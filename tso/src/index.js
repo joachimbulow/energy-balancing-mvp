@@ -18,8 +18,6 @@ const brokerTypes = {
 initialize();
 
 async function initialize() {
-  initializeBroker(brokerTypes.REDIS);
-
   subscribe(BATTERY_ACTIONS_TOPIC, handleBatteryAction)
 
   loadFrequencyMeasurements();

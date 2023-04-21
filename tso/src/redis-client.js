@@ -1,5 +1,4 @@
 const redis = require("redis");
-const PubSubBroker = require("./pub-sub-client");
 
 const REDIS_HOST = "localhost";
 const REDIS_PORT = 6379;
