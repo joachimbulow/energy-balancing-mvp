@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"time"
 
 	"github.com/joachimbulow/pem-energy-balance/src"
 )
@@ -18,9 +18,12 @@ func initialize() {
 	for i := 0; i < nBatteries; i++ {
 		go startBattery()
 	}
+
+	for {
+		time.Sleep(1 * time.Second)
+	}
 }
 
 func startBattery() {
-	battery := src.NewBattery()
-	fmt.Print("New battery created: ", battery.ID)
+	src.NewBattery()
 }
