@@ -1,5 +1,4 @@
 const { Kafka } = require("kafkajs");
-const { publishClient } = require("./redis-client");
 
 const KAFKA_SERVER = "localhost:9092";
 const GROUP_ID = "TSO";
