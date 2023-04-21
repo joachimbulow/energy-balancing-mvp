@@ -20,17 +20,16 @@ const (
 )
 
 var (
-	// instance of the broker
-	newBroker broker.Broker
+	brokerInstance broker.Broker
 )
 
-type Request struct {
+type PEMRequest struct {
 	ID          string `json:"id"`
 	BatteryID   string `json:"batteryId"`
 	RequestType string `json:"requestType"`
 }
 
-type Response struct {
+type PEMResponse struct {
 	ID           string `json:"id"`
 	BatteryID    string `json:"batteryId"`
 	ResponseType string `json:"responseType"`
@@ -71,7 +70,7 @@ const (
 	PacketTimeS     = 5 * 60
 	PACKET_ENERGY_J = PacketPowerW * PacketTimeS
 
-	PACKET_KWH = PACKET_ENERGY_J / 3600000
+	PACKET_KWH = float64(PACKET_ENERGY_J / 3600000)
 
 	SENDING_INTERVAL_MS = 10000
 
@@ -82,7 +81,7 @@ type Battery struct {
 	ID             string
 	BrokerInstance broker.Broker
 	SoC            float64
-	Requests       []Request
+	Requests       map[string]PEMRequest
 }
 
 var (
@@ -100,11 +99,11 @@ func NewBattery() Battery {
 
 func setupBroker() broker.Broker {
 	var err error
-	newBroker, err = broker.NewBroker(KAFKA)
+	brokerInstance, err = broker.NewBroker(KAFKA)
 	if err != nil {
 		log.Print("Broker instance could not be created:", err)
 	}
-	return newBroker
+	return brokerInstance
 }
 
 func generateUuid() string {
@@ -126,16 +125,15 @@ func handlePEMresponse(params ...[]byte) {
 	// todo verify index
 	message := params[1]
 
-	response := Response{}
+	response := PEMResponse{}
 	json.Unmarshal(message, &response)
-	if !existsInRequests(response) {
+	if response.BatteryID != battery.ID {
 		return
 	}
 	if response.ResponseType == GRANTED {
 		actOnGrantedRequest(response)
 	} else if response.ResponseType == DENIED {
 		fmt.Printf("Request with id %s denied\n", response.ID)
-		removeRequest(response.ID)
 	}
 }
 
@@ -152,16 +150,15 @@ func publishPEMrequests() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		// instead of remembering all previous requests, maybe look for own id
-		battery.Requests = append(battery.Requests, request)
+		battery.Requests[request.ID] = request
 		battery.BrokerInstance.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
 
-func getPEMRequest() Request {
+func getPEMRequest() PEMRequest {
 	stateOfCharge := measureSoC()
 
-	var request Request
+	var request PEMRequest
 	if stateOfCharge < LowerBoundBatteryCapacity {
 		request = newRequest(CHARGE)
 	} else if stateOfCharge >= LowerBoundBatteryCapacity && stateOfCharge <= UpperBoundBatteryCapacity {
@@ -181,15 +178,15 @@ func measureSoC() float64 {
 	return battery.SoC
 }
 
-func newRequest(requestType string) Request {
-	return Request{
+func newRequest(requestType string) PEMRequest {
+	return PEMRequest{
 		ID:          generateUuid(),
 		BatteryID:   battery.ID,
 		RequestType: requestType,
 	}
 }
 
-func probabilisticallyCalculateRequest() Request {
+func probabilisticallyCalculateRequest() PEMRequest {
 	// based on state of charge send a request to charge or discharge the battery
 	// TODO can be improved by using a more sophisticated algorithm
 	if rand.Float64() < 0.5 {
@@ -198,9 +195,9 @@ func probabilisticallyCalculateRequest() Request {
 	return newRequest(DISCHARGE)
 }
 
-func actOnGrantedRequest(response Response) {
+func actOnGrantedRequest(response PEMResponse) {
 	fmt.Printf("Request with id %s approved\n", response.ID)
-	request := findMatchingRequest(response)
+	request := battery.Requests[response.ID]
 
 	if request.ID == "" {
 		fmt.Printf("Request with id %s not found\n", response.ID)
@@ -215,18 +212,7 @@ func actOnGrantedRequest(response Response) {
 		dischargePacket()
 	}
 	publishBatteryAction(request.RequestType)
-	removeRequest(request.ID)
-}
-
-func findMatchingRequest(response Response) Request {
-	var request Request
-	for _, r := range battery.Requests {
-		if r.ID == response.ID {
-			request = r
-			break
-		}
-	}
-	return request
+	delete(battery.Requests, request.ID)
 }
 
 func chargePacket() {
@@ -247,25 +233,6 @@ func updateBattery(chargeAmount float64) {
 	time.Sleep(CHARGE_DISCHARGE_INTERVAL_MS * time.Millisecond)
 	fmt.Printf("After the update the new SoC is: %.4f\n", battery.SoC)
 	busy = false
-}
-
-func removeRequest(id string) {
-	var updatedRequests []Request
-	for _, req := range battery.Requests {
-		if req.ID != id {
-			updatedRequests = append(updatedRequests, req)
-		}
-	}
-	battery.Requests = updatedRequests
-}
-
-func existsInRequests(response Response) bool {
-	for _, req := range battery.Requests {
-		if req.ID == response.ID {
-			return true
-		}
-	}
-	return false
 }
 
 func publishBatteryAction(actionType string) {
