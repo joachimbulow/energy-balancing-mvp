@@ -1,0 +1,6482 @@
+[
+  {
+    "HourUTC": "2023-01-30T22:00:00",
+    "HourDK": "2023-01-30T23:00:00",
+    "InertiaNordicGWs": 167.245682,
+    "InertiaDK2GWs": 9.176234,
+    "InertiaNOGWs": 52.96043,
+    "InertiaSEGWs": 69.001846,
+    "InertiaFIGWs": 36.107845
+  },
+  {
+    "HourUTC": "2023-01-30T21:00:00",
+    "HourDK": "2023-01-30T22:00:00",
+    "InertiaNordicGWs": 169.706467,
+    "InertiaDK2GWs": 9.176063,
+    "InertiaNOGWs": 54.232136,
+    "InertiaSEGWs": 69.379715,
+    "InertiaFIGWs": 36.917557
+  },
+  {
+    "HourUTC": "2023-01-30T20:00:00",
+    "HourDK": "2023-01-30T21:00:00",
+    "InertiaNordicGWs": 173.508316,
+    "InertiaDK2GWs": 9.175823,
+    "InertiaNOGWs": 56.760105,
+    "InertiaSEGWs": 70.247063,
+    "InertiaFIGWs": 37.325073
+  },
+  {
+    "HourUTC": "2023-01-30T19:00:00",
+    "HourDK": "2023-01-30T20:00:00",
+    "InertiaNordicGWs": 176.980972,
+    "InertiaDK2GWs": 9.175718,
+    "InertiaNOGWs": 58.872829,
+    "InertiaSEGWs": 71.322456,
+    "InertiaFIGWs": 37.608368
+  },
+  {
+    "HourUTC": "2023-01-30T18:00:00",
+    "HourDK": "2023-01-30T19:00:00",
+    "InertiaNordicGWs": 182.406387,
+    "InertiaDK2GWs": 9.176152,
+    "InertiaNOGWs": 62.553055,
+    "InertiaSEGWs": 72.467804,
+    "InertiaFIGWs": 38.208542
+  },
+  {
+    "HourUTC": "2023-01-30T17:00:00",
+    "HourDK": "2023-01-30T18:00:00",
+    "InertiaNordicGWs": 185.463135,
+    "InertiaDK2GWs": 9.176264,
+    "InertiaNOGWs": 64.352043,
+    "InertiaSEGWs": 73.583916,
+    "InertiaFIGWs": 38.35009
+  },
+  {
+    "HourUTC": "2023-01-30T16:00:00",
+    "HourDK": "2023-01-30T17:00:00",
+    "InertiaNordicGWs": 186.43277,
+    "InertiaDK2GWs": 9.176518,
+    "InertiaNOGWs": 63.647488,
+    "InertiaSEGWs": 75.060562,
+    "InertiaFIGWs": 38.548504
+  },
+  {
+    "HourUTC": "2023-01-30T15:00:00",
+    "HourDK": "2023-01-30T16:00:00",
+    "InertiaNordicGWs": 183.817139,
+    "InertiaDK2GWs": 9.176055,
+    "InertiaNOGWs": 60.468544,
+    "InertiaSEGWs": 75.420593,
+    "InertiaFIGWs": 38.75248
+  },
+  {
+    "HourUTC": "2023-01-30T14:00:00",
+    "HourDK": "2023-01-30T15:00:00",
+    "InertiaNordicGWs": 181.619064,
+    "InertiaDK2GWs": 9.17625,
+    "InertiaNOGWs": 58.367783,
+    "InertiaSEGWs": 75.40567,
+    "InertiaFIGWs": 38.669849
+  },
+  {
+    "HourUTC": "2023-01-30T13:00:00",
+    "HourDK": "2023-01-30T14:00:00",
+    "InertiaNordicGWs": 180.497467,
+    "InertiaDK2GWs": 9.176092,
+    "InertiaNOGWs": 57.186394,
+    "InertiaSEGWs": 75.283226,
+    "InertiaFIGWs": 38.851231
+  },
+  {
+    "HourUTC": "2023-01-30T12:00:00",
+    "HourDK": "2023-01-30T13:00:00",
+    "InertiaNordicGWs": 180.649399,
+    "InertiaDK2GWs": 9.176271,
+    "InertiaNOGWs": 57.326298,
+    "InertiaSEGWs": 75.293312,
+    "InertiaFIGWs": 38.852924
+  },
+  {
+    "HourUTC": "2023-01-30T11:00:00",
+    "HourDK": "2023-01-30T12:00:00",
+    "InertiaNordicGWs": 182.012451,
+    "InertiaDK2GWs": 9.176197,
+    "InertiaNOGWs": 58.465775,
+    "InertiaSEGWs": 75.504044,
+    "InertiaFIGWs": 38.86557
+  },
+  {
+    "HourUTC": "2023-01-30T10:00:00",
+    "HourDK": "2023-01-30T11:00:00",
+    "InertiaNordicGWs": 186.279709,
+    "InertiaDK2GWs": 9.175501,
+    "InertiaNOGWs": 61.46059,
+    "InertiaSEGWs": 76.771194,
+    "InertiaFIGWs": 38.872467
+  },
+  {
+    "HourUTC": "2023-01-30T09:00:00",
+    "HourDK": "2023-01-30T10:00:00",
+    "InertiaNordicGWs": 190.251328,
+    "InertiaDK2GWs": 9.176055,
+    "InertiaNOGWs": 64.706459,
+    "InertiaSEGWs": 77.541176,
+    "InertiaFIGWs": 38.826908
+  },
+  {
+    "HourUTC": "2023-01-30T08:00:00",
+    "HourDK": "2023-01-30T09:00:00",
+    "InertiaNordicGWs": 192.825089,
+    "InertiaDK2GWs": 9.176399,
+    "InertiaNOGWs": 66.947411,
+    "InertiaSEGWs": 77.894646,
+    "InertiaFIGWs": 38.806206
+  },
+  {
+    "HourUTC": "2023-01-30T07:00:00",
+    "HourDK": "2023-01-30T08:00:00",
+    "InertiaNordicGWs": 191.987534,
+    "InertiaDK2GWs": 9.175823,
+    "InertiaNOGWs": 66.560478,
+    "InertiaSEGWs": 77.412819,
+    "InertiaFIGWs": 38.83939
+  },
+  {
+    "HourUTC": "2023-01-30T06:00:00",
+    "HourDK": "2023-01-30T07:00:00",
+    "InertiaNordicGWs": 189.214859,
+    "InertiaDK2GWs": 9.17625,
+    "InertiaNOGWs": 65.140419,
+    "InertiaSEGWs": 76.194992,
+    "InertiaFIGWs": 38.7061
+  },
+  {
+    "HourUTC": "2023-01-30T05:00:00",
+    "HourDK": "2023-01-30T06:00:00",
+    "InertiaNordicGWs": 178.477295,
+    "InertiaDK2GWs": 9.1758,
+    "InertiaNOGWs": 56.8745,
+    "InertiaSEGWs": 73.457939,
+    "InertiaFIGWs": 38.973866
+  },
+  {
+    "HourUTC": "2023-01-30T04:00:00",
+    "HourDK": "2023-01-30T05:00:00",
+    "InertiaNordicGWs": 162.220795,
+    "InertiaDK2GWs": 9.175905,
+    "InertiaNOGWs": 47.00185,
+    "InertiaSEGWs": 68.167671,
+    "InertiaFIGWs": 37.879311
+  },
+  {
+    "HourUTC": "2023-01-30T03:00:00",
+    "HourDK": "2023-01-30T04:00:00",
+    "InertiaNordicGWs": 153.118546,
+    "InertiaDK2GWs": 9.175569,
+    "InertiaNOGWs": 42.157791,
+    "InertiaSEGWs": 65.271927,
+    "InertiaFIGWs": 36.516151
+  },
+  {
+    "HourUTC": "2023-01-30T02:00:00",
+    "HourDK": "2023-01-30T03:00:00",
+    "InertiaNordicGWs": 149.754013,
+    "InertiaDK2GWs": 9.175703,
+    "InertiaNOGWs": 40.313084,
+    "InertiaSEGWs": 64.352959,
+    "InertiaFIGWs": 35.91283
+  },
+  {
+    "HourUTC": "2023-01-30T01:00:00",
+    "HourDK": "2023-01-30T02:00:00",
+    "InertiaNordicGWs": 148.676498,
+    "InertiaDK2GWs": 9.175404,
+    "InertiaNOGWs": 39.340942,
+    "InertiaSEGWs": 64.185333,
+    "InertiaFIGWs": 35.975998
+  },
+  {
+    "HourUTC": "2023-01-30T00:00:00",
+    "HourDK": "2023-01-30T01:00:00",
+    "InertiaNordicGWs": 148.477188,
+    "InertiaDK2GWs": 9.175284,
+    "InertiaNOGWs": 38.793522,
+    "InertiaSEGWs": 64.509575,
+    "InertiaFIGWs": 35.998802
+  },
+  {
+    "HourUTC": "2023-01-29T23:00:00",
+    "HourDK": "2023-01-30T00:00:00",
+    "InertiaNordicGWs": 151.735718,
+    "InertiaDK2GWs": 9.175075,
+    "InertiaNOGWs": 40.551891,
+    "InertiaSEGWs": 66.060699,
+    "InertiaFIGWs": 35.947319
+  },
+  {
+    "HourUTC": "2023-01-29T22:00:00",
+    "HourDK": "2023-01-29T23:00:00",
+    "InertiaNordicGWs": 154.200821,
+    "InertiaDK2GWs": 9.17503,
+    "InertiaNOGWs": 41.491734,
+    "InertiaSEGWs": 67.532814,
+    "InertiaFIGWs": 36.000065
+  },
+  {
+    "HourUTC": "2023-01-29T21:00:00",
+    "HourDK": "2023-01-29T22:00:00",
+    "InertiaNordicGWs": 162.908829,
+    "InertiaDK2GWs": 9.175329,
+    "InertiaNOGWs": 46.689583,
+    "InertiaSEGWs": 70.341858,
+    "InertiaFIGWs": 36.700909
+  },
+  {
+    "HourUTC": "2023-01-29T20:00:00",
+    "HourDK": "2023-01-29T21:00:00",
+    "InertiaNordicGWs": 168.274445,
+    "InertiaDK2GWs": 9.174917,
+    "InertiaNOGWs": 51.22155,
+    "InertiaSEGWs": 70.988503,
+    "InertiaFIGWs": 36.888882
+  },
+  {
+    "HourUTC": "2023-01-29T19:00:00",
+    "HourDK": "2023-01-29T20:00:00",
+    "InertiaNordicGWs": 173.296265,
+    "InertiaDK2GWs": 9.175344,
+    "InertiaNOGWs": 55.698471,
+    "InertiaSEGWs": 71.189751,
+    "InertiaFIGWs": 37.2327
+  },
+  {
+    "HourUTC": "2023-01-29T18:00:00",
+    "HourDK": "2023-01-29T19:00:00",
+    "InertiaNordicGWs": 177.03067,
+    "InertiaDK2GWs": 9.175217,
+    "InertiaNOGWs": 57.625721,
+    "InertiaSEGWs": 72.737923,
+    "InertiaFIGWs": 37.490845
+  },
+  {
+    "HourUTC": "2023-01-29T17:00:00",
+    "HourDK": "2023-01-29T18:00:00",
+    "InertiaNordicGWs": 180.035141,
+    "InertiaDK2GWs": 9.175292,
+    "InertiaNOGWs": 59.063522,
+    "InertiaSEGWs": 74.199081,
+    "InertiaFIGWs": 37.595776
+  },
+  {
+    "HourUTC": "2023-01-29T16:00:00",
+    "HourDK": "2023-01-29T17:00:00",
+    "InertiaNordicGWs": 181.659515,
+    "InertiaDK2GWs": 9.175538,
+    "InertiaNOGWs": 60.271614,
+    "InertiaSEGWs": 74.597961,
+    "InertiaFIGWs": 37.613956
+  },
+  {
+    "HourUTC": "2023-01-29T15:00:00",
+    "HourDK": "2023-01-29T16:00:00",
+    "InertiaNordicGWs": 180.399902,
+    "InertiaDK2GWs": 9.175771,
+    "InertiaNOGWs": 59.030396,
+    "InertiaSEGWs": 74.514168,
+    "InertiaFIGWs": 37.680046
+  },
+  {
+    "HourUTC": "2023-01-29T14:00:00",
+    "HourDK": "2023-01-29T15:00:00",
+    "InertiaNordicGWs": 178.915802,
+    "InertiaDK2GWs": 9.175591,
+    "InertiaNOGWs": 58.44022,
+    "InertiaSEGWs": 74.095779,
+    "InertiaFIGWs": 37.204227
+  },
+  {
+    "HourUTC": "2023-01-29T13:00:00",
+    "HourDK": "2023-01-29T14:00:00",
+    "InertiaNordicGWs": 179.814285,
+    "InertiaDK2GWs": 9.174783,
+    "InertiaNOGWs": 59.551125,
+    "InertiaSEGWs": 73.924263,
+    "InertiaFIGWs": 37.16394
+  },
+  {
+    "HourUTC": "2023-01-29T12:00:00",
+    "HourDK": "2023-01-29T13:00:00",
+    "InertiaNordicGWs": 178.496918,
+    "InertiaDK2GWs": 9.175366,
+    "InertiaNOGWs": 60.526558,
+    "InertiaSEGWs": 73.817429,
+    "InertiaFIGWs": 34.977169
+  },
+  {
+    "HourUTC": "2023-01-29T11:00:00",
+    "HourDK": "2023-01-29T12:00:00",
+    "InertiaNordicGWs": 174.086487,
+    "InertiaDK2GWs": 9.175845,
+    "InertiaNOGWs": 60.84861,
+    "InertiaSEGWs": 73.396423,
+    "InertiaFIGWs": 30.664516
+  },
+  {
+    "HourUTC": "2023-01-29T10:00:00",
+    "HourDK": "2023-01-29T11:00:00",
+    "InertiaNordicGWs": 173.401642,
+    "InertiaDK2GWs": 9.175958,
+    "InertiaNOGWs": 60.718212,
+    "InertiaSEGWs": 73.051338,
+    "InertiaFIGWs": 30.456377
+  },
+  {
+    "HourUTC": "2023-01-29T09:00:00",
+    "HourDK": "2023-01-29T10:00:00",
+    "InertiaNordicGWs": 175.169556,
+    "InertiaDK2GWs": 9.175531,
+    "InertiaNOGWs": 62.740211,
+    "InertiaSEGWs": 72.823891,
+    "InertiaFIGWs": 30.429829
+  },
+  {
+    "HourUTC": "2023-01-29T08:00:00",
+    "HourDK": "2023-01-29T09:00:00",
+    "InertiaNordicGWs": 174.30838,
+    "InertiaDK2GWs": 9.176092,
+    "InertiaNOGWs": 64.627701,
+    "InertiaSEGWs": 70.294708,
+    "InertiaFIGWs": 30.209627
+  },
+  {
+    "HourUTC": "2023-01-29T07:00:00",
+    "HourDK": "2023-01-29T08:00:00",
+    "InertiaNordicGWs": 173.618164,
+    "InertiaDK2GWs": 9.176309,
+    "InertiaNOGWs": 64.81675,
+    "InertiaSEGWs": 69.409866,
+    "InertiaFIGWs": 30.215361
+  },
+  {
+    "HourUTC": "2023-01-29T06:00:00",
+    "HourDK": "2023-01-29T07:00:00",
+    "InertiaNordicGWs": 171.050247,
+    "InertiaDK2GWs": 9.176399,
+    "InertiaNOGWs": 62.408966,
+    "InertiaSEGWs": 69.304268,
+    "InertiaFIGWs": 30.160717
+  },
+  {
+    "HourUTC": "2023-01-29T05:00:00",
+    "HourDK": "2023-01-29T06:00:00",
+    "InertiaNordicGWs": 168.69075,
+    "InertiaDK2GWs": 9.176534,
+    "InertiaNOGWs": 60.583481,
+    "InertiaSEGWs": 68.963684,
+    "InertiaFIGWs": 29.967028
+  },
+  {
+    "HourUTC": "2023-01-29T04:00:00",
+    "HourDK": "2023-01-29T05:00:00",
+    "InertiaNordicGWs": 168.46666,
+    "InertiaDK2GWs": 9.175493,
+    "InertiaNOGWs": 60.492161,
+    "InertiaSEGWs": 68.456627,
+    "InertiaFIGWs": 30.342476
+  },
+  {
+    "HourUTC": "2023-01-29T03:00:00",
+    "HourDK": "2023-01-29T04:00:00",
+    "InertiaNordicGWs": 167.385849,
+    "InertiaDK2GWs": 9.176302,
+    "InertiaNOGWs": 60.200356,
+    "InertiaSEGWs": 68.076225,
+    "InertiaFIGWs": 29.93285
+  },
+  {
+    "HourUTC": "2023-01-29T02:00:00",
+    "HourDK": "2023-01-29T03:00:00",
+    "InertiaNordicGWs": 167.702957,
+    "InertiaDK2GWs": 9.176676,
+    "InertiaNOGWs": 60.607426,
+    "InertiaSEGWs": 68.106865,
+    "InertiaFIGWs": 29.811056
+  },
+  {
+    "HourUTC": "2023-01-29T01:00:00",
+    "HourDK": "2023-01-29T02:00:00",
+    "InertiaNordicGWs": 168.985718,
+    "InertiaDK2GWs": 9.175927,
+    "InertiaNOGWs": 61.960102,
+    "InertiaSEGWs": 68.152969,
+    "InertiaFIGWs": 29.69664
+  },
+  {
+    "HourUTC": "2023-01-29T00:00:00",
+    "HourDK": "2023-01-29T01:00:00",
+    "InertiaNordicGWs": 170.428787,
+    "InertiaDK2GWs": 9.176063,
+    "InertiaNOGWs": 62.724102,
+    "InertiaSEGWs": 68.331543,
+    "InertiaFIGWs": 30.196899
+  },
+  {
+    "HourUTC": "2023-01-28T23:00:00",
+    "HourDK": "2023-01-29T00:00:00",
+    "InertiaNordicGWs": 172.633682,
+    "InertiaDK2GWs": 9.176414,
+    "InertiaNOGWs": 64.400749,
+    "InertiaSEGWs": 68.625603,
+    "InertiaFIGWs": 30.430889
+  },
+  {
+    "HourUTC": "2023-01-28T22:00:00",
+    "HourDK": "2023-01-28T23:00:00",
+    "InertiaNordicGWs": 177.775528,
+    "InertiaDK2GWs": 9.17568,
+    "InertiaNOGWs": 68.055855,
+    "InertiaSEGWs": 69.340927,
+    "InertiaFIGWs": 31.202335
+  },
+  {
+    "HourUTC": "2023-01-28T21:00:00",
+    "HourDK": "2023-01-28T22:00:00",
+    "InertiaNordicGWs": 181.478027,
+    "InertiaDK2GWs": 9.177034,
+    "InertiaNOGWs": 70.637413,
+    "InertiaSEGWs": 70.191833,
+    "InertiaFIGWs": 31.471592
+  },
+  {
+    "HourUTC": "2023-01-28T20:00:00",
+    "HourDK": "2023-01-28T21:00:00",
+    "InertiaNordicGWs": 183.517822,
+    "InertiaDK2GWs": 9.175651,
+    "InertiaNOGWs": 71.666679,
+    "InertiaSEGWs": 71.054405,
+    "InertiaFIGWs": 31.620502
+  },
+  {
+    "HourUTC": "2023-01-28T19:00:00",
+    "HourDK": "2023-01-28T20:00:00",
+    "InertiaNordicGWs": 186.719009,
+    "InertiaDK2GWs": 9.175785,
+    "InertiaNOGWs": 73.344437,
+    "InertiaSEGWs": 71.981041,
+    "InertiaFIGWs": 32.216881
+  },
+  {
+    "HourUTC": "2023-01-28T18:00:00",
+    "HourDK": "2023-01-28T19:00:00",
+    "InertiaNordicGWs": 190.314926,
+    "InertiaDK2GWs": 9.174763,
+    "InertiaNOGWs": 75.691864,
+    "InertiaSEGWs": 72.947502,
+    "InertiaFIGWs": 32.500496
+  },
+  {
+    "HourUTC": "2023-01-28T17:00:00",
+    "HourDK": "2023-01-28T18:00:00",
+    "InertiaNordicGWs": 193.420059,
+    "InertiaDK2GWs": 9.178792,
+    "InertiaNOGWs": 78.170509,
+    "InertiaSEGWs": 73.498253,
+    "InertiaFIGWs": 32.572109
+  },
+  {
+    "HourUTC": "2023-01-28T16:00:00",
+    "HourDK": "2023-01-28T17:00:00",
+    "InertiaNordicGWs": 194.795929,
+    "InertiaDK2GWs": 9.182625,
+    "InertiaNOGWs": 79.140709,
+    "InertiaSEGWs": 73.839317,
+    "InertiaFIGWs": 32.633171
+  },
+  {
+    "HourUTC": "2023-01-28T15:00:00",
+    "HourDK": "2023-01-28T16:00:00",
+    "InertiaNordicGWs": 193.216949,
+    "InertiaDK2GWs": 9.181952,
+    "InertiaNOGWs": 77.529366,
+    "InertiaSEGWs": 73.880226,
+    "InertiaFIGWs": 32.625362
+  },
+  {
+    "HourUTC": "2023-01-28T14:00:00",
+    "HourDK": "2023-01-28T15:00:00",
+    "InertiaNordicGWs": 189.872025,
+    "InertiaDK2GWs": 9.181712,
+    "InertiaNOGWs": 75.214081,
+    "InertiaSEGWs": 73.03714,
+    "InertiaFIGWs": 32.439461
+  },
+  {
+    "HourUTC": "2023-01-28T13:00:00",
+    "HourDK": "2023-01-28T14:00:00",
+    "InertiaNordicGWs": 188.654541,
+    "InertiaDK2GWs": 9.181802,
+    "InertiaNOGWs": 75.259743,
+    "InertiaSEGWs": 72.684845,
+    "InertiaFIGWs": 31.528769
+  },
+  {
+    "HourUTC": "2023-01-28T12:00:00",
+    "HourDK": "2023-01-28T13:00:00",
+    "InertiaNordicGWs": 188.352585,
+    "InertiaDK2GWs": 9.181518,
+    "InertiaNOGWs": 75.280632,
+    "InertiaSEGWs": 72.422829,
+    "InertiaFIGWs": 31.466349
+  },
+  {
+    "HourUTC": "2023-01-28T11:00:00",
+    "HourDK": "2023-01-28T12:00:00",
+    "InertiaNordicGWs": 191.486267,
+    "InertiaDK2GWs": 9.182027,
+    "InertiaNOGWs": 79.063087,
+    "InertiaSEGWs": 71.874809,
+    "InertiaFIGWs": 31.366081
+  },
+  {
+    "HourUTC": "2023-01-28T10:00:00",
+    "HourDK": "2023-01-28T11:00:00",
+    "InertiaNordicGWs": 193.152054,
+    "InertiaDK2GWs": 9.182154,
+    "InertiaNOGWs": 81.06179,
+    "InertiaSEGWs": 71.800163,
+    "InertiaFIGWs": 31.109207
+  },
+  {
+    "HourUTC": "2023-01-28T09:00:00",
+    "HourDK": "2023-01-28T10:00:00",
+    "InertiaNordicGWs": 192.646484,
+    "InertiaDK2GWs": 9.182064,
+    "InertiaNOGWs": 80.773422,
+    "InertiaSEGWs": 71.63752,
+    "InertiaFIGWs": 31.0543
+  },
+  {
+    "HourUTC": "2023-01-28T08:00:00",
+    "HourDK": "2023-01-28T09:00:00",
+    "InertiaNordicGWs": 189.247528,
+    "InertiaDK2GWs": 9.193797,
+    "InertiaNOGWs": 78.261147,
+    "InertiaSEGWs": 70.892052,
+    "InertiaFIGWs": 30.901167
+  },
+  {
+    "HourUTC": "2023-01-28T07:00:00",
+    "HourDK": "2023-01-28T08:00:00",
+    "InertiaNordicGWs": 186.889236,
+    "InertiaDK2GWs": 9.308688,
+    "InertiaNOGWs": 75.899765,
+    "InertiaSEGWs": 70.917496,
+    "InertiaFIGWs": 30.763288
+  },
+  {
+    "HourUTC": "2023-01-28T06:00:00",
+    "HourDK": "2023-01-28T07:00:00",
+    "InertiaNordicGWs": 184.381516,
+    "InertiaDK2GWs": 9.415593,
+    "InertiaNOGWs": 73.885918,
+    "InertiaSEGWs": 70.493912,
+    "InertiaFIGWs": 30.586832
+  },
+  {
+    "HourUTC": "2023-01-28T05:00:00",
+    "HourDK": "2023-01-28T06:00:00",
+    "InertiaNordicGWs": 181.50499,
+    "InertiaDK2GWs": 9.387313,
+    "InertiaNOGWs": 71.656563,
+    "InertiaSEGWs": 70.319206,
+    "InertiaFIGWs": 30.142487
+  },
+  {
+    "HourUTC": "2023-01-28T04:00:00",
+    "HourDK": "2023-01-28T05:00:00",
+    "InertiaNordicGWs": 178.481186,
+    "InertiaDK2GWs": 9.191525,
+    "InertiaNOGWs": 71.611313,
+    "InertiaSEGWs": 67.675163,
+    "InertiaFIGWs": 30.003334
+  },
+  {
+    "HourUTC": "2023-01-28T03:00:00",
+    "HourDK": "2023-01-28T04:00:00",
+    "InertiaNordicGWs": 176.124634,
+    "InertiaDK2GWs": 9.176197,
+    "InertiaNOGWs": 70.950554,
+    "InertiaSEGWs": 66.114258,
+    "InertiaFIGWs": 29.883615
+  },
+  {
+    "HourUTC": "2023-01-28T02:00:00",
+    "HourDK": "2023-01-28T03:00:00",
+    "InertiaNordicGWs": 176.240768,
+    "InertiaDK2GWs": 9.175995,
+    "InertiaNOGWs": 71.276085,
+    "InertiaSEGWs": 65.893173,
+    "InertiaFIGWs": 29.895411
+  },
+  {
+    "HourUTC": "2023-01-28T01:00:00",
+    "HourDK": "2023-01-28T02:00:00",
+    "InertiaNordicGWs": 177.549332,
+    "InertiaDK2GWs": 9.176511,
+    "InertiaNOGWs": 72.411934,
+    "InertiaSEGWs": 66.045189,
+    "InertiaFIGWs": 29.915983
+  },
+  {
+    "HourUTC": "2023-01-28T00:00:00",
+    "HourDK": "2023-01-28T01:00:00",
+    "InertiaNordicGWs": 179.149796,
+    "InertiaDK2GWs": 9.194489,
+    "InertiaNOGWs": 73.632172,
+    "InertiaSEGWs": 66.336784,
+    "InertiaFIGWs": 29.986105
+  },
+  {
+    "HourUTC": "2023-01-27T23:00:00",
+    "HourDK": "2023-01-28T00:00:00",
+    "InertiaNordicGWs": 182.443924,
+    "InertiaDK2GWs": 9.233633,
+    "InertiaNOGWs": 74.30899,
+    "InertiaSEGWs": 68.731232,
+    "InertiaFIGWs": 30.169874
+  },
+  {
+    "HourUTC": "2023-01-27T22:00:00",
+    "HourDK": "2023-01-27T23:00:00",
+    "InertiaNordicGWs": 188.185043,
+    "InertiaDK2GWs": 9.182917,
+    "InertiaNOGWs": 73.231598,
+    "InertiaSEGWs": 75.374855,
+    "InertiaFIGWs": 30.395618
+  },
+  {
+    "HourUTC": "2023-01-27T21:00:00",
+    "HourDK": "2023-01-27T22:00:00",
+    "InertiaNordicGWs": 193.33844,
+    "InertiaDK2GWs": 9.18359,
+    "InertiaNOGWs": 75.044548,
+    "InertiaSEGWs": 77.023468,
+    "InertiaFIGWs": 32.086605
+  },
+  {
+    "HourUTC": "2023-01-27T20:00:00",
+    "HourDK": "2023-01-27T21:00:00",
+    "InertiaNordicGWs": 197.648773,
+    "InertiaDK2GWs": 9.182648,
+    "InertiaNOGWs": 76.942131,
+    "InertiaSEGWs": 78.397934,
+    "InertiaFIGWs": 33.125572
+  },
+  {
+    "HourUTC": "2023-01-27T19:00:00",
+    "HourDK": "2023-01-27T20:00:00",
+    "InertiaNordicGWs": 199.490112,
+    "InertiaDK2GWs": 9.193929,
+    "InertiaNOGWs": 77.591011,
+    "InertiaSEGWs": 78.834099,
+    "InertiaFIGWs": 33.869629
+  },
+  {
+    "HourUTC": "2023-01-27T18:00:00",
+    "HourDK": "2023-01-27T19:00:00",
+    "InertiaNordicGWs": 204.465607,
+    "InertiaDK2GWs": 9.309339,
+    "InertiaNOGWs": 81.815056,
+    "InertiaSEGWs": 78.997566,
+    "InertiaFIGWs": 34.342083
+  },
+  {
+    "HourUTC": "2023-01-27T17:00:00",
+    "HourDK": "2023-01-27T18:00:00",
+    "InertiaNordicGWs": 208.954712,
+    "InertiaDK2GWs": 9.355575,
+    "InertiaNOGWs": 84.991707,
+    "InertiaSEGWs": 79.095642,
+    "InertiaFIGWs": 35.503788
+  },
+  {
+    "HourUTC": "2023-01-27T16:00:00",
+    "HourDK": "2023-01-27T17:00:00",
+    "InertiaNordicGWs": 216.592728,
+    "InertiaDK2GWs": 9.484023,
+    "InertiaNOGWs": 87.264084,
+    "InertiaSEGWs": 79.027428,
+    "InertiaFIGWs": 40.8158
+  },
+  {
+    "HourUTC": "2023-01-27T15:00:00",
+    "HourDK": "2023-01-27T16:00:00",
+    "InertiaNordicGWs": 216.076767,
+    "InertiaDK2GWs": 9.484053,
+    "InertiaNOGWs": 86.701988,
+    "InertiaSEGWs": 79.423111,
+    "InertiaFIGWs": 40.469009
+  },
+  {
+    "HourUTC": "2023-01-27T14:00:00",
+    "HourDK": "2023-01-27T15:00:00",
+    "InertiaNordicGWs": 213.971603,
+    "InertiaDK2GWs": 9.484352,
+    "InertiaNOGWs": 84.335884,
+    "InertiaSEGWs": 79.909447,
+    "InertiaFIGWs": 40.241917
+  },
+  {
+    "HourUTC": "2023-01-27T13:00:00",
+    "HourDK": "2023-01-27T14:00:00",
+    "InertiaNordicGWs": 214.898544,
+    "InertiaDK2GWs": 9.491111,
+    "InertiaNOGWs": 83.448601,
+    "InertiaSEGWs": 80.748116,
+    "InertiaFIGWs": 41.210812
+  },
+  {
+    "HourUTC": "2023-01-27T12:00:00",
+    "HourDK": "2023-01-27T13:00:00",
+    "InertiaNordicGWs": 215.342499,
+    "InertiaDK2GWs": 9.485354,
+    "InertiaNOGWs": 83.816437,
+    "InertiaSEGWs": 80.813652,
+    "InertiaFIGWs": 41.226944
+  },
+  {
+    "HourUTC": "2023-01-27T11:00:00",
+    "HourDK": "2023-01-27T12:00:00",
+    "InertiaNordicGWs": 214.660339,
+    "InertiaDK2GWs": 9.48525,
+    "InertiaNOGWs": 83.626144,
+    "InertiaSEGWs": 80.243507,
+    "InertiaFIGWs": 41.305542
+  },
+  {
+    "HourUTC": "2023-01-27T10:00:00",
+    "HourDK": "2023-01-27T11:00:00",
+    "InertiaNordicGWs": 214.775772,
+    "InertiaDK2GWs": 9.491046,
+    "InertiaNOGWs": 83.39122,
+    "InertiaSEGWs": 80.553192,
+    "InertiaFIGWs": 41.340454
+  },
+  {
+    "HourUTC": "2023-01-27T09:00:00",
+    "HourDK": "2023-01-27T10:00:00",
+    "InertiaNordicGWs": 215.694855,
+    "InertiaDK2GWs": 9.492606,
+    "InertiaNOGWs": 83.997391,
+    "InertiaSEGWs": 80.865707,
+    "InertiaFIGWs": 41.339283
+  },
+  {
+    "HourUTC": "2023-01-27T08:00:00",
+    "HourDK": "2023-01-27T09:00:00",
+    "InertiaNordicGWs": 217.122803,
+    "InertiaDK2GWs": 9.495497,
+    "InertiaNOGWs": 85.327667,
+    "InertiaSEGWs": 80.982002,
+    "InertiaFIGWs": 41.317547
+  },
+  {
+    "HourUTC": "2023-01-27T07:00:00",
+    "HourDK": "2023-01-27T08:00:00",
+    "InertiaNordicGWs": 218.379852,
+    "InertiaDK2GWs": 9.488709,
+    "InertiaNOGWs": 86.223045,
+    "InertiaSEGWs": 81.262276,
+    "InertiaFIGWs": 41.405411
+  },
+  {
+    "HourUTC": "2023-01-27T06:00:00",
+    "HourDK": "2023-01-27T07:00:00",
+    "InertiaNordicGWs": 219.203873,
+    "InertiaDK2GWs": 9.51951,
+    "InertiaNOGWs": 86.236931,
+    "InertiaSEGWs": 81.954079,
+    "InertiaFIGWs": 41.493301
+  },
+  {
+    "HourUTC": "2023-01-27T05:00:00",
+    "HourDK": "2023-01-27T06:00:00",
+    "InertiaNordicGWs": 217.57811,
+    "InertiaDK2GWs": 9.190341,
+    "InertiaNOGWs": 84.671967,
+    "InertiaSEGWs": 82.454346,
+    "InertiaFIGWs": 41.263519
+  },
+  {
+    "HourUTC": "2023-01-27T04:00:00",
+    "HourDK": "2023-01-27T05:00:00",
+    "InertiaNordicGWs": 208.598083,
+    "InertiaDK2GWs": 9.176339,
+    "InertiaNOGWs": 76.427521,
+    "InertiaSEGWs": 82.4217,
+    "InertiaFIGWs": 40.574551
+  },
+  {
+    "HourUTC": "2023-01-27T03:00:00",
+    "HourDK": "2023-01-27T04:00:00",
+    "InertiaNordicGWs": 202.075287,
+    "InertiaDK2GWs": 9.175306,
+    "InertiaNOGWs": 71.366501,
+    "InertiaSEGWs": 81.658638,
+    "InertiaFIGWs": 39.876205
+  },
+  {
+    "HourUTC": "2023-01-27T02:00:00",
+    "HourDK": "2023-01-27T03:00:00",
+    "InertiaNordicGWs": 198.646408,
+    "InertiaDK2GWs": 9.176182,
+    "InertiaNOGWs": 69.645142,
+    "InertiaSEGWs": 81.595566,
+    "InertiaFIGWs": 38.228588
+  },
+  {
+    "HourUTC": "2023-01-27T01:00:00",
+    "HourDK": "2023-01-27T02:00:00",
+    "InertiaNordicGWs": 197.810806,
+    "InertiaDK2GWs": 9.179994,
+    "InertiaNOGWs": 69.320702,
+    "InertiaSEGWs": 81.471764,
+    "InertiaFIGWs": 37.837387
+  },
+  {
+    "HourUTC": "2023-01-27T00:00:00",
+    "HourDK": "2023-01-27T01:00:00",
+    "InertiaNordicGWs": 197.207565,
+    "InertiaDK2GWs": 9.182049,
+    "InertiaNOGWs": 68.822655,
+    "InertiaSEGWs": 81.323509,
+    "InertiaFIGWs": 37.878941
+  },
+  {
+    "HourUTC": "2023-01-26T23:00:00",
+    "HourDK": "2023-01-27T00:00:00",
+    "InertiaNordicGWs": 197.233932,
+    "InertiaDK2GWs": 9.183006,
+    "InertiaNOGWs": 68.989075,
+    "InertiaSEGWs": 81.291298,
+    "InertiaFIGWs": 37.769829
+  },
+  {
+    "HourUTC": "2023-01-26T22:00:00",
+    "HourDK": "2023-01-26T23:00:00",
+    "InertiaNordicGWs": 198.883179,
+    "InertiaDK2GWs": 9.182819,
+    "InertiaNOGWs": 70.536163,
+    "InertiaSEGWs": 81.193497,
+    "InertiaFIGWs": 37.970119
+  },
+  {
+    "HourUTC": "2023-01-26T21:00:00",
+    "HourDK": "2023-01-26T22:00:00",
+    "InertiaNordicGWs": 202.674927,
+    "InertiaDK2GWs": 9.182737,
+    "InertiaNOGWs": 73.150726,
+    "InertiaSEGWs": 81.57605,
+    "InertiaFIGWs": 38.764439
+  },
+  {
+    "HourUTC": "2023-01-26T20:00:00",
+    "HourDK": "2023-01-26T21:00:00",
+    "InertiaNordicGWs": 204.577408,
+    "InertiaDK2GWs": 9.217605,
+    "InertiaNOGWs": 74.404533,
+    "InertiaSEGWs": 81.27401,
+    "InertiaFIGWs": 39.680737
+  },
+  {
+    "HourUTC": "2023-01-26T19:00:00",
+    "HourDK": "2023-01-26T20:00:00",
+    "InertiaNordicGWs": 206.451553,
+    "InertiaDK2GWs": 9.358356,
+    "InertiaNOGWs": 74.857971,
+    "InertiaSEGWs": 82.180389,
+    "InertiaFIGWs": 40.054325
+  },
+  {
+    "HourUTC": "2023-01-26T18:00:00",
+    "HourDK": "2023-01-26T19:00:00",
+    "InertiaNordicGWs": 208.58844,
+    "InertiaDK2GWs": 9.359209,
+    "InertiaNOGWs": 77.048492,
+    "InertiaSEGWs": 81.932365,
+    "InertiaFIGWs": 40.248375
+  },
+  {
+    "HourUTC": "2023-01-26T17:00:00",
+    "HourDK": "2023-01-26T18:00:00",
+    "InertiaNordicGWs": 210.787567,
+    "InertiaDK2GWs": 9.358528,
+    "InertiaNOGWs": 79.169456,
+    "InertiaSEGWs": 81.961555,
+    "InertiaFIGWs": 40.297615
+  },
+  {
+    "HourUTC": "2023-01-26T16:00:00",
+    "HourDK": "2023-01-26T17:00:00",
+    "InertiaNordicGWs": 211.552155,
+    "InertiaDK2GWs": 9.516903,
+    "InertiaNOGWs": 79.444313,
+    "InertiaSEGWs": 82.298851,
+    "InertiaFIGWs": 40.291557
+  },
+  {
+    "HourUTC": "2023-01-26T15:00:00",
+    "HourDK": "2023-01-26T16:00:00",
+    "InertiaNordicGWs": 211.27179,
+    "InertiaDK2GWs": 9.525323,
+    "InertiaNOGWs": 79.267433,
+    "InertiaSEGWs": 82.360107,
+    "InertiaFIGWs": 40.120266
+  },
+  {
+    "HourUTC": "2023-01-26T14:00:00",
+    "HourDK": "2023-01-26T15:00:00",
+    "InertiaNordicGWs": 208.63681,
+    "InertiaDK2GWs": 9.485325,
+    "InertiaNOGWs": 77.692902,
+    "InertiaSEGWs": 82.219078,
+    "InertiaFIGWs": 39.239719
+  },
+  {
+    "HourUTC": "2023-01-26T13:00:00",
+    "HourDK": "2023-01-26T14:00:00",
+    "InertiaNordicGWs": 207.023621,
+    "InertiaDK2GWs": 9.484965,
+    "InertiaNOGWs": 76.510864,
+    "InertiaSEGWs": 81.8311,
+    "InertiaFIGWs": 39.197899
+  },
+  {
+    "HourUTC": "2023-01-26T12:00:00",
+    "HourDK": "2023-01-26T13:00:00",
+    "InertiaNordicGWs": 204.854172,
+    "InertiaDK2GWs": 9.484509,
+    "InertiaNOGWs": 75.39624,
+    "InertiaSEGWs": 80.846893,
+    "InertiaFIGWs": 39.125202
+  },
+  {
+    "HourUTC": "2023-01-26T11:00:00",
+    "HourDK": "2023-01-26T12:00:00",
+    "InertiaNordicGWs": 206.327454,
+    "InertiaDK2GWs": 9.484165,
+    "InertiaNOGWs": 76.997787,
+    "InertiaSEGWs": 80.907532,
+    "InertiaFIGWs": 38.938202
+  },
+  {
+    "HourUTC": "2023-01-26T10:00:00",
+    "HourDK": "2023-01-26T11:00:00",
+    "InertiaNordicGWs": 208.233063,
+    "InertiaDK2GWs": 9.484442,
+    "InertiaNOGWs": 79.177643,
+    "InertiaSEGWs": 80.602806,
+    "InertiaFIGWs": 38.967205
+  },
+  {
+    "HourUTC": "2023-01-26T09:00:00",
+    "HourDK": "2023-01-26T10:00:00",
+    "InertiaNordicGWs": 210.378204,
+    "InertiaDK2GWs": 9.484307,
+    "InertiaNOGWs": 81.219704,
+    "InertiaSEGWs": 80.531319,
+    "InertiaFIGWs": 39.143406
+  },
+  {
+    "HourUTC": "2023-01-26T08:00:00",
+    "HourDK": "2023-01-26T09:00:00",
+    "InertiaNordicGWs": 209.813126,
+    "InertiaDK2GWs": 9.484389,
+    "InertiaNOGWs": 81.020226,
+    "InertiaSEGWs": 80.082985,
+    "InertiaFIGWs": 39.225224
+  },
+  {
+    "HourUTC": "2023-01-26T07:00:00",
+    "HourDK": "2023-01-26T08:00:00",
+    "InertiaNordicGWs": 210.743591,
+    "InertiaDK2GWs": 9.487185,
+    "InertiaNOGWs": 82.244759,
+    "InertiaSEGWs": 79.874214,
+    "InertiaFIGWs": 39.137657
+  },
+  {
+    "HourUTC": "2023-01-26T06:00:00",
+    "HourDK": "2023-01-26T07:00:00",
+    "InertiaNordicGWs": 210.520737,
+    "InertiaDK2GWs": 9.4771,
+    "InertiaNOGWs": 83.186317,
+    "InertiaSEGWs": 78.716789,
+    "InertiaFIGWs": 39.14188
+  },
+  {
+    "HourUTC": "2023-01-26T05:00:00",
+    "HourDK": "2023-01-26T06:00:00",
+    "InertiaNordicGWs": 201.162704,
+    "InertiaDK2GWs": 9.302551,
+    "InertiaNOGWs": 75.717094,
+    "InertiaSEGWs": 77.242111,
+    "InertiaFIGWs": 38.903042
+  },
+  {
+    "HourUTC": "2023-01-26T04:00:00",
+    "HourDK": "2023-01-26T05:00:00",
+    "InertiaNordicGWs": 194.354797,
+    "InertiaDK2GWs": 9.192182,
+    "InertiaNOGWs": 72.051926,
+    "InertiaSEGWs": 75.093773,
+    "InertiaFIGWs": 38.017239
+  },
+  {
+    "HourUTC": "2023-01-26T03:00:00",
+    "HourDK": "2023-01-26T04:00:00",
+    "InertiaNordicGWs": 190.166351,
+    "InertiaDK2GWs": 9.176631,
+    "InertiaNOGWs": 70.288429,
+    "InertiaSEGWs": 73.331848,
+    "InertiaFIGWs": 37.369789
+  },
+  {
+    "HourUTC": "2023-01-26T02:00:00",
+    "HourDK": "2023-01-26T03:00:00",
+    "InertiaNordicGWs": 189.892487,
+    "InertiaDK2GWs": 9.180073,
+    "InertiaNOGWs": 70.520325,
+    "InertiaSEGWs": 73.212845,
+    "InertiaFIGWs": 36.978874
+  },
+  {
+    "HourUTC": "2023-01-26T01:00:00",
+    "HourDK": "2023-01-26T02:00:00",
+    "InertiaNordicGWs": 189.422913,
+    "InertiaDK2GWs": 9.182206,
+    "InertiaNOGWs": 71.243698,
+    "InertiaSEGWs": 73.168282,
+    "InertiaFIGWs": 35.829639
+  },
+  {
+    "HourUTC": "2023-01-26T00:00:00",
+    "HourDK": "2023-01-26T01:00:00",
+    "InertiaNordicGWs": 192.095276,
+    "InertiaDK2GWs": 9.199787,
+    "InertiaNOGWs": 74.530693,
+    "InertiaSEGWs": 73.164558,
+    "InertiaFIGWs": 35.199764
+  },
+  {
+    "HourUTC": "2023-01-25T23:00:00",
+    "HourDK": "2023-01-26T00:00:00",
+    "InertiaNordicGWs": 195.264938,
+    "InertiaDK2GWs": 9.284284,
+    "InertiaNOGWs": 75.758659,
+    "InertiaSEGWs": 75.172981,
+    "InertiaFIGWs": 35.049118
+  },
+  {
+    "HourUTC": "2023-01-25T22:00:00",
+    "HourDK": "2023-01-25T23:00:00",
+    "InertiaNordicGWs": 195.670807,
+    "InertiaDK2GWs": 9.284731,
+    "InertiaNOGWs": 76.728714,
+    "InertiaSEGWs": 74.87809,
+    "InertiaFIGWs": 34.779419
+  },
+  {
+    "HourUTC": "2023-01-25T21:00:00",
+    "HourDK": "2023-01-25T22:00:00",
+    "InertiaNordicGWs": 197.60791,
+    "InertiaDK2GWs": 9.411304,
+    "InertiaNOGWs": 78.126839,
+    "InertiaSEGWs": 75.182976,
+    "InertiaFIGWs": 34.886795
+  },
+  {
+    "HourUTC": "2023-01-25T20:00:00",
+    "HourDK": "2023-01-25T21:00:00",
+    "InertiaNordicGWs": 199.996201,
+    "InertiaDK2GWs": 9.2916,
+    "InertiaNOGWs": 80.046722,
+    "InertiaSEGWs": 75.718132,
+    "InertiaFIGWs": 34.939495
+  },
+  {
+    "HourUTC": "2023-01-25T19:00:00",
+    "HourDK": "2023-01-25T20:00:00",
+    "InertiaNordicGWs": 200.63504,
+    "InertiaDK2GWs": 9.258234,
+    "InertiaNOGWs": 80.259766,
+    "InertiaSEGWs": 76.17205,
+    "InertiaFIGWs": 34.944649
+  },
+  {
+    "HourUTC": "2023-01-25T18:00:00",
+    "HourDK": "2023-01-25T19:00:00",
+    "InertiaNordicGWs": 201.588043,
+    "InertiaDK2GWs": 9.275572,
+    "InertiaNOGWs": 81.063477,
+    "InertiaSEGWs": 76.227837,
+    "InertiaFIGWs": 35.021313
+  },
+  {
+    "HourUTC": "2023-01-25T17:00:00",
+    "HourDK": "2023-01-25T18:00:00",
+    "InertiaNordicGWs": 201.257553,
+    "InertiaDK2GWs": 9.230527,
+    "InertiaNOGWs": 80.703239,
+    "InertiaSEGWs": 76.232292,
+    "InertiaFIGWs": 35.091381
+  },
+  {
+    "HourUTC": "2023-01-25T16:00:00",
+    "HourDK": "2023-01-25T17:00:00",
+    "InertiaNordicGWs": 201.168045,
+    "InertiaDK2GWs": 9.355931,
+    "InertiaNOGWs": 80.591965,
+    "InertiaSEGWs": 76.146683,
+    "InertiaFIGWs": 35.074791
+  },
+  {
+    "HourUTC": "2023-01-25T15:00:00",
+    "HourDK": "2023-01-25T16:00:00",
+    "InertiaNordicGWs": 200.099625,
+    "InertiaDK2GWs": 9.18322,
+    "InertiaNOGWs": 79.734352,
+    "InertiaSEGWs": 76.080879,
+    "InertiaFIGWs": 35.101135
+  },
+  {
+    "HourUTC": "2023-01-25T14:00:00",
+    "HourDK": "2023-01-25T15:00:00",
+    "InertiaNordicGWs": 196.241684,
+    "InertiaDK2GWs": 9.182319,
+    "InertiaNOGWs": 76.046791,
+    "InertiaSEGWs": 75.928329,
+    "InertiaFIGWs": 35.084221
+  },
+  {
+    "HourUTC": "2023-01-25T13:00:00",
+    "HourDK": "2023-01-25T14:00:00",
+    "InertiaNordicGWs": 194.7883,
+    "InertiaDK2GWs": 9.182461,
+    "InertiaNOGWs": 75.924774,
+    "InertiaSEGWs": 74.619667,
+    "InertiaFIGWs": 35.062428
+  },
+  {
+    "HourUTC": "2023-01-25T12:00:00",
+    "HourDK": "2023-01-25T13:00:00",
+    "InertiaNordicGWs": 195.310623,
+    "InertiaDK2GWs": 9.181023,
+    "InertiaNOGWs": 76.846642,
+    "InertiaSEGWs": 74.282021,
+    "InertiaFIGWs": 34.999626
+  },
+  {
+    "HourUTC": "2023-01-25T11:00:00",
+    "HourDK": "2023-01-25T12:00:00",
+    "InertiaNordicGWs": 195.086105,
+    "InertiaDK2GWs": 9.195953,
+    "InertiaNOGWs": 77.262596,
+    "InertiaSEGWs": 73.718193,
+    "InertiaFIGWs": 34.909729
+  },
+  {
+    "HourUTC": "2023-01-25T10:00:00",
+    "HourDK": "2023-01-25T11:00:00",
+    "InertiaNordicGWs": 194.432022,
+    "InertiaDK2GWs": 9.185654,
+    "InertiaNOGWs": 77.569351,
+    "InertiaSEGWs": 72.62381,
+    "InertiaFIGWs": 35.053673
+  },
+  {
+    "HourUTC": "2023-01-25T09:00:00",
+    "HourDK": "2023-01-25T10:00:00",
+    "InertiaNordicGWs": 194.227798,
+    "InertiaDK2GWs": 9.188143,
+    "InertiaNOGWs": 78.050758,
+    "InertiaSEGWs": 71.970871,
+    "InertiaFIGWs": 35.01823
+  },
+  {
+    "HourUTC": "2023-01-25T08:00:00",
+    "HourDK": "2023-01-25T09:00:00",
+    "InertiaNordicGWs": 194.376968,
+    "InertiaDK2GWs": 9.18282,
+    "InertiaNOGWs": 78.246536,
+    "InertiaSEGWs": 71.741913,
+    "InertiaFIGWs": 35.205719
+  },
+  {
+    "HourUTC": "2023-01-25T07:00:00",
+    "HourDK": "2023-01-25T08:00:00",
+    "InertiaNordicGWs": 193.824829,
+    "InertiaDK2GWs": 9.182072,
+    "InertiaNOGWs": 77.834465,
+    "InertiaSEGWs": 71.73748,
+    "InertiaFIGWs": 35.070629
+  },
+  {
+    "HourUTC": "2023-01-25T06:00:00",
+    "HourDK": "2023-01-25T07:00:00",
+    "InertiaNordicGWs": 190.415024,
+    "InertiaDK2GWs": 9.177422,
+    "InertiaNOGWs": 76.14164,
+    "InertiaSEGWs": 70.096756,
+    "InertiaFIGWs": 35.000534
+  },
+  {
+    "HourUTC": "2023-01-25T05:00:00",
+    "HourDK": "2023-01-25T06:00:00",
+    "InertiaNordicGWs": 181.415649,
+    "InertiaDK2GWs": 9.1767,
+    "InertiaNOGWs": 67.794067,
+    "InertiaSEGWs": 69.684845,
+    "InertiaFIGWs": 34.763313
+  },
+  {
+    "HourUTC": "2023-01-25T04:00:00",
+    "HourDK": "2023-01-25T05:00:00",
+    "InertiaNordicGWs": 172.761963,
+    "InertiaDK2GWs": 9.175651,
+    "InertiaNOGWs": 61.146572,
+    "InertiaSEGWs": 68.389122,
+    "InertiaFIGWs": 34.051353
+  },
+  {
+    "HourUTC": "2023-01-25T03:00:00",
+    "HourDK": "2023-01-25T04:00:00",
+    "InertiaNordicGWs": 167.175552,
+    "InertiaDK2GWs": 9.176047,
+    "InertiaNOGWs": 59.440395,
+    "InertiaSEGWs": 64.913971,
+    "InertiaFIGWs": 33.644028
+  },
+  {
+    "HourUTC": "2023-01-25T02:00:00",
+    "HourDK": "2023-01-25T03:00:00",
+    "InertiaNordicGWs": 167.167114,
+    "InertiaDK2GWs": 9.176332,
+    "InertiaNOGWs": 60.081783,
+    "InertiaSEGWs": 64.28009,
+    "InertiaFIGWs": 33.628288
+  },
+  {
+    "HourUTC": "2023-01-25T01:00:00",
+    "HourDK": "2023-01-25T02:00:00",
+    "InertiaNordicGWs": 168.031433,
+    "InertiaDK2GWs": 9.176242,
+    "InertiaNOGWs": 60.838486,
+    "InertiaSEGWs": 64.379814,
+    "InertiaFIGWs": 33.636658
+  },
+  {
+    "HourUTC": "2023-01-25T00:00:00",
+    "HourDK": "2023-01-25T01:00:00",
+    "InertiaNordicGWs": 169.332535,
+    "InertiaDK2GWs": 9.178383,
+    "InertiaNOGWs": 61.705288,
+    "InertiaSEGWs": 64.760246,
+    "InertiaFIGWs": 33.688385
+  },
+  {
+    "HourUTC": "2023-01-24T23:00:00",
+    "HourDK": "2023-01-25T00:00:00",
+    "InertiaNordicGWs": 174.02182,
+    "InertiaDK2GWs": 9.182523,
+    "InertiaNOGWs": 64.057579,
+    "InertiaSEGWs": 66.72226,
+    "InertiaFIGWs": 34.059502
+  },
+  {
+    "HourUTC": "2023-01-24T22:00:00",
+    "HourDK": "2023-01-24T23:00:00",
+    "InertiaNordicGWs": 179.295135,
+    "InertiaDK2GWs": 9.182971,
+    "InertiaNOGWs": 66.408615,
+    "InertiaSEGWs": 69.209656,
+    "InertiaFIGWs": 34.492073
+  },
+  {
+    "HourUTC": "2023-01-24T21:00:00",
+    "HourDK": "2023-01-24T22:00:00",
+    "InertiaNordicGWs": 185.108017,
+    "InertiaDK2GWs": 9.201847,
+    "InertiaNOGWs": 70.277443,
+    "InertiaSEGWs": 71.218842,
+    "InertiaFIGWs": 34.408749
+  },
+  {
+    "HourUTC": "2023-01-24T20:00:00",
+    "HourDK": "2023-01-24T21:00:00",
+    "InertiaNordicGWs": 190.811234,
+    "InertiaDK2GWs": 9.284533,
+    "InertiaNOGWs": 73.82222,
+    "InertiaSEGWs": 72.802055,
+    "InertiaFIGWs": 34.902119
+  },
+  {
+    "HourUTC": "2023-01-24T19:00:00",
+    "HourDK": "2023-01-24T20:00:00",
+    "InertiaNordicGWs": 197.348587,
+    "InertiaDK2GWs": 9.283439,
+    "InertiaNOGWs": 75.870995,
+    "InertiaSEGWs": 75.701981,
+    "InertiaFIGWs": 36.491692
+  },
+  {
+    "HourUTC": "2023-01-24T18:00:00",
+    "HourDK": "2023-01-24T19:00:00",
+    "InertiaNordicGWs": 202.965897,
+    "InertiaDK2GWs": 9.283693,
+    "InertiaNOGWs": 78.343285,
+    "InertiaSEGWs": 77.794548,
+    "InertiaFIGWs": 37.543106
+  },
+  {
+    "HourUTC": "2023-01-24T17:00:00",
+    "HourDK": "2023-01-24T18:00:00",
+    "InertiaNordicGWs": 208.6418,
+    "InertiaDK2GWs": 9.379691,
+    "InertiaNOGWs": 81.128029,
+    "InertiaSEGWs": 78.627243,
+    "InertiaFIGWs": 39.504341
+  },
+  {
+    "HourUTC": "2023-01-24T16:00:00",
+    "HourDK": "2023-01-24T17:00:00",
+    "InertiaNordicGWs": 212.629013,
+    "InertiaDK2GWs": 9.358431,
+    "InertiaNOGWs": 83.022247,
+    "InertiaSEGWs": 80.364891,
+    "InertiaFIGWs": 39.882
+  },
+  {
+    "HourUTC": "2023-01-24T15:00:00",
+    "HourDK": "2023-01-24T16:00:00",
+    "InertiaNordicGWs": 215.488342,
+    "InertiaDK2GWs": 9.357309,
+    "InertiaNOGWs": 83.737587,
+    "InertiaSEGWs": 82.48056,
+    "InertiaFIGWs": 39.912636
+  },
+  {
+    "HourUTC": "2023-01-24T14:00:00",
+    "HourDK": "2023-01-24T15:00:00",
+    "InertiaNordicGWs": 216.904709,
+    "InertiaDK2GWs": 9.360287,
+    "InertiaNOGWs": 84.782837,
+    "InertiaSEGWs": 82.968277,
+    "InertiaFIGWs": 39.794201
+  },
+  {
+    "HourUTC": "2023-01-24T13:00:00",
+    "HourDK": "2023-01-24T14:00:00",
+    "InertiaNordicGWs": 216.304779,
+    "InertiaDK2GWs": 9.363307,
+    "InertiaNOGWs": 83.370323,
+    "InertiaSEGWs": 83.48967,
+    "InertiaFIGWs": 40.08202
+  },
+  {
+    "HourUTC": "2023-01-24T12:00:00",
+    "HourDK": "2023-01-24T13:00:00",
+    "InertiaNordicGWs": 215.664001,
+    "InertiaDK2GWs": 9.385542,
+    "InertiaNOGWs": 82.175949,
+    "InertiaSEGWs": 83.571114,
+    "InertiaFIGWs": 40.531849
+  },
+  {
+    "HourUTC": "2023-01-24T11:00:00",
+    "HourDK": "2023-01-24T12:00:00",
+    "InertiaNordicGWs": 214.635284,
+    "InertiaDK2GWs": 9.528009,
+    "InertiaNOGWs": 81.187454,
+    "InertiaSEGWs": 83.559853,
+    "InertiaFIGWs": 40.36002
+  },
+  {
+    "HourUTC": "2023-01-24T10:00:00",
+    "HourDK": "2023-01-24T11:00:00",
+    "InertiaNordicGWs": 214.776566,
+    "InertiaDK2GWs": 9.591883,
+    "InertiaNOGWs": 79.758263,
+    "InertiaSEGWs": 85.149567,
+    "InertiaFIGWs": 40.276875
+  },
+  {
+    "HourUTC": "2023-01-24T09:00:00",
+    "HourDK": "2023-01-24T10:00:00",
+    "InertiaNordicGWs": 214.564529,
+    "InertiaDK2GWs": 9.484848,
+    "InertiaNOGWs": 79.206497,
+    "InertiaSEGWs": 84.857086,
+    "InertiaFIGWs": 41.015446
+  },
+  {
+    "HourUTC": "2023-01-24T08:00:00",
+    "HourDK": "2023-01-24T09:00:00",
+    "InertiaNordicGWs": 214.369553,
+    "InertiaDK2GWs": 9.311777,
+    "InertiaNOGWs": 79.072426,
+    "InertiaSEGWs": 85.156349,
+    "InertiaFIGWs": 40.82917
+  },
+  {
+    "HourUTC": "2023-01-24T07:00:00",
+    "HourDK": "2023-01-24T08:00:00",
+    "InertiaNordicGWs": 213.941254,
+    "InertiaDK2GWs": 9.308352,
+    "InertiaNOGWs": 79.585686,
+    "InertiaSEGWs": 84.645393,
+    "InertiaFIGWs": 40.402401
+  },
+  {
+    "HourUTC": "2023-01-24T06:00:00",
+    "HourDK": "2023-01-24T07:00:00",
+    "InertiaNordicGWs": 213.070541,
+    "InertiaDK2GWs": 9.309092,
+    "InertiaNOGWs": 79.015297,
+    "InertiaSEGWs": 84.544556,
+    "InertiaFIGWs": 40.201641
+  },
+  {
+    "HourUTC": "2023-01-24T05:00:00",
+    "HourDK": "2023-01-24T06:00:00",
+    "InertiaNordicGWs": 205.958679,
+    "InertiaDK2GWs": 9.308358,
+    "InertiaNOGWs": 74.390404,
+    "InertiaSEGWs": 82.369186,
+    "InertiaFIGWs": 39.891373
+  },
+  {
+    "HourUTC": "2023-01-24T04:00:00",
+    "HourDK": "2023-01-24T05:00:00",
+    "InertiaNordicGWs": 195.744904,
+    "InertiaDK2GWs": 9.309099,
+    "InertiaNOGWs": 70.431641,
+    "InertiaSEGWs": 77.45797,
+    "InertiaFIGWs": 38.546631
+  },
+  {
+    "HourUTC": "2023-01-24T03:00:00",
+    "HourDK": "2023-01-24T04:00:00",
+    "InertiaNordicGWs": 190.58136,
+    "InertiaDK2GWs": 9.308389,
+    "InertiaNOGWs": 68.770729,
+    "InertiaSEGWs": 75.667671,
+    "InertiaFIGWs": 36.834373
+  },
+  {
+    "HourUTC": "2023-01-24T02:00:00",
+    "HourDK": "2023-01-24T03:00:00",
+    "InertiaNordicGWs": 189.56958,
+    "InertiaDK2GWs": 9.309099,
+    "InertiaNOGWs": 68.837883,
+    "InertiaSEGWs": 74.82019,
+    "InertiaFIGWs": 36.602448
+  },
+  {
+    "HourUTC": "2023-01-24T01:00:00",
+    "HourDK": "2023-01-24T02:00:00",
+    "InertiaNordicGWs": 189.182632,
+    "InertiaDK2GWs": 9.308889,
+    "InertiaNOGWs": 68.975273,
+    "InertiaSEGWs": 74.605278,
+    "InertiaFIGWs": 36.293224
+  },
+  {
+    "HourUTC": "2023-01-24T00:00:00",
+    "HourDK": "2023-01-24T01:00:00",
+    "InertiaNordicGWs": 189.81868,
+    "InertiaDK2GWs": 9.198225,
+    "InertiaNOGWs": 69.355431,
+    "InertiaSEGWs": 74.940895,
+    "InertiaFIGWs": 36.323498
+  },
+  {
+    "HourUTC": "2023-01-23T23:00:00",
+    "HourDK": "2023-01-24T00:00:00",
+    "InertiaNordicGWs": 192.999771,
+    "InertiaDK2GWs": 9.182842,
+    "InertiaNOGWs": 72.133652,
+    "InertiaSEGWs": 75.0625,
+    "InertiaFIGWs": 36.620419
+  },
+  {
+    "HourUTC": "2023-01-23T22:00:00",
+    "HourDK": "2023-01-23T23:00:00",
+    "InertiaNordicGWs": 196.93959,
+    "InertiaDK2GWs": 9.183066,
+    "InertiaNOGWs": 74.011719,
+    "InertiaSEGWs": 76.644096,
+    "InertiaFIGWs": 37.100735
+  },
+  {
+    "HourUTC": "2023-01-23T21:00:00",
+    "HourDK": "2023-01-23T22:00:00",
+    "InertiaNordicGWs": 201.933899,
+    "InertiaDK2GWs": 9.246408,
+    "InertiaNOGWs": 76.201729,
+    "InertiaSEGWs": 78.836487,
+    "InertiaFIGWs": 37.648788
+  },
+  {
+    "HourUTC": "2023-01-23T20:00:00",
+    "HourDK": "2023-01-23T21:00:00",
+    "InertiaNordicGWs": 209.417114,
+    "InertiaDK2GWs": 9.369361,
+    "InertiaNOGWs": 78.827545,
+    "InertiaSEGWs": 82.595673,
+    "InertiaFIGWs": 38.624027
+  },
+  {
+    "HourUTC": "2023-01-23T19:00:00",
+    "HourDK": "2023-01-23T20:00:00",
+    "InertiaNordicGWs": 212.122437,
+    "InertiaDK2GWs": 9.490496,
+    "InertiaNOGWs": 80.232567,
+    "InertiaSEGWs": 83.229866,
+    "InertiaFIGWs": 39.169033
+  },
+  {
+    "HourUTC": "2023-01-23T18:00:00",
+    "HourDK": "2023-01-23T19:00:00",
+    "InertiaNordicGWs": 215.835846,
+    "InertiaDK2GWs": 9.490338,
+    "InertiaNOGWs": 83.416031,
+    "InertiaSEGWs": 83.51152,
+    "InertiaFIGWs": 39.41758
+  },
+  {
+    "HourUTC": "2023-01-23T17:00:00",
+    "HourDK": "2023-01-23T18:00:00",
+    "InertiaNordicGWs": 217.459579,
+    "InertiaDK2GWs": 9.493748,
+    "InertiaNOGWs": 84.735641,
+    "InertiaSEGWs": 83.649452,
+    "InertiaFIGWs": 39.579967
+  },
+  {
+    "HourUTC": "2023-01-23T16:00:00",
+    "HourDK": "2023-01-23T17:00:00",
+    "InertiaNordicGWs": 219.366791,
+    "InertiaDK2GWs": 9.491802,
+    "InertiaNOGWs": 85.919197,
+    "InertiaSEGWs": 84.64856,
+    "InertiaFIGWs": 39.307468
+  },
+  {
+    "HourUTC": "2023-01-23T15:00:00",
+    "HourDK": "2023-01-23T16:00:00",
+    "InertiaNordicGWs": 219.918304,
+    "InertiaDK2GWs": 9.48943,
+    "InertiaNOGWs": 86.013283,
+    "InertiaSEGWs": 85.126846,
+    "InertiaFIGWs": 39.289429
+  },
+  {
+    "HourUTC": "2023-01-23T14:00:00",
+    "HourDK": "2023-01-23T15:00:00",
+    "InertiaNordicGWs": 218.856384,
+    "InertiaDK2GWs": 9.490241,
+    "InertiaNOGWs": 84.49453,
+    "InertiaSEGWs": 85.482216,
+    "InertiaFIGWs": 39.389488
+  },
+  {
+    "HourUTC": "2023-01-23T13:00:00",
+    "HourDK": "2023-01-23T14:00:00",
+    "InertiaNordicGWs": 219.684586,
+    "InertiaDK2GWs": 9.393958,
+    "InertiaNOGWs": 85.343262,
+    "InertiaSEGWs": 85.59613,
+    "InertiaFIGWs": 39.351448
+  },
+  {
+    "HourUTC": "2023-01-23T12:00:00",
+    "HourDK": "2023-01-23T13:00:00",
+    "InertiaNordicGWs": 221.680222,
+    "InertiaDK2GWs": 9.413559,
+    "InertiaNOGWs": 87.343735,
+    "InertiaSEGWs": 85.519218,
+    "InertiaFIGWs": 39.404064
+  },
+  {
+    "HourUTC": "2023-01-23T11:00:00",
+    "HourDK": "2023-01-23T12:00:00",
+    "InertiaNordicGWs": 221.044449,
+    "InertiaDK2GWs": 9.384159,
+    "InertiaNOGWs": 86.789818,
+    "InertiaSEGWs": 85.475304,
+    "InertiaFIGWs": 39.3951
+  },
+  {
+    "HourUTC": "2023-01-23T10:00:00",
+    "HourDK": "2023-01-23T11:00:00",
+    "InertiaNordicGWs": 219.843628,
+    "InertiaDK2GWs": 9.373624,
+    "InertiaNOGWs": 85.575615,
+    "InertiaSEGWs": 85.38369,
+    "InertiaFIGWs": 39.510506
+  },
+  {
+    "HourUTC": "2023-01-23T09:00:00",
+    "HourDK": "2023-01-23T10:00:00",
+    "InertiaNordicGWs": 220.476563,
+    "InertiaDK2GWs": 9.490249,
+    "InertiaNOGWs": 86.100525,
+    "InertiaSEGWs": 84.969124,
+    "InertiaFIGWs": 39.916779
+  },
+  {
+    "HourUTC": "2023-01-23T08:00:00",
+    "HourDK": "2023-01-23T09:00:00",
+    "InertiaNordicGWs": 220.477722,
+    "InertiaDK2GWs": 9.490428,
+    "InertiaNOGWs": 86.495102,
+    "InertiaSEGWs": 84.22773,
+    "InertiaFIGWs": 40.264721
+  },
+  {
+    "HourUTC": "2023-01-23T07:00:00",
+    "HourDK": "2023-01-23T08:00:00",
+    "InertiaNordicGWs": 220.494797,
+    "InertiaDK2GWs": 9.48565,
+    "InertiaNOGWs": 86.36071,
+    "InertiaSEGWs": 84.326942,
+    "InertiaFIGWs": 40.321705
+  },
+  {
+    "HourUTC": "2023-01-23T06:00:00",
+    "HourDK": "2023-01-23T07:00:00",
+    "InertiaNordicGWs": 219.36525,
+    "InertiaDK2GWs": 9.376578,
+    "InertiaNOGWs": 85.863617,
+    "InertiaSEGWs": 83.864853,
+    "InertiaFIGWs": 40.260212
+  },
+  {
+    "HourUTC": "2023-01-23T05:00:00",
+    "HourDK": "2023-01-23T06:00:00",
+    "InertiaNordicGWs": 216.178787,
+    "InertiaDK2GWs": 9.301819,
+    "InertiaNOGWs": 83.773148,
+    "InertiaSEGWs": 82.980042,
+    "InertiaFIGWs": 40.123795
+  },
+  {
+    "HourUTC": "2023-01-23T04:00:00",
+    "HourDK": "2023-01-23T05:00:00",
+    "InertiaNordicGWs": 208.729553,
+    "InertiaDK2GWs": 9.301683,
+    "InertiaNOGWs": 80.562691,
+    "InertiaSEGWs": 80.32518,
+    "InertiaFIGWs": 38.540936
+  },
+  {
+    "HourUTC": "2023-01-23T03:00:00",
+    "HourDK": "2023-01-23T04:00:00",
+    "InertiaNordicGWs": 202.742096,
+    "InertiaDK2GWs": 9.192355,
+    "InertiaNOGWs": 78.585747,
+    "InertiaSEGWs": 77.39576,
+    "InertiaFIGWs": 37.568649
+  },
+  {
+    "HourUTC": "2023-01-23T02:00:00",
+    "HourDK": "2023-01-23T03:00:00",
+    "InertiaNordicGWs": 200.539673,
+    "InertiaDK2GWs": 9.175254,
+    "InertiaNOGWs": 77.283249,
+    "InertiaSEGWs": 76.57518,
+    "InertiaFIGWs": 37.505486
+  },
+  {
+    "HourUTC": "2023-01-23T01:00:00",
+    "HourDK": "2023-01-23T02:00:00",
+    "InertiaNordicGWs": 200.267761,
+    "InertiaDK2GWs": 9.175299,
+    "InertiaNOGWs": 77.313675,
+    "InertiaSEGWs": 76.271355,
+    "InertiaFIGWs": 37.507256
+  },
+  {
+    "HourUTC": "2023-01-23T00:00:00",
+    "HourDK": "2023-01-23T01:00:00",
+    "InertiaNordicGWs": 201.158722,
+    "InertiaDK2GWs": 9.322817,
+    "InertiaNOGWs": 77.892067,
+    "InertiaSEGWs": 76.258408,
+    "InertiaFIGWs": 37.68541
+  },
+  {
+    "HourUTC": "2023-01-22T23:00:00",
+    "HourDK": "2023-01-23T00:00:00",
+    "InertiaNordicGWs": 202.42189,
+    "InertiaDK2GWs": 9.199603,
+    "InertiaNOGWs": 79.192589,
+    "InertiaSEGWs": 76.171432,
+    "InertiaFIGWs": 37.85714
+  },
+  {
+    "HourUTC": "2023-01-22T22:00:00",
+    "HourDK": "2023-01-22T23:00:00",
+    "InertiaNordicGWs": 204.803085,
+    "InertiaDK2GWs": 9.257568,
+    "InertiaNOGWs": 79.68129,
+    "InertiaSEGWs": 76.869476,
+    "InertiaFIGWs": 38.994732
+  },
+  {
+    "HourUTC": "2023-01-22T21:00:00",
+    "HourDK": "2023-01-22T22:00:00",
+    "InertiaNordicGWs": 207.794556,
+    "InertiaDK2GWs": 9.35781,
+    "InertiaNOGWs": 81.544571,
+    "InertiaSEGWs": 77.375595,
+    "InertiaFIGWs": 39.516163
+  },
+  {
+    "HourUTC": "2023-01-22T20:00:00",
+    "HourDK": "2023-01-22T21:00:00",
+    "InertiaNordicGWs": 209.243973,
+    "InertiaDK2GWs": 9.368346,
+    "InertiaNOGWs": 82.190201,
+    "InertiaSEGWs": 77.793953,
+    "InertiaFIGWs": 39.891602
+  },
+  {
+    "HourUTC": "2023-01-22T19:00:00",
+    "HourDK": "2023-01-22T20:00:00",
+    "InertiaNordicGWs": 210.591736,
+    "InertiaDK2GWs": 9.483799,
+    "InertiaNOGWs": 82.942078,
+    "InertiaSEGWs": 78.127922,
+    "InertiaFIGWs": 40.038177
+  },
+  {
+    "HourUTC": "2023-01-22T18:00:00",
+    "HourDK": "2023-01-22T19:00:00",
+    "InertiaNordicGWs": 212.111786,
+    "InertiaDK2GWs": 9.484838,
+    "InertiaNOGWs": 83.540047,
+    "InertiaSEGWs": 78.866745,
+    "InertiaFIGWs": 40.219711
+  },
+  {
+    "HourUTC": "2023-01-22T17:00:00",
+    "HourDK": "2023-01-22T18:00:00",
+    "InertiaNordicGWs": 213.255722,
+    "InertiaDK2GWs": 9.483941,
+    "InertiaNOGWs": 84.085648,
+    "InertiaSEGWs": 79.32534,
+    "InertiaFIGWs": 40.360893
+  },
+  {
+    "HourUTC": "2023-01-22T16:00:00",
+    "HourDK": "2023-01-22T17:00:00",
+    "InertiaNordicGWs": 213.823975,
+    "InertiaDK2GWs": 9.484128,
+    "InertiaNOGWs": 82.926353,
+    "InertiaSEGWs": 81.052803,
+    "InertiaFIGWs": 40.360291
+  },
+  {
+    "HourUTC": "2023-01-22T15:00:00",
+    "HourDK": "2023-01-22T16:00:00",
+    "InertiaNordicGWs": 214.028595,
+    "InertiaDK2GWs": 9.484344,
+    "InertiaNOGWs": 82.941864,
+    "InertiaSEGWs": 81.357094,
+    "InertiaFIGWs": 40.24461
+  },
+  {
+    "HourUTC": "2023-01-22T14:00:00",
+    "HourDK": "2023-01-22T15:00:00",
+    "InertiaNordicGWs": 213.877609,
+    "InertiaDK2GWs": 9.485631,
+    "InertiaNOGWs": 81.639839,
+    "InertiaSEGWs": 82.46479,
+    "InertiaFIGWs": 40.287968
+  },
+  {
+    "HourUTC": "2023-01-22T13:00:00",
+    "HourDK": "2023-01-22T14:00:00",
+    "InertiaNordicGWs": 212.801361,
+    "InertiaDK2GWs": 9.369158,
+    "InertiaNOGWs": 80.495422,
+    "InertiaSEGWs": 82.638031,
+    "InertiaFIGWs": 40.298157
+  },
+  {
+    "HourUTC": "2023-01-22T12:00:00",
+    "HourDK": "2023-01-22T13:00:00",
+    "InertiaNordicGWs": 213.553452,
+    "InertiaDK2GWs": 9.43257,
+    "InertiaNOGWs": 81.118347,
+    "InertiaSEGWs": 82.646523,
+    "InertiaFIGWs": 40.355625
+  },
+  {
+    "HourUTC": "2023-01-22T11:00:00",
+    "HourDK": "2023-01-22T12:00:00",
+    "InertiaNordicGWs": 215.585449,
+    "InertiaDK2GWs": 9.487093,
+    "InertiaNOGWs": 83.136955,
+    "InertiaSEGWs": 82.62606,
+    "InertiaFIGWs": 40.334942
+  },
+  {
+    "HourUTC": "2023-01-22T10:00:00",
+    "HourDK": "2023-01-22T11:00:00",
+    "InertiaNordicGWs": 217.140366,
+    "InertiaDK2GWs": 9.377708,
+    "InertiaNOGWs": 84.935432,
+    "InertiaSEGWs": 82.506065,
+    "InertiaFIGWs": 40.321224
+  },
+  {
+    "HourUTC": "2023-01-22T09:00:00",
+    "HourDK": "2023-01-22T10:00:00",
+    "InertiaNordicGWs": 216.899002,
+    "InertiaDK2GWs": 9.358298,
+    "InertiaNOGWs": 84.764511,
+    "InertiaSEGWs": 82.453796,
+    "InertiaFIGWs": 40.323139
+  },
+  {
+    "HourUTC": "2023-01-22T08:00:00",
+    "HourDK": "2023-01-22T09:00:00",
+    "InertiaNordicGWs": 214.792358,
+    "InertiaDK2GWs": 9.18434,
+    "InertiaNOGWs": 82.950554,
+    "InertiaSEGWs": 82.361084,
+    "InertiaFIGWs": 40.297997
+  },
+  {
+    "HourUTC": "2023-01-22T07:00:00",
+    "HourDK": "2023-01-22T08:00:00",
+    "InertiaNordicGWs": 209.296097,
+    "InertiaDK2GWs": 9.182221,
+    "InertiaNOGWs": 78.502129,
+    "InertiaSEGWs": 82.021553,
+    "InertiaFIGWs": 39.592285
+  },
+  {
+    "HourUTC": "2023-01-22T06:00:00",
+    "HourDK": "2023-01-22T07:00:00",
+    "InertiaNordicGWs": 203.684784,
+    "InertiaDK2GWs": 9.182887,
+    "InertiaNOGWs": 73.74984,
+    "InertiaSEGWs": 81.578773,
+    "InertiaFIGWs": 39.174179
+  },
+  {
+    "HourUTC": "2023-01-22T05:00:00",
+    "HourDK": "2023-01-22T06:00:00",
+    "InertiaNordicGWs": 200.377213,
+    "InertiaDK2GWs": 9.182385,
+    "InertiaNOGWs": 71.059219,
+    "InertiaSEGWs": 81.244759,
+    "InertiaFIGWs": 38.890923
+  },
+  {
+    "HourUTC": "2023-01-22T04:00:00",
+    "HourDK": "2023-01-22T05:00:00",
+    "InertiaNordicGWs": 197.850143,
+    "InertiaDK2GWs": 9.182138,
+    "InertiaNOGWs": 68.772034,
+    "InertiaSEGWs": 81.086334,
+    "InertiaFIGWs": 38.809765
+  },
+  {
+    "HourUTC": "2023-01-22T03:00:00",
+    "HourDK": "2023-01-22T04:00:00",
+    "InertiaNordicGWs": 195.981506,
+    "InertiaDK2GWs": 9.182064,
+    "InertiaNOGWs": 67.416107,
+    "InertiaSEGWs": 80.947197,
+    "InertiaFIGWs": 38.436275
+  },
+  {
+    "HourUTC": "2023-01-22T02:00:00",
+    "HourDK": "2023-01-22T03:00:00",
+    "InertiaNordicGWs": 196.70517,
+    "InertiaDK2GWs": 9.182019,
+    "InertiaNOGWs": 67.727379,
+    "InertiaSEGWs": 80.979515,
+    "InertiaFIGWs": 38.81601
+  },
+  {
+    "HourUTC": "2023-01-22T01:00:00",
+    "HourDK": "2023-01-22T02:00:00",
+    "InertiaNordicGWs": 195.915054,
+    "InertiaDK2GWs": 9.182767,
+    "InertiaNOGWs": 66.927711,
+    "InertiaSEGWs": 80.627106,
+    "InertiaFIGWs": 39.177162
+  },
+  {
+    "HourUTC": "2023-01-22T00:00:00",
+    "HourDK": "2023-01-22T01:00:00",
+    "InertiaNordicGWs": 196.728973,
+    "InertiaDK2GWs": 9.182446,
+    "InertiaNOGWs": 67.5839,
+    "InertiaSEGWs": 80.600456,
+    "InertiaFIGWs": 39.361519
+  },
+  {
+    "HourUTC": "2023-01-21T23:00:00",
+    "HourDK": "2023-01-22T00:00:00",
+    "InertiaNordicGWs": 199.965408,
+    "InertiaDK2GWs": 9.23114,
+    "InertiaNOGWs": 70.552094,
+    "InertiaSEGWs": 80.333931,
+    "InertiaFIGWs": 39.848812
+  },
+  {
+    "HourUTC": "2023-01-21T22:00:00",
+    "HourDK": "2023-01-21T23:00:00",
+    "InertiaNordicGWs": 202.116959,
+    "InertiaDK2GWs": 9.358185,
+    "InertiaNOGWs": 71.874146,
+    "InertiaSEGWs": 80.904884,
+    "InertiaFIGWs": 39.978317
+  },
+  {
+    "HourUTC": "2023-01-21T21:00:00",
+    "HourDK": "2023-01-21T22:00:00",
+    "InertiaNordicGWs": 206.206818,
+    "InertiaDK2GWs": 9.35799,
+    "InertiaNOGWs": 75.16172,
+    "InertiaSEGWs": 81.604622,
+    "InertiaFIGWs": 40.080696
+  },
+  {
+    "HourUTC": "2023-01-21T20:00:00",
+    "HourDK": "2023-01-21T21:00:00",
+    "InertiaNordicGWs": 209.603439,
+    "InertiaDK2GWs": 9.357533,
+    "InertiaNOGWs": 77.581505,
+    "InertiaSEGWs": 82.335648,
+    "InertiaFIGWs": 40.328411
+  },
+  {
+    "HourUTC": "2023-01-21T19:00:00",
+    "HourDK": "2023-01-21T20:00:00",
+    "InertiaNordicGWs": 211.940659,
+    "InertiaDK2GWs": 9.358566,
+    "InertiaNOGWs": 79.603592,
+    "InertiaSEGWs": 82.499603,
+    "InertiaFIGWs": 40.47752
+  },
+  {
+    "HourUTC": "2023-01-21T18:00:00",
+    "HourDK": "2023-01-21T19:00:00",
+    "InertiaNordicGWs": 214.711349,
+    "InertiaDK2GWs": 9.358289,
+    "InertiaNOGWs": 81.058296,
+    "InertiaSEGWs": 83.635376,
+    "InertiaFIGWs": 40.65892
+  },
+  {
+    "HourUTC": "2023-01-21T17:00:00",
+    "HourDK": "2023-01-21T18:00:00",
+    "InertiaNordicGWs": 216.950409,
+    "InertiaDK2GWs": 9.368394,
+    "InertiaNOGWs": 82.691116,
+    "InertiaSEGWs": 84.115723,
+    "InertiaFIGWs": 40.77417
+  },
+  {
+    "HourUTC": "2023-01-21T16:00:00",
+    "HourDK": "2023-01-21T17:00:00",
+    "InertiaNordicGWs": 219.183044,
+    "InertiaDK2GWs": 9.484899,
+    "InertiaNOGWs": 84.953392,
+    "InertiaSEGWs": 83.936623,
+    "InertiaFIGWs": 40.807728
+  },
+  {
+    "HourUTC": "2023-01-21T15:00:00",
+    "HourDK": "2023-01-21T16:00:00",
+    "InertiaNordicGWs": 220.11734,
+    "InertiaDK2GWs": 9.485668,
+    "InertiaNOGWs": 85.806381,
+    "InertiaSEGWs": 84.015877,
+    "InertiaFIGWs": 40.810108
+  },
+  {
+    "HourUTC": "2023-01-21T14:00:00",
+    "HourDK": "2023-01-21T15:00:00",
+    "InertiaNordicGWs": 216.285294,
+    "InertiaDK2GWs": 9.485848,
+    "InertiaNOGWs": 82.237602,
+    "InertiaSEGWs": 83.775719,
+    "InertiaFIGWs": 40.786812
+  },
+  {
+    "HourUTC": "2023-01-21T13:00:00",
+    "HourDK": "2023-01-21T14:00:00",
+    "InertiaNordicGWs": 216.563873,
+    "InertiaDK2GWs": 9.375251,
+    "InertiaNOGWs": 82.34301,
+    "InertiaSEGWs": 84.070129,
+    "InertiaFIGWs": 40.775032
+  },
+  {
+    "HourUTC": "2023-01-21T12:00:00",
+    "HourDK": "2023-01-21T13:00:00",
+    "InertiaNordicGWs": 219.42598,
+    "InertiaDK2GWs": 9.358514,
+    "InertiaNOGWs": 85.143898,
+    "InertiaSEGWs": 84.173813,
+    "InertiaFIGWs": 40.749023
+  },
+  {
+    "HourUTC": "2023-01-21T11:00:00",
+    "HourDK": "2023-01-21T12:00:00",
+    "InertiaNordicGWs": 222.095596,
+    "InertiaDK2GWs": 9.368925,
+    "InertiaNOGWs": 87.794792,
+    "InertiaSEGWs": 84.194992,
+    "InertiaFIGWs": 40.736813
+  },
+  {
+    "HourUTC": "2023-01-21T10:00:00",
+    "HourDK": "2023-01-21T11:00:00",
+    "InertiaNordicGWs": 221.298401,
+    "InertiaDK2GWs": 9.48543,
+    "InertiaNOGWs": 86.965935,
+    "InertiaSEGWs": 84.114456,
+    "InertiaFIGWs": 40.732807
+  },
+  {
+    "HourUTC": "2023-01-21T09:00:00",
+    "HourDK": "2023-01-21T10:00:00",
+    "InertiaNordicGWs": 218.023178,
+    "InertiaDK2GWs": 9.479683,
+    "InertiaNOGWs": 83.754463,
+    "InertiaSEGWs": 84.035347,
+    "InertiaFIGWs": 40.753807
+  },
+  {
+    "HourUTC": "2023-01-21T08:00:00",
+    "HourDK": "2023-01-21T09:00:00",
+    "InertiaNordicGWs": 214.527649,
+    "InertiaDK2GWs": 7.715131,
+    "InertiaNOGWs": 82.676025,
+    "InertiaSEGWs": 83.372459,
+    "InertiaFIGWs": 40.765274
+  },
+  {
+    "HourUTC": "2023-01-21T07:00:00",
+    "HourDK": "2023-01-21T08:00:00",
+    "InertiaNordicGWs": 211.166122,
+    "InertiaDK2GWs": 7.421172,
+    "InertiaNOGWs": 79.843071,
+    "InertiaSEGWs": 83.351768,
+    "InertiaFIGWs": 40.550575
+  },
+  {
+    "HourUTC": "2023-01-21T06:00:00",
+    "HourDK": "2023-01-21T07:00:00",
+    "InertiaNordicGWs": 206.434998,
+    "InertiaDK2GWs": 7.421479,
+    "InertiaNOGWs": 76.029625,
+    "InertiaSEGWs": 82.824745,
+    "InertiaFIGWs": 40.162033
+  },
+  {
+    "HourUTC": "2023-01-21T05:00:00",
+    "HourDK": "2023-01-21T06:00:00",
+    "InertiaNordicGWs": 199.316177,
+    "InertiaDK2GWs": 7.42103,
+    "InertiaNOGWs": 71.168739,
+    "InertiaSEGWs": 81.404152,
+    "InertiaFIGWs": 39.322571
+  },
+  {
+    "HourUTC": "2023-01-21T04:00:00",
+    "HourDK": "2023-01-21T05:00:00",
+    "InertiaNordicGWs": 197.47934,
+    "InertiaDK2GWs": 7.309814,
+    "InertiaNOGWs": 70.019798,
+    "InertiaSEGWs": 80.666718,
+    "InertiaFIGWs": 39.482731
+  },
+  {
+    "HourUTC": "2023-01-21T03:00:00",
+    "HourDK": "2023-01-21T04:00:00",
+    "InertiaNordicGWs": 196.709503,
+    "InertiaDK2GWs": 7.294121,
+    "InertiaNOGWs": 70.660629,
+    "InertiaSEGWs": 79.457886,
+    "InertiaFIGWs": 39.29657
+  },
+  {
+    "HourUTC": "2023-01-21T02:00:00",
+    "HourDK": "2023-01-21T03:00:00",
+    "InertiaNordicGWs": 197.456757,
+    "InertiaDK2GWs": 7.29371,
+    "InertiaNOGWs": 72.644173,
+    "InertiaSEGWs": 79.218666,
+    "InertiaFIGWs": 38.299896
+  },
+  {
+    "HourUTC": "2023-01-21T01:00:00",
+    "HourDK": "2023-01-21T02:00:00",
+    "InertiaNordicGWs": 200.578079,
+    "InertiaDK2GWs": 7.293987,
+    "InertiaNOGWs": 75.866165,
+    "InertiaSEGWs": 79.241264,
+    "InertiaFIGWs": 38.176712
+  },
+  {
+    "HourUTC": "2023-01-21T00:00:00",
+    "HourDK": "2023-01-21T01:00:00",
+    "InertiaNordicGWs": 199.876801,
+    "InertiaDK2GWs": 7.294961,
+    "InertiaNOGWs": 76.078362,
+    "InertiaSEGWs": 78.392143,
+    "InertiaFIGWs": 38.111263
+  },
+  {
+    "HourUTC": "2023-01-20T23:00:00",
+    "HourDK": "2023-01-21T00:00:00",
+    "InertiaNordicGWs": 202.436737,
+    "InertiaDK2GWs": 7.294249,
+    "InertiaNOGWs": 77.573166,
+    "InertiaSEGWs": 78.551697,
+    "InertiaFIGWs": 39.018272
+  },
+  {
+    "HourUTC": "2023-01-20T22:00:00",
+    "HourDK": "2023-01-20T23:00:00",
+    "InertiaNordicGWs": 204.053299,
+    "InertiaDK2GWs": 7.294904,
+    "InertiaNOGWs": 76.874153,
+    "InertiaSEGWs": 80.44944,
+    "InertiaFIGWs": 39.434013
+  },
+  {
+    "HourUTC": "2023-01-20T21:00:00",
+    "HourDK": "2023-01-20T22:00:00",
+    "InertiaNordicGWs": 207.181076,
+    "InertiaDK2GWs": 7.301042,
+    "InertiaNOGWs": 78.476662,
+    "InertiaSEGWs": 81.516548,
+    "InertiaFIGWs": 39.885124
+  },
+  {
+    "HourUTC": "2023-01-20T20:00:00",
+    "HourDK": "2023-01-20T21:00:00",
+    "InertiaNordicGWs": 211.596786,
+    "InertiaDK2GWs": 7.300601,
+    "InertiaNOGWs": 81.355576,
+    "InertiaSEGWs": 82.467705,
+    "InertiaFIGWs": 40.471767
+  },
+  {
+    "HourUTC": "2023-01-20T19:00:00",
+    "HourDK": "2023-01-20T20:00:00",
+    "InertiaNordicGWs": 214.715729,
+    "InertiaDK2GWs": 7.476912,
+    "InertiaNOGWs": 83.45388,
+    "InertiaSEGWs": 82.996422,
+    "InertiaFIGWs": 40.787659
+  },
+  {
+    "HourUTC": "2023-01-20T18:00:00",
+    "HourDK": "2023-01-20T19:00:00",
+    "InertiaNordicGWs": 218.155869,
+    "InertiaDK2GWs": 7.602956,
+    "InertiaNOGWs": 85.562279,
+    "InertiaSEGWs": 83.282089,
+    "InertiaFIGWs": 41.707325
+  },
+  {
+    "HourUTC": "2023-01-20T17:00:00",
+    "HourDK": "2023-01-20T18:00:00",
+    "InertiaNordicGWs": 219.031555,
+    "InertiaDK2GWs": 7.602512,
+    "InertiaNOGWs": 86.062775,
+    "InertiaSEGWs": 83.387573,
+    "InertiaFIGWs": 41.977448
+  },
+  {
+    "HourUTC": "2023-01-20T16:00:00",
+    "HourDK": "2023-01-20T17:00:00",
+    "InertiaNordicGWs": 219.198975,
+    "InertiaDK2GWs": 7.603419,
+    "InertiaNOGWs": 86.119232,
+    "InertiaSEGWs": 83.493752,
+    "InertiaFIGWs": 41.984547
+  },
+  {
+    "HourUTC": "2023-01-20T15:00:00",
+    "HourDK": "2023-01-20T16:00:00",
+    "InertiaNordicGWs": 217.908585,
+    "InertiaDK2GWs": 7.603248,
+    "InertiaNOGWs": 84.615242,
+    "InertiaSEGWs": 83.716942,
+    "InertiaFIGWs": 41.973644
+  },
+  {
+    "HourUTC": "2023-01-20T14:00:00",
+    "HourDK": "2023-01-20T15:00:00",
+    "InertiaNordicGWs": 218.856812,
+    "InertiaDK2GWs": 7.603203,
+    "InertiaNOGWs": 83.503838,
+    "InertiaSEGWs": 83.632362,
+    "InertiaFIGWs": 44.114323
+  },
+  {
+    "HourUTC": "2023-01-20T13:00:00",
+    "HourDK": "2023-01-20T14:00:00",
+    "InertiaNordicGWs": 220.033615,
+    "InertiaDK2GWs": 7.610046,
+    "InertiaNOGWs": 82.895897,
+    "InertiaSEGWs": 83.422531,
+    "InertiaFIGWs": 46.104645
+  },
+  {
+    "HourUTC": "2023-01-20T12:00:00",
+    "HourDK": "2023-01-20T13:00:00",
+    "InertiaNordicGWs": 219.399765,
+    "InertiaDK2GWs": 7.430538,
+    "InertiaNOGWs": 83.197151,
+    "InertiaSEGWs": 83.214058,
+    "InertiaFIGWs": 45.558418
+  },
+  {
+    "HourUTC": "2023-01-20T11:00:00",
+    "HourDK": "2023-01-20T12:00:00",
+    "InertiaNordicGWs": 220.016449,
+    "InertiaDK2GWs": 7.427478,
+    "InertiaNOGWs": 84.299011,
+    "InertiaSEGWs": 82.805168,
+    "InertiaFIGWs": 45.484455
+  },
+  {
+    "HourUTC": "2023-01-20T10:00:00",
+    "HourDK": "2023-01-20T11:00:00",
+    "InertiaNordicGWs": 222.608109,
+    "InertiaDK2GWs": 7.422891,
+    "InertiaNOGWs": 86.239105,
+    "InertiaSEGWs": 83.22229,
+    "InertiaFIGWs": 45.723068
+  },
+  {
+    "HourUTC": "2023-01-20T09:00:00",
+    "HourDK": "2023-01-20T10:00:00",
+    "InertiaNordicGWs": 224.238586,
+    "InertiaDK2GWs": 7.407549,
+    "InertiaNOGWs": 87.404938,
+    "InertiaSEGWs": 83.735039,
+    "InertiaFIGWs": 45.690331
+  },
+  {
+    "HourUTC": "2023-01-20T08:00:00",
+    "HourDK": "2023-01-20T09:00:00",
+    "InertiaNordicGWs": 224.415985,
+    "InertiaDK2GWs": 7.401863,
+    "InertiaNOGWs": 87.056656,
+    "InertiaSEGWs": 84.225319,
+    "InertiaFIGWs": 45.73172
+  },
+  {
+    "HourUTC": "2023-01-20T07:00:00",
+    "HourDK": "2023-01-20T08:00:00",
+    "InertiaNordicGWs": 223.94545,
+    "InertiaDK2GWs": 7.397586,
+    "InertiaNOGWs": 86.382645,
+    "InertiaSEGWs": 84.479866,
+    "InertiaFIGWs": 45.685612
+  },
+  {
+    "HourUTC": "2023-01-20T06:00:00",
+    "HourDK": "2023-01-20T07:00:00",
+    "InertiaNordicGWs": 222.156387,
+    "InertiaDK2GWs": 7.388674,
+    "InertiaNOGWs": 84.68956,
+    "InertiaSEGWs": 84.505234,
+    "InertiaFIGWs": 45.573502
+  },
+  {
+    "HourUTC": "2023-01-20T05:00:00",
+    "HourDK": "2023-01-20T06:00:00",
+    "InertiaNordicGWs": 216.203049,
+    "InertiaDK2GWs": 7.272412,
+    "InertiaNOGWs": 79.957878,
+    "InertiaSEGWs": 84.421089,
+    "InertiaFIGWs": 44.552727
+  },
+  {
+    "HourUTC": "2023-01-20T04:00:00",
+    "HourDK": "2023-01-20T05:00:00",
+    "InertiaNordicGWs": 208.515518,
+    "InertiaDK2GWs": 7.273888,
+    "InertiaNOGWs": 74.534561,
+    "InertiaSEGWs": 83.584198,
+    "InertiaFIGWs": 43.12339
+  },
+  {
+    "HourUTC": "2023-01-20T03:00:00",
+    "HourDK": "2023-01-20T04:00:00",
+    "InertiaNordicGWs": 205.15657,
+    "InertiaDK2GWs": 7.287948,
+    "InertiaNOGWs": 72.797859,
+    "InertiaSEGWs": 82.515274,
+    "InertiaFIGWs": 42.555733
+  },
+  {
+    "HourUTC": "2023-01-20T02:00:00",
+    "HourDK": "2023-01-20T03:00:00",
+    "InertiaNordicGWs": 204.544815,
+    "InertiaDK2GWs": 7.288173,
+    "InertiaNOGWs": 72.273903,
+    "InertiaSEGWs": 82.51329,
+    "InertiaFIGWs": 42.469349
+  },
+  {
+    "HourUTC": "2023-01-20T01:00:00",
+    "HourDK": "2023-01-20T02:00:00",
+    "InertiaNordicGWs": 205.249619,
+    "InertiaDK2GWs": 7.291788,
+    "InertiaNOGWs": 72.749168,
+    "InertiaSEGWs": 82.70919,
+    "InertiaFIGWs": 42.499649
+  },
+  {
+    "HourUTC": "2023-01-20T00:00:00",
+    "HourDK": "2023-01-20T01:00:00",
+    "InertiaNordicGWs": 207.080963,
+    "InertiaDK2GWs": 7.294839,
+    "InertiaNOGWs": 74.239952,
+    "InertiaSEGWs": 82.725403,
+    "InertiaFIGWs": 42.820045
+  },
+  {
+    "HourUTC": "2023-01-19T23:00:00",
+    "HourDK": "2023-01-20T00:00:00",
+    "InertiaNordicGWs": 209.306702,
+    "InertiaDK2GWs": 7.294615,
+    "InertiaNOGWs": 75.646492,
+    "InertiaSEGWs": 83.348618,
+    "InertiaFIGWs": 43.017735
+  },
+  {
+    "HourUTC": "2023-01-19T22:00:00",
+    "HourDK": "2023-01-19T23:00:00",
+    "InertiaNordicGWs": 208.846817,
+    "InertiaDK2GWs": 7.295101,
+    "InertiaNOGWs": 74.987068,
+    "InertiaSEGWs": 83.166595,
+    "InertiaFIGWs": 43.396763
+  },
+  {
+    "HourUTC": "2023-01-19T21:00:00",
+    "HourDK": "2023-01-19T22:00:00",
+    "InertiaNordicGWs": 216.443054,
+    "InertiaDK2GWs": 7.342382,
+    "InertiaNOGWs": 80.508957,
+    "InertiaSEGWs": 83.649666,
+    "InertiaFIGWs": 44.941849
+  },
+  {
+    "HourUTC": "2023-01-19T20:00:00",
+    "HourDK": "2023-01-19T21:00:00",
+    "InertiaNordicGWs": 220.703476,
+    "InertiaDK2GWs": 7.469965,
+    "InertiaNOGWs": 84.076553,
+    "InertiaSEGWs": 84.0867,
+    "InertiaFIGWs": 45.070049
+  },
+  {
+    "HourUTC": "2023-01-19T19:00:00",
+    "HourDK": "2023-01-19T20:00:00",
+    "InertiaNordicGWs": 222.85524,
+    "InertiaDK2GWs": 7.46992,
+    "InertiaNOGWs": 85.553818,
+    "InertiaSEGWs": 84.528419,
+    "InertiaFIGWs": 45.302254
+  },
+  {
+    "HourUTC": "2023-01-19T18:00:00",
+    "HourDK": "2023-01-19T19:00:00",
+    "InertiaNordicGWs": 224.657364,
+    "InertiaDK2GWs": 7.471275,
+    "InertiaNOGWs": 87.091537,
+    "InertiaSEGWs": 84.542313,
+    "InertiaFIGWs": 45.552132
+  },
+  {
+    "HourUTC": "2023-01-19T17:00:00",
+    "HourDK": "2023-01-19T18:00:00",
+    "InertiaNordicGWs": 225.508499,
+    "InertiaDK2GWs": 7.516612,
+    "InertiaNOGWs": 87.515182,
+    "InertiaSEGWs": 84.636421,
+    "InertiaFIGWs": 45.840271
+  },
+  {
+    "HourUTC": "2023-01-19T16:00:00",
+    "HourDK": "2023-01-19T17:00:00",
+    "InertiaNordicGWs": 226.516525,
+    "InertiaDK2GWs": 7.533932,
+    "InertiaNOGWs": 88.527527,
+    "InertiaSEGWs": 84.636421,
+    "InertiaFIGWs": 45.818531
+  },
+  {
+    "HourUTC": "2023-01-19T15:00:00",
+    "HourDK": "2023-01-19T16:00:00",
+    "InertiaNordicGWs": 224.824066,
+    "InertiaDK2GWs": 7.598642,
+    "InertiaNOGWs": 86.947525,
+    "InertiaSEGWs": 84.487129,
+    "InertiaFIGWs": 45.791039
+  },
+  {
+    "HourUTC": "2023-01-19T14:00:00",
+    "HourDK": "2023-01-19T15:00:00",
+    "InertiaNordicGWs": 223.554108,
+    "InertiaDK2GWs": 7.598654,
+    "InertiaNOGWs": 85.779716,
+    "InertiaSEGWs": 84.405884,
+    "InertiaFIGWs": 45.770279
+  },
+  {
+    "HourUTC": "2023-01-19T13:00:00",
+    "HourDK": "2023-01-19T14:00:00",
+    "InertiaNordicGWs": 223.392014,
+    "InertiaDK2GWs": 7.586877,
+    "InertiaNOGWs": 85.6073,
+    "InertiaSEGWs": 84.4366,
+    "InertiaFIGWs": 45.760723
+  },
+  {
+    "HourUTC": "2023-01-19T12:00:00",
+    "HourDK": "2023-01-19T13:00:00",
+    "InertiaNordicGWs": 221.218552,
+    "InertiaDK2GWs": 7.567309,
+    "InertiaNOGWs": 83.599228,
+    "InertiaSEGWs": 84.320633,
+    "InertiaFIGWs": 45.732407
+  },
+  {
+    "HourUTC": "2023-01-19T11:00:00",
+    "HourDK": "2023-01-19T12:00:00",
+    "InertiaNordicGWs": 219.496628,
+    "InertiaDK2GWs": 7.564653,
+    "InertiaNOGWs": 81.952797,
+    "InertiaSEGWs": 84.216827,
+    "InertiaFIGWs": 45.761909
+  },
+  {
+    "HourUTC": "2023-01-19T10:00:00",
+    "HourDK": "2023-01-19T11:00:00",
+    "InertiaNordicGWs": 221.40329,
+    "InertiaDK2GWs": 7.560424,
+    "InertiaNOGWs": 83.78434,
+    "InertiaSEGWs": 84.249329,
+    "InertiaFIGWs": 45.808487
+  },
+  {
+    "HourUTC": "2023-01-19T09:00:00",
+    "HourDK": "2023-01-19T10:00:00",
+    "InertiaNordicGWs": 224.069885,
+    "InertiaDK2GWs": 7.56618,
+    "InertiaNOGWs": 86.534134,
+    "InertiaSEGWs": 84.191841,
+    "InertiaFIGWs": 45.774918
+  },
+  {
+    "HourUTC": "2023-01-19T08:00:00",
+    "HourDK": "2023-01-19T09:00:00",
+    "InertiaNordicGWs": 224.626541,
+    "InertiaDK2GWs": 7.454493,
+    "InertiaNOGWs": 87.178436,
+    "InertiaSEGWs": 84.208176,
+    "InertiaFIGWs": 45.785713
+  },
+  {
+    "HourUTC": "2023-01-19T07:00:00",
+    "HourDK": "2023-01-19T08:00:00",
+    "InertiaNordicGWs": 224.167572,
+    "InertiaDK2GWs": 7.440655,
+    "InertiaNOGWs": 86.701302,
+    "InertiaSEGWs": 84.209404,
+    "InertiaFIGWs": 45.816643
+  },
+  {
+    "HourUTC": "2023-01-19T06:00:00",
+    "HourDK": "2023-01-19T07:00:00",
+    "InertiaNordicGWs": 219.159088,
+    "InertiaDK2GWs": 7.439727,
+    "InertiaNOGWs": 81.789093,
+    "InertiaSEGWs": 84.2537,
+    "InertiaFIGWs": 45.676678
+  },
+  {
+    "HourUTC": "2023-01-19T05:00:00",
+    "HourDK": "2023-01-19T06:00:00",
+    "InertiaNordicGWs": 210.688217,
+    "InertiaDK2GWs": 7.29063,
+    "InertiaNOGWs": 74.024521,
+    "InertiaSEGWs": 83.858391,
+    "InertiaFIGWs": 45.516335
+  },
+  {
+    "HourUTC": "2023-01-19T04:00:00",
+    "HourDK": "2023-01-19T05:00:00",
+    "InertiaNordicGWs": 199.043243,
+    "InertiaDK2GWs": 7.258226,
+    "InertiaNOGWs": 63.439709,
+    "InertiaSEGWs": 83.27684,
+    "InertiaFIGWs": 45.069874
+  },
+  {
+    "HourUTC": "2023-01-19T03:00:00",
+    "HourDK": "2023-01-19T04:00:00",
+    "InertiaNordicGWs": 188.119141,
+    "InertiaDK2GWs": 7.258241,
+    "InertiaNOGWs": 58.244194,
+    "InertiaSEGWs": 81.895256,
+    "InertiaFIGWs": 40.722218
+  },
+  {
+    "HourUTC": "2023-01-19T02:00:00",
+    "HourDK": "2023-01-19T03:00:00",
+    "InertiaNordicGWs": 185.720718,
+    "InertiaDK2GWs": 7.258638,
+    "InertiaNOGWs": 57.726303,
+    "InertiaSEGWs": 81.302551,
+    "InertiaFIGWs": 39.433277
+  },
+  {
+    "HourUTC": "2023-01-19T01:00:00",
+    "HourDK": "2023-01-19T02:00:00",
+    "InertiaNordicGWs": 186.118057,
+    "InertiaDK2GWs": 7.256775,
+    "InertiaNOGWs": 58.25655,
+    "InertiaSEGWs": 81.304268,
+    "InertiaFIGWs": 39.300438
+  },
+  {
+    "HourUTC": "2023-01-19T00:00:00",
+    "HourDK": "2023-01-19T01:00:00",
+    "InertiaNordicGWs": 185.032349,
+    "InertiaDK2GWs": 7.260795,
+    "InertiaNOGWs": 58.252087,
+    "InertiaSEGWs": 81.222885,
+    "InertiaFIGWs": 38.296265
+  },
+  {
+    "HourUTC": "2023-01-18T23:00:00",
+    "HourDK": "2023-01-19T00:00:00",
+    "InertiaNordicGWs": 186.238831,
+    "InertiaDK2GWs": 7.264377,
+    "InertiaNOGWs": 59.749828,
+    "InertiaSEGWs": 81.108948,
+    "InertiaFIGWs": 38.11565
+  },
+  {
+    "HourUTC": "2023-01-18T22:00:00",
+    "HourDK": "2023-01-18T23:00:00",
+    "InertiaNordicGWs": 187.152878,
+    "InertiaDK2GWs": 7.264602,
+    "InertiaNOGWs": 59.682396,
+    "InertiaSEGWs": 81.865044,
+    "InertiaFIGWs": 38.340725
+  },
+  {
+    "HourUTC": "2023-01-18T21:00:00",
+    "HourDK": "2023-01-18T22:00:00",
+    "InertiaNordicGWs": 191.866501,
+    "InertiaDK2GWs": 7.264348,
+    "InertiaNOGWs": 63.168911,
+    "InertiaSEGWs": 83.074432,
+    "InertiaFIGWs": 38.358929
+  },
+  {
+    "HourUTC": "2023-01-18T20:00:00",
+    "HourDK": "2023-01-18T21:00:00",
+    "InertiaNordicGWs": 194.803726,
+    "InertiaDK2GWs": 7.275889,
+    "InertiaNOGWs": 65.383095,
+    "InertiaSEGWs": 83.76033,
+    "InertiaFIGWs": 38.384399
+  },
+  {
+    "HourUTC": "2023-01-18T19:00:00",
+    "HourDK": "2023-01-18T20:00:00",
+    "InertiaNordicGWs": 198.382706,
+    "InertiaDK2GWs": 7.396356,
+    "InertiaNOGWs": 67.548042,
+    "InertiaSEGWs": 84.685478,
+    "InertiaFIGWs": 38.752659
+  },
+  {
+    "HourUTC": "2023-01-18T18:00:00",
+    "HourDK": "2023-01-18T19:00:00",
+    "InertiaNordicGWs": 202.453491,
+    "InertiaDK2GWs": 7.397503,
+    "InertiaNOGWs": 71.133972,
+    "InertiaSEGWs": 84.935303,
+    "InertiaFIGWs": 38.986408
+  },
+  {
+    "HourUTC": "2023-01-18T17:00:00",
+    "HourDK": "2023-01-18T18:00:00",
+    "InertiaNordicGWs": 205.91156,
+    "InertiaDK2GWs": 7.394881,
+    "InertiaNOGWs": 74.307426,
+    "InertiaSEGWs": 85.316772,
+    "InertiaFIGWs": 38.892265
+  },
+  {
+    "HourUTC": "2023-01-18T16:00:00",
+    "HourDK": "2023-01-18T17:00:00",
+    "InertiaNordicGWs": 209.366821,
+    "InertiaDK2GWs": 7.391495,
+    "InertiaNOGWs": 77.667496,
+    "InertiaSEGWs": 85.569565,
+    "InertiaFIGWs": 38.73867
+  },
+  {
+    "HourUTC": "2023-01-18T15:00:00",
+    "HourDK": "2023-01-18T16:00:00",
+    "InertiaNordicGWs": 207.427963,
+    "InertiaDK2GWs": 7.391846,
+    "InertiaNOGWs": 75.72226,
+    "InertiaSEGWs": 85.569565,
+    "InertiaFIGWs": 38.744038
+  },
+  {
+    "HourUTC": "2023-01-18T14:00:00",
+    "HourDK": "2023-01-18T15:00:00",
+    "InertiaNordicGWs": 206.307571,
+    "InertiaDK2GWs": 7.405902,
+    "InertiaNOGWs": 74.605507,
+    "InertiaSEGWs": 85.563126,
+    "InertiaFIGWs": 38.734043
+  },
+  {
+    "HourUTC": "2023-01-18T13:00:00",
+    "HourDK": "2023-01-18T14:00:00",
+    "InertiaNordicGWs": 205.854126,
+    "InertiaDK2GWs": 8.306231,
+    "InertiaNOGWs": 73.337791,
+    "InertiaSEGWs": 85.575409,
+    "InertiaFIGWs": 38.634712
+  },
+  {
+    "HourUTC": "2023-01-18T12:00:00",
+    "HourDK": "2023-01-18T13:00:00",
+    "InertiaNordicGWs": 204.259888,
+    "InertiaDK2GWs": 9.279512,
+    "InertiaNOGWs": 71.011703,
+    "InertiaSEGWs": 85.391823,
+    "InertiaFIGWs": 38.576931
+  },
+  {
+    "HourUTC": "2023-01-18T11:00:00",
+    "HourDK": "2023-01-18T12:00:00",
+    "InertiaNordicGWs": 205.416611,
+    "InertiaDK2GWs": 9.267445,
+    "InertiaNOGWs": 72.387711,
+    "InertiaSEGWs": 85.311638,
+    "InertiaFIGWs": 38.449818
+  },
+  {
+    "HourUTC": "2023-01-18T10:00:00",
+    "HourDK": "2023-01-18T11:00:00",
+    "InertiaNordicGWs": 208.649872,
+    "InertiaDK2GWs": 9.152918,
+    "InertiaNOGWs": 75.613968,
+    "InertiaSEGWs": 85.434776,
+    "InertiaFIGWs": 38.448517
+  },
+  {
+    "HourUTC": "2023-01-18T09:00:00",
+    "HourDK": "2023-01-18T10:00:00",
+    "InertiaNordicGWs": 211.245331,
+    "InertiaDK2GWs": 9.153292,
+    "InertiaNOGWs": 78.096703,
+    "InertiaSEGWs": 85.537163,
+    "InertiaFIGWs": 38.457405
+  },
+  {
+    "HourUTC": "2023-01-18T08:00:00",
+    "HourDK": "2023-01-18T09:00:00",
+    "InertiaNordicGWs": 212.779358,
+    "InertiaDK2GWs": 9.152879,
+    "InertiaNOGWs": 79.900902,
+    "InertiaSEGWs": 85.278557,
+    "InertiaFIGWs": 38.4468
+  },
+  {
+    "HourUTC": "2023-01-18T07:00:00",
+    "HourDK": "2023-01-18T08:00:00",
+    "InertiaNordicGWs": 213.492676,
+    "InertiaDK2GWs": 9.152927,
+    "InertiaNOGWs": 80.655525,
+    "InertiaSEGWs": 85.31514,
+    "InertiaFIGWs": 38.369049
+  },
+  {
+    "HourUTC": "2023-01-18T06:00:00",
+    "HourDK": "2023-01-18T07:00:00",
+    "InertiaNordicGWs": 212.21312,
+    "InertiaDK2GWs": 9.211663,
+    "InertiaNOGWs": 80.351616,
+    "InertiaSEGWs": 84.753181,
+    "InertiaFIGWs": 37.897125
+  },
+  {
+    "HourUTC": "2023-01-18T05:00:00",
+    "HourDK": "2023-01-18T06:00:00",
+    "InertiaNordicGWs": 200.314453,
+    "InertiaDK2GWs": 9.163466,
+    "InertiaNOGWs": 71.670296,
+    "InertiaSEGWs": 82.796013,
+    "InertiaFIGWs": 36.686893
+  },
+  {
+    "HourUTC": "2023-01-18T04:00:00",
+    "HourDK": "2023-01-18T05:00:00",
+    "InertiaNordicGWs": 186.95459,
+    "InertiaDK2GWs": 9.145481,
+    "InertiaNOGWs": 63.388401,
+    "InertiaSEGWs": 78.352776,
+    "InertiaFIGWs": 36.068928
+  },
+  {
+    "HourUTC": "2023-01-18T03:00:00",
+    "HourDK": "2023-01-18T04:00:00",
+    "InertiaNordicGWs": 177.94577,
+    "InertiaDK2GWs": 9.145144,
+    "InertiaNOGWs": 59.16758,
+    "InertiaSEGWs": 74.057388,
+    "InertiaFIGWs": 35.575626
+  },
+  {
+    "HourUTC": "2023-01-18T02:00:00",
+    "HourDK": "2023-01-18T03:00:00",
+    "InertiaNordicGWs": 177.650787,
+    "InertiaDK2GWs": 9.145055,
+    "InertiaNOGWs": 60.631596,
+    "InertiaSEGWs": 72.354538,
+    "InertiaFIGWs": 35.519543
+  },
+  {
+    "HourUTC": "2023-01-18T01:00:00",
+    "HourDK": "2023-01-18T02:00:00",
+    "InertiaNordicGWs": 177.847443,
+    "InertiaDK2GWs": 9.145077,
+    "InertiaNOGWs": 61.048714,
+    "InertiaSEGWs": 72.333755,
+    "InertiaFIGWs": 35.320133
+  },
+  {
+    "HourUTC": "2023-01-18T00:00:00",
+    "HourDK": "2023-01-18T01:00:00",
+    "InertiaNordicGWs": 178.548965,
+    "InertiaDK2GWs": 9.144793,
+    "InertiaNOGWs": 61.561829,
+    "InertiaSEGWs": 72.502747,
+    "InertiaFIGWs": 35.338699
+  },
+  {
+    "HourUTC": "2023-01-17T23:00:00",
+    "HourDK": "2023-01-18T00:00:00",
+    "InertiaNordicGWs": 180.861481,
+    "InertiaDK2GWs": 9.144815,
+    "InertiaNOGWs": 62.855942,
+    "InertiaSEGWs": 73.324631,
+    "InertiaFIGWs": 35.535862
+  },
+  {
+    "HourUTC": "2023-01-17T22:00:00",
+    "HourDK": "2023-01-17T23:00:00",
+    "InertiaNordicGWs": 185.29361,
+    "InertiaDK2GWs": 9.14972,
+    "InertiaNOGWs": 65.957504,
+    "InertiaSEGWs": 74.414391,
+    "InertiaFIGWs": 35.771774
+  },
+  {
+    "HourUTC": "2023-01-17T21:00:00",
+    "HourDK": "2023-01-17T22:00:00",
+    "InertiaNordicGWs": 191.770065,
+    "InertiaDK2GWs": 9.152394,
+    "InertiaNOGWs": 70.480865,
+    "InertiaSEGWs": 75.613983,
+    "InertiaFIGWs": 36.522232
+  },
+  {
+    "HourUTC": "2023-01-17T20:00:00",
+    "HourDK": "2023-01-17T21:00:00",
+    "InertiaNordicGWs": 195.250656,
+    "InertiaDK2GWs": 9.151587,
+    "InertiaNOGWs": 72.056114,
+    "InertiaSEGWs": 76.797371,
+    "InertiaFIGWs": 37.244923
+  },
+  {
+    "HourUTC": "2023-01-17T19:00:00",
+    "HourDK": "2023-01-17T20:00:00",
+    "InertiaNordicGWs": 200.398209,
+    "InertiaDK2GWs": 9.172491,
+    "InertiaNOGWs": 74.540405,
+    "InertiaSEGWs": 79.058327,
+    "InertiaFIGWs": 37.626701
+  },
+  {
+    "HourUTC": "2023-01-17T18:00:00",
+    "HourDK": "2023-01-17T19:00:00",
+    "InertiaNordicGWs": 204.807571,
+    "InertiaDK2GWs": 9.16708,
+    "InertiaNOGWs": 76.778923,
+    "InertiaSEGWs": 81.210526,
+    "InertiaFIGWs": 37.651005
+  },
+  {
+    "HourUTC": "2023-01-17T17:00:00",
+    "HourDK": "2023-01-17T18:00:00",
+    "InertiaNordicGWs": 208.54509,
+    "InertiaDK2GWs": 9.317385,
+    "InertiaNOGWs": 77.765686,
+    "InertiaSEGWs": 83.104691,
+    "InertiaFIGWs": 38.357273
+  },
+  {
+    "HourUTC": "2023-01-17T16:00:00",
+    "HourDK": "2023-01-17T17:00:00",
+    "InertiaNordicGWs": 211.518875,
+    "InertiaDK2GWs": 9.325664,
+    "InertiaNOGWs": 80.00029,
+    "InertiaSEGWs": 83.366982,
+    "InertiaFIGWs": 38.826023
+  },
+  {
+    "HourUTC": "2023-01-17T15:00:00",
+    "HourDK": "2023-01-17T16:00:00",
+    "InertiaNordicGWs": 212.140793,
+    "InertiaDK2GWs": 9.327468,
+    "InertiaNOGWs": 80.279533,
+    "InertiaSEGWs": 83.500618,
+    "InertiaFIGWs": 39.033615
+  },
+  {
+    "HourUTC": "2023-01-17T14:00:00",
+    "HourDK": "2023-01-17T15:00:00",
+    "InertiaNordicGWs": 209.606827,
+    "InertiaDK2GWs": 9.32755,
+    "InertiaNOGWs": 77.784233,
+    "InertiaSEGWs": 83.442131,
+    "InertiaFIGWs": 39.052906
+  },
+  {
+    "HourUTC": "2023-01-17T13:00:00",
+    "HourDK": "2023-01-17T14:00:00",
+    "InertiaNordicGWs": 206.909653,
+    "InertiaDK2GWs": 9.327042,
+    "InertiaNOGWs": 75.084625,
+    "InertiaSEGWs": 83.456413,
+    "InertiaFIGWs": 39.041561
+  },
+  {
+    "HourUTC": "2023-01-17T12:00:00",
+    "HourDK": "2023-01-17T13:00:00",
+    "InertiaNordicGWs": 203.036148,
+    "InertiaDK2GWs": 9.326966,
+    "InertiaNOGWs": 71.352036,
+    "InertiaSEGWs": 83.4048,
+    "InertiaFIGWs": 38.953396
+  },
+  {
+    "HourUTC": "2023-01-17T11:00:00",
+    "HourDK": "2023-01-17T12:00:00",
+    "InertiaNordicGWs": 200.769379,
+    "InertiaDK2GWs": 9.327355,
+    "InertiaNOGWs": 68.884453,
+    "InertiaSEGWs": 83.611168,
+    "InertiaFIGWs": 38.945786
+  },
+  {
+    "HourUTC": "2023-01-17T10:00:00",
+    "HourDK": "2023-01-17T11:00:00",
+    "InertiaNordicGWs": 202.99794,
+    "InertiaDK2GWs": 9.327019,
+    "InertiaNOGWs": 71.883873,
+    "InertiaSEGWs": 82.858719,
+    "InertiaFIGWs": 38.929096
+  },
+  {
+    "HourUTC": "2023-01-17T09:00:00",
+    "HourDK": "2023-01-17T10:00:00",
+    "InertiaNordicGWs": 202.960861,
+    "InertiaDK2GWs": 9.326522,
+    "InertiaNOGWs": 72.002792,
+    "InertiaSEGWs": 82.796524,
+    "InertiaFIGWs": 38.834923
+  },
+  {
+    "HourUTC": "2023-01-17T08:00:00",
+    "HourDK": "2023-01-17T09:00:00",
+    "InertiaNordicGWs": 202.790573,
+    "InertiaDK2GWs": 9.327198,
+    "InertiaNOGWs": 72.958771,
+    "InertiaSEGWs": 82.483688,
+    "InertiaFIGWs": 38.036491
+  },
+  {
+    "HourUTC": "2023-01-17T07:00:00",
+    "HourDK": "2023-01-17T08:00:00",
+    "InertiaNordicGWs": 205.131699,
+    "InertiaDK2GWs": 9.327355,
+    "InertiaNOGWs": 75.478973,
+    "InertiaSEGWs": 82.495193,
+    "InertiaFIGWs": 37.830685
+  },
+  {
+    "HourUTC": "2023-01-17T06:00:00",
+    "HourDK": "2023-01-17T07:00:00",
+    "InertiaNordicGWs": 200.010117,
+    "InertiaDK2GWs": 9.266431,
+    "InertiaNOGWs": 71.357605,
+    "InertiaSEGWs": 82.311226,
+    "InertiaFIGWs": 37.077663
+  },
+  {
+    "HourUTC": "2023-01-17T05:00:00",
+    "HourDK": "2023-01-17T06:00:00",
+    "InertiaNordicGWs": 185.757034,
+    "InertiaDK2GWs": 9.144748,
+    "InertiaNOGWs": 60.952271,
+    "InertiaSEGWs": 78.977432,
+    "InertiaFIGWs": 36.684258
+  },
+  {
+    "HourUTC": "2023-01-17T04:00:00",
+    "HourDK": "2023-01-17T05:00:00",
+    "InertiaNordicGWs": 171.090179,
+    "InertiaDK2GWs": 9.144964,
+    "InertiaNOGWs": 51.911457,
+    "InertiaSEGWs": 74.149986,
+    "InertiaFIGWs": 35.884323
+  },
+  {
+    "HourUTC": "2023-01-17T03:00:00",
+    "HourDK": "2023-01-17T04:00:00",
+    "InertiaNordicGWs": 164.936844,
+    "InertiaDK2GWs": 9.146214,
+    "InertiaNOGWs": 48.335545,
+    "InertiaSEGWs": 71.998283,
+    "InertiaFIGWs": 35.456818
+  },
+  {
+    "HourUTC": "2023-01-17T02:00:00",
+    "HourDK": "2023-01-17T03:00:00",
+    "InertiaNordicGWs": 163.712906,
+    "InertiaDK2GWs": 9.145795,
+    "InertiaNOGWs": 47.475098,
+    "InertiaSEGWs": 71.600288,
+    "InertiaFIGWs": 35.491718
+  },
+  {
+    "HourUTC": "2023-01-17T01:00:00",
+    "HourDK": "2023-01-17T02:00:00",
+    "InertiaNordicGWs": 162.626526,
+    "InertiaDK2GWs": 9.145503,
+    "InertiaNOGWs": 47.273403,
+    "InertiaSEGWs": 70.712875,
+    "InertiaFIGWs": 35.494713
+  },
+  {
+    "HourUTC": "2023-01-17T00:00:00",
+    "HourDK": "2023-01-17T01:00:00",
+    "InertiaNordicGWs": 164.577957,
+    "InertiaDK2GWs": 9.149186,
+    "InertiaNOGWs": 48.253838,
+    "InertiaSEGWs": 71.563484,
+    "InertiaFIGWs": 35.611172
+  },
+  {
+    "HourUTC": "2023-01-16T23:00:00",
+    "HourDK": "2023-01-17T00:00:00",
+    "InertiaNordicGWs": 168.51268,
+    "InertiaDK2GWs": 9.152723,
+    "InertiaNOGWs": 51.650028,
+    "InertiaSEGWs": 72.07122,
+    "InertiaFIGWs": 35.638844
+  },
+  {
+    "HourUTC": "2023-01-16T22:00:00",
+    "HourDK": "2023-01-16T23:00:00",
+    "InertiaNordicGWs": 173.417465,
+    "InertiaDK2GWs": 9.151265,
+    "InertiaNOGWs": 54.380939,
+    "InertiaSEGWs": 73.942291,
+    "InertiaFIGWs": 35.942215
+  },
+  {
+    "HourUTC": "2023-01-16T21:00:00",
+    "HourDK": "2023-01-16T22:00:00",
+    "InertiaNordicGWs": 183.062622,
+    "InertiaDK2GWs": 9.152237,
+    "InertiaNOGWs": 61.097919,
+    "InertiaSEGWs": 75.850861,
+    "InertiaFIGWs": 36.960751
+  },
+  {
+    "HourUTC": "2023-01-16T20:00:00",
+    "HourDK": "2023-01-16T21:00:00",
+    "InertiaNordicGWs": 188.985397,
+    "InertiaDK2GWs": 9.152476,
+    "InertiaNOGWs": 64.283157,
+    "InertiaSEGWs": 77.754494,
+    "InertiaFIGWs": 37.795322
+  },
+  {
+    "HourUTC": "2023-01-16T19:00:00",
+    "HourDK": "2023-01-16T20:00:00",
+    "InertiaNordicGWs": 194.713242,
+    "InertiaDK2GWs": 9.152925,
+    "InertiaNOGWs": 67.279953,
+    "InertiaSEGWs": 79.86026,
+    "InertiaFIGWs": 38.4193
+  },
+  {
+    "HourUTC": "2023-01-16T18:00:00",
+    "HourDK": "2023-01-16T19:00:00",
+    "InertiaNordicGWs": 200.957764,
+    "InertiaDK2GWs": 9.18107,
+    "InertiaNOGWs": 71.643921,
+    "InertiaSEGWs": 81.492935,
+    "InertiaFIGWs": 38.63913
+  },
+  {
+    "HourUTC": "2023-01-16T17:00:00",
+    "HourDK": "2023-01-16T18:00:00",
+    "InertiaNordicGWs": 205.109558,
+    "InertiaDK2GWs": 9.348567,
+    "InertiaNOGWs": 74.779686,
+    "InertiaSEGWs": 82.799561,
+    "InertiaFIGWs": 38.181595
+  },
+  {
+    "HourUTC": "2023-01-16T16:00:00",
+    "HourDK": "2023-01-16T17:00:00",
+    "InertiaNordicGWs": 203.736771,
+    "InertiaDK2GWs": 9.358319,
+    "InertiaNOGWs": 72.934853,
+    "InertiaSEGWs": 83.45359,
+    "InertiaFIGWs": 37.989902
+  },
+  {
+    "HourUTC": "2023-01-16T15:00:00",
+    "HourDK": "2023-01-16T16:00:00",
+    "InertiaNordicGWs": 205.428833,
+    "InertiaDK2GWs": 9.358469,
+    "InertiaNOGWs": 74.063072,
+    "InertiaSEGWs": 83.984467,
+    "InertiaFIGWs": 38.022926
+  },
+  {
+    "HourUTC": "2023-01-16T14:00:00",
+    "HourDK": "2023-01-16T15:00:00",
+    "InertiaNordicGWs": 204.666412,
+    "InertiaDK2GWs": 9.358865,
+    "InertiaNOGWs": 73.018967,
+    "InertiaSEGWs": 84.126457,
+    "InertiaFIGWs": 38.162399
+  },
+  {
+    "HourUTC": "2023-01-16T13:00:00",
+    "HourDK": "2023-01-16T14:00:00",
+    "InertiaNordicGWs": 204.87085,
+    "InertiaDK2GWs": 9.359232,
+    "InertiaNOGWs": 73.121201,
+    "InertiaSEGWs": 84.08625,
+    "InertiaFIGWs": 38.303791
+  },
+  {
+    "HourUTC": "2023-01-16T12:00:00",
+    "HourDK": "2023-01-16T13:00:00",
+    "InertiaNordicGWs": 204.230438,
+    "InertiaDK2GWs": 9.359437,
+    "InertiaNOGWs": 72.617218,
+    "InertiaSEGWs": 83.967529,
+    "InertiaFIGWs": 38.28548
+  },
+  {
+    "HourUTC": "2023-01-16T11:00:00",
+    "HourDK": "2023-01-16T12:00:00",
+    "InertiaNordicGWs": 206.518448,
+    "InertiaDK2GWs": 9.375936,
+    "InertiaNOGWs": 74.861984,
+    "InertiaSEGWs": 84.006485,
+    "InertiaFIGWs": 38.274082
+  },
+  {
+    "HourUTC": "2023-01-16T10:00:00",
+    "HourDK": "2023-01-16T11:00:00",
+    "InertiaNordicGWs": 207.67337,
+    "InertiaDK2GWs": 9.491333,
+    "InertiaNOGWs": 75.612694,
+    "InertiaSEGWs": 84.413818,
+    "InertiaFIGWs": 38.153862
+  },
+  {
+    "HourUTC": "2023-01-16T09:00:00",
+    "HourDK": "2023-01-16T10:00:00",
+    "InertiaNordicGWs": 209.946899,
+    "InertiaDK2GWs": 9.435436,
+    "InertiaNOGWs": 77.825813,
+    "InertiaSEGWs": 84.526772,
+    "InertiaFIGWs": 38.157776
+  },
+  {
+    "HourUTC": "2023-01-16T08:00:00",
+    "HourDK": "2023-01-16T09:00:00",
+    "InertiaNordicGWs": 211.300598,
+    "InertiaDK2GWs": 9.30978,
+    "InertiaNOGWs": 79.135818,
+    "InertiaSEGWs": 84.516396,
+    "InertiaFIGWs": 38.338459
+  },
+  {
+    "HourUTC": "2023-01-16T07:00:00",
+    "HourDK": "2023-01-16T08:00:00",
+    "InertiaNordicGWs": 209.836441,
+    "InertiaDK2GWs": 9.309744,
+    "InertiaNOGWs": 77.734169,
+    "InertiaSEGWs": 84.460426,
+    "InertiaFIGWs": 38.332401
+  },
+  {
+    "HourUTC": "2023-01-16T06:00:00",
+    "HourDK": "2023-01-16T07:00:00",
+    "InertiaNordicGWs": 206.078201,
+    "InertiaDK2GWs": 9.302604,
+    "InertiaNOGWs": 75.951302,
+    "InertiaSEGWs": 83.457329,
+    "InertiaFIGWs": 37.367714
+  },
+  {
+    "HourUTC": "2023-01-16T05:00:00",
+    "HourDK": "2023-01-16T06:00:00",
+    "InertiaNordicGWs": 188.145981,
+    "InertiaDK2GWs": 9.191825,
+    "InertiaNOGWs": 63.31218,
+    "InertiaSEGWs": 78.925362,
+    "InertiaFIGWs": 36.718178
+  },
+  {
+    "HourUTC": "2023-01-16T04:00:00",
+    "HourDK": "2023-01-16T05:00:00",
+    "InertiaNordicGWs": 170.440933,
+    "InertiaDK2GWs": 9.176661,
+    "InertiaNOGWs": 52.311234,
+    "InertiaSEGWs": 72.698814,
+    "InertiaFIGWs": 36.255547
+  },
+  {
+    "HourUTC": "2023-01-16T03:00:00",
+    "HourDK": "2023-01-16T04:00:00",
+    "InertiaNordicGWs": 156.326889,
+    "InertiaDK2GWs": 8.386446,
+    "InertiaNOGWs": 43.417782,
+    "InertiaSEGWs": 69.088394,
+    "InertiaFIGWs": 35.43568
+  },
+  {
+    "HourUTC": "2023-01-16T02:00:00",
+    "HourDK": "2023-01-16T03:00:00",
+    "InertiaNordicGWs": 150.313477,
+    "InertiaDK2GWs": 7.592209,
+    "InertiaNOGWs": 39.306774,
+    "InertiaSEGWs": 68.656006,
+    "InertiaFIGWs": 34.758801
+  },
+  {
+    "HourUTC": "2023-01-16T01:00:00",
+    "HourDK": "2023-01-16T02:00:00",
+    "InertiaNordicGWs": 151.132339,
+    "InertiaDK2GWs": 7.592411,
+    "InertiaNOGWs": 40.311714,
+    "InertiaSEGWs": 68.442825,
+    "InertiaFIGWs": 34.785309
+  },
+  {
+    "HourUTC": "2023-01-16T00:00:00",
+    "HourDK": "2023-01-16T01:00:00",
+    "InertiaNordicGWs": 151.421692,
+    "InertiaDK2GWs": 7.593076,
+    "InertiaNOGWs": 41.22076,
+    "InertiaSEGWs": 67.831657,
+    "InertiaFIGWs": 34.77597
+  },
+  {
+    "HourUTC": "2023-01-15T23:00:00",
+    "HourDK": "2023-01-16T00:00:00",
+    "InertiaNordicGWs": 152.90126,
+    "InertiaDK2GWs": 7.592792,
+    "InertiaNOGWs": 43.376312,
+    "InertiaSEGWs": 66.690056,
+    "InertiaFIGWs": 35.241425
+  },
+  {
+    "HourUTC": "2023-01-15T22:00:00",
+    "HourDK": "2023-01-15T23:00:00",
+    "InertiaNordicGWs": 155.966873,
+    "InertiaDK2GWs": 7.593735,
+    "InertiaNOGWs": 45.537182,
+    "InertiaSEGWs": 67.29612,
+    "InertiaFIGWs": 35.539982
+  },
+  {
+    "HourUTC": "2023-01-15T21:00:00",
+    "HourDK": "2023-01-15T22:00:00",
+    "InertiaNordicGWs": 158.090515,
+    "InertiaDK2GWs": 7.593316,
+    "InertiaNOGWs": 46.615173,
+    "InertiaSEGWs": 67.495705,
+    "InertiaFIGWs": 36.386456
+  },
+  {
+    "HourUTC": "2023-01-15T20:00:00",
+    "HourDK": "2023-01-15T21:00:00",
+    "InertiaNordicGWs": 158.378387,
+    "InertiaDK2GWs": 7.593443,
+    "InertiaNOGWs": 46.429535,
+    "InertiaSEGWs": 67.617905,
+    "InertiaFIGWs": 36.737465
+  },
+  {
+    "HourUTC": "2023-01-15T19:00:00",
+    "HourDK": "2023-01-15T20:00:00",
+    "InertiaNordicGWs": 158.513809,
+    "InertiaDK2GWs": 7.592613,
+    "InertiaNOGWs": 45.839382,
+    "InertiaSEGWs": 68.012886,
+    "InertiaFIGWs": 37.068748
+  },
+  {
+    "HourUTC": "2023-01-15T18:00:00",
+    "HourDK": "2023-01-15T19:00:00",
+    "InertiaNordicGWs": 160.641129,
+    "InertiaDK2GWs": 7.591775,
+    "InertiaNOGWs": 47.095573,
+    "InertiaSEGWs": 68.722298,
+    "InertiaFIGWs": 37.231621
+  },
+  {
+    "HourUTC": "2023-01-15T17:00:00",
+    "HourDK": "2023-01-15T18:00:00",
+    "InertiaNordicGWs": 162.875977,
+    "InertiaDK2GWs": 7.591932,
+    "InertiaNOGWs": 49.471443,
+    "InertiaSEGWs": 68.576988,
+    "InertiaFIGWs": 37.235546
+  },
+  {
+    "HourUTC": "2023-01-15T16:00:00",
+    "HourDK": "2023-01-15T17:00:00",
+    "InertiaNordicGWs": 162.229172,
+    "InertiaDK2GWs": 7.593226,
+    "InertiaNOGWs": 48.946785,
+    "InertiaSEGWs": 68.48568,
+    "InertiaFIGWs": 37.203571
+  },
+  {
+    "HourUTC": "2023-01-15T15:00:00",
+    "HourDK": "2023-01-15T16:00:00",
+    "InertiaNordicGWs": 161.448502,
+    "InertiaDK2GWs": 7.593226,
+    "InertiaNOGWs": 48.415974,
+    "InertiaSEGWs": 68.052551,
+    "InertiaFIGWs": 37.386868
+  },
+  {
+    "HourUTC": "2023-01-15T14:00:00",
+    "HourDK": "2023-01-15T15:00:00",
+    "InertiaNordicGWs": 158.094711,
+    "InertiaDK2GWs": 7.593166,
+    "InertiaNOGWs": 45.962017,
+    "InertiaSEGWs": 67.171547,
+    "InertiaFIGWs": 37.368168
+  },
+  {
+    "HourUTC": "2023-01-15T13:00:00",
+    "HourDK": "2023-01-15T14:00:00",
+    "InertiaNordicGWs": 155.374146,
+    "InertiaDK2GWs": 7.593039,
+    "InertiaNOGWs": 43.543289,
+    "InertiaSEGWs": 66.878952,
+    "InertiaFIGWs": 37.359081
+  },
+  {
+    "HourUTC": "2023-01-15T12:00:00",
+    "HourDK": "2023-01-15T13:00:00",
+    "InertiaNordicGWs": 154.162857,
+    "InertiaDK2GWs": 7.591969,
+    "InertiaNOGWs": 42.682926,
+    "InertiaSEGWs": 66.451218,
+    "InertiaFIGWs": 37.436825
+  },
+  {
+    "HourUTC": "2023-01-15T11:00:00",
+    "HourDK": "2023-01-15T12:00:00",
+    "InertiaNordicGWs": 153.473358,
+    "InertiaDK2GWs": 7.591992,
+    "InertiaNOGWs": 42.647686,
+    "InertiaSEGWs": 65.818893,
+    "InertiaFIGWs": 37.414745
+  },
+  {
+    "HourUTC": "2023-01-15T10:00:00",
+    "HourDK": "2023-01-15T11:00:00",
+    "InertiaNordicGWs": 152.524139,
+    "InertiaDK2GWs": 7.591692,
+    "InertiaNOGWs": 41.926365,
+    "InertiaSEGWs": 65.660095,
+    "InertiaFIGWs": 37.34594
+  },
+  {
+    "HourUTC": "2023-01-15T09:00:00",
+    "HourDK": "2023-01-15T10:00:00",
+    "InertiaNordicGWs": 150.999176,
+    "InertiaDK2GWs": 7.592321,
+    "InertiaNOGWs": 40.196129,
+    "InertiaSEGWs": 65.864746,
+    "InertiaFIGWs": 37.34647
+  },
+  {
+    "HourUTC": "2023-01-15T08:00:00",
+    "HourDK": "2023-01-15T09:00:00",
+    "InertiaNordicGWs": 148.109222,
+    "InertiaDK2GWs": 7.591528,
+    "InertiaNOGWs": 37.736217,
+    "InertiaSEGWs": 65.483589,
+    "InertiaFIGWs": 37.298264
+  },
+  {
+    "HourUTC": "2023-01-15T07:00:00",
+    "HourDK": "2023-01-15T08:00:00",
+    "InertiaNordicGWs": 144.111053,
+    "InertiaDK2GWs": 7.591448,
+    "InertiaNOGWs": 34.978508,
+    "InertiaSEGWs": 64.973152,
+    "InertiaFIGWs": 36.568001
+  },
+  {
+    "HourUTC": "2023-01-15T06:00:00",
+    "HourDK": "2023-01-15T07:00:00",
+    "InertiaNordicGWs": 141.582733,
+    "InertiaDK2GWs": 7.592186,
+    "InertiaNOGWs": 33.070461,
+    "InertiaSEGWs": 64.884666,
+    "InertiaFIGWs": 36.035408
+  },
+  {
+    "HourUTC": "2023-01-15T05:00:00",
+    "HourDK": "2023-01-15T06:00:00",
+    "InertiaNordicGWs": 139.958618,
+    "InertiaDK2GWs": 7.591618,
+    "InertiaNOGWs": 32.343826,
+    "InertiaSEGWs": 64.222946,
+    "InertiaFIGWs": 35.800617
+  },
+  {
+    "HourUTC": "2023-01-15T04:00:00",
+    "HourDK": "2023-01-15T05:00:00",
+    "InertiaNordicGWs": 139.307907,
+    "InertiaDK2GWs": 7.591633,
+    "InertiaNOGWs": 32.198868,
+    "InertiaSEGWs": 63.760662,
+    "InertiaFIGWs": 35.756561
+  },
+  {
+    "HourUTC": "2023-01-15T03:00:00",
+    "HourDK": "2023-01-15T04:00:00",
+    "InertiaNordicGWs": 138.776978,
+    "InertiaDK2GWs": 7.591438,
+    "InertiaNOGWs": 31.830063,
+    "InertiaSEGWs": 63.608402,
+    "InertiaFIGWs": 35.747166
+  },
+  {
+    "HourUTC": "2023-01-15T02:00:00",
+    "HourDK": "2023-01-15T03:00:00",
+    "InertiaNordicGWs": 139.191284,
+    "InertiaDK2GWs": 7.59179,
+    "InertiaNOGWs": 31.782011,
+    "InertiaSEGWs": 64.134239,
+    "InertiaFIGWs": 35.683254
+  },
+  {
+    "HourUTC": "2023-01-15T01:00:00",
+    "HourDK": "2023-01-15T02:00:00",
+    "InertiaNordicGWs": 140.393997,
+    "InertiaDK2GWs": 7.591753,
+    "InertiaNOGWs": 32.911072,
+    "InertiaSEGWs": 64.190689,
+    "InertiaFIGWs": 35.700294
+  },
+  {
+    "HourUTC": "2023-01-15T00:00:00",
+    "HourDK": "2023-01-15T01:00:00",
+    "InertiaNordicGWs": 142.861389,
+    "InertiaDK2GWs": 7.591655,
+    "InertiaNOGWs": 35.296074,
+    "InertiaSEGWs": 64.337601,
+    "InertiaFIGWs": 35.63583
+  },
+  {
+    "HourUTC": "2023-01-14T23:00:00",
+    "HourDK": "2023-01-15T00:00:00",
+    "InertiaNordicGWs": 145.555511,
+    "InertiaDK2GWs": 7.59182,
+    "InertiaNOGWs": 36.401211,
+    "InertiaSEGWs": 65.74897,
+    "InertiaFIGWs": 35.81316
+  },
+  {
+    "HourUTC": "2023-01-14T22:00:00",
+    "HourDK": "2023-01-14T23:00:00",
+    "InertiaNordicGWs": 155.576828,
+    "InertiaDK2GWs": 7.593069,
+    "InertiaNOGWs": 39.199295,
+    "InertiaSEGWs": 72.405678,
+    "InertiaFIGWs": 36.378281
+  },
+  {
+    "HourUTC": "2023-01-14T21:00:00",
+    "HourDK": "2023-01-14T22:00:00",
+    "InertiaNordicGWs": 160.164963,
+    "InertiaDK2GWs": 7.593196,
+    "InertiaNOGWs": 42.35619,
+    "InertiaSEGWs": 72.91806,
+    "InertiaFIGWs": 37.296753
+  },
+  {
+    "HourUTC": "2023-01-14T20:00:00",
+    "HourDK": "2023-01-14T21:00:00",
+    "InertiaNordicGWs": 165.74884,
+    "InertiaDK2GWs": 7.59657,
+    "InertiaNOGWs": 45.104038,
+    "InertiaSEGWs": 75.078751,
+    "InertiaFIGWs": 37.968426
+  },
+  {
+    "HourUTC": "2023-01-14T19:00:00",
+    "HourDK": "2023-01-14T20:00:00",
+    "InertiaNordicGWs": 169.987213,
+    "InertiaDK2GWs": 7.599878,
+    "InertiaNOGWs": 47.660206,
+    "InertiaSEGWs": 76.59893,
+    "InertiaFIGWs": 38.127296
+  },
+  {
+    "HourUTC": "2023-01-14T18:00:00",
+    "HourDK": "2023-01-14T19:00:00",
+    "InertiaNordicGWs": 174.987503,
+    "InertiaDK2GWs": 7.599669,
+    "InertiaNOGWs": 50.171299,
+    "InertiaSEGWs": 78.909653,
+    "InertiaFIGWs": 38.306255
+  },
+  {
+    "HourUTC": "2023-01-14T17:00:00",
+    "HourDK": "2023-01-14T18:00:00",
+    "InertiaNordicGWs": 179.074326,
+    "InertiaDK2GWs": 7.598958,
+    "InertiaNOGWs": 52.174702,
+    "InertiaSEGWs": 80.71386,
+    "InertiaFIGWs": 38.586285
+  },
+  {
+    "HourUTC": "2023-01-14T16:00:00",
+    "HourDK": "2023-01-14T17:00:00",
+    "InertiaNordicGWs": 181.34137,
+    "InertiaDK2GWs": 7.599302,
+    "InertiaNOGWs": 52.660652,
+    "InertiaSEGWs": 82.205933,
+    "InertiaFIGWs": 38.875595
+  },
+  {
+    "HourUTC": "2023-01-14T15:00:00",
+    "HourDK": "2023-01-14T16:00:00",
+    "InertiaNordicGWs": 178.422272,
+    "InertiaDK2GWs": 7.598225,
+    "InertiaNOGWs": 49.945942,
+    "InertiaSEGWs": 82.364944,
+    "InertiaFIGWs": 38.514118
+  },
+  {
+    "HourUTC": "2023-01-14T14:00:00",
+    "HourDK": "2023-01-14T15:00:00",
+    "InertiaNordicGWs": 173.768036,
+    "InertiaDK2GWs": 7.598689,
+    "InertiaNOGWs": 46.136322,
+    "InertiaSEGWs": 81.851074,
+    "InertiaFIGWs": 38.182301
+  },
+  {
+    "HourUTC": "2023-01-14T13:00:00",
+    "HourDK": "2023-01-14T14:00:00",
+    "InertiaNordicGWs": 171.865387,
+    "InertiaDK2GWs": 7.598854,
+    "InertiaNOGWs": 45.345783,
+    "InertiaSEGWs": 80.864548,
+    "InertiaFIGWs": 38.056278
+  },
+  {
+    "HourUTC": "2023-01-14T12:00:00",
+    "HourDK": "2023-01-14T13:00:00",
+    "InertiaNordicGWs": 172.068909,
+    "InertiaDK2GWs": 7.59922,
+    "InertiaNOGWs": 45.582367,
+    "InertiaSEGWs": 80.844429,
+    "InertiaFIGWs": 38.043167
+  },
+  {
+    "HourUTC": "2023-01-14T11:00:00",
+    "HourDK": "2023-01-14T12:00:00",
+    "InertiaNordicGWs": 173.890244,
+    "InertiaDK2GWs": 7.598936,
+    "InertiaNOGWs": 47.525192,
+    "InertiaSEGWs": 80.745605,
+    "InertiaFIGWs": 38.020172
+  },
+  {
+    "HourUTC": "2023-01-14T10:00:00",
+    "HourDK": "2023-01-14T11:00:00",
+    "InertiaNordicGWs": 172.954773,
+    "InertiaDK2GWs": 7.598427,
+    "InertiaNOGWs": 48.278847,
+    "InertiaSEGWs": 79.070526,
+    "InertiaFIGWs": 38.006618
+  },
+  {
+    "HourUTC": "2023-01-14T09:00:00",
+    "HourDK": "2023-01-14T10:00:00",
+    "InertiaNordicGWs": 172.362717,
+    "InertiaDK2GWs": 7.598322,
+    "InertiaNOGWs": 48.315998,
+    "InertiaSEGWs": 78.486732,
+    "InertiaFIGWs": 37.96188
+  },
+  {
+    "HourUTC": "2023-01-14T08:00:00",
+    "HourDK": "2023-01-14T09:00:00",
+    "InertiaNordicGWs": 169.337326,
+    "InertiaDK2GWs": 7.598898,
+    "InertiaNOGWs": 46.605606,
+    "InertiaSEGWs": 77.300026,
+    "InertiaFIGWs": 37.833046
+  },
+  {
+    "HourUTC": "2023-01-14T07:00:00",
+    "HourDK": "2023-01-14T08:00:00",
+    "InertiaNordicGWs": 162.482361,
+    "InertiaDK2GWs": 7.598809,
+    "InertiaNOGWs": 42.525681,
+    "InertiaSEGWs": 75.227089,
+    "InertiaFIGWs": 37.131432
+  },
+  {
+    "HourUTC": "2023-01-14T06:00:00",
+    "HourDK": "2023-01-14T07:00:00",
+    "InertiaNordicGWs": 155.835526,
+    "InertiaDK2GWs": 7.593673,
+    "InertiaNOGWs": 38.290562,
+    "InertiaSEGWs": 73.714409,
+    "InertiaFIGWs": 36.238266
+  },
+  {
+    "HourUTC": "2023-01-14T05:00:00",
+    "HourDK": "2023-01-14T06:00:00",
+    "InertiaNordicGWs": 150.751999,
+    "InertiaDK2GWs": 7.592,
+    "InertiaNOGWs": 35.786839,
+    "InertiaSEGWs": 72.004951,
+    "InertiaFIGWs": 35.369183
+  },
+  {
+    "HourUTC": "2023-01-14T04:00:00",
+    "HourDK": "2023-01-14T05:00:00",
+    "InertiaNordicGWs": 147.08609,
+    "InertiaDK2GWs": 7.592762,
+    "InertiaNOGWs": 35.585785,
+    "InertiaSEGWs": 69.427162,
+    "InertiaFIGWs": 34.480968
+  },
+  {
+    "HourUTC": "2023-01-14T03:00:00",
+    "HourDK": "2023-01-14T04:00:00",
+    "InertiaNordicGWs": 147.264297,
+    "InertiaDK2GWs": 7.591296,
+    "InertiaNOGWs": 35.780449,
+    "InertiaSEGWs": 69.418999,
+    "InertiaFIGWs": 34.473431
+  },
+  {
+    "HourUTC": "2023-01-14T02:00:00",
+    "HourDK": "2023-01-14T03:00:00",
+    "InertiaNordicGWs": 148.627289,
+    "InertiaDK2GWs": 7.591618,
+    "InertiaNOGWs": 37.095375,
+    "InertiaSEGWs": 69.497429,
+    "InertiaFIGWs": 34.442509
+  },
+  {
+    "HourUTC": "2023-01-14T01:00:00",
+    "HourDK": "2023-01-14T02:00:00",
+    "InertiaNordicGWs": 150.456665,
+    "InertiaDK2GWs": 7.591573,
+    "InertiaNOGWs": 38.412159,
+    "InertiaSEGWs": 69.983925,
+    "InertiaFIGWs": 34.469063
+  },
+  {
+    "HourUTC": "2023-01-14T00:00:00",
+    "HourDK": "2023-01-14T01:00:00",
+    "InertiaNordicGWs": 153.315674,
+    "InertiaDK2GWs": 7.591266,
+    "InertiaNOGWs": 39.951172,
+    "InertiaSEGWs": 71.065346,
+    "InertiaFIGWs": 34.707832
+  },
+  {
+    "HourUTC": "2023-01-13T23:00:00",
+    "HourDK": "2023-01-14T00:00:00",
+    "InertiaNordicGWs": 161.003006,
+    "InertiaDK2GWs": 7.591498,
+    "InertiaNOGWs": 43.156658,
+    "InertiaSEGWs": 74.01355,
+    "InertiaFIGWs": 36.240204
+  },
+  {
+    "HourUTC": "2023-01-13T22:00:00",
+    "HourDK": "2023-01-13T23:00:00",
+    "InertiaNordicGWs": 169.130692,
+    "InertiaDK2GWs": 7.592007,
+    "InertiaNOGWs": 45.555481,
+    "InertiaSEGWs": 78.115105,
+    "InertiaFIGWs": 37.868134
+  },
+  {
+    "HourUTC": "2023-01-13T21:00:00",
+    "HourDK": "2023-01-13T22:00:00",
+    "InertiaNordicGWs": 173.31041,
+    "InertiaDK2GWs": 7.592628,
+    "InertiaNOGWs": 48.354588,
+    "InertiaSEGWs": 79.332573,
+    "InertiaFIGWs": 38.030693
+  },
+  {
+    "HourUTC": "2023-01-13T20:00:00",
+    "HourDK": "2023-01-13T21:00:00",
+    "InertiaNordicGWs": 176.967026,
+    "InertiaDK2GWs": 7.595734,
+    "InertiaNOGWs": 49.58107,
+    "InertiaSEGWs": 81.630821,
+    "InertiaFIGWs": 38.159214
+  },
+  {
+    "HourUTC": "2023-01-13T19:00:00",
+    "HourDK": "2023-01-13T20:00:00",
+    "InertiaNordicGWs": 181.60257,
+    "InertiaDK2GWs": 7.599145,
+    "InertiaNOGWs": 51.624859,
+    "InertiaSEGWs": 83.807449,
+    "InertiaFIGWs": 38.570026
+  },
+  {
+    "HourUTC": "2023-01-13T18:00:00",
+    "HourDK": "2023-01-13T19:00:00",
+    "InertiaNordicGWs": 186.903305,
+    "InertiaDK2GWs": 7.598263,
+    "InertiaNOGWs": 55.779194,
+    "InertiaSEGWs": 84.677597,
+    "InertiaFIGWs": 38.848007
+  },
+  {
+    "HourUTC": "2023-01-13T17:00:00",
+    "HourDK": "2023-01-13T18:00:00",
+    "InertiaNordicGWs": 189.026047,
+    "InertiaDK2GWs": 7.59845,
+    "InertiaNOGWs": 57.788242,
+    "InertiaSEGWs": 84.834793,
+    "InertiaFIGWs": 38.804489
+  },
+  {
+    "HourUTC": "2023-01-13T16:00:00",
+    "HourDK": "2023-01-13T17:00:00",
+    "InertiaNordicGWs": 187.637604,
+    "InertiaDK2GWs": 7.598412,
+    "InertiaNOGWs": 56.298885,
+    "InertiaSEGWs": 84.881798,
+    "InertiaFIGWs": 38.858952
+  },
+  {
+    "HourUTC": "2023-01-13T15:00:00",
+    "HourDK": "2023-01-13T16:00:00",
+    "InertiaNordicGWs": 183.98082,
+    "InertiaDK2GWs": 7.598502,
+    "InertiaNOGWs": 54.103161,
+    "InertiaSEGWs": 83.681862,
+    "InertiaFIGWs": 38.598423
+  },
+  {
+    "HourUTC": "2023-01-13T14:00:00",
+    "HourDK": "2023-01-13T15:00:00",
+    "InertiaNordicGWs": 181.768982,
+    "InertiaDK2GWs": 7.598495,
+    "InertiaNOGWs": 52.526848,
+    "InertiaSEGWs": 83.0242,
+    "InertiaFIGWs": 38.619591
+  },
+  {
+    "HourUTC": "2023-01-13T13:00:00",
+    "HourDK": "2023-01-13T14:00:00",
+    "InertiaNordicGWs": 177.608551,
+    "InertiaDK2GWs": 7.598412,
+    "InertiaNOGWs": 48.939461,
+    "InertiaSEGWs": 82.375381,
+    "InertiaFIGWs": 38.695862
+  },
+  {
+    "HourUTC": "2023-01-13T12:00:00",
+    "HourDK": "2023-01-13T13:00:00",
+    "InertiaNordicGWs": 176.002945,
+    "InertiaDK2GWs": 7.59815,
+    "InertiaNOGWs": 47.513878,
+    "InertiaSEGWs": 82.313072,
+    "InertiaFIGWs": 38.578014
+  },
+  {
+    "HourUTC": "2023-01-13T11:00:00",
+    "HourDK": "2023-01-13T12:00:00",
+    "InertiaNordicGWs": 178.244339,
+    "InertiaDK2GWs": 7.598562,
+    "InertiaNOGWs": 49.275021,
+    "InertiaSEGWs": 82.778114,
+    "InertiaFIGWs": 38.592514
+  },
+  {
+    "HourUTC": "2023-01-13T10:00:00",
+    "HourDK": "2023-01-13T11:00:00",
+    "InertiaNordicGWs": 180.398331,
+    "InertiaDK2GWs": 7.598098,
+    "InertiaNOGWs": 51.326324,
+    "InertiaSEGWs": 82.882309,
+    "InertiaFIGWs": 38.590992
+  },
+  {
+    "HourUTC": "2023-01-13T09:00:00",
+    "HourDK": "2023-01-13T10:00:00",
+    "InertiaNordicGWs": 183.457397,
+    "InertiaDK2GWs": 7.597986,
+    "InertiaNOGWs": 52.984726,
+    "InertiaSEGWs": 84.230026,
+    "InertiaFIGWs": 38.644566
+  },
+  {
+    "HourUTC": "2023-01-13T08:00:00",
+    "HourDK": "2023-01-13T09:00:00",
+    "InertiaNordicGWs": 185.609467,
+    "InertiaDK2GWs": 7.598061,
+    "InertiaNOGWs": 55.34549,
+    "InertiaSEGWs": 84.152901,
+    "InertiaFIGWs": 38.513222
+  },
+  {
+    "HourUTC": "2023-01-13T07:00:00",
+    "HourDK": "2023-01-13T08:00:00",
+    "InertiaNordicGWs": 185.160782,
+    "InertiaDK2GWs": 7.598996,
+    "InertiaNOGWs": 55.452412,
+    "InertiaSEGWs": 83.902565,
+    "InertiaFIGWs": 38.207035
+  },
+  {
+    "HourUTC": "2023-01-13T06:00:00",
+    "HourDK": "2023-01-13T07:00:00",
+    "InertiaNordicGWs": 177.402008,
+    "InertiaDK2GWs": 7.594489,
+    "InertiaNOGWs": 50.99789,
+    "InertiaSEGWs": 80.886543,
+    "InertiaFIGWs": 37.92382
+  },
+  {
+    "HourUTC": "2023-01-13T05:00:00",
+    "HourDK": "2023-01-13T06:00:00",
+    "InertiaNordicGWs": 163.473999,
+    "InertiaDK2GWs": 7.592897,
+    "InertiaNOGWs": 42.479931,
+    "InertiaSEGWs": 76.393906,
+    "InertiaFIGWs": 37.007866
+  },
+  {
+    "HourUTC": "2023-01-13T04:00:00",
+    "HourDK": "2023-01-13T05:00:00",
+    "InertiaNordicGWs": 144.051071,
+    "InertiaDK2GWs": 7.593331,
+    "InertiaNOGWs": 33.454803,
+    "InertiaSEGWs": 68.042542,
+    "InertiaFIGWs": 34.960636
+  },
+  {
+    "HourUTC": "2023-01-13T03:00:00",
+    "HourDK": "2023-01-13T04:00:00",
+    "InertiaNordicGWs": 136.156143,
+    "InertiaDK2GWs": 7.592875,
+    "InertiaNOGWs": 28.807884,
+    "InertiaSEGWs": 65.285805,
+    "InertiaFIGWs": 34.469421
+  },
+  {
+    "HourUTC": "2023-01-13T02:00:00",
+    "HourDK": "2023-01-13T03:00:00",
+    "InertiaNordicGWs": 137.281891,
+    "InertiaDK2GWs": 7.593159,
+    "InertiaNOGWs": 30.043013,
+    "InertiaSEGWs": 65.143921,
+    "InertiaFIGWs": 34.501602
+  },
+  {
+    "HourUTC": "2023-01-13T01:00:00",
+    "HourDK": "2023-01-13T02:00:00",
+    "InertiaNordicGWs": 138.352112,
+    "InertiaDK2GWs": 7.592747,
+    "InertiaNOGWs": 31.114384,
+    "InertiaSEGWs": 65.10788,
+    "InertiaFIGWs": 34.537041
+  },
+  {
+    "HourUTC": "2023-01-13T00:00:00",
+    "HourDK": "2023-01-13T01:00:00",
+    "InertiaNordicGWs": 140.240829,
+    "InertiaDK2GWs": 7.593241,
+    "InertiaNOGWs": 32.092155,
+    "InertiaSEGWs": 65.653671,
+    "InertiaFIGWs": 34.900101
+  },
+  {
+    "HourUTC": "2023-01-12T23:00:00",
+    "HourDK": "2023-01-13T00:00:00",
+    "InertiaNordicGWs": 145.83429,
+    "InertiaDK2GWs": 7.82518,
+    "InertiaNOGWs": 35.124424,
+    "InertiaSEGWs": 67.141479,
+    "InertiaFIGWs": 35.742199
+  },
+  {
+    "HourUTC": "2023-01-12T22:00:00",
+    "HourDK": "2023-01-12T23:00:00",
+    "InertiaNordicGWs": 161.024704,
+    "InertiaDK2GWs": 9.1769,
+    "InertiaNOGWs": 39.72678,
+    "InertiaSEGWs": 75.693977,
+    "InertiaFIGWs": 36.425743
+  },
+  {
+    "HourUTC": "2023-01-12T21:00:00",
+    "HourDK": "2023-01-12T22:00:00",
+    "InertiaNordicGWs": 168.523254,
+    "InertiaDK2GWs": 9.177536,
+    "InertiaNOGWs": 43.975918,
+    "InertiaSEGWs": 78.559456,
+    "InertiaFIGWs": 36.809605
+  },
+  {
+    "HourUTC": "2023-01-12T20:00:00",
+    "HourDK": "2023-01-12T21:00:00",
+    "InertiaNordicGWs": 175.245422,
+    "InertiaDK2GWs": 9.180263,
+    "InertiaNOGWs": 49.230293,
+    "InertiaSEGWs": 79.946045,
+    "InertiaFIGWs": 36.8876
+  },
+  {
+    "HourUTC": "2023-01-12T19:00:00",
+    "HourDK": "2023-01-12T20:00:00",
+    "InertiaNordicGWs": 179.300674,
+    "InertiaDK2GWs": 9.1846,
+    "InertiaNOGWs": 52.298454,
+    "InertiaSEGWs": 80.600639,
+    "InertiaFIGWs": 37.215305
+  },
+  {
+    "HourUTC": "2023-01-12T18:00:00",
+    "HourDK": "2023-01-12T19:00:00",
+    "InertiaNordicGWs": 184.043167,
+    "InertiaDK2GWs": 9.184166,
+    "InertiaNOGWs": 56.650879,
+    "InertiaSEGWs": 80.786285,
+    "InertiaFIGWs": 37.421371
+  },
+  {
+    "HourUTC": "2023-01-12T17:00:00",
+    "HourDK": "2023-01-12T18:00:00",
+    "InertiaNordicGWs": 187.346237,
+    "InertiaDK2GWs": 9.184256,
+    "InertiaNOGWs": 59.896664,
+    "InertiaSEGWs": 80.698517,
+    "InertiaFIGWs": 37.566715
+  },
+  {
+    "HourUTC": "2023-01-12T16:00:00",
+    "HourDK": "2023-01-12T17:00:00",
+    "InertiaNordicGWs": 186.985748,
+    "InertiaDK2GWs": 9.182969,
+    "InertiaNOGWs": 59.544025,
+    "InertiaSEGWs": 80.75042,
+    "InertiaFIGWs": 37.508247
+  },
+  {
+    "HourUTC": "2023-01-12T15:00:00",
+    "HourDK": "2023-01-12T16:00:00",
+    "InertiaNordicGWs": 182.443039,
+    "InertiaDK2GWs": 9.183298,
+    "InertiaNOGWs": 55.167805,
+    "InertiaSEGWs": 80.568321,
+    "InertiaFIGWs": 37.524403
+  },
+  {
+    "HourUTC": "2023-01-12T14:00:00",
+    "HourDK": "2023-01-12T15:00:00",
+    "InertiaNordicGWs": 182.325562,
+    "InertiaDK2GWs": 9.183043,
+    "InertiaNOGWs": 54.603466,
+    "InertiaSEGWs": 80.939026,
+    "InertiaFIGWs": 37.600292
+  },
+  {
+    "HourUTC": "2023-01-12T13:00:00",
+    "HourDK": "2023-01-12T14:00:00",
+    "InertiaNordicGWs": 182.747406,
+    "InertiaDK2GWs": 9.183522,
+    "InertiaNOGWs": 56.38488,
+    "InertiaSEGWs": 79.529488,
+    "InertiaFIGWs": 37.649483
+  },
+  {
+    "HourUTC": "2023-01-12T12:00:00",
+    "HourDK": "2023-01-12T13:00:00",
+    "InertiaNordicGWs": 179.594391,
+    "InertiaDK2GWs": 9.183201,
+    "InertiaNOGWs": 54.657158,
+    "InertiaSEGWs": 78.076828,
+    "InertiaFIGWs": 37.677258
+  },
+  {
+    "HourUTC": "2023-01-12T11:00:00",
+    "HourDK": "2023-01-12T12:00:00",
+    "InertiaNordicGWs": 179.300278,
+    "InertiaDK2GWs": 9.189981,
+    "InertiaNOGWs": 54.8769,
+    "InertiaSEGWs": 77.575325,
+    "InertiaFIGWs": 37.657951
+  },
+  {
+    "HourUTC": "2023-01-12T10:00:00",
+    "HourDK": "2023-01-12T11:00:00",
+    "InertiaNordicGWs": 182.278839,
+    "InertiaDK2GWs": 9.188763,
+    "InertiaNOGWs": 58.883774,
+    "InertiaSEGWs": 76.640198,
+    "InertiaFIGWs": 37.566326
+  },
+  {
+    "HourUTC": "2023-01-12T09:00:00",
+    "HourDK": "2023-01-12T10:00:00",
+    "InertiaNordicGWs": 181.461716,
+    "InertiaDK2GWs": 9.18347,
+    "InertiaNOGWs": 58.567822,
+    "InertiaSEGWs": 76.121918,
+    "InertiaFIGWs": 37.588398
+  },
+  {
+    "HourUTC": "2023-01-12T08:00:00",
+    "HourDK": "2023-01-12T09:00:00",
+    "InertiaNordicGWs": 181.951324,
+    "InertiaDK2GWs": 9.184256,
+    "InertiaNOGWs": 58.403084,
+    "InertiaSEGWs": 76.360916,
+    "InertiaFIGWs": 38.003212
+  },
+  {
+    "HourUTC": "2023-01-12T07:00:00",
+    "HourDK": "2023-01-12T08:00:00",
+    "InertiaNordicGWs": 181.657501,
+    "InertiaDK2GWs": 9.184076,
+    "InertiaNOGWs": 58.148067,
+    "InertiaSEGWs": 76.940422,
+    "InertiaFIGWs": 37.385284
+  },
+  {
+    "HourUTC": "2023-01-12T06:00:00",
+    "HourDK": "2023-01-12T07:00:00",
+    "InertiaNordicGWs": 178.245804,
+    "InertiaDK2GWs": 9.179835,
+    "InertiaNOGWs": 55.922871,
+    "InertiaSEGWs": 76.168869,
+    "InertiaFIGWs": 36.976601
+  },
+  {
+    "HourUTC": "2023-01-12T05:00:00",
+    "HourDK": "2023-01-12T06:00:00",
+    "InertiaNordicGWs": 163.673615,
+    "InertiaDK2GWs": 9.177947,
+    "InertiaNOGWs": 45.88361,
+    "InertiaSEGWs": 72.297569,
+    "InertiaFIGWs": 36.319122
+  },
+  {
+    "HourUTC": "2023-01-12T04:00:00",
+    "HourDK": "2023-01-12T05:00:00",
+    "InertiaNordicGWs": 145.190643,
+    "InertiaDK2GWs": 9.177558,
+    "InertiaNOGWs": 33.888165,
+    "InertiaSEGWs": 66.566391,
+    "InertiaFIGWs": 35.560169
+  },
+  {
+    "HourUTC": "2023-01-12T03:00:00",
+    "HourDK": "2023-01-12T04:00:00",
+    "InertiaNordicGWs": 139.308334,
+    "InertiaDK2GWs": 9.177297,
+    "InertiaNOGWs": 31.60471,
+    "InertiaSEGWs": 63.785831,
+    "InertiaFIGWs": 34.741062
+  },
+  {
+    "HourUTC": "2023-01-12T02:00:00",
+    "HourDK": "2023-01-12T03:00:00",
+    "InertiaNordicGWs": 139.083878,
+    "InertiaDK2GWs": 9.17705,
+    "InertiaNOGWs": 31.583508,
+    "InertiaSEGWs": 63.595245,
+    "InertiaFIGWs": 34.728119
+  },
+  {
+    "HourUTC": "2023-01-12T01:00:00",
+    "HourDK": "2023-01-12T02:00:00",
+    "InertiaNordicGWs": 141.726501,
+    "InertiaDK2GWs": 9.176421,
+    "InertiaNOGWs": 33.888721,
+    "InertiaSEGWs": 63.636162,
+    "InertiaFIGWs": 35.025017
+  },
+  {
+    "HourUTC": "2023-01-12T00:00:00",
+    "HourDK": "2023-01-12T01:00:00",
+    "InertiaNordicGWs": 140.708542,
+    "InertiaDK2GWs": 9.176489,
+    "InertiaNOGWs": 32.071941,
+    "InertiaSEGWs": 64.405701,
+    "InertiaFIGWs": 35.055038
+  },
+  {
+    "HourUTC": "2023-01-11T23:00:00",
+    "HourDK": "2023-01-12T00:00:00",
+    "InertiaNordicGWs": 142.480728,
+    "InertiaDK2GWs": 9.177266,
+    "InertiaNOGWs": 32.715221,
+    "InertiaSEGWs": 65.598465,
+    "InertiaFIGWs": 34.989666
+  },
+  {
+    "HourUTC": "2023-01-11T22:00:00",
+    "HourDK": "2023-01-11T23:00:00",
+    "InertiaNordicGWs": 151.483307,
+    "InertiaDK2GWs": 9.177491,
+    "InertiaNOGWs": 37.609798,
+    "InertiaSEGWs": 69.564201,
+    "InertiaFIGWs": 35.131325
+  },
+  {
+    "HourUTC": "2023-01-11T21:00:00",
+    "HourDK": "2023-01-11T22:00:00",
+    "InertiaNordicGWs": 160.538513,
+    "InertiaDK2GWs": 9.180858,
+    "InertiaNOGWs": 43.570526,
+    "InertiaSEGWs": 72.193146,
+    "InertiaFIGWs": 35.59341
+  },
+  {
+    "HourUTC": "2023-01-11T20:00:00",
+    "HourDK": "2023-01-11T21:00:00",
+    "InertiaNordicGWs": 168.7108,
+    "InertiaDK2GWs": 9.184151,
+    "InertiaNOGWs": 48.890045,
+    "InertiaSEGWs": 74.091583,
+    "InertiaFIGWs": 36.543949
+  },
+  {
+    "HourUTC": "2023-01-11T19:00:00",
+    "HourDK": "2023-01-11T20:00:00",
+    "InertiaNordicGWs": 177.983917,
+    "InertiaDK2GWs": 9.184091,
+    "InertiaNOGWs": 55.259872,
+    "InertiaSEGWs": 75.673904,
+    "InertiaFIGWs": 37.865131
+  },
+  {
+    "HourUTC": "2023-01-11T18:00:00",
+    "HourDK": "2023-01-11T19:00:00",
+    "InertiaNordicGWs": 184.823318,
+    "InertiaDK2GWs": 9.184248,
+    "InertiaNOGWs": 60.414845,
+    "InertiaSEGWs": 76.978912,
+    "InertiaFIGWs": 38.244312
+  },
+  {
+    "HourUTC": "2023-01-11T17:00:00",
+    "HourDK": "2023-01-11T18:00:00",
+    "InertiaNordicGWs": 190.085236,
+    "InertiaDK2GWs": 9.183702,
+    "InertiaNOGWs": 64.911407,
+    "InertiaSEGWs": 77.668221,
+    "InertiaFIGWs": 38.322189
+  },
+  {
+    "HourUTC": "2023-01-11T16:00:00",
+    "HourDK": "2023-01-11T17:00:00",
+    "InertiaNordicGWs": 193.80864,
+    "InertiaDK2GWs": 9.183553,
+    "InertiaNOGWs": 66.622253,
+    "InertiaSEGWs": 79.558403,
+    "InertiaFIGWs": 38.445248
+  },
+  {
+    "HourUTC": "2023-01-11T15:00:00",
+    "HourDK": "2023-01-11T16:00:00",
+    "InertiaNordicGWs": 191.282288,
+    "InertiaDK2GWs": 9.183732,
+    "InertiaNOGWs": 63.372833,
+    "InertiaSEGWs": 80.44709,
+    "InertiaFIGWs": 38.278961
+  },
+  {
+    "HourUTC": "2023-01-11T14:00:00",
+    "HourDK": "2023-01-11T15:00:00",
+    "InertiaNordicGWs": 189.892593,
+    "InertiaDK2GWs": 9.182603,
+    "InertiaNOGWs": 61.717079,
+    "InertiaSEGWs": 80.382988,
+    "InertiaFIGWs": 38.609821
+  },
+  {
+    "HourUTC": "2023-01-11T13:00:00",
+    "HourDK": "2023-01-11T14:00:00",
+    "InertiaNordicGWs": 187.436081,
+    "InertiaDK2GWs": 9.183253,
+    "InertiaNOGWs": 59.957531,
+    "InertiaSEGWs": 79.26445,
+    "InertiaFIGWs": 39.031162
+  },
+  {
+    "HourUTC": "2023-01-11T12:00:00",
+    "HourDK": "2023-01-11T13:00:00",
+    "InertiaNordicGWs": 186.310623,
+    "InertiaDK2GWs": 9.182812,
+    "InertiaNOGWs": 58.659393,
+    "InertiaSEGWs": 79.191803,
+    "InertiaFIGWs": 39.276924
+  },
+  {
+    "HourUTC": "2023-01-11T11:00:00",
+    "HourDK": "2023-01-11T12:00:00",
+    "InertiaNordicGWs": 189.119324,
+    "InertiaDK2GWs": 9.182333,
+    "InertiaNOGWs": 61.623547,
+    "InertiaSEGWs": 78.908249,
+    "InertiaFIGWs": 39.403503
+  },
+  {
+    "HourUTC": "2023-01-11T10:00:00",
+    "HourDK": "2023-01-11T11:00:00",
+    "InertiaNordicGWs": 194.279037,
+    "InertiaDK2GWs": 9.182887,
+    "InertiaNOGWs": 66.860275,
+    "InertiaSEGWs": 78.643082,
+    "InertiaFIGWs": 39.59156
+  },
+  {
+    "HourUTC": "2023-01-11T09:00:00",
+    "HourDK": "2023-01-11T10:00:00",
+    "InertiaNordicGWs": 197.663437,
+    "InertiaDK2GWs": 9.182752,
+    "InertiaNOGWs": 70.607414,
+    "InertiaSEGWs": 78.319008,
+    "InertiaFIGWs": 39.55349
+  },
+  {
+    "HourUTC": "2023-01-11T08:00:00",
+    "HourDK": "2023-01-11T09:00:00",
+    "InertiaNordicGWs": 197.881577,
+    "InertiaDK2GWs": 9.183224,
+    "InertiaNOGWs": 70.451385,
+    "InertiaSEGWs": 78.383606,
+    "InertiaFIGWs": 39.864388
+  },
+  {
+    "HourUTC": "2023-01-11T07:00:00",
+    "HourDK": "2023-01-11T08:00:00",
+    "InertiaNordicGWs": 194.478302,
+    "InertiaDK2GWs": 9.183075,
+    "InertiaNOGWs": 66.976753,
+    "InertiaSEGWs": 78.318748,
+    "InertiaFIGWs": 40.000237
+  },
+  {
+    "HourUTC": "2023-01-11T06:00:00",
+    "HourDK": "2023-01-11T07:00:00",
+    "InertiaNordicGWs": 184.115265,
+    "InertiaDK2GWs": 9.177484,
+    "InertiaNOGWs": 58.487968,
+    "InertiaSEGWs": 76.609451,
+    "InertiaFIGWs": 39.840736
+  },
+  {
+    "HourUTC": "2023-01-11T05:00:00",
+    "HourDK": "2023-01-11T06:00:00",
+    "InertiaNordicGWs": 166.901962,
+    "InertiaDK2GWs": 9.177476,
+    "InertiaNOGWs": 46.12738,
+    "InertiaSEGWs": 72.624649,
+    "InertiaFIGWs": 38.972717
+  },
+  {
+    "HourUTC": "2023-01-11T04:00:00",
+    "HourDK": "2023-01-11T05:00:00",
+    "InertiaNordicGWs": 152.882614,
+    "InertiaDK2GWs": 9.177513,
+    "InertiaNOGWs": 37.038467,
+    "InertiaSEGWs": 69.409561,
+    "InertiaFIGWs": 37.25732
+  },
+  {
+    "HourUTC": "2023-01-11T03:00:00",
+    "HourDK": "2023-01-11T04:00:00",
+    "InertiaNordicGWs": 146.490997,
+    "InertiaDK2GWs": 9.177484,
+    "InertiaNOGWs": 32.682594,
+    "InertiaSEGWs": 68.145424,
+    "InertiaFIGWs": 36.485592
+  },
+  {
+    "HourUTC": "2023-01-11T02:00:00",
+    "HourDK": "2023-01-11T03:00:00",
+    "InertiaNordicGWs": 146.772705,
+    "InertiaDK2GWs": 9.177065,
+    "InertiaNOGWs": 33.180824,
+    "InertiaSEGWs": 68.133858,
+    "InertiaFIGWs": 36.280994
+  },
+  {
+    "HourUTC": "2023-01-11T01:00:00",
+    "HourDK": "2023-01-11T02:00:00",
+    "InertiaNordicGWs": 147.507629,
+    "InertiaDK2GWs": 9.176908,
+    "InertiaNOGWs": 33.682674,
+    "InertiaSEGWs": 68.126419,
+    "InertiaFIGWs": 36.521645
+  },
+  {
+    "HourUTC": "2023-01-11T00:00:00",
+    "HourDK": "2023-01-11T01:00:00",
+    "InertiaNordicGWs": 151.250198,
+    "InertiaDK2GWs": 9.176773,
+    "InertiaNOGWs": 35.864407,
+    "InertiaSEGWs": 69.095299,
+    "InertiaFIGWs": 37.112747
+  },
+  {
+    "HourUTC": "2023-01-10T23:00:00",
+    "HourDK": "2023-01-11T00:00:00",
+    "InertiaNordicGWs": 156.903168,
+    "InertiaDK2GWs": 9.176661,
+    "InertiaNOGWs": 38.721031,
+    "InertiaSEGWs": 71.427078,
+    "InertiaFIGWs": 37.577785
+  },
+  {
+    "HourUTC": "2023-01-10T22:00:00",
+    "HourDK": "2023-01-10T23:00:00",
+    "InertiaNordicGWs": 164.969452,
+    "InertiaDK2GWs": 9.176256,
+    "InertiaNOGWs": 41.785599,
+    "InertiaSEGWs": 75.662727,
+    "InertiaFIGWs": 38.343918
+  },
+  {
+    "HourUTC": "2023-01-10T21:00:00",
+    "HourDK": "2023-01-10T22:00:00",
+    "InertiaNordicGWs": 175.838913,
+    "InertiaDK2GWs": 9.176167,
+    "InertiaNOGWs": 47.42606,
+    "InertiaSEGWs": 79.954086,
+    "InertiaFIGWs": 39.281345
+  },
+  {
+    "HourUTC": "2023-01-10T20:00:00",
+    "HourDK": "2023-01-10T21:00:00",
+    "InertiaNordicGWs": 185.101837,
+    "InertiaDK2GWs": 9.17895,
+    "InertiaNOGWs": 53.014091,
+    "InertiaSEGWs": 83.035309,
+    "InertiaFIGWs": 39.872608
+  },
+  {
+    "HourUTC": "2023-01-10T19:00:00",
+    "HourDK": "2023-01-10T20:00:00",
+    "InertiaNordicGWs": 208.000702,
+    "InertiaDK2GWs": 9.18359,
+    "InertiaNOGWs": 58.656963,
+    "InertiaSEGWs": 84.155792,
+    "InertiaFIGWs": 56.000801
+  },
+  {
+    "HourUTC": "2023-01-10T18:00:00",
+    "HourDK": "2023-01-10T19:00:00",
+    "InertiaNordicGWs": 218.856964,
+    "InertiaDK2GWs": 9.194139,
+    "InertiaNOGWs": 66.752968,
+    "InertiaSEGWs": 84.585945,
+    "InertiaFIGWs": 58.322636
+  },
+  {
+    "HourUTC": "2023-01-10T17:00:00",
+    "HourDK": "2023-01-10T18:00:00",
+    "InertiaNordicGWs": 226.474915,
+    "InertiaDK2GWs": 9.309833,
+    "InertiaNOGWs": 73.827324,
+    "InertiaSEGWs": 84.943802,
+    "InertiaFIGWs": 58.393723
+  },
+  {
+    "HourUTC": "2023-01-10T16:00:00",
+    "HourDK": "2023-01-10T17:00:00",
+    "InertiaNordicGWs": 231.683899,
+    "InertiaDK2GWs": 9.310288,
+    "InertiaNOGWs": 78.57737,
+    "InertiaSEGWs": 85.428322,
+    "InertiaFIGWs": 58.36797
+  },
+  {
+    "HourUTC": "2023-01-10T15:00:00",
+    "HourDK": "2023-01-10T16:00:00",
+    "InertiaNordicGWs": 231.533035,
+    "InertiaDK2GWs": 9.310117,
+    "InertiaNOGWs": 78.524132,
+    "InertiaSEGWs": 85.40992,
+    "InertiaFIGWs": 58.288761
+  },
+  {
+    "HourUTC": "2023-01-10T14:00:00",
+    "HourDK": "2023-01-10T15:00:00",
+    "InertiaNordicGWs": 230.389923,
+    "InertiaDK2GWs": 9.199233,
+    "InertiaNOGWs": 77.531487,
+    "InertiaSEGWs": 85.368729,
+    "InertiaFIGWs": 58.290573
+  },
+  {
+    "HourUTC": "2023-01-10T13:00:00",
+    "HourDK": "2023-01-10T14:00:00",
+    "InertiaNordicGWs": 227.809006,
+    "InertiaDK2GWs": 9.171787,
+    "InertiaNOGWs": 75.09256,
+    "InertiaSEGWs": 85.255936,
+    "InertiaFIGWs": 58.288307
+  },
+  {
+    "HourUTC": "2023-01-10T12:00:00",
+    "HourDK": "2023-01-10T13:00:00",
+    "InertiaNordicGWs": 226.414734,
+    "InertiaDK2GWs": 9.213199,
+    "InertiaNOGWs": 73.82473,
+    "InertiaSEGWs": 85.121948,
+    "InertiaFIGWs": 58.254925
+  },
+  {
+    "HourUTC": "2023-01-10T11:00:00",
+    "HourDK": "2023-01-10T12:00:00",
+    "InertiaNordicGWs": 226.524475,
+    "InertiaDK2GWs": 9.344922,
+    "InertiaNOGWs": 74.05468,
+    "InertiaSEGWs": 84.662567,
+    "InertiaFIGWs": 58.461494
+  },
+  {
+    "HourUTC": "2023-01-10T10:00:00",
+    "HourDK": "2023-01-10T11:00:00",
+    "InertiaNordicGWs": 229.240982,
+    "InertiaDK2GWs": 9.356206,
+    "InertiaNOGWs": 76.643646,
+    "InertiaSEGWs": 84.668381,
+    "InertiaFIGWs": 58.487175
+  },
+  {
+    "HourUTC": "2023-01-10T09:00:00",
+    "HourDK": "2023-01-10T10:00:00",
+    "InertiaNordicGWs": 232.822357,
+    "InertiaDK2GWs": 9.468503,
+    "InertiaNOGWs": 80.261024,
+    "InertiaSEGWs": 84.598465,
+    "InertiaFIGWs": 58.493763
+  },
+  {
+    "HourUTC": "2023-01-10T08:00:00",
+    "HourDK": "2023-01-10T09:00:00",
+    "InertiaNordicGWs": 233.747253,
+    "InertiaDK2GWs": 9.466158,
+    "InertiaNOGWs": 80.343216,
+    "InertiaSEGWs": 84.554039,
+    "InertiaFIGWs": 59.385067
+  },
+  {
+    "HourUTC": "2023-01-10T07:00:00",
+    "HourDK": "2023-01-10T08:00:00",
+    "InertiaNordicGWs": 233.423203,
+    "InertiaDK2GWs": 9.418003,
+    "InertiaNOGWs": 81.327278,
+    "InertiaSEGWs": 84.310318,
+    "InertiaFIGWs": 58.367332
+  },
+  {
+    "HourUTC": "2023-01-10T06:00:00",
+    "HourDK": "2023-01-10T07:00:00",
+    "InertiaNordicGWs": 230.930344,
+    "InertiaDK2GWs": 9.177415,
+    "InertiaNOGWs": 79.40834,
+    "InertiaSEGWs": 84.174843,
+    "InertiaFIGWs": 58.17094
+  },
+  {
+    "HourUTC": "2023-01-10T05:00:00",
+    "HourDK": "2023-01-10T06:00:00",
+    "InertiaNordicGWs": 220.726379,
+    "InertiaDK2GWs": 9.170486,
+    "InertiaNOGWs": 70.116524,
+    "InertiaSEGWs": 83.913971,
+    "InertiaFIGWs": 57.526737
+  },
+  {
+    "HourUTC": "2023-01-10T04:00:00",
+    "HourDK": "2023-01-10T05:00:00",
+    "InertiaNordicGWs": 203.858185,
+    "InertiaDK2GWs": 9.176929,
+    "InertiaNOGWs": 56.33675,
+    "InertiaSEGWs": 82.215454,
+    "InertiaFIGWs": 56.131569
+  },
+  {
+    "HourUTC": "2023-01-10T03:00:00",
+    "HourDK": "2023-01-10T04:00:00",
+    "InertiaNordicGWs": 194.188538,
+    "InertiaDK2GWs": 9.176736,
+    "InertiaNOGWs": 48.562531,
+    "InertiaSEGWs": 80.647385,
+    "InertiaFIGWs": 55.803101
+  },
+  {
+    "HourUTC": "2023-01-10T02:00:00",
+    "HourDK": "2023-01-10T03:00:00",
+    "InertiaNordicGWs": 192.997314,
+    "InertiaDK2GWs": 9.182562,
+    "InertiaNOGWs": 47.988846,
+    "InertiaSEGWs": 80.238724,
+    "InertiaFIGWs": 55.586895
+  },
+  {
+    "HourUTC": "2023-01-10T01:00:00",
+    "HourDK": "2023-01-10T02:00:00",
+    "InertiaNordicGWs": 193.19519,
+    "InertiaDK2GWs": 9.203642,
+    "InertiaNOGWs": 48.990044,
+    "InertiaSEGWs": 79.511559,
+    "InertiaFIGWs": 55.490215
+  },
+  {
+    "HourUTC": "2023-01-10T00:00:00",
+    "HourDK": "2023-01-10T01:00:00",
+    "InertiaNordicGWs": 194.015945,
+    "InertiaDK2GWs": 9.203111,
+    "InertiaNOGWs": 49.607628,
+    "InertiaSEGWs": 80.103409,
+    "InertiaFIGWs": 55.102665
+  },
+  {
+    "HourUTC": "2023-01-09T23:00:00",
+    "HourDK": "2023-01-10T00:00:00",
+    "InertiaNordicGWs": 199.00386,
+    "InertiaDK2GWs": 9.205776,
+    "InertiaNOGWs": 55.469505,
+    "InertiaSEGWs": 80.076263,
+    "InertiaFIGWs": 54.250103
+  },
+  {
+    "HourUTC": "2023-01-09T22:00:00",
+    "HourDK": "2023-01-09T23:00:00",
+    "InertiaNordicGWs": 206.566238,
+    "InertiaDK2GWs": 9.208813,
+    "InertiaNOGWs": 60.944332,
+    "InertiaSEGWs": 82.239143,
+    "InertiaFIGWs": 54.171219
+  },
+  {
+    "HourUTC": "2023-01-09T21:00:00",
+    "HourDK": "2023-01-09T22:00:00",
+    "InertiaNordicGWs": 216.711288,
+    "InertiaDK2GWs": 9.208499,
+    "InertiaNOGWs": 70.377083,
+    "InertiaSEGWs": 82.603188,
+    "InertiaFIGWs": 54.519985
+  },
+  {
+    "HourUTC": "2023-01-09T20:00:00",
+    "HourDK": "2023-01-09T21:00:00",
+    "InertiaNordicGWs": 222.927765,
+    "InertiaDK2GWs": 9.208783,
+    "InertiaNOGWs": 75.763,
+    "InertiaSEGWs": 83.075043,
+    "InertiaFIGWs": 54.880428
+  },
+  {
+    "HourUTC": "2023-01-09T19:00:00",
+    "HourDK": "2023-01-09T20:00:00",
+    "InertiaNordicGWs": 227.634125,
+    "InertiaDK2GWs": 9.383089,
+    "InertiaNOGWs": 80.431229,
+    "InertiaSEGWs": 82.650711,
+    "InertiaFIGWs": 55.168774
+  },
+  {
+    "HourUTC": "2023-01-09T18:00:00",
+    "HourDK": "2023-01-09T19:00:00",
+    "InertiaNordicGWs": 230.182434,
+    "InertiaDK2GWs": 9.512717,
+    "InertiaNOGWs": 82.475517,
+    "InertiaSEGWs": 82.660614,
+    "InertiaFIGWs": 55.5327
+  },
+  {
+    "HourUTC": "2023-01-09T17:00:00",
+    "HourDK": "2023-01-09T18:00:00",
+    "InertiaNordicGWs": 232.732513,
+    "InertiaDK2GWs": 9.512822,
+    "InertiaNOGWs": 84.696587,
+    "InertiaSEGWs": 82.665398,
+    "InertiaFIGWs": 55.857605
+  },
+  {
+    "HourUTC": "2023-01-09T16:00:00",
+    "HourDK": "2023-01-09T17:00:00",
+    "InertiaNordicGWs": 233.595963,
+    "InertiaDK2GWs": 9.513165,
+    "InertiaNOGWs": 85.338394,
+    "InertiaSEGWs": 82.652672,
+    "InertiaFIGWs": 56.091618
+  },
+  {
+    "HourUTC": "2023-01-09T15:00:00",
+    "HourDK": "2023-01-09T16:00:00",
+    "InertiaNordicGWs": 232.391235,
+    "InertiaDK2GWs": 9.396679,
+    "InertiaNOGWs": 83.620514,
+    "InertiaSEGWs": 83.14698,
+    "InertiaFIGWs": 56.227551
+  },
+  {
+    "HourUTC": "2023-01-09T14:00:00",
+    "HourDK": "2023-01-09T15:00:00",
+    "InertiaNordicGWs": 231.14447,
+    "InertiaDK2GWs": 9.40066,
+    "InertiaNOGWs": 82.208656,
+    "InertiaSEGWs": 83.354805,
+    "InertiaFIGWs": 56.182022
+  },
+  {
+    "HourUTC": "2023-01-09T13:00:00",
+    "HourDK": "2023-01-09T14:00:00",
+    "InertiaNordicGWs": 229.240128,
+    "InertiaDK2GWs": 9.391216,
+    "InertiaNOGWs": 81.574379,
+    "InertiaSEGWs": 82.571091,
+    "InertiaFIGWs": 55.704201
+  },
+  {
+    "HourUTC": "2023-01-09T12:00:00",
+    "HourDK": "2023-01-09T13:00:00",
+    "InertiaNordicGWs": 225.70195,
+    "InertiaDK2GWs": 9.391505,
+    "InertiaNOGWs": 78.552147,
+    "InertiaSEGWs": 82.345024,
+    "InertiaFIGWs": 55.413486
+  },
+  {
+    "HourUTC": "2023-01-09T11:00:00",
+    "HourDK": "2023-01-09T12:00:00",
+    "InertiaNordicGWs": 225.909378,
+    "InertiaDK2GWs": 9.388624,
+    "InertiaNOGWs": 79.158524,
+    "InertiaSEGWs": 82.336304,
+    "InertiaFIGWs": 55.02552
+  },
+  {
+    "HourUTC": "2023-01-09T10:00:00",
+    "HourDK": "2023-01-09T11:00:00",
+    "InertiaNordicGWs": 228.083023,
+    "InertiaDK2GWs": 9.381276,
+    "InertiaNOGWs": 81.744156,
+    "InertiaSEGWs": 82.004456,
+    "InertiaFIGWs": 54.953121
+  },
+  {
+    "HourUTC": "2023-01-09T09:00:00",
+    "HourDK": "2023-01-09T10:00:00",
+    "InertiaNordicGWs": 227.220673,
+    "InertiaDK2GWs": 9.385749,
+    "InertiaNOGWs": 80.758011,
+    "InertiaSEGWs": 81.914993,
+    "InertiaFIGWs": 55.162582
+  },
+  {
+    "HourUTC": "2023-01-09T08:00:00",
+    "HourDK": "2023-01-09T09:00:00",
+    "InertiaNordicGWs": 227.705109,
+    "InertiaDK2GWs": 9.385435,
+    "InertiaNOGWs": 81.339668,
+    "InertiaSEGWs": 81.845207,
+    "InertiaFIGWs": 55.134785
+  },
+  {
+    "HourUTC": "2023-01-09T07:00:00",
+    "HourDK": "2023-01-09T08:00:00",
+    "InertiaNordicGWs": 226.242722,
+    "InertiaDK2GWs": 9.39018,
+    "InertiaNOGWs": 79.900948,
+    "InertiaSEGWs": 81.798798,
+    "InertiaFIGWs": 55.153656
+  },
+  {
+    "HourUTC": "2023-01-09T06:00:00",
+    "HourDK": "2023-01-09T07:00:00",
+    "InertiaNordicGWs": 218.780563,
+    "InertiaDK2GWs": 9.228684,
+    "InertiaNOGWs": 74.100014,
+    "InertiaSEGWs": 80.787994,
+    "InertiaFIGWs": 54.665039
+  },
+  {
+    "HourUTC": "2023-01-09T05:00:00",
+    "HourDK": "2023-01-09T06:00:00",
+    "InertiaNordicGWs": 201.734894,
+    "InertiaDK2GWs": 9.203432,
+    "InertiaNOGWs": 59.725624,
+    "InertiaSEGWs": 79.077156,
+    "InertiaFIGWs": 53.73267
+  },
+  {
+    "HourUTC": "2023-01-09T04:00:00",
+    "HourDK": "2023-01-09T05:00:00",
+    "InertiaNordicGWs": 184.048798,
+    "InertiaDK2GWs": 9.202235,
+    "InertiaNOGWs": 46.59996,
+    "InertiaSEGWs": 75.074081,
+    "InertiaFIGWs": 53.175331
+  },
+  {
+    "HourUTC": "2023-01-09T03:00:00",
+    "HourDK": "2023-01-09T04:00:00",
+    "InertiaNordicGWs": 170.293304,
+    "InertiaDK2GWs": 9.20243,
+    "InertiaNOGWs": 38.039761,
+    "InertiaSEGWs": 70.488411,
+    "InertiaFIGWs": 52.564411
+  },
+  {
+    "HourUTC": "2023-01-09T02:00:00",
+    "HourDK": "2023-01-09T03:00:00",
+    "InertiaNordicGWs": 167.517776,
+    "InertiaDK2GWs": 9.202856,
+    "InertiaNOGWs": 35.875278,
+    "InertiaSEGWs": 69.815781,
+    "InertiaFIGWs": 52.623852
+  },
+  {
+    "HourUTC": "2023-01-09T01:00:00",
+    "HourDK": "2023-01-09T02:00:00",
+    "InertiaNordicGWs": 170.523346,
+    "InertiaDK2GWs": 9.203268,
+    "InertiaNOGWs": 38.078625,
+    "InertiaSEGWs": 70.159485,
+    "InertiaFIGWs": 53.081818
+  },
+  {
+    "HourUTC": "2023-01-09T00:00:00",
+    "HourDK": "2023-01-09T01:00:00",
+    "InertiaNordicGWs": 174.898102,
+    "InertiaDK2GWs": 9.203515,
+    "InertiaNOGWs": 41.176838,
+    "InertiaSEGWs": 71.35675,
+    "InertiaFIGWs": 53.159161
+  },
+  {
+    "HourUTC": "2023-01-08T23:00:00",
+    "HourDK": "2023-01-09T00:00:00",
+    "InertiaNordicGWs": 181.07428,
+    "InertiaDK2GWs": 9.203216,
+    "InertiaNOGWs": 45.392254,
+    "InertiaSEGWs": 73.000984,
+    "InertiaFIGWs": 53.476578
+  },
+  {
+    "HourUTC": "2023-01-08T22:00:00",
+    "HourDK": "2023-01-08T23:00:00",
+    "InertiaNordicGWs": 186.698868,
+    "InertiaDK2GWs": 9.203866,
+    "InertiaNOGWs": 51.783596,
+    "InertiaSEGWs": 71.876808,
+    "InertiaFIGWs": 53.83168
+  },
+  {
+    "HourUTC": "2023-01-08T21:00:00",
+    "HourDK": "2023-01-08T22:00:00",
+    "InertiaNordicGWs": 194.980316,
+    "InertiaDK2GWs": 9.207926,
+    "InertiaNOGWs": 58.838852,
+    "InertiaSEGWs": 72.562935,
+    "InertiaFIGWs": 54.370102
+  },
+  {
+    "HourUTC": "2023-01-08T20:00:00",
+    "HourDK": "2023-01-08T21:00:00",
+    "InertiaNordicGWs": 196.505219,
+    "InertiaDK2GWs": 9.210496,
+    "InertiaNOGWs": 58.974972,
+    "InertiaSEGWs": 73.602539,
+    "InertiaFIGWs": 54.717319
+  },
+  {
+    "HourUTC": "2023-01-08T19:00:00",
+    "HourDK": "2023-01-08T20:00:00",
+    "InertiaNordicGWs": 198.081924,
+    "InertiaDK2GWs": 9.21013,
+    "InertiaNOGWs": 60.377361,
+    "InertiaSEGWs": 73.683144,
+    "InertiaFIGWs": 54.811127
+  },
+  {
+    "HourUTC": "2023-01-08T18:00:00",
+    "HourDK": "2023-01-08T19:00:00",
+    "InertiaNordicGWs": 202.820526,
+    "InertiaDK2GWs": 9.210003,
+    "InertiaNOGWs": 63.198727,
+    "InertiaSEGWs": 75.496269,
+    "InertiaFIGWs": 54.914665
+  },
+  {
+    "HourUTC": "2023-01-08T17:00:00",
+    "HourDK": "2023-01-08T18:00:00",
+    "InertiaNordicGWs": 206.223785,
+    "InertiaDK2GWs": 9.210361,
+    "InertiaNOGWs": 66.08728,
+    "InertiaSEGWs": 75.68338,
+    "InertiaFIGWs": 55.242249
+  },
+  {
+    "HourUTC": "2023-01-08T16:00:00",
+    "HourDK": "2023-01-08T17:00:00",
+    "InertiaNordicGWs": 207.816071,
+    "InertiaDK2GWs": 9.20977,
+    "InertiaNOGWs": 67.538994,
+    "InertiaSEGWs": 75.862419,
+    "InertiaFIGWs": 55.205288
+  },
+  {
+    "HourUTC": "2023-01-08T15:00:00",
+    "HourDK": "2023-01-08T16:00:00",
+    "InertiaNordicGWs": 203.456345,
+    "InertiaDK2GWs": 9.209935,
+    "InertiaNOGWs": 64.133118,
+    "InertiaSEGWs": 75.313271,
+    "InertiaFIGWs": 54.800053
+  },
+  {
+    "HourUTC": "2023-01-08T14:00:00",
+    "HourDK": "2023-01-08T15:00:00",
+    "InertiaNordicGWs": 196.452179,
+    "InertiaDK2GWs": 9.209703,
+    "InertiaNOGWs": 59.297947,
+    "InertiaSEGWs": 73.387817,
+    "InertiaFIGWs": 54.556717
+  },
+  {
+    "HourUTC": "2023-01-08T13:00:00",
+    "HourDK": "2023-01-08T14:00:00",
+    "InertiaNordicGWs": 194.414047,
+    "InertiaDK2GWs": 9.209943,
+    "InertiaNOGWs": 58.887051,
+    "InertiaSEGWs": 72.259285,
+    "InertiaFIGWs": 54.057976
+  },
+  {
+    "HourUTC": "2023-01-08T12:00:00",
+    "HourDK": "2023-01-08T13:00:00",
+    "InertiaNordicGWs": 192.182785,
+    "InertiaDK2GWs": 9.210219,
+    "InertiaNOGWs": 57.550121,
+    "InertiaSEGWs": 71.376953,
+    "InertiaFIGWs": 54.045948
+  },
+  {
+    "HourUTC": "2023-01-08T11:00:00",
+    "HourDK": "2023-01-08T12:00:00",
+    "InertiaNordicGWs": 191.898224,
+    "InertiaDK2GWs": 9.209591,
+    "InertiaNOGWs": 57.362892,
+    "InertiaSEGWs": 71.380081,
+    "InertiaFIGWs": 53.945423
+  },
+  {
+    "HourUTC": "2023-01-08T10:00:00",
+    "HourDK": "2023-01-08T11:00:00",
+    "InertiaNordicGWs": 191.292709,
+    "InertiaDK2GWs": 9.209912,
+    "InertiaNOGWs": 57.021297,
+    "InertiaSEGWs": 71.178024,
+    "InertiaFIGWs": 53.883709
+  },
+  {
+    "HourUTC": "2023-01-08T09:00:00",
+    "HourDK": "2023-01-08T10:00:00",
+    "InertiaNordicGWs": 187.17038,
+    "InertiaDK2GWs": 9.20989,
+    "InertiaNOGWs": 53.61483,
+    "InertiaSEGWs": 70.657158,
+    "InertiaFIGWs": 53.689617
+  },
+  {
+    "HourUTC": "2023-01-08T08:00:00",
+    "HourDK": "2023-01-08T09:00:00",
+    "InertiaNordicGWs": 179.473938,
+    "InertiaDK2GWs": 9.209808,
+    "InertiaNOGWs": 46.291374,
+    "InertiaSEGWs": 70.290352,
+    "InertiaFIGWs": 53.683479
+  },
+  {
+    "HourUTC": "2023-01-08T07:00:00",
+    "HourDK": "2023-01-08T08:00:00",
+    "InertiaNordicGWs": 171.930695,
+    "InertiaDK2GWs": 9.207576,
+    "InertiaNOGWs": 39.061543,
+    "InertiaSEGWs": 70.131882,
+    "InertiaFIGWs": 53.530239
+  },
+  {
+    "HourUTC": "2023-01-08T06:00:00",
+    "HourDK": "2023-01-08T07:00:00",
+    "InertiaNordicGWs": 167.07283,
+    "InertiaDK2GWs": 9.203238,
+    "InertiaNOGWs": 34.902512,
+    "InertiaSEGWs": 69.831924,
+    "InertiaFIGWs": 53.136299
+  },
+  {
+    "HourUTC": "2023-01-08T05:00:00",
+    "HourDK": "2023-01-08T06:00:00",
+    "InertiaNordicGWs": 167.279434,
+    "InertiaDK2GWs": 9.202864,
+    "InertiaNOGWs": 35.047886,
+    "InertiaSEGWs": 70.016602,
+    "InertiaFIGWs": 53.011986
+  },
+  {
+    "HourUTC": "2023-01-08T04:00:00",
+    "HourDK": "2023-01-08T05:00:00",
+    "InertiaNordicGWs": 164.368713,
+    "InertiaDK2GWs": 9.203358,
+    "InertiaNOGWs": 34.765198,
+    "InertiaSEGWs": 67.765388,
+    "InertiaFIGWs": 52.635509
+  },
+  {
+    "HourUTC": "2023-01-08T03:00:00",
+    "HourDK": "2023-01-08T04:00:00",
+    "InertiaNordicGWs": 160.224991,
+    "InertiaDK2GWs": 9.202876,
+    "InertiaNOGWs": 34.322403,
+    "InertiaSEGWs": 64.100868,
+    "InertiaFIGWs": 52.599075
+  },
+  {
+    "HourUTC": "2023-01-08T02:00:00",
+    "HourDK": "2023-01-08T03:00:00",
+    "InertiaNordicGWs": 159.694016,
+    "InertiaDK2GWs": 9.203335,
+    "InertiaNOGWs": 33.85709,
+    "InertiaSEGWs": 64.033669,
+    "InertiaFIGWs": 52.599667
+  },
+  {
+    "HourUTC": "2023-01-08T01:00:00",
+    "HourDK": "2023-01-08T02:00:00",
+    "InertiaNordicGWs": 160.649475,
+    "InertiaDK2GWs": 9.202991,
+    "InertiaNOGWs": 34.6516,
+    "InertiaSEGWs": 64.07299,
+    "InertiaFIGWs": 52.721893
+  },
+  {
+    "HourUTC": "2023-01-08T00:00:00",
+    "HourDK": "2023-01-08T01:00:00",
+    "InertiaNordicGWs": 161.082306,
+    "InertiaDK2GWs": 9.202497,
+    "InertiaNOGWs": 34.93,
+    "InertiaSEGWs": 64.164444,
+    "InertiaFIGWs": 52.785439
+  },
+  {
+    "HourUTC": "2023-01-07T23:00:00",
+    "HourDK": "2023-01-08T00:00:00",
+    "InertiaNordicGWs": 165.109512,
+    "InertiaDK2GWs": 9.207427,
+    "InertiaNOGWs": 35.985085,
+    "InertiaSEGWs": 66.633881,
+    "InertiaFIGWs": 53.282703
+  },
+  {
+    "HourUTC": "2023-01-07T22:00:00",
+    "HourDK": "2023-01-07T23:00:00",
+    "InertiaNordicGWs": 174.564941,
+    "InertiaDK2GWs": 9.208978,
+    "InertiaNOGWs": 39.679928,
+    "InertiaSEGWs": 71.616539,
+    "InertiaFIGWs": 54.058437
+  },
+  {
+    "HourUTC": "2023-01-07T21:00:00",
+    "HourDK": "2023-01-07T22:00:00",
+    "InertiaNordicGWs": 180.558105,
+    "InertiaDK2GWs": 9.209659,
+    "InertiaNOGWs": 42.788136,
+    "InertiaSEGWs": 73.742622,
+    "InertiaFIGWs": 54.817497
+  },
+  {
+    "HourUTC": "2023-01-07T20:00:00",
+    "HourDK": "2023-01-07T21:00:00",
+    "InertiaNordicGWs": 186.952805,
+    "InertiaDK2GWs": 9.208925,
+    "InertiaNOGWs": 47.128113,
+    "InertiaSEGWs": 75.68602,
+    "InertiaFIGWs": 54.928986
+  },
+  {
+    "HourUTC": "2023-01-07T19:00:00",
+    "HourDK": "2023-01-07T20:00:00",
+    "InertiaNordicGWs": 193.277847,
+    "InertiaDK2GWs": 9.20897,
+    "InertiaNOGWs": 52.155182,
+    "InertiaSEGWs": 76.715744,
+    "InertiaFIGWs": 55.197208
+  },
+  {
+    "HourUTC": "2023-01-07T18:00:00",
+    "HourDK": "2023-01-07T19:00:00",
+    "InertiaNordicGWs": 202.815628,
+    "InertiaDK2GWs": 9.208484,
+    "InertiaNOGWs": 57.825214,
+    "InertiaSEGWs": 79.755753,
+    "InertiaFIGWs": 56.025063
+  },
+  {
+    "HourUTC": "2023-01-07T17:00:00",
+    "HourDK": "2023-01-07T18:00:00",
+    "InertiaNordicGWs": 208.401199,
+    "InertiaDK2GWs": 9.20897,
+    "InertiaNOGWs": 61.556324,
+    "InertiaSEGWs": 80.587936,
+    "InertiaFIGWs": 57.047924
+  },
+  {
+    "HourUTC": "2023-01-07T16:00:00",
+    "HourDK": "2023-01-07T17:00:00",
+    "InertiaNordicGWs": 208.431,
+    "InertiaDK2GWs": 9.208783,
+    "InertiaNOGWs": 60.282654,
+    "InertiaSEGWs": 81.174126,
+    "InertiaFIGWs": 57.76582
+  },
+  {
+    "HourUTC": "2023-01-07T15:00:00",
+    "HourDK": "2023-01-07T16:00:00",
+    "InertiaNordicGWs": 206.57962,
+    "InertiaDK2GWs": 9.208664,
+    "InertiaNOGWs": 59.320812,
+    "InertiaSEGWs": 80.285995,
+    "InertiaFIGWs": 57.764763
+  },
+  {
+    "HourUTC": "2023-01-07T14:00:00",
+    "HourDK": "2023-01-07T15:00:00",
+    "InertiaNordicGWs": 203.980209,
+    "InertiaDK2GWs": 9.208903,
+    "InertiaNOGWs": 56.983635,
+    "InertiaSEGWs": 79.992188,
+    "InertiaFIGWs": 57.795967
+  },
+  {
+    "HourUTC": "2023-01-07T13:00:00",
+    "HourDK": "2023-01-07T14:00:00",
+    "InertiaNordicGWs": 201.862411,
+    "InertiaDK2GWs": 9.208671,
+    "InertiaNOGWs": 55.264565,
+    "InertiaSEGWs": 80.04451,
+    "InertiaFIGWs": 57.344517
+  },
+  {
+    "HourUTC": "2023-01-07T12:00:00",
+    "HourDK": "2023-01-07T13:00:00",
+    "InertiaNordicGWs": 200.593506,
+    "InertiaDK2GWs": 9.209023,
+    "InertiaNOGWs": 54.038113,
+    "InertiaSEGWs": 79.997971,
+    "InertiaFIGWs": 57.348225
+  },
+  {
+    "HourUTC": "2023-01-07T11:00:00",
+    "HourDK": "2023-01-07T12:00:00",
+    "InertiaNordicGWs": 201.368088,
+    "InertiaDK2GWs": 9.208783,
+    "InertiaNOGWs": 54.820724,
+    "InertiaSEGWs": 79.985588,
+    "InertiaFIGWs": 57.352127
+  },
+  {
+    "HourUTC": "2023-01-07T10:00:00",
+    "HourDK": "2023-01-07T11:00:00",
+    "InertiaNordicGWs": 201.550247,
+    "InertiaDK2GWs": 9.208641,
+    "InertiaNOGWs": 55.201214,
+    "InertiaSEGWs": 79.65554,
+    "InertiaFIGWs": 57.484776
+  },
+  {
+    "HourUTC": "2023-01-07T09:00:00",
+    "HourDK": "2023-01-07T10:00:00",
+    "InertiaNordicGWs": 202.939056,
+    "InertiaDK2GWs": 9.208417,
+    "InertiaNOGWs": 56.795547,
+    "InertiaSEGWs": 79.452637,
+    "InertiaFIGWs": 57.482281
+  },
+  {
+    "HourUTC": "2023-01-07T08:00:00",
+    "HourDK": "2023-01-07T09:00:00",
+    "InertiaNordicGWs": 203.115326,
+    "InertiaDK2GWs": 9.208791,
+    "InertiaNOGWs": 57.358265,
+    "InertiaSEGWs": 79.123619,
+    "InertiaFIGWs": 57.425442
+  },
+  {
+    "HourUTC": "2023-01-07T07:00:00",
+    "HourDK": "2023-01-07T08:00:00",
+    "InertiaNordicGWs": 199.39473,
+    "InertiaDK2GWs": 9.208701,
+    "InertiaNOGWs": 55.249443,
+    "InertiaSEGWs": 78.13282,
+    "InertiaFIGWs": 56.803856
+  },
+  {
+    "HourUTC": "2023-01-07T06:00:00",
+    "HourDK": "2023-01-07T07:00:00",
+    "InertiaNordicGWs": 195.383636,
+    "InertiaDK2GWs": 9.207285,
+    "InertiaNOGWs": 52.524101,
+    "InertiaSEGWs": 77.042397,
+    "InertiaFIGWs": 56.610352
+  },
+  {
+    "HourUTC": "2023-01-07T05:00:00",
+    "HourDK": "2023-01-07T06:00:00",
+    "InertiaNordicGWs": 188.056732,
+    "InertiaDK2GWs": 9.201869,
+    "InertiaNOGWs": 46.469799,
+    "InertiaSEGWs": 76.283684,
+    "InertiaFIGWs": 56.102596
+  },
+  {
+    "HourUTC": "2023-01-07T04:00:00",
+    "HourDK": "2023-01-07T05:00:00",
+    "InertiaNordicGWs": 183.872009,
+    "InertiaDK2GWs": 9.202737,
+    "InertiaNOGWs": 44.445061,
+    "InertiaSEGWs": 75.087646,
+    "InertiaFIGWs": 55.136726
+  },
+  {
+    "HourUTC": "2023-01-07T03:00:00",
+    "HourDK": "2023-01-07T04:00:00",
+    "InertiaNordicGWs": 183.332764,
+    "InertiaDK2GWs": 9.202048,
+    "InertiaNOGWs": 44.054634,
+    "InertiaSEGWs": 74.924904,
+    "InertiaFIGWs": 55.151051
+  },
+  {
+    "HourUTC": "2023-01-07T02:00:00",
+    "HourDK": "2023-01-07T03:00:00",
+    "InertiaNordicGWs": 183.868195,
+    "InertiaDK2GWs": 9.202078,
+    "InertiaNOGWs": 44.360924,
+    "InertiaSEGWs": 75.143639,
+    "InertiaFIGWs": 55.161366
+  },
+  {
+    "HourUTC": "2023-01-07T01:00:00",
+    "HourDK": "2023-01-07T02:00:00",
+    "InertiaNordicGWs": 187.507935,
+    "InertiaDK2GWs": 9.201921,
+    "InertiaNOGWs": 47.00893,
+    "InertiaSEGWs": 76.137436,
+    "InertiaFIGWs": 55.159458
+  },
+  {
+    "HourUTC": "2023-01-07T00:00:00",
+    "HourDK": "2023-01-07T01:00:00",
+    "InertiaNordicGWs": 190.608109,
+    "InertiaDK2GWs": 9.202048,
+    "InertiaNOGWs": 49.593273,
+    "InertiaSEGWs": 76.650253,
+    "InertiaFIGWs": 55.161495
+  },
+  {
+    "HourUTC": "2023-01-06T23:00:00",
+    "HourDK": "2023-01-07T00:00:00",
+    "InertiaNordicGWs": 197.504883,
+    "InertiaDK2GWs": 9.206361,
+    "InertiaNOGWs": 55.76046,
+    "InertiaSEGWs": 77.337265,
+    "InertiaFIGWs": 55.199966
+  },
+  {
+    "HourUTC": "2023-01-06T22:00:00",
+    "HourDK": "2023-01-06T23:00:00",
+    "InertiaNordicGWs": 206.826981,
+    "InertiaDK2GWs": 9.208462,
+    "InertiaNOGWs": 64.159462,
+    "InertiaSEGWs": 77.310944,
+    "InertiaFIGWs": 56.14616
+  },
+  {
+    "HourUTC": "2023-01-06T21:00:00",
+    "HourDK": "2023-01-06T22:00:00",
+    "InertiaNordicGWs": 213.312637,
+    "InertiaDK2GWs": 9.208364,
+    "InertiaNOGWs": 69.492004,
+    "InertiaSEGWs": 77.548203,
+    "InertiaFIGWs": 57.063107
+  },
+  {
+    "HourUTC": "2023-01-06T20:00:00",
+    "HourDK": "2023-01-06T21:00:00",
+    "InertiaNordicGWs": 216.72049,
+    "InertiaDK2GWs": 9.208798,
+    "InertiaNOGWs": 71.228767,
+    "InertiaSEGWs": 77.916382,
+    "InertiaFIGWs": 58.366032
+  },
+  {
+    "HourUTC": "2023-01-06T19:00:00",
+    "HourDK": "2023-01-06T20:00:00",
+    "InertiaNordicGWs": 219.663879,
+    "InertiaDK2GWs": 9.221457,
+    "InertiaNOGWs": 72.937462,
+    "InertiaSEGWs": 78.445175,
+    "InertiaFIGWs": 59.058659
+  },
+  {
+    "HourUTC": "2023-01-06T18:00:00",
+    "HourDK": "2023-01-06T19:00:00",
+    "InertiaNordicGWs": 226.94313,
+    "InertiaDK2GWs": 9.335258,
+    "InertiaNOGWs": 77.680901,
+    "InertiaSEGWs": 80.070061,
+    "InertiaFIGWs": 59.856213
+  },
+  {
+    "HourUTC": "2023-01-06T17:00:00",
+    "HourDK": "2023-01-06T18:00:00",
+    "InertiaNordicGWs": 230.224518,
+    "InertiaDK2GWs": 9.335018,
+    "InertiaNOGWs": 79.817276,
+    "InertiaSEGWs": 80.822922,
+    "InertiaFIGWs": 60.249142
+  },
+  {
+    "HourUTC": "2023-01-06T16:00:00",
+    "HourDK": "2023-01-06T17:00:00",
+    "InertiaNordicGWs": 231.686829,
+    "InertiaDK2GWs": 9.336761,
+    "InertiaNOGWs": 80.708725,
+    "InertiaSEGWs": 81.185692,
+    "InertiaFIGWs": 60.455925
+  },
+  {
+    "HourUTC": "2023-01-06T15:00:00",
+    "HourDK": "2023-01-06T16:00:00",
+    "InertiaNordicGWs": 229.694656,
+    "InertiaDK2GWs": 9.226566,
+    "InertiaNOGWs": 78.528465,
+    "InertiaSEGWs": 81.451294,
+    "InertiaFIGWs": 60.488319
+  },
+  {
+    "HourUTC": "2023-01-06T14:00:00",
+    "HourDK": "2023-01-06T15:00:00",
+    "InertiaNordicGWs": 226.537674,
+    "InertiaDK2GWs": 9.20918,
+    "InertiaNOGWs": 75.87709,
+    "InertiaSEGWs": 80.969543,
+    "InertiaFIGWs": 60.482079
+  },
+  {
+    "HourUTC": "2023-01-06T13:00:00",
+    "HourDK": "2023-01-06T14:00:00",
+    "InertiaNordicGWs": 221.615555,
+    "InertiaDK2GWs": 9.209703,
+    "InertiaNOGWs": 71.127357,
+    "InertiaSEGWs": 80.982849,
+    "InertiaFIGWs": 60.297615
+  },
+  {
+    "HourUTC": "2023-01-06T12:00:00",
+    "HourDK": "2023-01-06T13:00:00",
+    "InertiaNordicGWs": 217.311508,
+    "InertiaDK2GWs": 9.209209,
+    "InertiaNOGWs": 67.016624,
+    "InertiaSEGWs": 80.847336,
+    "InertiaFIGWs": 60.238068
+  },
+  {
+    "HourUTC": "2023-01-06T11:00:00",
+    "HourDK": "2023-01-06T12:00:00",
+    "InertiaNordicGWs": 220.301208,
+    "InertiaDK2GWs": 9.208559,
+    "InertiaNOGWs": 69.294434,
+    "InertiaSEGWs": 81.551834,
+    "InertiaFIGWs": 60.245808
+  },
+  {
+    "HourUTC": "2023-01-06T10:00:00",
+    "HourDK": "2023-01-06T11:00:00",
+    "InertiaNordicGWs": 219.536118,
+    "InertiaDK2GWs": 9.221187,
+    "InertiaNOGWs": 68.768196,
+    "InertiaSEGWs": 81.336746,
+    "InertiaFIGWs": 60.210804
+  },
+  {
+    "HourUTC": "2023-01-06T09:00:00",
+    "HourDK": "2023-01-06T10:00:00",
+    "InertiaNordicGWs": 219.231964,
+    "InertiaDK2GWs": 9.335489,
+    "InertiaNOGWs": 68.18615,
+    "InertiaSEGWs": 81.508682,
+    "InertiaFIGWs": 60.201538
+  },
+  {
+    "HourUTC": "2023-01-06T08:00:00",
+    "HourDK": "2023-01-06T09:00:00",
+    "InertiaNordicGWs": 220.121658,
+    "InertiaDK2GWs": 9.335886,
+    "InertiaNOGWs": 69.097244,
+    "InertiaSEGWs": 81.50679,
+    "InertiaFIGWs": 60.1819
+  },
+  {
+    "HourUTC": "2023-01-06T07:00:00",
+    "HourDK": "2023-01-06T08:00:00",
+    "InertiaNordicGWs": 220.286636,
+    "InertiaDK2GWs": 9.335789,
+    "InertiaNOGWs": 69.580696,
+    "InertiaSEGWs": 81.349007,
+    "InertiaFIGWs": 60.023151
+  },
+  {
+    "HourUTC": "2023-01-06T06:00:00",
+    "HourDK": "2023-01-06T07:00:00",
+    "InertiaNordicGWs": 210.953842,
+    "InertiaDK2GWs": 9.347163,
+    "InertiaNOGWs": 61.665119,
+    "InertiaSEGWs": 80.455475,
+    "InertiaFIGWs": 59.487488
+  },
+  {
+    "HourUTC": "2023-01-06T05:00:00",
+    "HourDK": "2023-01-06T06:00:00",
+    "InertiaNordicGWs": 201.239319,
+    "InertiaDK2GWs": 9.233855,
+    "InertiaNOGWs": 54.08675,
+    "InertiaSEGWs": 79.884735,
+    "InertiaFIGWs": 58.034626
+  },
+  {
+    "HourUTC": "2023-01-06T04:00:00",
+    "HourDK": "2023-01-06T05:00:00",
+    "InertiaNordicGWs": 195.132782,
+    "InertiaDK2GWs": 9.23384,
+    "InertiaNOGWs": 48.71896,
+    "InertiaSEGWs": 79.528275,
+    "InertiaFIGWs": 57.652298
+  },
+  {
+    "HourUTC": "2023-01-06T03:00:00",
+    "HourDK": "2023-01-06T04:00:00",
+    "InertiaNordicGWs": 195.006027,
+    "InertiaDK2GWs": 9.234924,
+    "InertiaNOGWs": 48.322884,
+    "InertiaSEGWs": 79.635406,
+    "InertiaFIGWs": 57.812767
+  },
+  {
+    "HourUTC": "2023-01-06T02:00:00",
+    "HourDK": "2023-01-06T03:00:00",
+    "InertiaNordicGWs": 195.496078,
+    "InertiaDK2GWs": 9.234924,
+    "InertiaNOGWs": 48.766827,
+    "InertiaSEGWs": 79.730698,
+    "InertiaFIGWs": 57.763638
+  },
+  {
+    "HourUTC": "2023-01-06T01:00:00",
+    "HourDK": "2023-01-06T02:00:00",
+    "InertiaNordicGWs": 199.070114,
+    "InertiaDK2GWs": 9.234139,
+    "InertiaNOGWs": 51.44025,
+    "InertiaSEGWs": 80.618729,
+    "InertiaFIGWs": 57.776985
+  },
+  {
+    "HourUTC": "2023-01-06T00:00:00",
+    "HourDK": "2023-01-06T01:00:00",
+    "InertiaNordicGWs": 203.214203,
+    "InertiaDK2GWs": 9.234521,
+    "InertiaNOGWs": 54.735397,
+    "InertiaSEGWs": 81.281982,
+    "InertiaFIGWs": 57.961952
+  },
+  {
+    "HourUTC": "2023-01-05T23:00:00",
+    "HourDK": "2023-01-06T00:00:00",
+    "InertiaNordicGWs": 208.119873,
+    "InertiaDK2GWs": 9.240636,
+    "InertiaNOGWs": 59.351147,
+    "InertiaSEGWs": 81.22448,
+    "InertiaFIGWs": 58.302551
+  },
+  {
+    "HourUTC": "2023-01-05T22:00:00",
+    "HourDK": "2023-01-05T23:00:00",
+    "InertiaNordicGWs": 216.897308,
+    "InertiaDK2GWs": 9.240365,
+    "InertiaNOGWs": 66.488731,
+    "InertiaSEGWs": 81.796585,
+    "InertiaFIGWs": 59.370575
+  },
+  {
+    "HourUTC": "2023-01-05T21:00:00",
+    "HourDK": "2023-01-05T22:00:00",
+    "InertiaNordicGWs": 227.990387,
+    "InertiaDK2GWs": 9.288912,
+    "InertiaNOGWs": 76.689621,
+    "InertiaSEGWs": 82.21312,
+    "InertiaFIGWs": 59.797882
+  },
+  {
+    "HourUTC": "2023-01-05T20:00:00",
+    "HourDK": "2023-01-05T21:00:00",
+    "InertiaNordicGWs": 232.222534,
+    "InertiaDK2GWs": 9.416276,
+    "InertiaNOGWs": 80.531754,
+    "InertiaSEGWs": 82.208458,
+    "InertiaFIGWs": 60.065964
+  },
+  {
+    "HourUTC": "2023-01-05T19:00:00",
+    "HourDK": "2023-01-05T20:00:00",
+    "InertiaNordicGWs": 236.788437,
+    "InertiaDK2GWs": 9.416606,
+    "InertiaNOGWs": 83.725952,
+    "InertiaSEGWs": 83.246811,
+    "InertiaFIGWs": 60.398273
+  },
+  {
+    "HourUTC": "2023-01-05T18:00:00",
+    "HourDK": "2023-01-05T19:00:00",
+    "InertiaNordicGWs": 238.583084,
+    "InertiaDK2GWs": 9.416748,
+    "InertiaNOGWs": 85.334526,
+    "InertiaSEGWs": 83.331467,
+    "InertiaFIGWs": 60.50024
+  },
+  {
+    "HourUTC": "2023-01-05T17:00:00",
+    "HourDK": "2023-01-05T18:00:00",
+    "InertiaNordicGWs": 238.593903,
+    "InertiaDK2GWs": 9.416224,
+    "InertiaNOGWs": 85.314636,
+    "InertiaSEGWs": 83.347023,
+    "InertiaFIGWs": 60.515499
+  },
+  {
+    "HourUTC": "2023-01-05T16:00:00",
+    "HourDK": "2023-01-05T17:00:00",
+    "InertiaNordicGWs": 238.770309,
+    "InertiaDK2GWs": 9.429822,
+    "InertiaNOGWs": 85.480011,
+    "InertiaSEGWs": 83.347023,
+    "InertiaFIGWs": 60.512444
+  },
+  {
+    "HourUTC": "2023-01-05T15:00:00",
+    "HourDK": "2023-01-05T16:00:00",
+    "InertiaNordicGWs": 238.797012,
+    "InertiaDK2GWs": 9.544052,
+    "InertiaNOGWs": 85.561646,
+    "InertiaSEGWs": 83.3302,
+    "InertiaFIGWs": 60.360775
+  },
+  {
+    "HourUTC": "2023-01-05T14:00:00",
+    "HourDK": "2023-01-05T15:00:00",
+    "InertiaNordicGWs": 237.256058,
+    "InertiaDK2GWs": 9.54397,
+    "InertiaNOGWs": 84.11734,
+    "InertiaSEGWs": 83.243744,
+    "InertiaFIGWs": 60.351826
+  },
+  {
+    "HourUTC": "2023-01-05T13:00:00",
+    "HourDK": "2023-01-05T14:00:00",
+    "InertiaNordicGWs": 233.234619,
+    "InertiaDK2GWs": 9.5439,
+    "InertiaNOGWs": 80.309029,
+    "InertiaSEGWs": 83.22699,
+    "InertiaFIGWs": 60.155716
+  },
+  {
+    "HourUTC": "2023-01-05T12:00:00",
+    "HourDK": "2023-01-05T13:00:00",
+    "InertiaNordicGWs": 230.702133,
+    "InertiaDK2GWs": 9.550105,
+    "InertiaNOGWs": 78.010735,
+    "InertiaSEGWs": 83.164009,
+    "InertiaFIGWs": 59.976963
+  },
+  {
+    "HourUTC": "2023-01-05T11:00:00",
+    "HourDK": "2023-01-05T12:00:00",
+    "InertiaNordicGWs": 230.493515,
+    "InertiaDK2GWs": 9.434551,
+    "InertiaNOGWs": 78.215935,
+    "InertiaSEGWs": 82.992905,
+    "InertiaFIGWs": 59.849991
+  },
+  {
+    "HourUTC": "2023-01-05T10:00:00",
+    "HourDK": "2023-01-05T11:00:00",
+    "InertiaNordicGWs": 230.782043,
+    "InertiaDK2GWs": 9.422733,
+    "InertiaNOGWs": 78.63369,
+    "InertiaSEGWs": 82.920219,
+    "InertiaFIGWs": 59.805981
+  },
+  {
+    "HourUTC": "2023-01-05T09:00:00",
+    "HourDK": "2023-01-05T10:00:00",
+    "InertiaNordicGWs": 228.084763,
+    "InertiaDK2GWs": 9.424185,
+    "InertiaNOGWs": 76.110016,
+    "InertiaSEGWs": 82.801941,
+    "InertiaFIGWs": 59.748867
+  },
+  {
+    "HourUTC": "2023-01-05T08:00:00",
+    "HourDK": "2023-01-05T09:00:00",
+    "InertiaNordicGWs": 224.745163,
+    "InertiaDK2GWs": 9.423676,
+    "InertiaNOGWs": 73.579071,
+    "InertiaSEGWs": 82.483841,
+    "InertiaFIGWs": 59.258942
+  },
+  {
+    "HourUTC": "2023-01-05T07:00:00",
+    "HourDK": "2023-01-05T08:00:00",
+    "InertiaNordicGWs": 218.50528,
+    "InertiaDK2GWs": 9.422801,
+    "InertiaNOGWs": 68.771942,
+    "InertiaSEGWs": 81.655754,
+    "InertiaFIGWs": 58.654942
+  },
+  {
+    "HourUTC": "2023-01-05T06:00:00",
+    "HourDK": "2023-01-05T07:00:00",
+    "InertiaNordicGWs": 210.273041,
+    "InertiaDK2GWs": 9.239444,
+    "InertiaNOGWs": 63.977932,
+    "InertiaSEGWs": 79.056511,
+    "InertiaFIGWs": 58.000076
+  },
+  {
+    "HourUTC": "2023-01-05T05:00:00",
+    "HourDK": "2023-01-05T06:00:00",
+    "InertiaNordicGWs": 194.535431,
+    "InertiaDK2GWs": 9.234326,
+    "InertiaNOGWs": 54.420273,
+    "InertiaSEGWs": 74.391747,
+    "InertiaFIGWs": 56.489437
+  },
+  {
+    "HourUTC": "2023-01-05T04:00:00",
+    "HourDK": "2023-01-05T05:00:00",
+    "InertiaNordicGWs": 182.105759,
+    "InertiaDK2GWs": 9.235358,
+    "InertiaNOGWs": 47.109196,
+    "InertiaSEGWs": 70.877945,
+    "InertiaFIGWs": 54.883556
+  },
+  {
+    "HourUTC": "2023-01-05T03:00:00",
+    "HourDK": "2023-01-05T04:00:00",
+    "InertiaNordicGWs": 177.189651,
+    "InertiaDK2GWs": 9.23565,
+    "InertiaNOGWs": 43.881664,
+    "InertiaSEGWs": 69.233665,
+    "InertiaFIGWs": 54.838768
+  },
+  {
+    "HourUTC": "2023-01-05T02:00:00",
+    "HourDK": "2023-01-05T03:00:00",
+    "InertiaNordicGWs": 176.801086,
+    "InertiaDK2GWs": 9.235591,
+    "InertiaNOGWs": 43.405369,
+    "InertiaSEGWs": 69.105255,
+    "InertiaFIGWs": 55.054909
+  },
+  {
+    "HourUTC": "2023-01-05T01:00:00",
+    "HourDK": "2023-01-05T02:00:00",
+    "InertiaNordicGWs": 177.531723,
+    "InertiaDK2GWs": 9.23473,
+    "InertiaNOGWs": 44.315208,
+    "InertiaSEGWs": 69.272453,
+    "InertiaFIGWs": 54.709293
+  },
+  {
+    "HourUTC": "2023-01-05T00:00:00",
+    "HourDK": "2023-01-05T01:00:00",
+    "InertiaNordicGWs": 178.756424,
+    "InertiaDK2GWs": 9.234513,
+    "InertiaNOGWs": 45.309471,
+    "InertiaSEGWs": 69.489143,
+    "InertiaFIGWs": 54.723244
+  },
+  {
+    "HourUTC": "2023-01-04T23:00:00",
+    "HourDK": "2023-01-05T00:00:00",
+    "InertiaNordicGWs": 181.074142,
+    "InertiaDK2GWs": 9.234566,
+    "InertiaNOGWs": 46.142204,
+    "InertiaSEGWs": 70.77935,
+    "InertiaFIGWs": 54.917336
+  },
+  {
+    "HourUTC": "2023-01-04T22:00:00",
+    "HourDK": "2023-01-04T23:00:00",
+    "InertiaNordicGWs": 186.341492,
+    "InertiaDK2GWs": 9.241386,
+    "InertiaNOGWs": 49.233631,
+    "InertiaSEGWs": 73.003052,
+    "InertiaFIGWs": 54.863041
+  },
+  {
+    "HourUTC": "2023-01-04T21:00:00",
+    "HourDK": "2023-01-04T22:00:00",
+    "InertiaNordicGWs": 193.247238,
+    "InertiaDK2GWs": 9.241801,
+    "InertiaNOGWs": 55.466747,
+    "InertiaSEGWs": 73.74881,
+    "InertiaFIGWs": 54.789421
+  },
+  {
+    "HourUTC": "2023-01-04T20:00:00",
+    "HourDK": "2023-01-04T21:00:00",
+    "InertiaNordicGWs": 199.478561,
+    "InertiaDK2GWs": 9.241338,
+    "InertiaNOGWs": 58.842739,
+    "InertiaSEGWs": 76.002014,
+    "InertiaFIGWs": 55.392189
+  },
+  {
+    "HourUTC": "2023-01-04T19:00:00",
+    "HourDK": "2023-01-04T20:00:00",
+    "InertiaNordicGWs": 204.172272,
+    "InertiaDK2GWs": 9.240993,
+    "InertiaNOGWs": 61.171005,
+    "InertiaSEGWs": 77.748199,
+    "InertiaFIGWs": 56.011955
+  },
+  {
+    "HourUTC": "2023-01-04T18:00:00",
+    "HourDK": "2023-01-04T19:00:00",
+    "InertiaNordicGWs": 209.032715,
+    "InertiaDK2GWs": 9.240702,
+    "InertiaNOGWs": 62.762882,
+    "InertiaSEGWs": 80.503723,
+    "InertiaFIGWs": 56.525543
+  },
+  {
+    "HourUTC": "2023-01-04T17:00:00",
+    "HourDK": "2023-01-04T18:00:00",
+    "InertiaNordicGWs": 212.564865,
+    "InertiaDK2GWs": 9.240732,
+    "InertiaNOGWs": 64.541679,
+    "InertiaSEGWs": 81.026894,
+    "InertiaFIGWs": 57.755672
+  },
+  {
+    "HourUTC": "2023-01-04T16:00:00",
+    "HourDK": "2023-01-04T17:00:00",
+    "InertiaNordicGWs": 214.853653,
+    "InertiaDK2GWs": 9.241367,
+    "InertiaNOGWs": 65.373512,
+    "InertiaSEGWs": 81.892105,
+    "InertiaFIGWs": 58.346886
+  },
+  {
+    "HourUTC": "2023-01-04T15:00:00",
+    "HourDK": "2023-01-04T16:00:00",
+    "InertiaNordicGWs": 215.430511,
+    "InertiaDK2GWs": 9.24133,
+    "InertiaNOGWs": 64.912514,
+    "InertiaSEGWs": 82.617226,
+    "InertiaFIGWs": 58.659374
+  },
+  {
+    "HourUTC": "2023-01-04T14:00:00",
+    "HourDK": "2023-01-04T15:00:00",
+    "InertiaNordicGWs": 215.18927,
+    "InertiaDK2GWs": 9.242048,
+    "InertiaNOGWs": 64.631897,
+    "InertiaSEGWs": 82.59111,
+    "InertiaFIGWs": 58.723911
+  },
+  {
+    "HourUTC": "2023-01-04T13:00:00",
+    "HourDK": "2023-01-04T14:00:00",
+    "InertiaNordicGWs": 215.970657,
+    "InertiaDK2GWs": 9.240457,
+    "InertiaNOGWs": 65.435394,
+    "InertiaSEGWs": 82.638657,
+    "InertiaFIGWs": 58.656078
+  },
+  {
+    "HourUTC": "2023-01-04T12:00:00",
+    "HourDK": "2023-01-04T13:00:00",
+    "InertiaNordicGWs": 217.280167,
+    "InertiaDK2GWs": 9.24154,
+    "InertiaNOGWs": 66.749001,
+    "InertiaSEGWs": 82.695541,
+    "InertiaFIGWs": 58.594051
+  },
+  {
+    "HourUTC": "2023-01-04T11:00:00",
+    "HourDK": "2023-01-04T12:00:00",
+    "InertiaNordicGWs": 215.596863,
+    "InertiaDK2GWs": 9.24114,
+    "InertiaNOGWs": 65.240395,
+    "InertiaSEGWs": 82.582359,
+    "InertiaFIGWs": 58.533035
+  },
+  {
+    "HourUTC": "2023-01-04T10:00:00",
+    "HourDK": "2023-01-04T11:00:00",
+    "InertiaNordicGWs": 215.502563,
+    "InertiaDK2GWs": 9.233041,
+    "InertiaNOGWs": 65.265297,
+    "InertiaSEGWs": 82.458031,
+    "InertiaFIGWs": 58.5462
+  },
+  {
+    "HourUTC": "2023-01-04T09:00:00",
+    "HourDK": "2023-01-04T10:00:00",
+    "InertiaNordicGWs": 216.658798,
+    "InertiaDK2GWs": 9.239418,
+    "InertiaNOGWs": 66.363365,
+    "InertiaSEGWs": 82.441628,
+    "InertiaFIGWs": 58.614395
+  },
+  {
+    "HourUTC": "2023-01-04T08:00:00",
+    "HourDK": "2023-01-04T09:00:00",
+    "InertiaNordicGWs": 215.001984,
+    "InertiaDK2GWs": 9.236784,
+    "InertiaNOGWs": 64.834755,
+    "InertiaSEGWs": 82.473305,
+    "InertiaFIGWs": 58.457661
+  },
+  {
+    "HourUTC": "2023-01-04T07:00:00",
+    "HourDK": "2023-01-04T08:00:00",
+    "InertiaNordicGWs": 212.16127,
+    "InertiaDK2GWs": 9.235381,
+    "InertiaNOGWs": 61.826454,
+    "InertiaSEGWs": 82.486076,
+    "InertiaFIGWs": 58.613178
+  },
+  {
+    "HourUTC": "2023-01-04T06:00:00",
+    "HourDK": "2023-01-04T07:00:00",
+    "InertiaNordicGWs": 209.340744,
+    "InertiaDK2GWs": 9.235538,
+    "InertiaNOGWs": 59.497013,
+    "InertiaSEGWs": 82.290741,
+    "InertiaFIGWs": 58.317844
+  },
+  {
+    "HourUTC": "2023-01-04T05:00:00",
+    "HourDK": "2023-01-04T06:00:00",
+    "InertiaNordicGWs": 199.266251,
+    "InertiaDK2GWs": 9.235082,
+    "InertiaNOGWs": 51.326378,
+    "InertiaSEGWs": 81.173248,
+    "InertiaFIGWs": 57.532448
+  },
+  {
+    "HourUTC": "2023-01-04T04:00:00",
+    "HourDK": "2023-01-04T05:00:00",
+    "InertiaNordicGWs": 189.282379,
+    "InertiaDK2GWs": 9.235142,
+    "InertiaNOGWs": 46.415901,
+    "InertiaSEGWs": 77.530334,
+    "InertiaFIGWs": 56.101318
+  },
+  {
+    "HourUTC": "2023-01-04T03:00:00",
+    "HourDK": "2023-01-04T04:00:00",
+    "InertiaNordicGWs": 187.186493,
+    "InertiaDK2GWs": 9.235119,
+    "InertiaNOGWs": 45.94672,
+    "InertiaSEGWs": 76.439583,
+    "InertiaFIGWs": 55.565872
+  },
+  {
+    "HourUTC": "2023-01-04T02:00:00",
+    "HourDK": "2023-01-04T03:00:00",
+    "InertiaNordicGWs": 186.493774,
+    "InertiaDK2GWs": 9.234401,
+    "InertiaNOGWs": 45.646248,
+    "InertiaSEGWs": 76.10009,
+    "InertiaFIGWs": 55.513123
+  },
+  {
+    "HourUTC": "2023-01-04T01:00:00",
+    "HourDK": "2023-01-04T02:00:00",
+    "InertiaNordicGWs": 187.58699,
+    "InertiaDK2GWs": 9.234521,
+    "InertiaNOGWs": 46.189125,
+    "InertiaSEGWs": 76.615578,
+    "InertiaFIGWs": 55.547668
+  },
+  {
+    "HourUTC": "2023-01-04T00:00:00",
+    "HourDK": "2023-01-04T01:00:00",
+    "InertiaNordicGWs": 191.783783,
+    "InertiaDK2GWs": 9.233698,
+    "InertiaNOGWs": 48.367558,
+    "InertiaSEGWs": 77.827835,
+    "InertiaFIGWs": 56.354458
+  },
+  {
+    "HourUTC": "2023-01-03T23:00:00",
+    "HourDK": "2023-01-04T00:00:00",
+    "InertiaNordicGWs": 196.90538,
+    "InertiaDK2GWs": 9.234147,
+    "InertiaNOGWs": 50.762108,
+    "InertiaSEGWs": 79.391464,
+    "InertiaFIGWs": 57.517414
+  },
+  {
+    "HourUTC": "2023-01-03T22:00:00",
+    "HourDK": "2023-01-03T23:00:00",
+    "InertiaNordicGWs": 202.784439,
+    "InertiaDK2GWs": 9.240016,
+    "InertiaNOGWs": 54.1702,
+    "InertiaSEGWs": 81.157303,
+    "InertiaFIGWs": 58.212448
+  },
+  {
+    "HourUTC": "2023-01-03T21:00:00",
+    "HourDK": "2023-01-03T22:00:00",
+    "InertiaNordicGWs": 212.790665,
+    "InertiaDK2GWs": 9.24074,
+    "InertiaNOGWs": 59.69371,
+    "InertiaSEGWs": 82.035736,
+    "InertiaFIGWs": 61.819115
+  },
+  {
+    "HourUTC": "2023-01-03T20:00:00",
+    "HourDK": "2023-01-03T21:00:00",
+    "InertiaNordicGWs": 220.09668,
+    "InertiaDK2GWs": 9.240456,
+    "InertiaNOGWs": 65.605774,
+    "InertiaSEGWs": 82.592514,
+    "InertiaFIGWs": 62.655979
+  },
+  {
+    "HourUTC": "2023-01-03T19:00:00",
+    "HourDK": "2023-01-03T20:00:00",
+    "InertiaNordicGWs": 227.111511,
+    "InertiaDK2GWs": 9.416351,
+    "InertiaNOGWs": 71.618073,
+    "InertiaSEGWs": 82.672112,
+    "InertiaFIGWs": 63.404289
+  },
+  {
+    "HourUTC": "2023-01-03T18:00:00",
+    "HourDK": "2023-01-03T19:00:00",
+    "InertiaNordicGWs": 232.509613,
+    "InertiaDK2GWs": 9.428382,
+    "InertiaNOGWs": 76.618988,
+    "InertiaSEGWs": 82.806091,
+    "InertiaFIGWs": 63.653076
+  },
+  {
+    "HourUTC": "2023-01-03T17:00:00",
+    "HourDK": "2023-01-03T18:00:00",
+    "InertiaNordicGWs": 236.349426,
+    "InertiaDK2GWs": 9.653716,
+    "InertiaNOGWs": 80.528252,
+    "InertiaSEGWs": 82.632668,
+    "InertiaFIGWs": 63.533344
+  },
+  {
+    "HourUTC": "2023-01-03T16:00:00",
+    "HourDK": "2023-01-03T17:00:00",
+    "InertiaNordicGWs": 237.439514,
+    "InertiaDK2GWs": 9.556236,
+    "InertiaNOGWs": 82.008812,
+    "InertiaSEGWs": 82.748116,
+    "InertiaFIGWs": 63.126736
+  },
+  {
+    "HourUTC": "2023-01-03T15:00:00",
+    "HourDK": "2023-01-03T16:00:00",
+    "InertiaNordicGWs": 234.732529,
+    "InertiaDK2GWs": 9.544382,
+    "InertiaNOGWs": 79.202248,
+    "InertiaSEGWs": 82.832245,
+    "InertiaFIGWs": 63.153839
+  },
+  {
+    "HourUTC": "2023-01-03T14:00:00",
+    "HourDK": "2023-01-03T15:00:00",
+    "InertiaNordicGWs": 232.783081,
+    "InertiaDK2GWs": 9.557048,
+    "InertiaNOGWs": 77.340508,
+    "InertiaSEGWs": 82.731552,
+    "InertiaFIGWs": 63.154411
+  },
+  {
+    "HourUTC": "2023-01-03T13:00:00",
+    "HourDK": "2023-01-03T14:00:00",
+    "InertiaNordicGWs": 230.62207,
+    "InertiaDK2GWs": 9.433647,
+    "InertiaNOGWs": 75.874031,
+    "InertiaSEGWs": 82.21347,
+    "InertiaFIGWs": 63.100544
+  },
+  {
+    "HourUTC": "2023-01-03T12:00:00",
+    "HourDK": "2023-01-03T13:00:00",
+    "InertiaNordicGWs": 226.259903,
+    "InertiaDK2GWs": 9.417182,
+    "InertiaNOGWs": 72.283142,
+    "InertiaSEGWs": 81.811157,
+    "InertiaFIGWs": 62.749008
+  },
+  {
+    "HourUTC": "2023-01-03T11:00:00",
+    "HourDK": "2023-01-03T12:00:00",
+    "InertiaNordicGWs": 224.253479,
+    "InertiaDK2GWs": 9.268681,
+    "InertiaNOGWs": 70.861679,
+    "InertiaSEGWs": 81.554779,
+    "InertiaFIGWs": 62.568451
+  },
+  {
+    "HourUTC": "2023-01-03T10:00:00",
+    "HourDK": "2023-01-03T11:00:00",
+    "InertiaNordicGWs": 225.40863,
+    "InertiaDK2GWs": 9.241906,
+    "InertiaNOGWs": 72.32724,
+    "InertiaSEGWs": 81.374901,
+    "InertiaFIGWs": 62.463631
+  },
+  {
+    "HourUTC": "2023-01-03T09:00:00",
+    "HourDK": "2023-01-03T10:00:00",
+    "InertiaNordicGWs": 225.845261,
+    "InertiaDK2GWs": 9.24014,
+    "InertiaNOGWs": 72.660202,
+    "InertiaSEGWs": 81.368126,
+    "InertiaFIGWs": 62.576054
+  },
+  {
+    "HourUTC": "2023-01-03T08:00:00",
+    "HourDK": "2023-01-03T09:00:00",
+    "InertiaNordicGWs": 224.842377,
+    "InertiaDK2GWs": 9.242167,
+    "InertiaNOGWs": 71.938148,
+    "InertiaSEGWs": 80.777184,
+    "InertiaFIGWs": 62.885452
+  },
+  {
+    "HourUTC": "2023-01-03T07:00:00",
+    "HourDK": "2023-01-03T08:00:00",
+    "InertiaNordicGWs": 224.476318,
+    "InertiaDK2GWs": 9.24689,
+    "InertiaNOGWs": 72.053963,
+    "InertiaSEGWs": 80.452133,
+    "InertiaFIGWs": 62.723232
+  },
+  {
+    "HourUTC": "2023-01-03T06:00:00",
+    "HourDK": "2023-01-03T07:00:00",
+    "InertiaNordicGWs": 221.956345,
+    "InertiaDK2GWs": 9.242461,
+    "InertiaNOGWs": 70.188408,
+    "InertiaSEGWs": 80.352478,
+    "InertiaFIGWs": 62.174213
+  },
+  {
+    "HourUTC": "2023-01-03T05:00:00",
+    "HourDK": "2023-01-03T06:00:00",
+    "InertiaNordicGWs": 208.533829,
+    "InertiaDK2GWs": 7.733517,
+    "InertiaNOGWs": 60.110802,
+    "InertiaSEGWs": 79.467064,
+    "InertiaFIGWs": 61.224796
+  },
+  {
+    "HourUTC": "2023-01-03T04:00:00",
+    "HourDK": "2023-01-03T05:00:00",
+    "InertiaNordicGWs": 194.837219,
+    "InertiaDK2GWs": 7.650286,
+    "InertiaNOGWs": 50.571789,
+    "InertiaSEGWs": 76.364998,
+    "InertiaFIGWs": 60.250729
+  },
+  {
+    "HourUTC": "2023-01-03T03:00:00",
+    "HourDK": "2023-01-03T04:00:00",
+    "InertiaNordicGWs": 185.790512,
+    "InertiaDK2GWs": 7.650137,
+    "InertiaNOGWs": 46.53817,
+    "InertiaSEGWs": 74.821198,
+    "InertiaFIGWs": 56.781555
+  },
+  {
+    "HourUTC": "2023-01-03T02:00:00",
+    "HourDK": "2023-01-03T03:00:00",
+    "InertiaNordicGWs": 183.207947,
+    "InertiaDK2GWs": 7.649336,
+    "InertiaNOGWs": 46.372158,
+    "InertiaSEGWs": 73.976433,
+    "InertiaFIGWs": 55.210045
+  },
+  {
+    "HourUTC": "2023-01-03T01:00:00",
+    "HourDK": "2023-01-03T02:00:00",
+    "InertiaNordicGWs": 184.816803,
+    "InertiaDK2GWs": 7.650204,
+    "InertiaNOGWs": 48.217209,
+    "InertiaSEGWs": 74.226051,
+    "InertiaFIGWs": 54.723385
+  },
+  {
+    "HourUTC": "2023-01-03T00:00:00",
+    "HourDK": "2023-01-03T01:00:00",
+    "InertiaNordicGWs": 186.26091,
+    "InertiaDK2GWs": 7.650712,
+    "InertiaNOGWs": 49.572826,
+    "InertiaSEGWs": 75.198746,
+    "InertiaFIGWs": 53.838692
+  },
+  {
+    "HourUTC": "2023-01-02T23:00:00",
+    "HourDK": "2023-01-03T00:00:00",
+    "InertiaNordicGWs": 193.402939,
+    "InertiaDK2GWs": 7.650668,
+    "InertiaNOGWs": 53.765831,
+    "InertiaSEGWs": 77.404694,
+    "InertiaFIGWs": 54.582222
+  },
+  {
+    "HourUTC": "2023-01-02T22:00:00",
+    "HourDK": "2023-01-02T23:00:00",
+    "InertiaNordicGWs": 197.3013,
+    "InertiaDK2GWs": 7.656722,
+    "InertiaNOGWs": 55.390316,
+    "InertiaSEGWs": 79.214157,
+    "InertiaFIGWs": 55.040211
+  },
+  {
+    "HourUTC": "2023-01-02T21:00:00",
+    "HourDK": "2023-01-02T22:00:00",
+    "InertiaNordicGWs": 203.166046,
+    "InertiaDK2GWs": 7.656751,
+    "InertiaNOGWs": 59.538372,
+    "InertiaSEGWs": 80.290977,
+    "InertiaFIGWs": 55.680038
+  },
+  {
+    "HourUTC": "2023-01-02T20:00:00",
+    "HourDK": "2023-01-02T21:00:00",
+    "InertiaNordicGWs": 209.489929,
+    "InertiaDK2GWs": 7.823,
+    "InertiaNOGWs": 63.32502,
+    "InertiaSEGWs": 81.894119,
+    "InertiaFIGWs": 56.447426
+  },
+  {
+    "HourUTC": "2023-01-02T19:00:00",
+    "HourDK": "2023-01-02T20:00:00",
+    "InertiaNordicGWs": 216.310135,
+    "InertiaDK2GWs": 7.832348,
+    "InertiaNOGWs": 68.396912,
+    "InertiaSEGWs": 83.218575,
+    "InertiaFIGWs": 56.860641
+  },
+  {
+    "HourUTC": "2023-01-02T18:00:00",
+    "HourDK": "2023-01-02T19:00:00",
+    "InertiaNordicGWs": 220.588348,
+    "InertiaDK2GWs": 7.831675,
+    "InertiaNOGWs": 72.165939,
+    "InertiaSEGWs": 83.328468,
+    "InertiaFIGWs": 57.261776
+  },
+  {
+    "HourUTC": "2023-01-02T17:00:00",
+    "HourDK": "2023-01-02T18:00:00",
+    "InertiaNordicGWs": 222.93158,
+    "InertiaDK2GWs": 7.831832,
+    "InertiaNOGWs": 74.486374,
+    "InertiaSEGWs": 83.328468,
+    "InertiaFIGWs": 57.284973
+  },
+  {
+    "HourUTC": "2023-01-02T16:00:00",
+    "HourDK": "2023-01-02T17:00:00",
+    "InertiaNordicGWs": 221.763962,
+    "InertiaDK2GWs": 7.831541,
+    "InertiaNOGWs": 73.373184,
+    "InertiaSEGWs": 83.241386,
+    "InertiaFIGWs": 57.31805
+  },
+  {
+    "HourUTC": "2023-01-02T15:00:00",
+    "HourDK": "2023-01-02T16:00:00",
+    "InertiaNordicGWs": 220.461517,
+    "InertiaDK2GWs": 7.830781,
+    "InertiaNOGWs": 72.139748,
+    "InertiaSEGWs": 83.233696,
+    "InertiaFIGWs": 57.257164
+  },
+  {
+    "HourUTC": "2023-01-02T14:00:00",
+    "HourDK": "2023-01-02T15:00:00",
+    "InertiaNordicGWs": 218.478088,
+    "InertiaDK2GWs": 7.831952,
+    "InertiaNOGWs": 70.253372,
+    "InertiaSEGWs": 83.197067,
+    "InertiaFIGWs": 57.195175
+  },
+  {
+    "HourUTC": "2023-01-02T13:00:00",
+    "HourDK": "2023-01-02T14:00:00",
+    "InertiaNordicGWs": 215.807541,
+    "InertiaDK2GWs": 7.832363,
+    "InertiaNOGWs": 67.685486,
+    "InertiaSEGWs": 83.152695,
+    "InertiaFIGWs": 57.137394
+  },
+  {
+    "HourUTC": "2023-01-02T12:00:00",
+    "HourDK": "2023-01-02T13:00:00",
+    "InertiaNordicGWs": 214.847351,
+    "InertiaDK2GWs": 7.831316,
+    "InertiaNOGWs": 66.984291,
+    "InertiaSEGWs": 83.145004,
+    "InertiaFIGWs": 56.886864
+  },
+  {
+    "HourUTC": "2023-01-02T11:00:00",
+    "HourDK": "2023-01-02T12:00:00",
+    "InertiaNordicGWs": 216.702515,
+    "InertiaDK2GWs": 7.83172,
+    "InertiaNOGWs": 69.396927,
+    "InertiaSEGWs": 83.053658,
+    "InertiaFIGWs": 56.42054
+  },
+  {
+    "HourUTC": "2023-01-02T10:00:00",
+    "HourDK": "2023-01-02T11:00:00",
+    "InertiaNordicGWs": 214.246643,
+    "InertiaDK2GWs": 7.800821,
+    "InertiaNOGWs": 67.30442,
+    "InertiaSEGWs": 82.910805,
+    "InertiaFIGWs": 56.231564
+  },
+  {
+    "HourUTC": "2023-01-02T09:00:00",
+    "HourDK": "2023-01-02T10:00:00",
+    "InertiaNordicGWs": 209.993866,
+    "InertiaDK2GWs": 7.656385,
+    "InertiaNOGWs": 63.605972,
+    "InertiaSEGWs": 82.359528,
+    "InertiaFIGWs": 56.371307
+  },
+  {
+    "HourUTC": "2023-01-02T08:00:00",
+    "HourDK": "2023-01-02T09:00:00",
+    "InertiaNordicGWs": 209.679657,
+    "InertiaDK2GWs": 7.656071,
+    "InertiaNOGWs": 64.560913,
+    "InertiaSEGWs": 81.37513,
+    "InertiaFIGWs": 56.086781
+  },
+  {
+    "HourUTC": "2023-01-02T07:00:00",
+    "HourDK": "2023-01-02T08:00:00",
+    "InertiaNordicGWs": 207.8685,
+    "InertiaDK2GWs": 7.656138,
+    "InertiaNOGWs": 63.492287,
+    "InertiaSEGWs": 81.023422,
+    "InertiaFIGWs": 55.696793
+  },
+  {
+    "HourUTC": "2023-01-02T06:00:00",
+    "HourDK": "2023-01-02T07:00:00",
+    "InertiaNordicGWs": 201.561813,
+    "InertiaDK2GWs": 7.65431,
+    "InertiaNOGWs": 59.403229,
+    "InertiaSEGWs": 79.187325,
+    "InertiaFIGWs": 55.319035
+  },
+  {
+    "HourUTC": "2023-01-02T05:00:00",
+    "HourDK": "2023-01-02T06:00:00",
+    "InertiaNordicGWs": 186.952454,
+    "InertiaDK2GWs": 7.649411,
+    "InertiaNOGWs": 48.68071,
+    "InertiaSEGWs": 76.316322,
+    "InertiaFIGWs": 54.309109
+  },
+  {
+    "HourUTC": "2023-01-02T04:00:00",
+    "HourDK": "2023-01-02T05:00:00",
+    "InertiaNordicGWs": 178.658463,
+    "InertiaDK2GWs": 7.649202,
+    "InertiaNOGWs": 44.146587,
+    "InertiaSEGWs": 73.427261,
+    "InertiaFIGWs": 53.436104
+  },
+  {
+    "HourUTC": "2023-01-02T03:00:00",
+    "HourDK": "2023-01-02T04:00:00",
+    "InertiaNordicGWs": 174.5849,
+    "InertiaDK2GWs": 7.649636,
+    "InertiaNOGWs": 43.705845,
+    "InertiaSEGWs": 70.049927,
+    "InertiaFIGWs": 53.179527
+  },
+  {
+    "HourUTC": "2023-01-02T02:00:00",
+    "HourDK": "2023-01-02T03:00:00",
+    "InertiaNordicGWs": 172.8535,
+    "InertiaDK2GWs": 7.649419,
+    "InertiaNOGWs": 42.61964,
+    "InertiaSEGWs": 69.655975,
+    "InertiaFIGWs": 52.929611
+  },
+  {
+    "HourUTC": "2023-01-02T01:00:00",
+    "HourDK": "2023-01-02T02:00:00",
+    "InertiaNordicGWs": 174.069351,
+    "InertiaDK2GWs": 7.649651,
+    "InertiaNOGWs": 42.697475,
+    "InertiaSEGWs": 70.793533,
+    "InertiaFIGWs": 52.926502
+  },
+  {
+    "HourUTC": "2023-01-02T00:00:00",
+    "HourDK": "2023-01-02T01:00:00",
+    "InertiaNordicGWs": 173.883957,
+    "InertiaDK2GWs": 7.649404,
+    "InertiaNOGWs": 44.05294,
+    "InertiaSEGWs": 69.545601,
+    "InertiaFIGWs": 52.634693
+  },
+  {
+    "HourUTC": "2023-01-01T23:00:00",
+    "HourDK": "2023-01-02T00:00:00",
+    "InertiaNordicGWs": 176.67453,
+    "InertiaDK2GWs": 7.649359,
+    "InertiaNOGWs": 45.284584,
+    "InertiaSEGWs": 71.339722,
+    "InertiaFIGWs": 52.401691
+  },
+  {
+    "HourUTC": "2023-01-01T22:00:00",
+    "HourDK": "2023-01-01T23:00:00",
+    "InertiaNordicGWs": 178.324585,
+    "InertiaDK2GWs": 7.652609,
+    "InertiaNOGWs": 45.376118,
+    "InertiaSEGWs": 72.550461,
+    "InertiaFIGWs": 52.74419
+  },
+  {
+    "HourUTC": "2023-01-01T21:00:00",
+    "HourDK": "2023-01-01T22:00:00",
+    "InertiaNordicGWs": 180.944138,
+    "InertiaDK2GWs": 7.65619,
+    "InertiaNOGWs": 46.707951,
+    "InertiaSEGWs": 73.452408,
+    "InertiaFIGWs": 53.127422
+  },
+  {
+    "HourUTC": "2023-01-01T20:00:00",
+    "HourDK": "2023-01-01T21:00:00",
+    "InertiaNordicGWs": 182.934143,
+    "InertiaDK2GWs": 7.655704,
+    "InertiaNOGWs": 48.011436,
+    "InertiaSEGWs": 73.83873,
+    "InertiaFIGWs": 53.428314
+  },
+  {
+    "HourUTC": "2023-01-01T19:00:00",
+    "HourDK": "2023-01-01T20:00:00",
+    "InertiaNordicGWs": 183.362167,
+    "InertiaDK2GWs": 7.655756,
+    "InertiaNOGWs": 48.36911,
+    "InertiaSEGWs": 73.334198,
+    "InertiaFIGWs": 54.002888
+  },
+  {
+    "HourUTC": "2023-01-01T18:00:00",
+    "HourDK": "2023-01-01T19:00:00",
+    "InertiaNordicGWs": 185.030624,
+    "InertiaDK2GWs": 7.656243,
+    "InertiaNOGWs": 48.692112,
+    "InertiaSEGWs": 74.660393,
+    "InertiaFIGWs": 54.021355
+  },
+  {
+    "HourUTC": "2023-01-01T17:00:00",
+    "HourDK": "2023-01-01T18:00:00",
+    "InertiaNordicGWs": 186.179306,
+    "InertiaDK2GWs": 7.655921,
+    "InertiaNOGWs": 48.659889,
+    "InertiaSEGWs": 75.863464,
+    "InertiaFIGWs": 54.000057
+  },
+  {
+    "HourUTC": "2023-01-01T16:00:00",
+    "HourDK": "2023-01-01T17:00:00",
+    "InertiaNordicGWs": 185.251862,
+    "InertiaDK2GWs": 7.655973,
+    "InertiaNOGWs": 50.000736,
+    "InertiaSEGWs": 74.118095,
+    "InertiaFIGWs": 53.477074
+  },
+  {
+    "HourUTC": "2023-01-01T15:00:00",
+    "HourDK": "2023-01-01T16:00:00",
+    "InertiaNordicGWs": 183.151413,
+    "InertiaDK2GWs": 7.656512,
+    "InertiaNOGWs": 49.710171,
+    "InertiaSEGWs": 72.537025,
+    "InertiaFIGWs": 53.247986
+  },
+  {
+    "HourUTC": "2023-01-01T14:00:00",
+    "HourDK": "2023-01-01T15:00:00",
+    "InertiaNordicGWs": 172.306549,
+    "InertiaDK2GWs": 7.657088,
+    "InertiaNOGWs": 43.385811,
+    "InertiaSEGWs": 68.102112,
+    "InertiaFIGWs": 53.161644
+  },
+  {
+    "HourUTC": "2023-01-01T13:00:00",
+    "HourDK": "2023-01-01T14:00:00",
+    "InertiaNordicGWs": 166.748505,
+    "InertiaDK2GWs": 7.651183,
+    "InertiaNOGWs": 39.598232,
+    "InertiaSEGWs": 66.560692,
+    "InertiaFIGWs": 52.937595
+  },
+  {
+    "HourUTC": "2023-01-01T12:00:00",
+    "HourDK": "2023-01-01T13:00:00",
+    "InertiaNordicGWs": 165.562943,
+    "InertiaDK2GWs": 7.650855,
+    "InertiaNOGWs": 39.834087,
+    "InertiaSEGWs": 65.273811,
+    "InertiaFIGWs": 52.804893
+  },
+  {
+    "HourUTC": "2023-01-01T11:00:00",
+    "HourDK": "2023-01-01T12:00:00",
+    "InertiaNordicGWs": 163.662262,
+    "InertiaDK2GWs": 7.650466,
+    "InertiaNOGWs": 38.761909,
+    "InertiaSEGWs": 64.473251,
+    "InertiaFIGWs": 52.777164
+  },
+  {
+    "HourUTC": "2023-01-01T10:00:00",
+    "HourDK": "2023-01-01T11:00:00",
+    "InertiaNordicGWs": 161.520615,
+    "InertiaDK2GWs": 7.650817,
+    "InertiaNOGWs": 36.900566,
+    "InertiaSEGWs": 64.261375,
+    "InertiaFIGWs": 52.707855
+  },
+  {
+    "HourUTC": "2023-01-01T09:00:00",
+    "HourDK": "2023-01-01T10:00:00",
+    "InertiaNordicGWs": 158.763306,
+    "InertiaDK2GWs": 7.650795,
+    "InertiaNOGWs": 34.179932,
+    "InertiaSEGWs": 64.201256,
+    "InertiaFIGWs": 52.731987
+  },
+  {
+    "HourUTC": "2023-01-01T08:00:00",
+    "HourDK": "2023-01-01T09:00:00",
+    "InertiaNordicGWs": 156.996078,
+    "InertiaDK2GWs": 7.650937,
+    "InertiaNOGWs": 32.830513,
+    "InertiaSEGWs": 63.79697,
+    "InertiaFIGWs": 52.719112
+  },
+  {
+    "HourUTC": "2023-01-01T07:00:00",
+    "HourDK": "2023-01-01T08:00:00",
+    "InertiaNordicGWs": 154.464554,
+    "InertiaDK2GWs": 7.650862,
+    "InertiaNOGWs": 30.411852,
+    "InertiaSEGWs": 63.690205,
+    "InertiaFIGWs": 52.712395
+  },
+  {
+    "HourUTC": "2023-01-01T06:00:00",
+    "HourDK": "2023-01-01T07:00:00",
+    "InertiaNordicGWs": 154.310852,
+    "InertiaDK2GWs": 7.651057,
+    "InertiaNOGWs": 29.970175,
+    "InertiaSEGWs": 63.993862,
+    "InertiaFIGWs": 52.69635
+  },
+  {
+    "HourUTC": "2023-01-01T05:00:00",
+    "HourDK": "2023-01-01T06:00:00",
+    "InertiaNordicGWs": 153.260223,
+    "InertiaDK2GWs": 7.650122,
+    "InertiaNOGWs": 29.06245,
+    "InertiaSEGWs": 63.902752,
+    "InertiaFIGWs": 52.644604
+  },
+  {
+    "HourUTC": "2023-01-01T04:00:00",
+    "HourDK": "2023-01-01T05:00:00",
+    "InertiaNordicGWs": 152.260712,
+    "InertiaDK2GWs": 7.6506,
+    "InertiaNOGWs": 28.584845,
+    "InertiaSEGWs": 63.6674,
+    "InertiaFIGWs": 52.358627
+  },
+  {
+    "HourUTC": "2023-01-01T03:00:00",
+    "HourDK": "2023-01-01T04:00:00",
+    "InertiaNordicGWs": 151.040802,
+    "InertiaDK2GWs": 7.650712,
+    "InertiaNOGWs": 28.863535,
+    "InertiaSEGWs": 62.481728,
+    "InertiaFIGWs": 52.044868
+  },
+  {
+    "HourUTC": "2023-01-01T02:00:00",
+    "HourDK": "2023-01-01T03:00:00",
+    "InertiaNordicGWs": 151.342468,
+    "InertiaDK2GWs": 7.651132,
+    "InertiaNOGWs": 29.277861,
+    "InertiaSEGWs": 62.42038,
+    "InertiaFIGWs": 51.993046
+  },
+  {
+    "HourUTC": "2023-01-01T01:00:00",
+    "HourDK": "2023-01-01T02:00:00",
+    "InertiaNordicGWs": 153.079987,
+    "InertiaDK2GWs": 7.650586,
+    "InertiaNOGWs": 30.856853,
+    "InertiaSEGWs": 62.602226,
+    "InertiaFIGWs": 51.970394
+  },
+  {
+    "HourUTC": "2023-01-01T00:00:00",
+    "HourDK": "2023-01-01T01:00:00",
+    "InertiaNordicGWs": 156.705582,
+    "InertiaDK2GWs": 7.650668,
+    "InertiaNOGWs": 34.051258,
+    "InertiaSEGWs": 63.054935,
+    "InertiaFIGWs": 51.948807
+  },
+  {
+    "HourUTC": "2022-12-31T23:00:00",
+    "HourDK": "2023-01-01T00:00:00",
+    "InertiaNordicGWs": 159.249329,
+    "InertiaDK2GWs": 7.650907,
+    "InertiaNOGWs": 36.215782,
+    "InertiaSEGWs": 63.584988,
+    "InertiaFIGWs": 51.797619
+  }
+]

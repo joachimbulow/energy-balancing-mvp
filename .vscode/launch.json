@@ -5,7 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Package",
+            "name": "TSO",
+            "program": "${workspaceFolder}/tso/src/index.js",
+            "cwd": "${workspaceFolder}",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "Battery",
             "type": "go",
             "request": "launch",
             "mode": "auto",
