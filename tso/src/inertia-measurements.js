@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { publishClient, ensureClientIsConnected } = require("./redis-client");
+const { publish } = require("./redis-client");
 
 const INERTIA_MEASUREMENTS_TOPIC = "inertia_measurements";
 
@@ -53,16 +53,10 @@ function initializeInertiaPublication() {
 }
 
 async function publishInertiaMeasurements() {
-  await ensureClientIsConnected(publishClient);
-
   const measurements = getCurrentInertiaMeasurements();
-
   console.table(measurements);
 
-  publishClient.publish(
-    INERTIA_MEASUREMENTS_TOPIC,
-    JSON.stringify(measurements, null, 2)
-  );
+  publish(INERTIA_MEASUREMENTS_TOPIC, measurements);
 }
 
 module.exports = {

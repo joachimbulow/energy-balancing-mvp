@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { publishClient, ensureClientIsConnected } = require("./redis-client");
+const { publish } = require("./redis-client");
 const { sleep } = require("./utils");
 const { factorInBatteryActions } = require("./battery-actions")
 
@@ -50,14 +50,9 @@ function initializeFrequencyPublication() {
   }, PUBLISHING_INTERVAL_FREQUENCY_MS);
 
   async function publishFrequencyMeasurements() {
-    await ensureClientIsConnected(publishClient);
-
     const measurements = getCurrentFrequencyMeasurements();
-
-    publishClient.publish(
-      FREQUENCY_MEASUREMENT_TOPIC,
-      JSON.stringify(measurements, null, 2)
-    );
+    console.table(measurements);
+    publish(FREQUENCY_MEASUREMENT_TOPIC, measurements);
   }
 }
 

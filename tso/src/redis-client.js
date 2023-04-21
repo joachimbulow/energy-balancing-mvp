@@ -1,4 +1,5 @@
 const redis = require("redis");
+const PubSubBroker = require("./pub-sub-client");
 
 const REDIS_HOST = "localhost";
 const REDIS_PORT = 6379;
@@ -35,13 +36,13 @@ subscribeClient.on("connect", () => {
   console.log("Subscribe client connected to Redis");
 });
 
-async function ensureClientIsConnected(client) {
-  if (client == null || client == undefined || client.connected == false) {
-    await connectClient(client);
+async function ensurePublishClientIsConnected() {
+  if (publishClient == null || publishClient == undefined) {
+    await connectPublishClient(publishClient);
   }
 }
 
-async function connectClient(client) {
+async function connectPublishClient(client) {
   client = redis.createClient(REDIS_CONFIG);
 
   await client.connect();
@@ -55,9 +56,22 @@ async function connectClient(client) {
   });
 }
 
+async function subscribe(topic, handler) {
+  subscribeClient.subscribe(topic, (message, topic) => {
+    console.log("Received message on channel " + topic + ":\n" + message);
+    handler(message);
+  });
+}
+
+async function publish(topic, message) {
+  await ensurePublishClientIsConnected();
+  publishClient.publish(
+    topic,
+    JSON.stringify(message, null, 2)
+  );
+}
 
 module.exports = {
-  publishClient: publishClient,
-  subscribeClient: subscribeClient,
-  ensureClientIsConnected
+  subscribe,
+  publish,
 };
