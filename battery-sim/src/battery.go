@@ -2,13 +2,12 @@ package src
 
 import (
 	"encoding/json"
-	"fmt"
-	"log"
 	"math/rand"
 	"os/exec"
 	"time"
 
 	"github.com/joachimbulow/pem-energy-balance/src/broker"
+	"github.com/joachimbulow/pem-energy-balance/src/util"
 )
 
 const (
@@ -20,7 +19,7 @@ const (
 )
 
 var (
-	brokerInstance broker.Broker
+	logger util.Logger
 )
 
 type PEMRequest struct {
@@ -72,16 +71,16 @@ const (
 
 	PACKET_KWH = float64(PACKET_ENERGY_J / 3600000)
 
-	SENDING_INTERVAL_MS = 10000
+	SENDING_INTERVAL_NS = 10 * time.Second
 
 	CHARGE_DISCHARGE_INTERVAL_MS = 10000
 )
 
 type Battery struct {
-	ID             string
-	BrokerInstance broker.Broker
-	SoC            float64
-	Requests       map[string]PEMRequest
+	id       string
+	broker   broker.Broker
+	soc      float64
+	requests map[string]PEMRequest
 }
 
 var (
@@ -90,18 +89,20 @@ var (
 )
 
 func NewBattery() Battery {
-	battery.ID = generateUuid()
-	battery.BrokerInstance = setupBroker()
-	go battery.BrokerInstance.Listen(PEM_RESPONSES_TOPIC, handlePEMresponse)
+	battery.id = generateUuid()
+	battery.broker = setupBroker()
+	battery.requests = make(map[string]PEMRequest)
+	logger = util.NewLogger(battery.id)
+	go battery.broker.Listen(PEM_RESPONSES_TOPIC, handlePEMresponse)
 	go publishPEMrequests()
+	logger.Info("Battery started\n")
 	return battery
 }
 
 func setupBroker() broker.Broker {
-	var err error
-	brokerInstance, err = broker.NewBroker(KAFKA)
+	var brokerInstance, err = broker.NewBroker(KAFKA)
 	if err != nil {
-		log.Print("Broker instance could not be created:", err)
+		logger.Fatalf(err, "Broker instance could not be created")
 	}
 	return brokerInstance
 }
@@ -109,49 +110,44 @@ func setupBroker() broker.Broker {
 func generateUuid() string {
 	newUUID, err := exec.Command("uuidgen").Output()
 	if err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
 	}
-	fmt.Println("Generated UUID:")
-	fmt.Printf("%s", newUUID)
 	return string(newUUID)
 }
 
 func handlePEMresponse(params ...[]byte) {
-	fmt.Println("Received PEM response: ")
-	for _, param := range params {
-		fmt.Printf("'%s'", param)
-	}
+	logger.Info("Received PEM response with the following params: %v", params)
 
 	// todo verify index
 	message := params[1]
 
 	response := PEMResponse{}
 	json.Unmarshal(message, &response)
-	if response.BatteryID != battery.ID {
+	if response.BatteryID != battery.id {
 		return
 	}
 	if response.ResponseType == GRANTED {
 		actOnGrantedRequest(response)
 	} else if response.ResponseType == DENIED {
-		fmt.Printf("Request with id %s denied\n", response.ID)
+		logger.Info("Request with id %s denied\n", response.ID)
 	}
 }
 
 func publishPEMrequests() {
 	for {
-		time.Sleep(SENDING_INTERVAL_MS)
+		time.Sleep(SENDING_INTERVAL_NS)
 		for busy {
 			time.Sleep(time.Second)
 		}
 		request := getPEMRequest()
-		fmt.Printf("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
+		logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
 
 		jsonRequest, err := json.Marshal(request)
 		if err != nil {
-			log.Fatal(err)
+			logger.Fatal(err)
 		}
-		battery.Requests[request.ID] = request
-		battery.BrokerInstance.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
+		battery.requests[request.ID] = request
+		battery.broker.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
 
@@ -170,18 +166,18 @@ func getPEMRequest() PEMRequest {
 }
 
 func measureSoC() float64 {
-	if battery.SoC == 0 {
+	if battery.soc == 0 {
 		// first measurement should be normally distributed around soc mean and std dev
-		battery.SoC = rand.NormFloat64()*SOC_STD + SOC_MEAN
+		battery.soc = rand.NormFloat64()*SOC_STD + SOC_MEAN
 	}
-	fmt.Printf("Battery state of charge: %.2f\n", battery.SoC)
-	return battery.SoC
+	logger.Info("Battery state of charge: %.2f\n", battery.soc)
+	return battery.soc
 }
 
 func newRequest(requestType string) PEMRequest {
 	return PEMRequest{
 		ID:          generateUuid(),
-		BatteryID:   battery.ID,
+		BatteryID:   battery.id,
 		RequestType: requestType,
 	}
 }
@@ -196,11 +192,11 @@ func probabilisticallyCalculateRequest() PEMRequest {
 }
 
 func actOnGrantedRequest(response PEMResponse) {
-	fmt.Printf("Request with id %s approved\n", response.ID)
-	request := battery.Requests[response.ID]
+	logger.Info("Request with id %s approved\n", response.ID)
+	request := battery.requests[response.ID]
 
 	if request.ID == "" {
-		fmt.Printf("Request with id %s not found\n", response.ID)
+		logger.Info("Request with id %s not found\n", response.ID)
 		return
 	}
 	for busy {
@@ -212,38 +208,38 @@ func actOnGrantedRequest(response PEMResponse) {
 		dischargePacket()
 	}
 	publishBatteryAction(request.RequestType)
-	delete(battery.Requests, request.ID)
+	delete(battery.requests, request.ID)
 }
 
 func chargePacket() {
-	fmt.Printf("Charging packet of + %.2f kWh.\n", PACKET_KWH)
+	logger.Info("Charging packet of + %.2f kWh.\n", PACKET_KWH)
 	updateBattery(PACKET_KWH)
 }
 
 func dischargePacket() {
-	fmt.Printf("Discharging packet of - %.2f kWh.\n", PACKET_KWH)
+	logger.Info("Discharging packet of - %.2f kWh.\n", PACKET_KWH)
 	updateBattery(-PACKET_KWH)
 }
 
 func updateBattery(chargeAmount float64) {
 	busy = true
-	currentBatteryCharge := battery.SoC * BATTERY_CAPACITY_KWH
+	currentBatteryCharge := battery.soc * BATTERY_CAPACITY_KWH
 	currentBatteryCharge += chargeAmount
-	battery.SoC = (currentBatteryCharge / BATTERY_CAPACITY_KWH)
+	battery.soc = (currentBatteryCharge / BATTERY_CAPACITY_KWH)
 	time.Sleep(CHARGE_DISCHARGE_INTERVAL_MS * time.Millisecond)
-	fmt.Printf("After the update the new SoC is: %.4f\n", battery.SoC)
+	logger.Info("After the update the new SoC is: %.4f\n", battery.soc)
 	busy = false
 }
 
 func publishBatteryAction(actionType string) {
 	action := BatteryAction{
 		ID:         generateUuid(),
-		BatteryID:  battery.ID,
+		BatteryID:  battery.id,
 		ActionType: actionType,
 	}
 	json, err := json.Marshal(action)
 	if err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
 	}
-	battery.BrokerInstance.Publish(BATTERY_ACTIONS_TOPIC, battery.ID, string(json))
+	battery.broker.Publish(BATTERY_ACTIONS_TOPIC, battery.id, string(json))
 }
