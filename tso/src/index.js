@@ -1,4 +1,5 @@
-const { subscribe } = require("./redis-client");
+//const { subscribe } = require("./redis-client");
+const { subscribe } = require("./kafka-client");
 
 const { loadInertiaMeasurements, initializeInertiaPublication } = require("./inertia-measurements");
 const { loadFrequencyMeasurements, initializeFrequencyPublication } = require("./frequency-measurements");

@@ -1,5 +1,6 @@
 const fs = require("fs");
-const { publish } = require("./redis-client");
+//const { publish } = require("./redis-client");
+const { publish } = require("./kafka-client");
 
 const INERTIA_MEASUREMENTS_TOPIC = "inertia_measurements";
 

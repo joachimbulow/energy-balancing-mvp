@@ -1,5 +1,8 @@
 const fs = require("fs");
-const { publish } = require("./redis-client");
+
+//const { publish } = require("./redis-client");
+const { publish } = require("./kafka-client");
+
 const { sleep } = require("./utils");
 const { factorInBatteryActions } = require("./battery-actions")
 
