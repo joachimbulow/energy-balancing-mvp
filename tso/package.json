@@ -13,6 +13,7 @@
   "dependencies": {
     "d3-random": "^2.2.2",
     "path": "^0.12.7",
-    "redis": "^4.6.5"
+    "redis": "^4.6.5",
+    "kafkajs": "^1.15.0"
   }
 }
