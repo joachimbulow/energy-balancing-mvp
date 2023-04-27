@@ -20,6 +20,12 @@ type KafkaBroker struct {
 func NewKafkaBroker() (*KafkaBroker, error) {
 	broker := &KafkaBroker{}
 	logger = util.NewLogger("KafkaBroker")
+	conn, err := kafka.Dial("tcp", brokerURL)
+    if err != nil {
+        logger.ErrorWithMsg("Failed to connect to Kafka:", err)
+        return broker, err
+    }
+    defer conn.Close()
 	return broker, nil
 }
 
