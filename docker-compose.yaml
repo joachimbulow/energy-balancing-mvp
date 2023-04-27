@@ -51,6 +51,7 @@ services:
     environment:
       - BROKER_URL=kafka:9092
       - BROKER=KAFKA
+      - N_BATTERIES=100
     networks:
       - mvp-network
 
