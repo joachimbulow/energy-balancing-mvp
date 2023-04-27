@@ -7,7 +7,9 @@ import (
 )
 
 var (
+	// TODO environment variable in dockerfile
 	nBatteries = 1
+	// TODO broker url as environment variable
 )
 
 func main() {
