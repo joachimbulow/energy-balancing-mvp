@@ -10,10 +10,6 @@ COPY main.go ./
 
 COPY . .
 
-# set environment variables
-ENV BROKER_URL=localhost:9092 \
-    BROKER=KAFKA
-
 RUN go build -o app
 
 CMD ["./app"]
