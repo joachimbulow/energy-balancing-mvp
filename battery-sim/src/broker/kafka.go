@@ -9,10 +9,7 @@ import (
 )
 
 var (
-	// TODO setup ingress rule
-	//brokerURL = "20.105.75.161:9092"
-	brokerURL = "127.0.0.1:9092"
-	logger    util.Logger
+	logger util.Logger
 )
 
 type KafkaBroker struct {
