@@ -3,8 +3,9 @@ package src
 import (
 	"encoding/json"
 	"math/rand"
-	"os/exec"
 	"time"
+
+	"github.com/google/uuid"
 
 	"github.com/joachimbulow/pem-energy-balance/src/broker"
 	"github.com/joachimbulow/pem-energy-balance/src/util"
@@ -108,11 +109,8 @@ func setupBroker() broker.Broker {
 }
 
 func generateUuid() string {
-	newUUID, err := exec.Command("uuidgen").Output()
-	if err != nil {
-		logger.Fatal(err)
-	}
-	return string(newUUID)
+	u := uuid.New()
+	return u.String()
 }
 
 func handlePEMresponse(params ...[]byte) {

@@ -22,6 +22,7 @@ type Broker interface {
 
 func NewBroker() (Broker, error) {
 	if envBrokerURL := os.Getenv("BROKER_URL"); envBrokerURL != "" {
+		brokerURL = envBrokerURL
 	} else {
 		logger.Info("BROKER_URL not set, using default: %s", brokerURL)
 	}
