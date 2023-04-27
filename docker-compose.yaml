@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 22181:2181
+    networks:
+      - mvp-network
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    networks:
+      - mvp-network
+
+  tso:
+    build: ./tso
+    platform: linux/x86_64
+    depends_on:
+      - kafka
+    environment:
+      - BROKER=kafka
+      - BROKER_URL=kafka
+      - BROKER_PORT=9092
+    networks:
+      - mvp-network
+
+  battery:
+    build: ./battery-sim
+    platform: linux/x86_64
+    deploy:
+      mode: replicated
+      replicas: 10
+    depends_on:
+      - kafka
+    environment:
+      - ENV_BROKER_URL=kafka:9092
+      - BROKER=KAFKA
+    networks:
+      - mvp-network
+
+networks:
+  mvp-network:
