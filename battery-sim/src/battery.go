@@ -100,7 +100,7 @@ func NewBattery() Battery {
 }
 
 func setupBroker() broker.Broker {
-	var brokerInstance, err = broker.NewBroker(KAFKA)
+	var brokerInstance, err = broker.NewBroker()
 	if err != nil {
 		logger.Fatalf(err, "Broker instance could not be created")
 	}

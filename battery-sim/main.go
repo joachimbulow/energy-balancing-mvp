@@ -1,22 +1,22 @@
 package main
 
 import (
+	"os"
+	"strconv"
 	"time"
 
 	"github.com/joachimbulow/pem-energy-balance/src"
 )
 
 var (
-	// TODO environment variable in dockerfile
-	nBatteries = 1
-	// TODO broker url as environment variable
+	nBatteries = getNumberOfBatteries()
 )
 
 func main() {
-	initialize()
+	initializeBatteries()
 }
 
-func initialize() {
+func initializeBatteries() {
 	for i := 0; i < nBatteries; i++ {
 		go startBattery()
 	}
@@ -28,4 +28,18 @@ func initialize() {
 
 func startBattery() {
 	src.NewBattery()
+}
+
+func getNumberOfBatteries() int {
+	nBatteriesEnv := os.Getenv("N_BATTERIES")
+	if nBatteriesEnv == "" {
+		n := 1
+		return n
+	}
+	nBatteries, err := strconv.Atoi(nBatteriesEnv)
+	if err != nil {
+		panic(err)
+	}
+
+	return nBatteries
 }
