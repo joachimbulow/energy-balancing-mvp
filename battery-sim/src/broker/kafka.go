@@ -21,11 +21,11 @@ func NewKafkaBroker() (*KafkaBroker, error) {
 	broker := &KafkaBroker{}
 	logger = util.NewLogger("KafkaBroker")
 	conn, err := kafka.Dial("tcp", brokerURL)
-    if err != nil {
-        logger.ErrorWithMsg("Failed to connect to Kafka:", err)
-        return broker, err
-    }
-    defer conn.Close()
+	if err != nil {
+		logger.ErrorWithMsg("Failed to connect to Kafka:", err)
+		return broker, err
+	}
+	defer conn.Close()
 	return broker, nil
 }
 
@@ -71,7 +71,7 @@ func (k *KafkaBroker) Publish(topic string, key string, message string) error {
 		},
 	)
 	if err != nil {
-		logger.Fatalf(err, "Failed to write messages")
+		logger.ErrorWithMsg("Failed to write messages", err)
 	}
 	return err
 }
@@ -83,7 +83,7 @@ func (k *KafkaBroker) Subscribe(topic string) error {
 
 func (k *KafkaBroker) Unsubscribe(topic string) error {
 	if err := k.reader.Close(); err != nil {
-		logger.Fatalf(err, "Failed to close reader")
+		logger.ErrorWithMsg("Failed to close reader", err)
 	}
 	return nil
 }
@@ -93,14 +93,12 @@ func (k *KafkaBroker) Listen(topic string, handler func(params ...[]byte)) error
 		setupReader(k, topic)
 	}
 	for {
-		// read messages from the Kafka topic
 		m, err := k.reader.ReadMessage(context.Background())
 		if err != nil {
 			logger.ErrorWithMsg("Failed to read message from Kafka", err)
 			continue
 		}
 
-		// call the handler function for each message
 		handler(m.Key, m.Value)
 	}
 }

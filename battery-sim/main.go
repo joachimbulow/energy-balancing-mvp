@@ -33,7 +33,7 @@ func startBattery() {
 func getNumberOfBatteries() int {
 	nBatteriesEnv := os.Getenv("N_BATTERIES")
 	if nBatteriesEnv == "" {
-		n := 1
+		n := 10
 		return n
 	}
 	nBatteries, err := strconv.Atoi(nBatteriesEnv)
