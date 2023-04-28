@@ -1,4 +1,4 @@
-const { subscribe } = require("./mqtt-client");
+const { subscribe } = require("./client");
 
 const {
   loadInertiaMeasurements,

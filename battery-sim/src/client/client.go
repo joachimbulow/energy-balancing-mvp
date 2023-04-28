@@ -1,4 +1,4 @@
-package broker
+package client
 
 import (
 	"fmt"
@@ -10,8 +10,7 @@ var (
 	brokerURL  = "127.0.0.1:9092"
 )
 
-// define an interface for the broker so that we can use different brokers
-type Broker interface {
+type Client interface {
 	Connect() error
 	Disconnect() error
 	Publish(topic string, key string, message string) error
@@ -20,7 +19,7 @@ type Broker interface {
 	Listen(topic string, handler func(params ...[]byte)) error
 }
 
-func NewBroker() (Broker, error) {
+func NewClient() (Client, error) {
 	if envBrokerURL := os.Getenv("BROKER_URL"); envBrokerURL != "" {
 		brokerURL = envBrokerURL
 	} else {
@@ -34,9 +33,9 @@ func NewBroker() (Broker, error) {
 
 	switch brokerType {
 	case "REDIS":
-		return NewRedisBroker()
+		return NewRedisClient()
 	case "KAFKA":
-		return NewKafkaBroker()
+		return NewKafkaClient()
 	default:
 		return nil, fmt.Errorf("invalid broker type: %s", brokerType)
 	}

@@ -6,8 +6,8 @@
     "configurations": [
         {
             "name": "TSO",
-            "program": "${workspaceFolder}/tso/src/index.js",
-            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/tso/main.js",
+            "cwd": "${workspaceFolder}/tso",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
