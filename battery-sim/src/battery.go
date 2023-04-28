@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/joachimbulow/pem-energy-balance/src/broker"
+	"github.com/joachimbulow/pem-energy-balance/src/client"
 	"github.com/joachimbulow/pem-energy-balance/src/util"
 )
 
@@ -17,10 +17,6 @@ const (
 	FREQUENCY_MEASUREMENT_TOPIC = "frequency_measurements"
 	BATTERY_ACTIONS_TOPIC       = "battery_actions"
 	INERTIA_MEASUREMENT         = "inertia_measurements"
-)
-
-var (
-	logger util.Logger
 )
 
 type PEMRequest struct {
@@ -79,7 +75,7 @@ const (
 
 type Battery struct {
 	id       string
-	broker   broker.Broker
+	client   client.Client
 	soc      float64
 	requests map[string]PEMRequest
 	logger   util.Logger
@@ -89,24 +85,23 @@ var (
 	busy = false
 )
 
-func NewBattery() Battery {
+func NewBattery() {
 	battery := Battery{}
 	battery.id = generateUuid()
-	battery.broker = battery.setupBroker()
+	battery.client = battery.setupClient()
 	battery.requests = make(map[string]PEMRequest)
 	battery.logger = util.NewLogger(battery.id)
-	go battery.broker.Listen(PEM_RESPONSES_TOPIC, battery.handlePEMresponse)
+	go battery.client.Listen(PEM_RESPONSES_TOPIC, battery.handlePEMresponse)
 	go battery.publishPEMrequests()
 	battery.logger.Info("Battery started\n")
-	return battery
 }
 
-func (battery *Battery) setupBroker() broker.Broker {
-	var brokerInstance, err = broker.NewBroker()
+func (battery *Battery) setupClient() client.Client {
+	var clientInstance, err = client.NewClient()
 	if err != nil {
-		battery.logger.Fatalf(err, "Broker instance could not be created")
+		battery.logger.Fatalf(err, "Client instance could not be created")
 	}
-	return brokerInstance
+	return clientInstance
 }
 
 func generateUuid() string {
@@ -146,7 +141,7 @@ func (battery *Battery) publishPEMrequests() {
 			battery.logger.Fatal(err)
 		}
 		battery.requests[request.ID] = request
-		battery.broker.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
+		battery.client.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
 
@@ -240,5 +235,5 @@ func (battery *Battery) publishBatteryAction(actionType string) {
 	if err != nil {
 		battery.logger.Fatal(err)
 	}
-	battery.broker.Publish(BATTERY_ACTIONS_TOPIC, battery.id, string(json))
+	battery.client.Publish(BATTERY_ACTIONS_TOPIC, battery.id, string(json))
 }

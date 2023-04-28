@@ -1,4 +1,4 @@
-package broker
+package client
 
 import (
 	"context"
@@ -10,7 +10,7 @@ import (
 	"github.com/go-redis/redis/v8"
 )
 
-type RedisBroker struct {
+type RedisClient struct {
 	client *redis.Client
 	pubsub *redis.PubSub
 	ctx    context.Context
@@ -20,7 +20,7 @@ const (
 	address = "localhost:6379"
 )
 
-func NewRedisBroker() (*RedisBroker, error) {
+func NewRedisClient() (*RedisClient, error) {
 	rdb := redis.NewClient(&redis.Options{
 		Addr: address,
 	})
@@ -31,18 +31,18 @@ func NewRedisBroker() (*RedisBroker, error) {
 
 	pubsub := rdb.Subscribe(context.Background(), "default")
 
-	return &RedisBroker{
+	return &RedisClient{
 		client: rdb,
 		pubsub: pubsub,
 		ctx:    context.Background(),
 	}, nil
 }
 
-func (rb *RedisBroker) Connect() error {
+func (rb *RedisClient) Connect() error {
 	return nil // Redis connection is established in NewRedisBroker()
 }
 
-func (rb *RedisBroker) Disconnect() error {
+func (rb *RedisClient) Disconnect() error {
 	if err := rb.pubsub.Unsubscribe(rb.ctx, "default"); err != nil {
 		return fmt.Errorf("failed to unsubscribe from topic: %w", err)
 	}
@@ -52,28 +52,28 @@ func (rb *RedisBroker) Disconnect() error {
 	return nil
 }
 
-func (rb *RedisBroker) Publish(topic string, key string, message string) error {
+func (rb *RedisClient) Publish(topic string, key string, message string) error {
 	if err := rb.client.Publish(rb.ctx, topic, message).Err(); err != nil {
 		return fmt.Errorf("failed to publish message: %w", err)
 	}
 	return nil
 }
 
-func (rb *RedisBroker) Subscribe(topic string) error {
+func (rb *RedisClient) Subscribe(topic string) error {
 	if err := rb.pubsub.Subscribe(rb.ctx, topic); err != nil {
 		return fmt.Errorf("failed to subscribe to topic: %w", err)
 	}
 	return nil
 }
 
-func (rb *RedisBroker) Unsubscribe(topic string) error {
+func (rb *RedisClient) Unsubscribe(topic string) error {
 	if err := rb.pubsub.Unsubscribe(rb.ctx, topic); err != nil {
 		return fmt.Errorf("failed to unsubscribe from topic: %w", err)
 	}
 	return nil
 }
 
-func (rb *RedisBroker) Listen(topic string, handler func(params ...[]byte)) error {
+func (rb *RedisClient) Listen(topic string, handler func(params ...[]byte)) error {
 	ch := rb.pubsub.Channel()
 
 	go func() {

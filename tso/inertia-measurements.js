@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { publish } = require("./mqtt-client");
+const { publish } = require("./client");
 
 const INERTIA_MEASUREMENTS_TOPIC = "inertia_measurements";
 
