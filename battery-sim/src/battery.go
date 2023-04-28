@@ -3,6 +3,7 @@ package src
 import (
 	"encoding/json"
 	"math/rand"
+	"sync"
 	"time"
 
 	"github.com/google/uuid"
@@ -66,7 +67,7 @@ const (
 	PacketTimeS     = 5 * 60
 	PACKET_ENERGY_J = PacketPowerW * PacketTimeS
 
-	PACKET_KWH = float64(PACKET_ENERGY_J / 3600000)
+	PACKET_KWH = PACKET_ENERGY_J / 3600000.00
 
 	SENDING_INTERVAL_NS = 10 * time.Second
 
@@ -74,16 +75,14 @@ const (
 )
 
 type Battery struct {
-	id       string
-	client   client.Client
-	soc      float64
-	requests map[string]PEMRequest
-	logger   util.Logger
+	id            string
+	client        client.Client
+	soc           float64
+	requests      map[string]PEMRequest
+	requestsMutex sync.Mutex
+	logger        util.Logger
+	busy          bool
 }
-
-var (
-	busy = false
-)
 
 func NewBattery() {
 	battery := Battery{}
@@ -93,7 +92,7 @@ func NewBattery() {
 	battery.logger = util.NewLogger(battery.id)
 	go battery.client.Listen(PEM_RESPONSES_TOPIC, battery.handlePEMresponse)
 	go battery.publishPEMrequests()
-	battery.logger.Info("Battery started\n")
+	battery.logger.Info("Battery started")
 }
 
 func (battery *Battery) setupClient() client.Client {
@@ -110,16 +109,20 @@ func generateUuid() string {
 }
 
 func (battery *Battery) handlePEMresponse(params ...[]byte) {
-	battery.logger.Info("Received PEM response with the following params: %v", params)
-
-	// todo verify index
 	message := params[1]
 
 	response := PEMResponse{}
-	json.Unmarshal(message, &response)
+	if err := json.Unmarshal(message, &response); err != nil {
+		battery.logger.ErrorWithMsg("Unmarshaling of message failed", err)
+		return
+	}
+
 	if response.BatteryID != battery.id {
 		return
 	}
+
+	battery.logger.Info("Received %s response with id %s and battery id %s\n", response.ResponseType, response.ID, response.BatteryID)
+
 	if response.ResponseType == GRANTED {
 		battery.actOnGrantedRequest(response)
 	} else if response.ResponseType == DENIED {
@@ -130,7 +133,7 @@ func (battery *Battery) handlePEMresponse(params ...[]byte) {
 func (battery *Battery) publishPEMrequests() {
 	for {
 		time.Sleep(SENDING_INTERVAL_NS)
-		for busy {
+		for battery.busy {
 			time.Sleep(time.Second)
 		}
 		request := battery.getPEMRequest()
@@ -140,7 +143,9 @@ func (battery *Battery) publishPEMrequests() {
 		if err != nil {
 			battery.logger.Fatal(err)
 		}
+		battery.requestsMutex.Lock()
 		battery.requests[request.ID] = request
+		battery.requestsMutex.Unlock()
 		battery.client.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
@@ -187,10 +192,14 @@ func (battery *Battery) probabilisticallyCalculateRequest() PEMRequest {
 
 func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 	battery.logger.Info("Request with id %s approved\n", response.ID)
-	for busy {
+	for battery.busy {
 		time.Sleep(1 * time.Second)
 	}
+	// maybe mutex is not needed here
+	battery.requestsMutex.Lock()
 	request := battery.requests[response.ID]
+	delete(battery.requests, request.ID)
+	battery.requestsMutex.Unlock()
 
 	if request.ID == "" {
 		battery.logger.Info("Request with id %s not found\n", response.ID)
@@ -202,27 +211,26 @@ func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 		battery.dischargePacket()
 	}
 	battery.publishBatteryAction(request.RequestType)
-	delete(battery.requests, request.ID)
 }
 
 func (battery *Battery) chargePacket() {
-	battery.logger.Info("Charging packet of + %.2f kWh.\n", PACKET_KWH)
+	battery.logger.Info("Charging packet of + %0.4f kWh.\n", PACKET_KWH)
 	battery.updateBattery(PACKET_KWH)
 }
 
 func (battery *Battery) dischargePacket() {
-	battery.logger.Info("Discharging packet of - %.2f kWh.\n", PACKET_KWH)
+	battery.logger.Info("Discharging packet of - %0.4f kWh.\n", PACKET_KWH)
 	battery.updateBattery(-PACKET_KWH)
 }
 
 func (battery *Battery) updateBattery(chargeAmount float64) {
-	busy = true
+	battery.busy = true
 	currentBatteryCharge := battery.soc * BATTERY_CAPACITY_KWH
 	currentBatteryCharge += chargeAmount
 	battery.soc = (currentBatteryCharge / BATTERY_CAPACITY_KWH)
-	time.Sleep(CHARGE_DISCHARGE_INTERVAL_MS * time.Millisecond)
+	time.Sleep(CHARGE_DISCHARGE_INTERVAL_MS * time.Millisecond) // simulate charging/discharging
 	battery.logger.Info("After the update the new SoC is: %.4f\n", battery.soc)
-	busy = false
+	battery.busy = false
 }
 
 func (battery *Battery) publishBatteryAction(actionType string) {
