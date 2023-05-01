@@ -7,7 +7,7 @@ import (
 
 var (
 	brokerType = "KAFKA"
-	brokerURL  = "127.0.0.1:9092"
+	brokerURL  = "127.0.0.1:29092" // Kafka PLAINTEXT_HOST://localhost:29092
 )
 
 type Client interface {
