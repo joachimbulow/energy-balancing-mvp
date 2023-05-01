@@ -2,6 +2,9 @@ version: "3"
 
 services:
   zookeeper:
+    profiles:
+      - no-battery
+      - no-coordinator
     image: confluentinc/cp-zookeeper:latest
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
@@ -12,6 +15,9 @@ services:
       - mvp-network
 
   kafka:
+    profiles:
+      - no-battery
+      - no-coordinator
     image: confluentinc/cp-kafka:latest
     depends_on:
       - zookeeper
@@ -29,6 +35,9 @@ services:
       - mvp-network
 
   tso:
+    profiles:
+      - no-battery
+      - no-coordinator
     build: ./tso
     platform: linux/x86_64
     depends_on:
@@ -41,6 +50,8 @@ services:
       - mvp-network
 
   battery:
+    profiles:
+      - no-coordinator
     build: ./battery-sim
     platform: linux/x86_64
     deploy:
