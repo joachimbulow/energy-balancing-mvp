@@ -104,8 +104,7 @@ func (battery *Battery) setupClient() client.Client {
 }
 
 func generateUuid() string {
-	u := uuid.New()
-	return u.String()
+	return uuid.New().String()
 }
 
 func (battery *Battery) handlePEMresponse(params ...[]byte) {
