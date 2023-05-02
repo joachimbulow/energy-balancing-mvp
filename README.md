@@ -1,4 +1,5 @@
 # pem-energy-balance
+
 This repository proposes a technology stack that should theoretically be able to aid in supporting the danish electrical infrastructure through a series of batteries communicating to charge / discharge power into the grid
 
 Battery-sim
@@ -9,3 +10,13 @@ Kafka highly distributed fault-tolerant message broker feeding millinos of messa
 
 Vizualisation
 TBD, real-time vizualisation
+
+## Profiles
+
+Run docker compose with --profile=no-battery to boot without the battery-sim
+Run docker compose with --profile=no-coordinator to boot without the coordinator
+
+## Useful commands
+
+run e.g. `docker exec -it <kafka-container-name> kafka-console-consumer --bootstrap-server localhost:9092 --topic <my-topic> --from-beginning`
+to see topic messages
