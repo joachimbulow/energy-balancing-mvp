@@ -1,6 +1,49 @@
 version: "3"
 
 services:
+  redis:
+    profiles:
+      - no-battery
+      - no-coordinator
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - mvp-network
+
+  influxdb:
+    profiles:
+      - no-battery
+      - no-coordinator
+    image: influxdb:1.8-alpine
+    container_name: influxdb
+    platform: linux/x86_64
+    restart: always
+    environment:
+      - INFLUXDB_DB=influx
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=admin
+    ports:
+      - '8086:8086'
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+    networks:
+      - mvp-network
+
+  grafana:
+    profiles:
+      - no-battery
+      - no-coordinator
+    image: grafana/grafana:latest
+    ports:
+      - 3001:3000
+    volumes:
+      - ./grafana:/var/lib/grafana
+    depends_on:
+      - influxdb
+    networks:
+      - mvp-network
+
   zookeeper:
     profiles:
       - no-battery
@@ -11,6 +54,8 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - 22181:2181
+    depends_on:
+      - redis
     networks:
       - mvp-network
 
@@ -56,7 +101,7 @@ services:
     platform: linux/x86_64
     deploy:
       mode: replicated
-      replicas: 10
+      replicas: 1
     depends_on:
       - kafka
     environment:
@@ -65,6 +110,10 @@ services:
       - N_BATTERIES=100
     networks:
       - mvp-network
+
+volumes:
+  influxdb_data:
+
 
 networks:
   mvp-network:
