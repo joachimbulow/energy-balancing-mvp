@@ -60,7 +60,11 @@ function calculateNewFrequency(
   previousFrequency // in Hz
 ) {
   console.log(
-    `Calculate new frequency: added energy = ${addedEnergy}, nominal frequency = ${nominalFrequency}, inertia = ${inertia}, previous frequency = ${previousFrequency}`
+    ```Calculate new frequency: 
+    added energy = ${addedEnergy}, 
+    nominal frequency = ${nominalFrequency}, 
+    inertia = ${inertia}, 
+    previous frequency = ${previousFrequency}```
   );
   if (nominalFrequency <= 0 || inertia <= 0) {
     throw new Error("Nominal frequency and inertia must be positive numbers.");
