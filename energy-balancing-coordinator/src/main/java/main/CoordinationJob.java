@@ -24,6 +24,7 @@ import org.apache.flink.streaming.connectors.influxdb.InfluxDBPoint;
 import org.apache.flink.streaming.connectors.influxdb.InfluxDBSink;
 
 import java.util.List;
+import java.util.Optional;
 
 public class CoordinationJob {
     // Topics
@@ -36,13 +37,18 @@ public class CoordinationJob {
     public final static String REDIS_FREQUENCY_KEY = "frequency";
     public final static String REDIS_INERTIA_KEY = "inertia";
 
-    public final static String KAFKA_BOOTSTRAP_SERVERS = "127.0.0.1:29092";
+    public static String KAFKA_BOOTSTRAP_SERVERS = "127.0.0.1:29092";
 
-    public final static String INFLUX_URL = "http://localhost:8086";
+    public  static String INFLUX_URL = "http://localhost:8086";
 
     public static void main(String[] args) throws Exception {
 
         System.out.println("Starting Flink job");
+
+        // Override with environment variables if set
+        KAFKA_BOOTSTRAP_SERVERS = Optional.ofNullable(System.getenv("KAFKA_BOOTSTRAP_SERVERS")).orElse(KAFKA_BOOTSTRAP_SERVERS);
+        INFLUX_URL = Optional.ofNullable(System.getenv("INFLUX_URL")).orElse(INFLUX_URL);
+        System.out.println("Kafka bootstrap servers: " + KAFKA_BOOTSTRAP_SERVERS);
 
 
         // For prod use the below
