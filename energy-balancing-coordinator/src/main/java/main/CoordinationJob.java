@@ -16,12 +16,9 @@ import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.functions.windowing.WindowFunction;
 import org.apache.flink.streaming.api.windowing.assigners.SlidingProcessingTimeWindows;
-import org.apache.flink.streaming.api.windowing.assigners.TumblingProcessingTimeWindows;
 
 import org.apache.flink.streaming.api.windowing.time.Time;
-import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.streaming.connectors.influxdb.InfluxDBConfig;
 import org.apache.flink.streaming.connectors.influxdb.InfluxDBPoint;
 import org.apache.flink.streaming.connectors.influxdb.InfluxDBSink;
@@ -53,38 +50,22 @@ public class CoordinationJob {
         // For testing locally
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
 
-        env.setParallelism(10);
+        env.setParallelism(1);
 
         // Custom settings
-        env.setRestartStrategy(
-                RestartStrategies.fixedDelayRestart(
-                        5, // Gracious amount of restarts
-                        org.apache.flink.api.common.time.Time.seconds(15) // delay between attempts
-                )
-        );
+        env.setRestartStrategy(RestartStrategies.fixedDelayRestart(5, // Gracious amount of restarts
+                org.apache.flink.api.common.time.Time.seconds(15) // delay between attempts
+        ));
 
         // Sources
-        KafkaSource<String> inertiaSource = KafkaSource.<String>builder()
-                .setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS)
-                .setTopics(INERTIA_MEASUREMENTS_TOPIC)
+        KafkaSource<String> inertiaSource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(INERTIA_MEASUREMENTS_TOPIC)
                 //.setGroupId("consumerGroupid")
                 .setStartingOffsets(OffsetsInitializer.latest()) //.earliest() to only read from whenever job is started
-                .setValueOnlyDeserializer(new SimpleStringSchema())
-                .build();
+                .setValueOnlyDeserializer(new SimpleStringSchema()).build();
 
-        KafkaSource<String> frequencySource = KafkaSource.<String>builder()
-                .setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS)
-                .setTopics(FREQUENCY_MEASUREMENTS_TOPIC)
-                .setStartingOffsets(OffsetsInitializer.latest())
-                .setValueOnlyDeserializer(new SimpleStringSchema())
-                .build();
+        KafkaSource<String> frequencySource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(FREQUENCY_MEASUREMENTS_TOPIC).setStartingOffsets(OffsetsInitializer.latest()).setValueOnlyDeserializer(new SimpleStringSchema()).build();
 
-        KafkaSource<String> requestsSource = KafkaSource.<String>builder()
-                .setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS)
-                .setTopics(PEM_REQUESTS_TOPIC)
-                .setStartingOffsets(OffsetsInitializer.latest())
-                .setValueOnlyDeserializer(new SimpleStringSchema())
-                .build();
+        KafkaSource<String> requestsSource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(PEM_REQUESTS_TOPIC).setStartingOffsets(OffsetsInitializer.latest()).setValueOnlyDeserializer(new SimpleStringSchema()).build();
 
         // Configure sinks
         InfluxDBConfig influxDbConfig = InfluxDBConfig.builder(INFLUX_URL, "admin", "admin", "influx").build();
@@ -113,18 +94,19 @@ public class CoordinationJob {
         DataStream<PemRequest> pojoRequestStream = rawRequestStream.map(new JsonToRequestMapper());
         DataStream<PemResponse> responseStream = pojoRequestStream.map(new CoordinatorMapper());
 
-        // Consume ALL responses on ALL instances and reduce sink into InfluxDB
+        // Consume ALL responses on ALL processing instances and reduce sink into InfluxDB
         DataStream<List<PemResponse>> timedWindowResponseStream = responseStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(10))).process(new RequestsProcessFunction());
+        DataStream<ResponseSummary> responseSummaryStream = timedWindowResponseStream.map(new ResponseListToSummaryMapper());
+        DataStream<InfluxDBPoint> influxResponseStream = responseSummaryStream.map(new InfluxDBPointMapper<ResponseSummary>());
+        influxResponseStream.addSink(new InfluxDBSink(influxDbConfig));
 
         // Sink into Kafka
         DataStream<String> jsonResponseStream = responseStream.map(new PojoToJsonMapper<PemResponse>());
-        jsonResponseStream.print();
 
-        /*KafkaSink<String> kafkaSink = KafkaSink.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setRecordSerializer(KafkaRecordSerializationSchema.builder()
+        KafkaSink<String> kafkaSink = KafkaSink.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setRecordSerializer(KafkaRecordSerializationSchema.builder()
                 .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.NONE).build();
 
-        jsonResponseStream.sinkTo(kafkaSink);*/
-
+        jsonResponseStream.sinkTo(kafkaSink);
 
 
         // Execute program, beginning computation.

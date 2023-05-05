@@ -10,6 +10,7 @@ public class PojoToJsonMapper<T> implements MapFunction<T, String> {
     @Override
     public String map(T pojo) throws JsonProcessingException {
         try {
+            System.out.println("Mapping pojo to json: " + pojo.toString());
             return mapper.writeValueAsString(pojo);
         }
         catch (Exception e) {

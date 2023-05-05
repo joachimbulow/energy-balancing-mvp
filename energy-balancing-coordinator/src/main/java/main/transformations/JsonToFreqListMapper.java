@@ -17,7 +17,7 @@ public class JsonToFreqListMapper implements MapFunction<String, List<FrequencyM
             mapper = new ObjectMapper();
 
         try {
-            return mapper.readValue(s.toString(), new TypeReference<List<FrequencyMeasurement>>(){});
+            return mapper.readValue(s, new TypeReference<List<FrequencyMeasurement>>(){});
         }
         catch (Exception e) {
             System.out.println("Error mapping json to List<Frequency>: " + e.getMessage());

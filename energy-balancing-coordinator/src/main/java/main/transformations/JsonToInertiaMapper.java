@@ -13,7 +13,7 @@ public final class JsonToInertiaMapper implements MapFunction<String, InertiaMea
             mapper = new ObjectMapper();
 
         try {
-            return mapper.readValue(s.toString(), InertiaMeasurement.class);
+            return mapper.readValue(s, InertiaMeasurement.class);
         }
         catch (Exception e) {
             System.out.println("Error mapping json to inertia: " + e.getMessage());

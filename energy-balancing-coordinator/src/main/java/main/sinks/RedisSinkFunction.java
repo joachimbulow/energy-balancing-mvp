@@ -18,14 +18,20 @@ public class RedisSinkFunction<T> implements SinkFunction<T> {
 
         if (in instanceof InertiaMeasurement) {
             String dk2Inertia = String.valueOf(((InertiaMeasurement) in).inertiaDK2GWs);
+            System.out.println("Writing inertia to redis: " + dk2Inertia);
             jedis.set(CoordinationJob.REDIS_INERTIA_KEY, dk2Inertia);
             jedis.close();
+            return;
         }
 
         if (in instanceof SystemFrequency) {
             String systemFrequency = String.valueOf(((SystemFrequency) in).getFrequency());
+            System.out.println("Writing system frequency to redis: " + systemFrequency);
             jedis.set(CoordinationJob.REDIS_FREQUENCY_KEY, systemFrequency);
             jedis.close();
+            return;
         }
+
+        System.out.println("Error sinking to Redis - unknown type");
     }
 }

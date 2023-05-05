@@ -21,20 +21,22 @@ public class CoordinatorMapper implements MapFunction<PemRequest, PemResponse> {
 
         try {
             currentFrequency = Double.parseDouble(jedis.get(CoordinationJob.REDIS_FREQUENCY_KEY));
+            jedis.close();
             //currentInertia = Double.parseDouble(jedis.get(CoordinationJob.REDIS_INERTIA_KEY)); REMOVED UNTIL FURTHER NOTICE
         }
         catch (Exception e) {
             System.out.println("Error parsing frequency or inertia value from Redis: " + e.getMessage());
+            jedis.close();
             return null;
         }
 
         if (currentFrequency < NOMINAL_SYSTEM_FREQUENCY) {
             ResponseType responseType = pemRequest.requestType == RequestType.CHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
-            return new PemResponse(pemRequest.id, pemRequest.batteryId, responseType);
+            return new PemResponse(pemRequest.id, pemRequest.batteryId, responseType, pemRequest.requestType);
         }
         else {
             ResponseType responseType = pemRequest.requestType == RequestType.DISCHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
-            return new PemResponse(pemRequest.id, pemRequest.batteryId, responseType);
+            return new PemResponse(pemRequest.id, pemRequest.batteryId, responseType, pemRequest.requestType);
         }
     }
 

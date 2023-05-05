@@ -38,7 +38,7 @@ services:
     ports:
       - 3001:3000
     volumes:
-      - ./grafana:/var/lib/grafana
+      - grafana:/var/lib/grafana
     depends_on:
       - influxdb
     networks:
@@ -107,12 +107,13 @@ services:
     environment:
       - BROKER_URL=kafka:9092
       - BROKER=KAFKA
-      - N_BATTERIES=100
+      - N_BATTERIES=2
     networks:
       - mvp-network
 
 volumes:
   influxdb_data:
+  grafana:
 
 
 networks:

@@ -18,7 +18,7 @@ public class JsonToRequestMapper implements MapFunction<String, PemRequest> {
             mapper = new ObjectMapper();
 
         try {
-            return mapper.readValue(s.toString(), PemRequest.class);
+            return mapper.readValue(s, PemRequest.class);
         }
         catch (Exception e) {
             System.out.println("Error mapping json to pemrequest: " + e.getMessage());
