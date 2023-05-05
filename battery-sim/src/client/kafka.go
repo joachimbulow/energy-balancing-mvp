@@ -3,6 +3,7 @@ package client
 import (
 	"context"
 	"strings"
+	"time"
 
 	"github.com/joachimbulow/pem-energy-balance/src/util"
 	"github.com/segmentio/kafka-go"
@@ -20,13 +21,25 @@ type KafkaClient struct {
 func NewKafkaClient() (*KafkaClient, error) {
 	client := &KafkaClient{}
 	logger = util.NewLogger("KafkaBroker")
-	conn, err := kafka.Dial("tcp", brokerURL)
-	if err != nil {
-		logger.ErrorWithMsg("Failed to connect to Kafka:", err)
-		return client, err
+
+	var conn *kafka.Conn
+	var err error
+	for i := 0; i < 3; i++ {
+		conn, err = kafka.Dial("tcp", brokerURL)
+		if err == nil {
+			break
+		}
+		if i < 2 {
+			logger.ErrorWithMsg("Failed to connect to Kafka, Retrying in 10 seconds...", err)
+			time.Sleep(10 * time.Second)
+		} else {
+			logger.ErrorWithMsg("Could not connect after 3 attempts, aborting mission", err)
+			panic(err)
+		}
+
 	}
 	defer conn.Close()
-	return client, nil
+	return client, err
 }
 
 func setupReader(kafkaClient *KafkaClient, topic string) *kafka.Reader {
