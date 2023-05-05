@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 	"strconv"
 	"time"
@@ -32,14 +33,11 @@ func startBattery() {
 
 func getNumberOfBatteries() int {
 	nBatteriesEnv := os.Getenv("N_BATTERIES")
-	if nBatteriesEnv == "" {
-		n := 2
-		return n
-	}
 	nBatteries, err := strconv.Atoi(nBatteriesEnv)
 	if err != nil {
-		panic(err)
+		// Print
+		log.Println("Could not parse N_BATTERIES environment variable, defaulting to 2")
+		nBatteries = 2
 	}
-
 	return nBatteries
 }

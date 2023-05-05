@@ -27,13 +27,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class CoordinationJob {
-    // Topics
     public final static String FREQUENCY_MEASUREMENTS_TOPIC = "frequency_measurements";
     public final static String INERTIA_MEASUREMENTS_TOPIC = "inertia_measurements";
     public final static String PEM_REQUESTS_TOPIC = "pem_requests";
     public final static String PEM_RESPONSES_TOPIC = "pem_responses";
 
-    // Config TODO: Use environment variables
     public final static String REDIS_FREQUENCY_KEY = "frequency";
     public final static String REDIS_INERTIA_KEY = "inertia";
 
