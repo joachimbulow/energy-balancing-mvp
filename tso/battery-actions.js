@@ -52,7 +52,9 @@ function factorInBatteryActions(measurement) {
   // Update the global state, and use for calculation of new frequency
   totalEnergyApplied += energyApplied;
 
-  console.log(`Total change to apply: ${energyApplied}`);
+  console.log(
+    `Total change to apply including previous actions: ${totalEnergyApplied}`
+  );
 
   var frequency = calculateNewFrequency(
     totalEnergyApplied,
