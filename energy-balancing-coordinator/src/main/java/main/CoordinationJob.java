@@ -50,9 +50,9 @@ public class CoordinationJob {
 
 
         // For prod use the below
-        final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        //final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         // For testing locally
-        //final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
+        final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
 
         env.setParallelism(1);
 
