@@ -47,7 +47,11 @@ function getCurrentInertiaMeasurements() {
     publishingIntervalCounter = 0;
   }
   currentInertiaDK2 = inertiaData[inertiaCounter].InertiaDK2GWs;
-  return inertiaData[inertiaCounter];
+
+  // Let us set the time to right now for good measure
+  var data = inertiaData[inertiaCounter];
+  data.HourUTC = new Date();
+  return data;
 }
 
 function initializeInertiaPublication() {

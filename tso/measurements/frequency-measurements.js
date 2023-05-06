@@ -51,9 +51,14 @@ function getCurrentFrequencyMeasurements() {
   const factoredData =
     factorInBatteryActions(currentFrequencyData) ?? currentFrequencyData;
 
+  const factoredDataWithCurrentTime = factoredData.map((item) => {
+    item.timestamp = new Date();
+    return item;
+  });
+
   resetBatteryActions();
 
-  return factoredData;
+  return factoredDataWithCurrentTime;
 }
 
 /**
