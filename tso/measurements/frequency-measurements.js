@@ -67,7 +67,12 @@ function initializeFrequencyPublication() {
   async function publishFrequencyMeasurements() {
     const measurements = getCurrentFrequencyMeasurements();
     console.table(measurements);
-    publish(FREQUENCY_MEASUREMENT_TOPIC, measurements);
+    try {
+      publish(FREQUENCY_MEASUREMENT_TOPIC, measurements);
+    } catch (error) {
+      console.error("Error publishing frequency to Kafka");
+      console.error(error);
+    }
   }
 }
 

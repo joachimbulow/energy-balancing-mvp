@@ -60,7 +60,12 @@ async function publishInertiaMeasurements() {
   const measurements = getCurrentInertiaMeasurements();
   console.table(measurements);
 
-  publish(INERTIA_MEASUREMENTS_TOPIC, measurements);
+  try {
+    publish(INERTIA_MEASUREMENTS_TOPIC, measurements);
+  } catch (error) {
+    console.error("Error publishing inertia to Kafka");
+    console.error(error);
+  }
 }
 
 module.exports = {
