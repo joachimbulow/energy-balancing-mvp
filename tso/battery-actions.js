@@ -44,10 +44,15 @@ function factorInBatteryActions(measurement) {
     }
   }
 
-  console.log(`Energy change in grid: ${energyApplied}`);
+  // Reset battery actions
+  batteryActions = [];
+
+  console.log(`Energy change in grid since last refresh: ${energyApplied}`);
 
   // Update the global state, and use for calculation of new frequency
   totalEnergyApplied += energyApplied;
+
+  console.log(`Total change to apply: ${energyApplied}`);
 
   var frequency = calculateNewFrequency(
     totalEnergyApplied,
