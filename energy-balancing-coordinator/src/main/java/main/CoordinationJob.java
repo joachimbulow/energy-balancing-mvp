@@ -37,7 +37,10 @@ public class CoordinationJob {
 
     public static String KAFKA_BOOTSTRAP_SERVERS = "127.0.0.1:29092";
 
-    public  static String INFLUX_URL = "http://localhost:8086";
+    public static String INFLUX_URL = "http://localhost:8086";
+
+    public static String REDIS_BROKER = "localhost";
+    public static int REDIS_PORT = 6379;
 
     public static void main(String[] args) throws Exception {
 
@@ -46,13 +49,14 @@ public class CoordinationJob {
         // Override with environment variables if set
         KAFKA_BOOTSTRAP_SERVERS = Optional.ofNullable(System.getenv("KAFKA_BOOTSTRAP_SERVERS")).orElse(KAFKA_BOOTSTRAP_SERVERS);
         INFLUX_URL = Optional.ofNullable(System.getenv("INFLUX_URL")).orElse(INFLUX_URL);
+        REDIS_BROKER = Optional.ofNullable(System.getenv("REDIS_BROKER")).orElse(REDIS_BROKER);
         System.out.println("Kafka bootstrap servers: " + KAFKA_BOOTSTRAP_SERVERS);
 
 
         // For prod use the below
-        //final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         // For testing locally
-        final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
+        //final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
 
         env.setParallelism(1);
 

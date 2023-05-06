@@ -1,4 +1,5 @@
 package main.redis;
+import main.CoordinationJob;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -17,8 +18,8 @@ public class RedisConnectionPool {
         poolConfig.setTestOnReturn(true);
 
         // configure the JedisPool with your Redis instance information
-        String redisHost = "localhost";
-        int redisPort = 6379;
+        String redisHost = CoordinationJob.REDIS_BROKER;
+        int redisPort = CoordinationJob.REDIS_PORT;
         String redisPassword = null;
         jedisPool = new JedisPool(poolConfig, redisHost, redisPort, 2000, redisPassword);
     }
