@@ -62,7 +62,7 @@ const (
 	SOC_STD            = 0.05
 	SIGNIFICANT_DIGITS = 4
 
-	BATTERY_CAPACITY_KWH = 2
+	BATTERY_CAPACITY_KWH = 13.5
 
 	PacketPowerW    = 4000
 	PacketTimeS     = 5 * 60
