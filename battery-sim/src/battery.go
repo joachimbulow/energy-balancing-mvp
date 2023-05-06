@@ -2,6 +2,7 @@ package src
 
 import (
 	"encoding/json"
+	"math"
 	"math/rand"
 	"sync"
 	"time"
@@ -180,13 +181,20 @@ func (battery *Battery) newRequest(requestType string) PEMRequest {
 	}
 }
 
+// The closer the battery is to the lower bound, the higher the probability of charging.
 func (battery *Battery) probabilisticallyCalculateRequest() PEMRequest {
-	// based on state of charge send a request to charge or discharge the battery
-	// TODO can be improved by using a more sophisticated algorithm
-	if rand.Float64() < 0.5 {
+	// Calculate distance to lower and upper bounds
+	lowerBoundDistance := battery.soc - LowerBoundBatteryCapacity
+	upperBoundDistance := UpperBoundBatteryCapacity - battery.soc
+
+	// Calculate probability of charging based on distance to bound
+	chargeProbability := math.Abs(lowerBoundDistance) / (math.Abs(lowerBoundDistance) + math.Abs(upperBoundDistance))
+
+	if rand.Float64() < chargeProbability {
 		return battery.newRequest(CHARGE)
+	} else {
+		return battery.newRequest(DISCHARGE)
 	}
-	return battery.newRequest(DISCHARGE)
 }
 
 func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
@@ -233,6 +241,7 @@ func (battery *Battery) updateBattery(chargeAmount float64) {
 }
 
 func (battery *Battery) publishBatteryAction(actionType string) {
+	battery.logger.Info("Publishing battery action: %s\n", actionType)
 	action := BatteryAction{
 		ID:         generateUuid(),
 		BatteryID:  battery.id,
