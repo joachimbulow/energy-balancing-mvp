@@ -3,11 +3,11 @@ const { subscribe } = require("./client");
 const {
   loadInertiaMeasurements,
   initializeInertiaPublication,
-} = require("./inertia-measurements");
+} = require("./measurements/inertia-measurements");
 const {
   loadFrequencyMeasurements,
   initializeFrequencyPublication,
-} = require("./frequency-measurements");
+} = require("./measurements/frequency-measurements");
 const { handleBatteryAction } = require("./battery-actions");
 
 const BATTERY_ACTIONS_TOPIC = "battery_actions";

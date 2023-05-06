@@ -1,9 +1,9 @@
 const fs = require("fs");
-const { publish } = require("./client");
+const { publish } = require("../client");
 
 const INERTIA_MEASUREMENTS_TOPIC = "inertia_measurements";
 
-const INERTIA_PATH = "./InertiaNordicSyncharea-January-2023.json";
+const INERTIA_PATH = "./measurements/InertiaNordicSyncharea-January-2023.json";
 const PUBLISHING_INTERVAL_INERTIA_MS = 10000; // 10 seconds
 const ONE_HOUR_MS = 3600000; // 1 hour in milli
 var publishingIntervalCounter = 0;

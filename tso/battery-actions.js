@@ -1,4 +1,4 @@
-var { currentInertiaDK2 } = require("./inertia-measurements");
+var { currentInertiaDK2 } = require("./measurements/inertia-measurements");
 
 const ACTION = {
   CHARGE: "CHARGE",
@@ -10,12 +10,23 @@ var batteryActions = [];
 const energyPacket = 4 / ONE_BILLION; // 4 W in MW
 const NOMINAL_FREQUENCY = 50;
 
+// Sum total of all the packets applied
+var totalEnergyApplied = 0;
+
+/**
+ * Handles the battery actions received from the broker
+ * @param {The battery action message} message
+ */
 function handleBatteryAction(message) {
   const action = JSON.parse(message);
-  console.log(Date.now() + ": Received action: " + action.actionType);
   batteryActions.push(action);
 }
 
+/**
+ * Uses Swing equation for calculating how much the battery packets of energy influence the frequency
+ * @param { List of measurements obtained from statically generated data } measurement
+ * @returns The same list of measurements, but with the frequency adjusted based on the battery actions
+ */
 function factorInBatteryActions(measurement) {
   if (currentInertiaDK2 == 0 || batteryActions.length == 0) {
     return;
@@ -23,26 +34,23 @@ function factorInBatteryActions(measurement) {
 
   var currentFrequency = measurement.frequency;
 
-  var energyBatteriesAddedToGrid = 0;
+  var energyApplied = 0;
 
-  batteryActions.forEach((action) => {
+  for (const action of batteryActions) {
     if (action.actionType === ACTION.CHARGE) {
-      energyBatteriesAddedToGrid -= energyPacket;
-      console.log(
-        `Energy charged to battery, and removed from grid ${energyPacket}`
-      );
+      energyApplied -= energyPacket;
     } else if (action.actionType === ACTION.DISCHARGE) {
-      energyBatteriesAddedToGrid += energyPacket;
-      console.log(
-        `Energy discharged from battery, and removed from grid ${energyPacket}`
-      );
+      energyApplied += energyPacket;
     }
-  });
+  }
 
-  console.log(`Energy change in grid: ${energyBatteriesAddedToGrid}`);
+  console.log(`Energy change in grid: ${energyApplied}`);
+
+  // Update the global state, and use for calculation of new frequency
+  totalEnergyApplied += energyApplied;
 
   var frequency = calculateNewFrequency(
-    energyBatteriesAddedToGrid,
+    totalEnergyApplied,
     NOMINAL_FREQUENCY,
     currentInertiaDK2,
     currentFrequency
@@ -52,28 +60,32 @@ function factorInBatteryActions(measurement) {
   measurement.frequency = frequency;
 }
 
-// BASED ON SWING EQUATION
+/**
+ *
+ * @param {The amount of energy added in MW} addedEnergy
+ * @param {System nominal frequency in Hz} nominalFrequency
+ * @param {System current inertia in seconds per megawatts (s/MW)} inertia
+ * @param {The current system frequency before applying battery action} previousFrequency
+ * @returns
+ */
 function calculateNewFrequency(
-  addedEnergy, // in MW
-  nominalFrequency, // in Hz
-  inertia, // in seconds per megawatt (s/MW)
-  previousFrequency // in Hz
+  addedEnergy,
+  nominalFrequency,
+  inertia,
+  previousFrequency
 ) {
-  console.log(
-    `Calculate new frequency: added energy = ${addedEnergy}, nominal frequency = ${nominalFrequency}, inertia = ${inertia}, previous frequency = ${previousFrequency}`
-  );
   if (nominalFrequency <= 0 || inertia <= 0) {
     throw new Error("Nominal frequency and inertia must be positive numbers.");
   }
 
-  var deviation = addedEnergy / (2 * Math.PI * nominalFrequency * inertia);
-  console.log("New deviation = " + deviation);
+  // Use Swing equation
+  // AddedEnergy is ΔP, also known as, deviation in power (in this case applied by the batteries)
+  var appliedDeviation =
+    addedEnergy / (2 * Math.PI * nominalFrequency * inertia);
 
-  // The reason why we subtract the deviation from the previous frequency is that
-  // if the added energy is negative (i.e., the batteries are charging), this will cause a decrease in the frequency,
-  // while if the added energy is positive (i.e., the batteries are discharging), this will cause an increase in the frequency.
-  var newFrequency = previousFrequency - deviation;
-  console.log("New frequency = " + newFrequency);
+  // appliedDeviation (Δf) is negative when energy is added to the system
+  // Therefore, we subtract the deviation from the previous frequency
+  var newFrequency = previousFrequency - appliedDeviation;
 
   return newFrequency;
 }
