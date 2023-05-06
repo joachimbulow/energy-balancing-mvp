@@ -58,7 +58,7 @@ function initializeInertiaPublication() {
 
 async function publishInertiaMeasurements() {
   const measurements = getCurrentInertiaMeasurements();
-  console.table(measurements);
+  console.log("Publishing inertia measurements");
 
   try {
     publish(INERTIA_MEASUREMENTS_TOPIC, measurements);

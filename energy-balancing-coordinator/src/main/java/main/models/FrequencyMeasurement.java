@@ -5,14 +5,14 @@ public class FrequencyMeasurement {
     public String location;
     public double voltage;
     public double current;
-    public int frequency;
+    public double frequency;
     public double consumption;
     public double production;
 
     public FrequencyMeasurement() {
     }
 
-    public FrequencyMeasurement(String timestamp, String location, double voltage, double current, int frequency, double consumption, double production) {
+    public FrequencyMeasurement(String timestamp, String location, double voltage, double current, double frequency, double consumption, double production) {
         this.timestamp = timestamp;
         this.location = location;
         this.voltage = voltage;

@@ -35,9 +35,10 @@ async function connectPublishClient() {
 async function subscribe(topic, handler) {
   await consumer.subscribe({ topic });
   await consumer.run({
-    eachMessage: async ({ message }) => {
-      if (message.topic === topic) {
-        handler(message.value.toString());
+    eachMessage: async (message) => {
+      const msg = JSON.parse(message.message.value);
+      if (!msg.heartbeat) {
+        handler(msg);
       }
     },
   });

@@ -1,3 +1,4 @@
+const { SocketClosedUnexpectedlyError } = require("redis");
 var { getCurrentInertia } = require("./measurements/inertia-measurements");
 
 const ACTION = {
@@ -18,11 +19,10 @@ var totalEnergyApplied = 0;
  * @param {The battery action message} message
  */
 function handleBatteryAction(message) {
-  const action = JSON.parse(message);
-  batteryActions.push(action);
+  batteryActions.push(message);
 }
 
-function resetBatteryActions(message) {
+function resetBatteryActions() {
   batteryActions = [];
 }
 
@@ -31,15 +31,11 @@ function resetBatteryActions(message) {
  * @param { List of measurements obtained from statically generated data } measurement
  * @returns The same list of measurements, but with the frequency adjusted based on the battery actions
  */
-function factorInBatteryActions(measurement) {
-  console.log("current inertia: " + getCurrentInertia());
-  if (getCurrentInertia() == 0 || batteryActions.length == 0) {
-    console.log("No inertia or battery actions to factor in.");
+function factorInBatteryActions(measurements) {
+  if (getCurrentInertia() == 0) {
+    console.log("No intertia registered, skipping battery actions");
     return;
   }
-  console.log("action:" + batteryActions);
-
-  var currentFrequency = measurement.frequency;
 
   var energyApplied = 0;
 
@@ -60,15 +56,19 @@ function factorInBatteryActions(measurement) {
     `Total change to apply including previous actions: ${totalEnergyApplied}`
   );
 
-  var frequency = calculateNewFrequency(
-    totalEnergyApplied,
-    NOMINAL_FREQUENCY,
-    currentInertiaDK2,
-    currentFrequency
-  );
-  console.log("New frequency = " + frequency);
+  for (const measurement of measurements) {
+    var batteryAdjustedFrequency = calculateNewFrequency(
+      totalEnergyApplied,
+      NOMINAL_FREQUENCY,
+      getCurrentInertia(),
+      measurement.frequency
+    );
+    console.log("New frequency = " + batteryAdjustedFrequency);
 
-  measurement.frequency = frequency;
+    measurement.frequency = batteryAdjustedFrequency;
+  }
+
+  return measurements;
 }
 
 /**

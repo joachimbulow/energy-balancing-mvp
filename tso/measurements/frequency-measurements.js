@@ -48,12 +48,12 @@ function getCurrentFrequencyMeasurements() {
 
   const currentFrequencyData = frequencyData.slice(startIndex, endIndex);
 
-  for (const measurement of currentFrequencyData) {
-    factorInBatteryActions(measurement);
-  }
+  const factoredData =
+    factorInBatteryActions(currentFrequencyData) ?? currentFrequencyData;
+
   resetBatteryActions();
 
-  return currentFrequencyData;
+  return factoredData;
 }
 
 /**
@@ -66,7 +66,8 @@ function initializeFrequencyPublication() {
 
   async function publishFrequencyMeasurements() {
     const measurements = getCurrentFrequencyMeasurements();
-    console.table(measurements);
+    console.log("Publishing frequency measurements");
+
     try {
       publish(FREQUENCY_MEASUREMENT_TOPIC, measurements);
     } catch (error) {
