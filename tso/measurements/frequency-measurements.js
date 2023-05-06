@@ -2,7 +2,10 @@ const fs = require("fs");
 
 const { publish } = require("../client");
 
-const { factorInBatteryActions } = require("../battery-actions");
+const {
+  factorInBatteryActions,
+  resetBatteryActions,
+} = require("../battery-actions");
 
 const FREQUENCY_MEASUREMENT_TOPIC = "frequency_measurements";
 
@@ -48,6 +51,7 @@ function getCurrentFrequencyMeasurements() {
   for (const measurement of currentFrequencyData) {
     factorInBatteryActions(measurement);
   }
+  resetBatteryActions();
 
   return currentFrequencyData;
 }

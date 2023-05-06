@@ -1,7 +1,7 @@
 const { Kafka } = require("kafkajs");
 
 const broker_url = process.env.BROKER_URL || "localhost";
-const broker_port = process.env.BROKER_PORT || "9092";
+const broker_port = process.env.BROKER_PORT || "29092";
 
 const KAFKA_SERVER = broker_url + ":" + broker_port;
 const GROUP_ID = "TSO";

@@ -1,4 +1,4 @@
-var { currentInertiaDK2 } = require("./measurements/inertia-measurements");
+var { getCurrentInertia } = require("./measurements/inertia-measurements");
 
 const ACTION = {
   CHARGE: "CHARGE",
@@ -22,15 +22,22 @@ function handleBatteryAction(message) {
   batteryActions.push(action);
 }
 
+function resetBatteryActions(message) {
+  batteryActions = [];
+}
+
 /**
  * Uses Swing equation for calculating how much the battery packets of energy influence the frequency
  * @param { List of measurements obtained from statically generated data } measurement
  * @returns The same list of measurements, but with the frequency adjusted based on the battery actions
  */
 function factorInBatteryActions(measurement) {
-  if (currentInertiaDK2 == 0 || batteryActions.length == 0) {
+  console.log("current inertia: " + getCurrentInertia());
+  if (getCurrentInertia() == 0 || batteryActions.length == 0) {
+    console.log("No inertia or battery actions to factor in.");
     return;
   }
+  console.log("action:" + batteryActions);
 
   var currentFrequency = measurement.frequency;
 
@@ -43,9 +50,6 @@ function factorInBatteryActions(measurement) {
       energyApplied += energyPacket;
     }
   }
-
-  // Reset battery actions
-  batteryActions = [];
 
   console.log(`Energy change in grid since last refresh: ${energyApplied}`);
 
@@ -100,4 +104,5 @@ function calculateNewFrequency(
 module.exports = {
   handleBatteryAction,
   factorInBatteryActions,
+  resetBatteryActions,
 };

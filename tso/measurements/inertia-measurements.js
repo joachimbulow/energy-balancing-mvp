@@ -4,12 +4,16 @@ const { publish } = require("../client");
 const INERTIA_MEASUREMENTS_TOPIC = "inertia_measurements";
 
 const INERTIA_PATH = "./measurements/InertiaNordicSyncharea-January-2023.json";
-const PUBLISHING_INTERVAL_INERTIA_MS = 10000; // 10 seconds
+const PUBLISHING_INTERVAL_INERTIA_MS = 3000; // 3 seconds
 const ONE_HOUR_MS = 3600000; // 1 hour in milli
 var publishingIntervalCounter = 0;
 var inertiaData = [];
 var inertiaCounter = 0;
 var currentInertiaDK2 = 0;
+
+function getCurrentInertia() {
+  return currentInertiaDK2;
+}
 
 function loadInertiaMeasurements() {
   fs.readFile(INERTIA_PATH, "utf8", (err, data) => {
@@ -62,5 +66,5 @@ async function publishInertiaMeasurements() {
 module.exports = {
   loadInertiaMeasurements,
   initializeInertiaPublication,
-  currentInertiaDK2: currentInertiaDK2,
+  getCurrentInertia,
 };
