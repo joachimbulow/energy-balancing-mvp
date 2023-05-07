@@ -6,14 +6,17 @@
   "scripts": {
     "test": "test",
     "start": "node main.js",
-    "simulate": "node pmu_measurement.js"
+    "simulate": "node pmu_measurement.js",
+    "sim2": "node pmu_new.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "d3-random": "^2.2.2",
+    "JSONStream": "^1.3.5",
+    "kafkajs": "^1.15.0",
+    "mathjs": "^11.8.0",
     "path": "^0.12.7",
-    "redis": "^4.6.5",
-    "kafkajs": "^1.15.0"
+    "redis": "^4.6.5"
   }
 }
