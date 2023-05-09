@@ -50,8 +50,11 @@ public class CoordinationJob {
         KAFKA_BOOTSTRAP_SERVERS = Optional.ofNullable(System.getenv("KAFKA_BOOTSTRAP_SERVERS")).orElse(KAFKA_BOOTSTRAP_SERVERS);
         INFLUX_URL = Optional.ofNullable(System.getenv("INFLUX_URL")).orElse(INFLUX_URL);
         REDIS_BROKER = Optional.ofNullable(System.getenv("REDIS_BROKER")).orElse(REDIS_BROKER);
+        REDIS_PORT = Integer.parseInt(Optional.ofNullable(System.getenv("REDIS_PORT")).orElse(String.valueOf(REDIS_PORT)));
         System.out.println("Kafka bootstrap servers: " + KAFKA_BOOTSTRAP_SERVERS);
-
+        System.out.println("Influx URL: " + INFLUX_URL);
+        System.out.println("Redis broker: " + REDIS_BROKER);
+        System.out.println("Redis port: " + REDIS_PORT);
 
         // For prod use the below
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
