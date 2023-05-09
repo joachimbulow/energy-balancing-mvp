@@ -20,7 +20,7 @@ read -p "Enter the image version tag: " VERSION
 
 # 1. Build the Docker image
 echo "Building Docker image..."
-docker build -t tso .
+docker build --platform linux/amd64 -t tso .
 
 # 2. Tag the Docker image with the specified version
 echo "Tagging Docker image with version $VERSION..."

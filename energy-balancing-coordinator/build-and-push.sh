@@ -24,7 +24,7 @@ mvn clean package
 
 # 2. Build the Docker image
 echo "Building Docker image..."
-docker build -t coordinator .
+docker build --platform linux/amd64 -t coordinator .
 
 # 3. Tag the Docker image with the specified version
 echo "Tagging Docker image with version $VERSION..."
