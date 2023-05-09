@@ -3,6 +3,7 @@ version: "3"
 services:
   redis:
     profiles:
+      - all
       - no-battery
       - no-coordinator
     image: redis:latest
@@ -13,6 +14,7 @@ services:
 
   influxdb:
     profiles:
+      - all
       - no-battery
       - no-coordinator
     image: influxdb:1.8-alpine
@@ -32,6 +34,7 @@ services:
 
   grafana:
     profiles:
+      - all
       - no-battery
       - no-coordinator
     image: grafana/grafana:latest
@@ -46,6 +49,7 @@ services:
 
   zookeeper:
     profiles:
+      - all
       - no-battery
       - no-coordinator
     image: confluentinc/cp-zookeeper:latest
@@ -61,6 +65,7 @@ services:
 
   kafka:
     profiles:
+      - all
       - no-battery
       - no-coordinator
     image: confluentinc/cp-kafka:latest
@@ -79,8 +84,27 @@ services:
     networks:
       - mvp-network
 
+  coordinator:
+    profiles:
+      - all
+      - no-battery
+    build: ./energy-balancing-coordinator
+    platform: linux/x86_64
+    deploy:
+      mode: replicated
+      replicas: 1
+    depends_on:
+      - kafka
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - INFLUX_URL=http://influxdb:8086
+      - REDIS_BROKER=redis
+      - REDIS_PORT=6379
+    networks:
+      - mvp-network
   tso:
     profiles:
+      - all
       - no-battery
       - no-coordinator
     build: ./tso
@@ -96,6 +120,7 @@ services:
 
   battery:
     profiles:
+      - all
       - no-coordinator
     build: ./battery-sim
     platform: linux/x86_64
