@@ -3,6 +3,12 @@ import main.CoordinationJob;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
 public class RedisConnectionPool {
 
     private static RedisConnectionPool instance = null;
@@ -21,7 +27,10 @@ public class RedisConnectionPool {
         String redisHost = CoordinationJob.REDIS_BROKER;
         int redisPort = CoordinationJob.REDIS_PORT;
         String redisPassword = null;
-        jedisPool = new JedisPool(poolConfig, redisHost, redisPort, 2000, redisPassword);
+        System.out.println("REDIS SINK: Connecting to Redis at " + redisHost + ":" + redisPort);
+        pingRedisHost(redisHost);
+
+        jedisPool = new JedisPool(poolConfig, redisHost, redisPort, 20000, redisPassword);
     }
 
     public static RedisConnectionPool getInstance() {
@@ -38,6 +47,19 @@ public class RedisConnectionPool {
     public JedisPool getJedisPool() {
         return jedisPool;
     }
+
+    private boolean pingRedisHost(String host) {
+        try {
+            InetAddress inetAddress = InetAddress.getByName(host);
+            System.out.println("REDIS SINK: " + host + " is reachable");
+            return true;
+        } catch (UnknownHostException e) {
+            System.out.println("REDIS SINK: " + host + " is not reachable");
+            System.out.println("REDIS SINK: Error while pinging Redis host: " + e.getMessage());
+            return false;
+        }
+    }
+
 
 }
 
