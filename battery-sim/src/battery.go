@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"math"
 	"math/rand"
-	"sync"
 	"time"
 
 	"github.com/google/uuid"
@@ -79,8 +78,7 @@ type Battery struct {
 	id            string
 	client        client.Client
 	soc           float64
-	requests      map[string]PEMRequest
-	requestsMutex sync.Mutex
+	latestRequest PEMRequest
 	logger        util.Logger
 	busy          bool
 }
@@ -89,7 +87,7 @@ func NewBattery() {
 	battery := Battery{}
 	battery.id = generateUuid()
 	battery.client = battery.setupClient()
-	battery.requests = make(map[string]PEMRequest)
+	battery.latestRequest = PEMRequest{}
 	battery.logger = util.NewLogger(battery.id)
 	go battery.client.Listen(PEM_RESPONSES_TOPIC, battery.handlePEMresponse)
 	go battery.publishPEMrequests()
@@ -117,7 +115,7 @@ func (battery *Battery) handlePEMresponse(params ...[]byte) {
 		return
 	}
 
-	if response.BatteryID != battery.id {
+	if response.ID != battery.latestRequest.ID {
 		return
 	}
 
@@ -137,15 +135,14 @@ func (battery *Battery) publishPEMrequests() {
 			time.Sleep(time.Second)
 		}
 		request := battery.getPEMRequest()
-		battery.logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
 
 		jsonRequest, err := json.Marshal(request)
 		if err != nil {
 			battery.logger.Fatal(err)
 		}
-		battery.requestsMutex.Lock()
-		battery.requests[request.ID] = request
-		battery.requestsMutex.Unlock()
+
+		battery.latestRequest = request
+		battery.logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
 		battery.client.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
@@ -202,16 +199,9 @@ func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 	for battery.busy {
 		time.Sleep(1 * time.Second)
 	}
-	// maybe mutex is not needed here
-	battery.requestsMutex.Lock()
-	request := battery.requests[response.ID]
-	delete(battery.requests, request.ID)
-	battery.requestsMutex.Unlock()
 
-	if request.ID == "" {
-		battery.logger.Info("Request with id %s not found\n", response.ID)
-		return
-	}
+	request := battery.latestRequest
+
 	if request.RequestType == CHARGE {
 		battery.chargePacket()
 	} else if request.RequestType == DISCHARGE {
