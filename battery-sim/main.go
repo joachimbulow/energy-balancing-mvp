@@ -1,16 +1,14 @@
 package main
 
 import (
-	"log"
-	"os"
-	"strconv"
 	"time"
 
 	"github.com/joachimbulow/pem-energy-balance/src"
+	"github.com/joachimbulow/pem-energy-balance/src/util"
 )
 
 var (
-	nBatteries = getNumberOfBatteries()
+	nBatteries = util.GetNumberOfBatteries()
 )
 
 func main() {
@@ -32,15 +30,4 @@ func initializeBatteries() {
 
 func startBattery() {
 	src.NewBattery()
-}
-
-func getNumberOfBatteries() int {
-	nBatteriesEnv := os.Getenv("N_BATTERIES")
-	nBatteries, err := strconv.Atoi(nBatteriesEnv)
-	if err != nil {
-		// Print
-		log.Println("N_BATTERIES not set, using default 2")
-		nBatteries = 12
-	}
-	return nBatteries
 }

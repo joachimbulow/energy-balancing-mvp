@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"math"
 	"math/rand"
-	"os"
-	"strconv"
 	"time"
 
 	"github.com/google/uuid"
@@ -56,58 +54,22 @@ const (
 )
 
 const (
-	UpperBoundBatteryCapacity = 0.8
-	LowerBoundBatteryCapacity = 0.2
-
 	SOC_MEAN           = 0.7
 	SOC_STD            = 0.05
 	SIGNIFICANT_DIGITS = 4
 
 	BATTERY_CAPACITY_KWH = 13.5
-
-	CHARGE_DISCHARGE_INTERVAL_MS = 10000
 )
 
 var (
-	requestInterval = getRequestInterval()
-	packetPowerW    = getPacketPowerW()
-	packetTimeS     = getPacketTimeS()
-	packetEnergyJ   = float64(packetPowerW) * float64(packetTimeS)
-	packetKwh       = float64(packetEnergyJ / 3600000.00)
+	upperBoundBatteryCapacity = util.GetUpperBoundBatteryCapacity()
+	lowerBoundBatteryCapacity = util.GetLowerBoundBatteryCapacity()
+	requestInterval           = util.GetRequestInterval()
+	packetPowerW              = util.GetPacketPowerW()
+	packetTimeS               = util.GetPacketTimeS()
+	packetEnergyJ             = float64(packetPowerW) * float64(packetTimeS)
+	packetKwh                 = float64(packetEnergyJ / 3600000.00)
 )
-
-func getRequestInterval() time.Duration {
-	if interval := os.Getenv("REQUEST_INTERVAL_SECONDS"); interval != "" {
-		parsedValue, err := strconv.Atoi(interval)
-		if err == nil {
-			return time.Duration(parsedValue) * time.Second
-		}
-	}
-	print("REQUEST_INTERVAL_SECONDS not set, using default: 20 seconds\n")
-	return 20 * time.Second // Default to 20 seconds
-}
-
-func getPacketPowerW() int {
-	if power := os.Getenv("PACKET_POWER_W"); power != "" {
-		parsedValue, err := strconv.Atoi(power)
-		if err == nil {
-			return parsedValue
-		}
-	}
-	print("PACKET_POWER_W not set, using default: 4000 watts\n")
-	return 4000 // Default to 4000 watts
-}
-
-func getPacketTimeS() int {
-	if time := os.Getenv("PACKET_TIME_S"); time != "" {
-		parsedValue, err := strconv.Atoi(time)
-		if err == nil {
-			return parsedValue
-		}
-	}
-	print("PACKET_TIME_S not set, using default: 5 minutes\n")
-	return 5 * 60 // Default to 5 minutes
-}
 
 /// -------------------------------------
 
@@ -193,9 +155,9 @@ func (battery *Battery) getPEMRequest() PEMRequest {
 	stateOfCharge := battery.measureSoC()
 
 	var request PEMRequest
-	if stateOfCharge < LowerBoundBatteryCapacity {
+	if stateOfCharge < lowerBoundBatteryCapacity {
 		request = battery.newRequest(CHARGE)
-	} else if stateOfCharge >= LowerBoundBatteryCapacity && stateOfCharge <= UpperBoundBatteryCapacity {
+	} else if stateOfCharge >= lowerBoundBatteryCapacity && stateOfCharge <= upperBoundBatteryCapacity {
 		request = battery.probabilisticallyCalculateRequest()
 	} else {
 		request = battery.newRequest(DISCHARGE)
@@ -223,8 +185,8 @@ func (battery *Battery) newRequest(requestType string) PEMRequest {
 // The closer the battery is to the lower bound, the higher the probability of charging.
 func (battery *Battery) probabilisticallyCalculateRequest() PEMRequest {
 	// Calculate distance to lower and upper bounds
-	lowerBoundDistance := battery.soc - LowerBoundBatteryCapacity
-	upperBoundDistance := UpperBoundBatteryCapacity - battery.soc
+	lowerBoundDistance := battery.soc - lowerBoundBatteryCapacity
+	upperBoundDistance := upperBoundBatteryCapacity - battery.soc
 
 	// Calculate probability of charging based on distance to bound
 	chargeProbability := math.Abs(lowerBoundDistance) / (math.Abs(lowerBoundDistance) + math.Abs(upperBoundDistance))
@@ -267,7 +229,7 @@ func (battery *Battery) updateBattery(chargeAmount float64) {
 	currentBatteryCharge := battery.soc * BATTERY_CAPACITY_KWH
 	currentBatteryCharge += chargeAmount
 	battery.soc = (currentBatteryCharge / BATTERY_CAPACITY_KWH)
-	time.Sleep(CHARGE_DISCHARGE_INTERVAL_MS * time.Millisecond) // simulate charging/discharging
+	time.Sleep(time.Duration(packetTimeS) * time.Millisecond) // simulate charging/discharging
 	battery.logger.Info("After the update the new SoC is: %.4f\n", battery.soc)
 	battery.busy = false
 }

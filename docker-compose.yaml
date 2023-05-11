@@ -136,6 +136,8 @@ services:
       - REQUEST_INTERVAL_SECONDS=30
       - PACKET_POWER_W=4000
       - PACKET_TIME_S=30
+      - UPPER_BOUND_BATTERY_CAPACITY=0.8
+      - LOWER_BOUND_BATTERY_CAPACITY=0.2
     networks:
       - mvp-network
 
