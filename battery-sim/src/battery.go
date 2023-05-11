@@ -72,7 +72,7 @@ var (
 	requestInterval = getRequestInterval()
 	packetPowerW    = getPacketPowerW()
 	packetTimeS     = getPacketTimeS()
-	packetEnergyJ   = packetPowerW * packetTimeS
+	packetEnergyJ   = float64(packetPowerW) * float64(packetTimeS)
 	packetKwh       = float64(packetEnergyJ / 3600000.00)
 )
 
