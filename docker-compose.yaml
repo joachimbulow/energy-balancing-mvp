@@ -133,6 +133,7 @@ services:
       - BROKER_URL=kafka:9092
       - BROKER=KAFKA
       - N_BATTERIES=2
+      - REQUEST_INTERVAL_SECONDS=30
     networks:
       - mvp-network
 
