@@ -48,6 +48,8 @@ public class CoordinationJob {
         // Override with environment variables if set
         KAFKA_BOOTSTRAP_SERVERS = Optional.ofNullable(System.getenv("KAFKA_BOOTSTRAP_SERVERS")).orElse(KAFKA_BOOTSTRAP_SERVERS);
         INFLUX_URL = Optional.ofNullable(System.getenv("INFLUX_URL")).orElse(INFLUX_URL);
+        System.out.println("Kafka bootstrap servers: " + KAFKA_BOOTSTRAP_SERVERS);
+        System.out.println("Influx URL: " + INFLUX_URL);
 
         // For prod use the below
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
