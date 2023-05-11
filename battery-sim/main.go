@@ -39,7 +39,7 @@ func getNumberOfBatteries() int {
 	nBatteries, err := strconv.Atoi(nBatteriesEnv)
 	if err != nil {
 		// Print
-		log.Println("Could not parse N_BATTERIES environment variable, defaulting to 2")
+		log.Println("N_BATTERIES not set, using default 2")
 		nBatteries = 12
 	}
 	return nBatteries

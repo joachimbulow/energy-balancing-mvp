@@ -83,6 +83,7 @@ func getRequestInterval() time.Duration {
 			return time.Duration(parsedValue) * time.Second
 		}
 	}
+	print("REQUEST_INTERVAL_SECONDS not set, using default: 20 seconds\n")
 	return 20 * time.Second // Default to 20 seconds
 }
 
@@ -93,6 +94,7 @@ func getPacketPowerW() int {
 			return parsedValue
 		}
 	}
+	print("PACKET_POWER_W not set, using default: 4000 watts\n")
 	return 4000 // Default to 4000 watts
 }
 
@@ -103,6 +105,7 @@ func getPacketTimeS() int {
 			return parsedValue
 		}
 	}
+	print("PACKET_TIME_S not set, using default: 5 minutes\n")
 	return 5 * 60 // Default to 5 minutes
 }
 
