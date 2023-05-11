@@ -1,5 +1,6 @@
 package main.sinks;
 
+import main.models.ActionSummary;
 import main.models.ResponseSummary;
 import main.models.SystemFrequency;
 import org.apache.flink.api.common.functions.MapFunction;
@@ -26,6 +27,13 @@ public class InfluxDBPointMapper<T> implements MapFunction<T, InfluxDBPoint> {
             fields.put("deniedDischarge", ((ResponseSummary) in).deniedDischarge);
             long timestamp = new Date().getTime();
             return new InfluxDBPoint("responseSummary", timestamp, null, fields);
+        }
+        if (in instanceof ActionSummary) {
+            Map<String, Object> fields = new HashMap<>();
+            fields.put("chargeActions", ((ActionSummary) in).chargeActions);
+            fields.put("dischargeActions", ((ActionSummary) in).dischargeActions);
+            long timestamp = new Date().getTime();
+            return new InfluxDBPoint("actionSummary", timestamp, null, fields);
         }
         System.out.println("Error mapping to InfluxDBPoint");
         return null;

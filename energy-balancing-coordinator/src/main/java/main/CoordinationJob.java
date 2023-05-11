@@ -32,8 +32,10 @@ public class CoordinationJob {
     public final static String PEM_REQUESTS_TOPIC = "pem_requests";
     public final static String PEM_RESPONSES_TOPIC = "pem_responses";
 
+    public final static String BATTERY_ACTIONS_TOPIC = "battery_actions";
     public final static String REDIS_FREQUENCY_KEY = "frequency";
     public final static String REDIS_INERTIA_KEY = "inertia";
+
 
     public static String KAFKA_BOOTSTRAP_SERVERS = "127.0.0.1:29092";
 
@@ -68,6 +70,8 @@ public class CoordinationJob {
         KafkaSource<String> frequencySource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(FREQUENCY_MEASUREMENTS_TOPIC).setStartingOffsets(OffsetsInitializer.latest()).setValueOnlyDeserializer(new SimpleStringSchema()).build();
 
         KafkaSource<String> requestsSource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(PEM_REQUESTS_TOPIC).setStartingOffsets(OffsetsInitializer.latest()).setValueOnlyDeserializer(new SimpleStringSchema()).build();
+
+        KafkaSource<String> batteryActionsSource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(BATTERY_ACTIONS_TOPIC).setStartingOffsets(OffsetsInitializer.latest()).setValueOnlyDeserializer(new SimpleStringSchema()).build();
 
         // Configure sinks
         InfluxDBConfig influxDbConfig = InfluxDBConfig.builder(INFLUX_URL, "admin", "admin", "influx").build();
@@ -110,6 +114,15 @@ public class CoordinationJob {
 
         jsonResponseStream.sinkTo(kafkaSink).name("Kafka response sink");
 
+        // # Actions
+        DataStream<String> rawActionsStream = env.fromSource(batteryActionsSource, WatermarkStrategy.noWatermarks(), "Actions source");
+        DataStream<BatteryAction> pojoActionStream = rawActionsStream.map(new JsonToActionMapper());
+
+        // Sink actions into InfluxDB as well
+        DataStream<List<BatteryAction>> timedWindowActionStream = pojoActionStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(10))).process(new ActionsProcessFunction());
+        DataStream<ActionSummary> actionSummaryStream = timedWindowActionStream.map(new ActionListToSummaryMapper());
+        DataStream<InfluxDBPoint> influxActionStream = actionSummaryStream.map(new InfluxDBPointMapper<ActionSummary>());
+        influxActionStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB actions summary sink");
 
         // Execute program, beginning computation.
         env.execute("Flink coordinator job");

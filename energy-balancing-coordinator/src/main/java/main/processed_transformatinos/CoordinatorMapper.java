@@ -31,7 +31,6 @@ public class CoordinatorMapper implements MapFunction<PemRequest, PemResponse> {
         }
 
         ResponseType responseType;
-        System.out.printf("evaluating request %s\n", pemRequest.requestType == RequestType.CHARGE ? "CHARGE" : "DISCHARGE");
         if (currentFrequency < NOMINAL_SYSTEM_FREQUENCY) {
             responseType = pemRequest.requestType == RequestType.CHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
         }
