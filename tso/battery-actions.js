@@ -46,9 +46,9 @@ function factorInBatteryActions(measurements) {
       energyApplied += energyPacket;
     }
   }
-
-  console.log(`Energy change in grid since last refresh: ${energyApplied}`);
-
+  if (energyApplied != 0) {
+    console.log(`Energy change in grid since last refresh: ${energyApplied}`);
+  }
   // Update the global state, and use for calculation of new frequency
   totalEnergyApplied += energyApplied;
 
