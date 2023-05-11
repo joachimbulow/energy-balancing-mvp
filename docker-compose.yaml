@@ -134,6 +134,8 @@ services:
       - BROKER=KAFKA
       - N_BATTERIES=2
       - REQUEST_INTERVAL_SECONDS=30
+      - PACKET_POWER_W=4000
+      - PACKET_TIME_S=30
     networks:
       - mvp-network
 

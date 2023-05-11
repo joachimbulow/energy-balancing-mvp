@@ -65,13 +65,15 @@ const (
 
 	BATTERY_CAPACITY_KWH = 13.5
 
-	PacketPowerW    = 4000
-	PacketTimeS     = 5 * 60
-	PACKET_ENERGY_J = PacketPowerW * PacketTimeS
-
-	PACKET_KWH = PACKET_ENERGY_J / 3600000.00
-
 	CHARGE_DISCHARGE_INTERVAL_MS = 10000
+)
+
+var (
+	requestInterval = getRequestInterval()
+	packetPowerW    = getPacketPowerW()
+	packetTimeS     = getPacketTimeS()
+	packetEnergyJ   = packetPowerW * packetTimeS
+	packetKwh       = float64(packetEnergyJ / 3600000.00)
 )
 
 func getRequestInterval() time.Duration {
@@ -83,6 +85,28 @@ func getRequestInterval() time.Duration {
 	}
 	return 20 * time.Second // Default to 20 seconds
 }
+
+func getPacketPowerW() int {
+	if power := os.Getenv("PACKET_POWER_W"); power != "" {
+		parsedValue, err := strconv.Atoi(power)
+		if err == nil {
+			return parsedValue
+		}
+	}
+	return 4000 // Default to 4000 watts
+}
+
+func getPacketTimeS() int {
+	if time := os.Getenv("PACKET_TIME_S"); time != "" {
+		parsedValue, err := strconv.Atoi(time)
+		if err == nil {
+			return parsedValue
+		}
+	}
+	return 5 * 60 // Default to 5 minutes
+}
+
+/// -------------------------------------
 
 type Battery struct {
 	id            string
@@ -145,7 +169,7 @@ func (battery *Battery) handlePEMresponse(params ...[]byte) {
 
 func (battery *Battery) publishPEMrequests() {
 	for {
-		time.Sleep(getRequestInterval())
+		time.Sleep(requestInterval)
 		for battery.busy {
 			time.Sleep(time.Second)
 		}
@@ -226,13 +250,13 @@ func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 }
 
 func (battery *Battery) chargePacket() {
-	battery.logger.Info("Charging packet of + %0.4f kWh.\n", PACKET_KWH)
-	battery.updateBattery(PACKET_KWH)
+	battery.logger.Info("Charging packet of + %0.4f kWh.\n", packetKwh)
+	battery.updateBattery(packetKwh)
 }
 
 func (battery *Battery) dischargePacket() {
-	battery.logger.Info("Discharging packet of - %0.4f kWh.\n", PACKET_KWH)
-	battery.updateBattery(-PACKET_KWH)
+	battery.logger.Info("Discharging packet of - %0.4f kWh.\n", packetKwh)
+	battery.updateBattery(-packetKwh)
 }
 
 func (battery *Battery) updateBattery(chargeAmount float64) {
