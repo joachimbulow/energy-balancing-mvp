@@ -25,7 +25,7 @@ func NewKafkaClient() (*KafkaClient, error) {
 	var conn *kafka.Conn
 	var err error
 	for i := 0; i < 3; i++ {
-		conn, err = kafka.Dial("tcp", brokerURL)
+		conn, err = kafka.Dial("tcp", util.GetBrokerURL())
 		if err == nil {
 			break
 		}
@@ -44,7 +44,7 @@ func NewKafkaClient() (*KafkaClient, error) {
 
 func setupReader(kafkaClient *KafkaClient, topic string, consumerGroupID string) *kafka.Reader {
 	kafkaClient.reader = kafka.NewReader(kafka.ReaderConfig{
-		Brokers:     strings.Split(brokerURL, ","),
+		Brokers:     strings.Split(util.GetBrokerURL(), ","),
 		GroupID:     consumerGroupID,
 		Topic:       topic,
 		MinBytes:    10e3, // 10KB
@@ -56,7 +56,7 @@ func setupReader(kafkaClient *KafkaClient, topic string, consumerGroupID string)
 
 func setupWriter(kafkaClient *KafkaClient) *kafka.Writer {
 	kafkaClient.writer = &kafka.Writer{
-		Addr:                   kafka.TCP(brokerURL),
+		Addr:                   kafka.TCP(util.GetBrokerURL()),
 		Balancer:               &kafka.Hash{},
 		AllowAutoTopicCreation: true,
 	}

@@ -7,6 +7,22 @@ import (
 	"time"
 )
 
+func GetBrokerURL() string {
+	if url := os.Getenv("BROKER_URL"); url != "" {
+		return url
+	}
+	log.Println("BROKER_URL not set, using default 127.0.0.1:29092")
+	return "127.0.0.1:29092" // Default to localhost
+}
+
+func GetBroker() string {
+	if url := os.Getenv("BROKER"); url != "" {
+		return url
+	}
+	log.Println("BROKER not set, using default KAFKA")
+	return "KAFKA"
+}
+
 func GetNumberOfBatteries() int {
 	if nBatteriesEnv := os.Getenv("N_BATTERIES"); nBatteriesEnv != "" {
 		nBatteries, err := strconv.Atoi(nBatteriesEnv)
@@ -25,6 +41,7 @@ func GetUpperBoundBatteryCapacity() float64 {
 			return parsedValue
 		}
 	}
+	log.Println("UPPER_BOUND_BATTERY_CAPACITY not set, using default 0.8")
 	return 0.8 // Default to 0.8
 }
 
@@ -35,6 +52,7 @@ func GetLowerBoundBatteryCapacity() float64 {
 			return parsedValue
 		}
 	}
+	log.Println("LOWER_BOUND_BATTERY_CAPACITY not set, using default: 0.2")
 	return 0.2 // Default to 0.2
 }
 
@@ -45,7 +63,7 @@ func GetRequestInterval() time.Duration {
 			return time.Duration(parsedValue) * time.Second
 		}
 	}
-	print("REQUEST_INTERVAL_SECONDS not set, using default: 20 seconds\n")
+	log.Println("REQUEST_INTERVAL_SECONDS not set, using default: 20 seconds")
 	return 20 * time.Second // Default to 20 seconds
 }
 
@@ -56,7 +74,7 @@ func GetPacketPowerW() int {
 			return parsedValue
 		}
 	}
-	print("PACKET_POWER_W not set, using default: 4000 watts\n")
+	log.Println("PACKET_POWER_W not set, using default: 4000 watts")
 	return 4000 // Default to 4000 watts
 }
 
@@ -67,6 +85,6 @@ func GetPacketTimeS() int {
 			return parsedValue
 		}
 	}
-	print("PACKET_TIME_S not set, using default: 5 minutes\n")
+	log.Println("PACKET_TIME_S not set, using default: 5 minutes")
 	return 5 * 60 // Default to 5 minutes
 }
