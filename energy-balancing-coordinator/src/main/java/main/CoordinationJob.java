@@ -89,7 +89,7 @@ public class CoordinationJob {
 
         // Map and sink into InfluxDB
         DataStream<InfluxDBPoint> influxStream = sysFreqStream.map(new InfluxDBPointMapper<SystemFrequency>());
-        influxStream.addSink(new InfluxDBSink(influxDbConfig));
+        influxStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB frequency sink");
 
         // # Requests
         DataStream<String> rawRequestStream = env.fromSource(requestsSource, WatermarkStrategy.noWatermarks(), "Requests source");
@@ -100,7 +100,7 @@ public class CoordinationJob {
         DataStream<List<PemResponse>> timedWindowResponseStream = responseStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(10))).process(new RequestsProcessFunction());
         DataStream<ResponseSummary> responseSummaryStream = timedWindowResponseStream.map(new ResponseListToSummaryMapper());
         DataStream<InfluxDBPoint> influxResponseStream = responseSummaryStream.map(new InfluxDBPointMapper<ResponseSummary>());
-        influxResponseStream.addSink(new InfluxDBSink(influxDbConfig));
+        influxResponseStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB response summary sink");
 
         // Sink into Kafka
         DataStream<String> jsonResponseStream = responseStream.map(new PojoToJsonMapper<PemResponse>());
@@ -108,7 +108,7 @@ public class CoordinationJob {
         KafkaSink<String> kafkaSink = KafkaSink.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setRecordSerializer(KafkaRecordSerializationSchema.builder()
                 .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.NONE).build();
 
-        jsonResponseStream.sinkTo(kafkaSink);
+        jsonResponseStream.sinkTo(kafkaSink).name("Kafka response sink");
 
 
         // Execute program, beginning computation.
