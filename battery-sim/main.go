@@ -20,7 +20,7 @@ func main() {
 func initializeBatteries() {
 	for i := 0; i < nBatteries; i++ {
 		// To spread out the spawn of the batteries so they spam less
-		time.Sleep(2 * time.Second)
+		time.Sleep(100 * time.Millisecond)
 		go startBattery()
 	}
 
@@ -40,7 +40,7 @@ func getNumberOfBatteries() int {
 	if err != nil {
 		// Print
 		log.Println("Could not parse N_BATTERIES environment variable, defaulting to 2")
-		nBatteries = 2
+		nBatteries = 12
 	}
 	return nBatteries
 }
