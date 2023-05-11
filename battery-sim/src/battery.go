@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"math"
 	"math/rand"
+	"os"
+	"strconv"
 	"time"
 
 	"github.com/google/uuid"
@@ -69,10 +71,18 @@ const (
 
 	PACKET_KWH = PACKET_ENERGY_J / 3600000.00
 
-	SENDING_INTERVAL_NS = 10 * time.Second
-
 	CHARGE_DISCHARGE_INTERVAL_MS = 10000
 )
+
+func getRequestInterval() time.Duration {
+	if interval := os.Getenv("REQUEST_INTERVAL_SECONDS"); interval != "" {
+		parsedValue, err := strconv.Atoi(interval)
+		if err == nil {
+			return time.Duration(parsedValue) * time.Second
+		}
+	}
+	return 20 * time.Second // Default to 20 seconds
+}
 
 type Battery struct {
 	id            string
@@ -84,14 +94,19 @@ type Battery struct {
 }
 
 func NewBattery() {
+	batteryIdAndConsumerGroupID := generateUuid()
+
 	battery := Battery{}
-	battery.id = generateUuid()
+	battery.id = batteryIdAndConsumerGroupID
 	battery.client = battery.setupClient()
 	battery.latestRequest = PEMRequest{}
 	battery.logger = util.NewLogger(battery.id)
-	go battery.client.Listen(PEM_RESPONSES_TOPIC, battery.handlePEMresponse)
+
+	// Start go routines
+	go battery.client.Listen(PEM_RESPONSES_TOPIC, batteryIdAndConsumerGroupID, battery.handlePEMresponse)
 	go battery.publishPEMrequests()
-	battery.logger.Info("Battery started")
+
+	battery.logger.Info("Battery started with id/consumer group: %s\n", battery.id)
 }
 
 func (battery *Battery) setupClient() client.Client {
@@ -130,7 +145,7 @@ func (battery *Battery) handlePEMresponse(params ...[]byte) {
 
 func (battery *Battery) publishPEMrequests() {
 	for {
-		time.Sleep(SENDING_INTERVAL_NS)
+		time.Sleep(getRequestInterval())
 		for battery.busy {
 			time.Sleep(time.Second)
 		}

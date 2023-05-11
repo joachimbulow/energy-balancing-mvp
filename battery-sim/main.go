@@ -22,6 +22,7 @@ func initializeBatteries() {
 		go startBattery()
 	}
 
+	// To keep routines running' we start sleepin'
 	for {
 		time.Sleep(1 * time.Second)
 	}

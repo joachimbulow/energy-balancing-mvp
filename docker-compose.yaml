@@ -126,7 +126,7 @@ services:
     platform: linux/x86_64
     deploy:
       mode: replicated
-      replicas: 1
+      replicas: 2
     depends_on:
       - kafka
     environment:

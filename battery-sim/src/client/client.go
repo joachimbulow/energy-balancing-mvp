@@ -16,7 +16,7 @@ type Client interface {
 	Publish(topic string, key string, message string) error
 	Subscribe(topic string) error
 	Unsubscribe(topic string) error
-	Listen(topic string, handler func(params ...[]byte)) error
+	Listen(topic string, consumerGroupID string, handler func(params ...[]byte)) error
 }
 
 func NewClient() (Client, error) {

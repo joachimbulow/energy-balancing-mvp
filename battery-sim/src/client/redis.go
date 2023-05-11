@@ -73,7 +73,7 @@ func (rb *RedisClient) Unsubscribe(topic string) error {
 	return nil
 }
 
-func (rb *RedisClient) Listen(topic string, handler func(params ...[]byte)) error {
+func (rb *RedisClient) Listen(topic string, consumerGroupID string, handler func(params ...[]byte)) error {
 	ch := rb.pubsub.Channel()
 
 	go func() {
