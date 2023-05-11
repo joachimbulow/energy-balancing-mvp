@@ -17,7 +17,7 @@ func main() {
 
 func initializeBatteries() {
 	for i := 0; i < nBatteries; i++ {
-		// To spread out the spawn of the batteries so they spam less
+		// To spread out the spawn of the batteries so they spam a bit less
 		time.Sleep(100 * time.Millisecond)
 		go startBattery()
 	}
