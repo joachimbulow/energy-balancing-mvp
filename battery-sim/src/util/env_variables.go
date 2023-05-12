@@ -7,6 +7,19 @@ import (
 	"time"
 )
 
+// Environement variables
+
+// BROKER_URL: The url to the broker, default is
+// N_BATTERIES: The number of batteries to simulate, default is 2
+
+// UPPER_BOUND_BATTERY_CAPACITY: The upper bound of the battery capacity for PEM, default is 0.8
+// LOWER_BOUND_BATTERY_CAPACITY: The lower bound of the battery capacity for PEM, default is 0.2
+
+// REQUEST_INTERVAL_SECONDS: The interval between requests, default is 20 seconds
+
+// PACKET_POWER_W: The power of the packet in watts, default is 4000 watts
+// PACKET_TIME_S: The time it takes to charge/discharge the packet in seconds, default is 5 minutes
+
 func GetBrokerURL() string {
 	if url := os.Getenv("BROKER_URL"); url != "" {
 		return url
