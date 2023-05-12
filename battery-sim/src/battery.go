@@ -229,7 +229,9 @@ func (battery *Battery) updateBattery(chargeAmount float64) {
 	currentBatteryCharge := battery.soc * BATTERY_CAPACITY_KWH
 	currentBatteryCharge += chargeAmount
 	battery.soc = (currentBatteryCharge / BATTERY_CAPACITY_KWH)
-	time.Sleep(time.Duration(packetTimeS) * time.Millisecond) // simulate charging/discharging
+
+	time.Sleep(time.Duration(packetTimeS) * time.Second) // simulate charging/discharging
+
 	battery.logger.Info("After the update the new SoC is: %.4f\n", battery.soc)
 	battery.busy = false
 }
