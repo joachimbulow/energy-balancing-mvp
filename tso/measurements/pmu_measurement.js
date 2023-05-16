@@ -22,14 +22,14 @@ const productionStdDev = 624.16;
 var measurements = [];
 var prevValues = {};
 
-var degreeOfChange = 1;
+var degreeOfChange = 0;
 var frequencyOfChange = 0;
 
 function resetExperiment() {
   measurements = [];
   prevValues = {};
 
-  degreeOfChange = 1;
+  degreeOfChange = 0;
   frequencyOfChange = 0;
 }
 
