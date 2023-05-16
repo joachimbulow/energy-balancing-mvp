@@ -30,14 +30,14 @@ public class CoordinatorMapper implements MapFunction<PemRequest, PemResponse> {
             return null;
         }
 
+        ResponseType responseType;
         if (currentFrequency < NOMINAL_SYSTEM_FREQUENCY) {
-            ResponseType responseType = pemRequest.requestType == RequestType.CHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
-            return new PemResponse(pemRequest.id, pemRequest.batteryId, responseType, pemRequest.requestType);
+            responseType = pemRequest.requestType == RequestType.CHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
         }
         else {
-            ResponseType responseType = pemRequest.requestType == RequestType.DISCHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
-            return new PemResponse(pemRequest.id, pemRequest.batteryId, responseType, pemRequest.requestType);
+            responseType = pemRequest.requestType == RequestType.DISCHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
         }
+        return new PemResponse(pemRequest.id, pemRequest.batteryId, responseType, pemRequest.requestType);
     }
 
 

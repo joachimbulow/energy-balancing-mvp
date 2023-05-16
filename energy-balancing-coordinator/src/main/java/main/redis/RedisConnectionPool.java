@@ -1,7 +1,7 @@
 package main.redis;
-import main.CoordinationJob;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
+import java.util.Optional;
 
 public class RedisConnectionPool {
 
@@ -18,10 +18,13 @@ public class RedisConnectionPool {
         poolConfig.setTestOnReturn(true);
 
         // configure the JedisPool with your Redis instance information
-        String redisHost = CoordinationJob.REDIS_BROKER;
-        int redisPort = CoordinationJob.REDIS_PORT;
+        String redisHost = Optional.ofNullable(System.getenv("REDIS_BROKER")).orElse("localhost");
+        int redisPort = Integer.parseInt(Optional.ofNullable(System.getenv("REDIS_PORT")).orElse(String.valueOf("6379")));
         String redisPassword = null;
-        jedisPool = new JedisPool(poolConfig, redisHost, redisPort, 2000, redisPassword);
+
+        System.out.println("REDIS SINK: Connecting to Redis at " + redisHost + ":" + redisPort);
+
+        jedisPool = new JedisPool(poolConfig, redisHost, redisPort, 20000, redisPassword);
     }
 
     public static RedisConnectionPool getInstance() {

@@ -9,6 +9,7 @@ import org.apache.flink.streaming.api.windowing.windows.Window;
 import org.apache.flink.util.Collector;
 import scala.collection.immutable.List$;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +19,10 @@ public class RequestsProcessFunction extends ProcessAllWindowFunction<PemRespons
     public void process(ProcessAllWindowFunction<PemResponse, List<PemResponse>, TimeWindow>.Context context, Iterable<PemResponse> iterable, Collector<List<PemResponse>> collector) throws Exception {
 
         System.out.println("Processing request window at time: " + new Date().getTime());
+        if (iterable == null) {
+            System.out.println("Window process is null for requests");
+            collector.collect(new ArrayList<>());
+        }
         collector.collect((List<PemResponse>) iterable);
     }
 }

@@ -25,7 +25,7 @@ func NewKafkaClient() (*KafkaClient, error) {
 	var conn *kafka.Conn
 	var err error
 	for i := 0; i < 3; i++ {
-		conn, err = kafka.Dial("tcp", brokerURL)
+		conn, err = kafka.Dial("tcp", util.GetBrokerURL())
 		if err == nil {
 			break
 		}
@@ -42,19 +42,21 @@ func NewKafkaClient() (*KafkaClient, error) {
 	return client, err
 }
 
-func setupReader(kafkaClient *KafkaClient, topic string) *kafka.Reader {
+func setupReader(kafkaClient *KafkaClient, topic string, consumerGroupID string) *kafka.Reader {
 	kafkaClient.reader = kafka.NewReader(kafka.ReaderConfig{
-		Brokers:  strings.Split(brokerURL, ","),
-		Topic:    topic,
-		MinBytes: 10e3, // 10KB
-		MaxBytes: 10e6, // 10MB
+		Brokers:     strings.Split(util.GetBrokerURL(), ","),
+		GroupID:     consumerGroupID,
+		Topic:       topic,
+		MinBytes:    10e3, // 10KB
+		MaxBytes:    10e6, // 10MB
+		StartOffset: kafka.LastOffset,
 	})
 	return kafkaClient.reader
 }
 
 func setupWriter(kafkaClient *KafkaClient) *kafka.Writer {
 	kafkaClient.writer = &kafka.Writer{
-		Addr:                   kafka.TCP(brokerURL),
+		Addr:                   kafka.TCP(util.GetBrokerURL()),
 		Balancer:               &kafka.Hash{},
 		AllowAutoTopicCreation: true,
 	}
@@ -101,9 +103,9 @@ func (k *KafkaClient) Unsubscribe(topic string) error {
 	return nil
 }
 
-func (k *KafkaClient) Listen(topic string, handler func(params ...[]byte)) error {
+func (k *KafkaClient) Listen(topic string, consumerGroupID string, handler func(params ...[]byte)) error {
 	if k.reader == nil {
-		setupReader(k, topic)
+		setupReader(k, topic, consumerGroupID)
 	}
 	for {
 		m, err := k.reader.ReadMessage(context.Background())

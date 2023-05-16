@@ -18,7 +18,6 @@ public class RedisSinkFunction<T> implements SinkFunction<T> {
 
         if (in instanceof InertiaMeasurement) {
             String dk2Inertia = String.valueOf(((InertiaMeasurement) in).inertiaDK2GWs);
-            System.out.println("Writing inertia to redis: " + dk2Inertia);
             jedis.set(CoordinationJob.REDIS_INERTIA_KEY, dk2Inertia);
             jedis.close();
             return;

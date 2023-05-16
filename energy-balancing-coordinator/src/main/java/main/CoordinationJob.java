@@ -32,15 +32,14 @@ public class CoordinationJob {
     public final static String PEM_REQUESTS_TOPIC = "pem_requests";
     public final static String PEM_RESPONSES_TOPIC = "pem_responses";
 
+    public final static String BATTERY_ACTIONS_TOPIC = "battery_actions";
     public final static String REDIS_FREQUENCY_KEY = "frequency";
     public final static String REDIS_INERTIA_KEY = "inertia";
+
 
     public static String KAFKA_BOOTSTRAP_SERVERS = "127.0.0.1:29092";
 
     public static String INFLUX_URL = "http://localhost:8086";
-
-    public static String REDIS_BROKER = "localhost";
-    public static int REDIS_PORT = 6379;
 
     public static void main(String[] args) throws Exception {
 
@@ -49,9 +48,8 @@ public class CoordinationJob {
         // Override with environment variables if set
         KAFKA_BOOTSTRAP_SERVERS = Optional.ofNullable(System.getenv("KAFKA_BOOTSTRAP_SERVERS")).orElse(KAFKA_BOOTSTRAP_SERVERS);
         INFLUX_URL = Optional.ofNullable(System.getenv("INFLUX_URL")).orElse(INFLUX_URL);
-        REDIS_BROKER = Optional.ofNullable(System.getenv("REDIS_BROKER")).orElse(REDIS_BROKER);
         System.out.println("Kafka bootstrap servers: " + KAFKA_BOOTSTRAP_SERVERS);
-
+        System.out.println("Influx URL: " + INFLUX_URL);
 
         // For prod use the below
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
@@ -75,6 +73,8 @@ public class CoordinationJob {
 
         KafkaSource<String> requestsSource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(PEM_REQUESTS_TOPIC).setStartingOffsets(OffsetsInitializer.latest()).setValueOnlyDeserializer(new SimpleStringSchema()).build();
 
+        KafkaSource<String> batteryActionsSource = KafkaSource.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setTopics(BATTERY_ACTIONS_TOPIC).setStartingOffsets(OffsetsInitializer.latest()).setValueOnlyDeserializer(new SimpleStringSchema()).build();
+
         // Configure sinks
         InfluxDBConfig influxDbConfig = InfluxDBConfig.builder(INFLUX_URL, "admin", "admin", "influx").build();
 
@@ -95,7 +95,7 @@ public class CoordinationJob {
 
         // Map and sink into InfluxDB
         DataStream<InfluxDBPoint> influxStream = sysFreqStream.map(new InfluxDBPointMapper<SystemFrequency>());
-        influxStream.addSink(new InfluxDBSink(influxDbConfig));
+        influxStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB frequency sink");
 
         // # Requests
         DataStream<String> rawRequestStream = env.fromSource(requestsSource, WatermarkStrategy.noWatermarks(), "Requests source");
@@ -106,7 +106,7 @@ public class CoordinationJob {
         DataStream<List<PemResponse>> timedWindowResponseStream = responseStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(10))).process(new RequestsProcessFunction());
         DataStream<ResponseSummary> responseSummaryStream = timedWindowResponseStream.map(new ResponseListToSummaryMapper());
         DataStream<InfluxDBPoint> influxResponseStream = responseSummaryStream.map(new InfluxDBPointMapper<ResponseSummary>());
-        influxResponseStream.addSink(new InfluxDBSink(influxDbConfig));
+        influxResponseStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB response summary sink");
 
         // Sink into Kafka
         DataStream<String> jsonResponseStream = responseStream.map(new PojoToJsonMapper<PemResponse>());
@@ -114,8 +114,17 @@ public class CoordinationJob {
         KafkaSink<String> kafkaSink = KafkaSink.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setRecordSerializer(KafkaRecordSerializationSchema.builder()
                 .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.NONE).build();
 
-        jsonResponseStream.sinkTo(kafkaSink);
+        jsonResponseStream.sinkTo(kafkaSink).name("Kafka response sink");
 
+        // # Actions
+        DataStream<String> rawActionsStream = env.fromSource(batteryActionsSource, WatermarkStrategy.noWatermarks(), "Actions source");
+        DataStream<BatteryAction> pojoActionStream = rawActionsStream.map(new JsonToActionMapper());
+
+        // Sink actions into InfluxDB as well
+        DataStream<List<BatteryAction>> timedWindowActionStream = pojoActionStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(10))).process(new ActionsProcessFunction());
+        DataStream<ActionSummary> actionSummaryStream = timedWindowActionStream.map(new ActionListToSummaryMapper());
+        DataStream<InfluxDBPoint> influxActionStream = actionSummaryStream.map(new InfluxDBPointMapper<ActionSummary>());
+        influxActionStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB actions summary sink");
 
         // Execute program, beginning computation.
         env.execute("Flink coordinator job");

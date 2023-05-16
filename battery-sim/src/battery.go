@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"math"
 	"math/rand"
-	"sync"
 	"time"
 
 	"github.com/google/uuid"
@@ -55,45 +54,48 @@ const (
 )
 
 const (
-	UpperBoundBatteryCapacity = 0.8
-	LowerBoundBatteryCapacity = 0.2
-
 	SOC_MEAN           = 0.7
 	SOC_STD            = 0.05
 	SIGNIFICANT_DIGITS = 4
 
 	BATTERY_CAPACITY_KWH = 13.5
-
-	PacketPowerW    = 4000
-	PacketTimeS     = 5 * 60
-	PACKET_ENERGY_J = PacketPowerW * PacketTimeS
-
-	PACKET_KWH = PACKET_ENERGY_J / 3600000.00
-
-	SENDING_INTERVAL_NS = 10 * time.Second
-
-	CHARGE_DISCHARGE_INTERVAL_MS = 10000
 )
+
+var (
+	upperBoundBatteryCapacity = util.GetUpperBoundBatteryCapacity()
+	lowerBoundBatteryCapacity = util.GetLowerBoundBatteryCapacity()
+	requestInterval           = util.GetRequestInterval()
+	packetPowerW              = util.GetPacketPowerW()
+	packetTimeS               = util.GetPacketTimeS()
+	packetEnergyJ             = float64(packetPowerW) * float64(packetTimeS)
+	packetKwh                 = float64(packetEnergyJ / 3600000.00)
+)
+
+/// -------------------------------------
 
 type Battery struct {
 	id            string
 	client        client.Client
 	soc           float64
-	requests      map[string]PEMRequest
-	requestsMutex sync.Mutex
+	latestRequest PEMRequest
 	logger        util.Logger
 	busy          bool
 }
 
 func NewBattery() {
+	batteryIdAndConsumerGroupID := generateUuid()
+
 	battery := Battery{}
-	battery.id = generateUuid()
+	battery.id = batteryIdAndConsumerGroupID
 	battery.client = battery.setupClient()
-	battery.requests = make(map[string]PEMRequest)
+	battery.latestRequest = PEMRequest{}
 	battery.logger = util.NewLogger(battery.id)
-	go battery.client.Listen(PEM_RESPONSES_TOPIC, battery.handlePEMresponse)
+
+	// Start go routines
+	go battery.client.Listen(PEM_RESPONSES_TOPIC, batteryIdAndConsumerGroupID, battery.handlePEMresponse)
 	go battery.publishPEMrequests()
-	battery.logger.Info("Battery started")
+
+	battery.logger.Info("Battery started with id/consumer group: %s\n", battery.id)
 }
 
 func (battery *Battery) setupClient() client.Client {
@@ -117,7 +119,7 @@ func (battery *Battery) handlePEMresponse(params ...[]byte) {
 		return
 	}
 
-	if response.BatteryID != battery.id {
+	if response.ID != battery.latestRequest.ID {
 		return
 	}
 
@@ -132,20 +134,19 @@ func (battery *Battery) handlePEMresponse(params ...[]byte) {
 
 func (battery *Battery) publishPEMrequests() {
 	for {
-		time.Sleep(SENDING_INTERVAL_NS)
+		time.Sleep(requestInterval)
 		for battery.busy {
 			time.Sleep(time.Second)
 		}
 		request := battery.getPEMRequest()
-		battery.logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
 
 		jsonRequest, err := json.Marshal(request)
 		if err != nil {
 			battery.logger.Fatal(err)
 		}
-		battery.requestsMutex.Lock()
-		battery.requests[request.ID] = request
-		battery.requestsMutex.Unlock()
+
+		battery.latestRequest = request
+		battery.logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
 		battery.client.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
@@ -154,9 +155,9 @@ func (battery *Battery) getPEMRequest() PEMRequest {
 	stateOfCharge := battery.measureSoC()
 
 	var request PEMRequest
-	if stateOfCharge < LowerBoundBatteryCapacity {
+	if stateOfCharge < lowerBoundBatteryCapacity {
 		request = battery.newRequest(CHARGE)
-	} else if stateOfCharge >= LowerBoundBatteryCapacity && stateOfCharge <= UpperBoundBatteryCapacity {
+	} else if stateOfCharge >= lowerBoundBatteryCapacity && stateOfCharge <= upperBoundBatteryCapacity {
 		request = battery.probabilisticallyCalculateRequest()
 	} else {
 		request = battery.newRequest(DISCHARGE)
@@ -184,8 +185,8 @@ func (battery *Battery) newRequest(requestType string) PEMRequest {
 // The closer the battery is to the lower bound, the higher the probability of charging.
 func (battery *Battery) probabilisticallyCalculateRequest() PEMRequest {
 	// Calculate distance to lower and upper bounds
-	lowerBoundDistance := battery.soc - LowerBoundBatteryCapacity
-	upperBoundDistance := UpperBoundBatteryCapacity - battery.soc
+	lowerBoundDistance := battery.soc - lowerBoundBatteryCapacity
+	upperBoundDistance := upperBoundBatteryCapacity - battery.soc
 
 	// Calculate probability of charging based on distance to bound
 	chargeProbability := math.Abs(lowerBoundDistance) / (math.Abs(lowerBoundDistance) + math.Abs(upperBoundDistance))
@@ -202,16 +203,9 @@ func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 	for battery.busy {
 		time.Sleep(1 * time.Second)
 	}
-	// maybe mutex is not needed here
-	battery.requestsMutex.Lock()
-	request := battery.requests[response.ID]
-	delete(battery.requests, request.ID)
-	battery.requestsMutex.Unlock()
 
-	if request.ID == "" {
-		battery.logger.Info("Request with id %s not found\n", response.ID)
-		return
-	}
+	request := battery.latestRequest
+
 	if request.RequestType == CHARGE {
 		battery.chargePacket()
 	} else if request.RequestType == DISCHARGE {
@@ -221,13 +215,13 @@ func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 }
 
 func (battery *Battery) chargePacket() {
-	battery.logger.Info("Charging packet of + %0.4f kWh.\n", PACKET_KWH)
-	battery.updateBattery(PACKET_KWH)
+	battery.logger.Info("Charging packet of + %0.4f kWh.\n", packetKwh)
+	battery.updateBattery(packetKwh)
 }
 
 func (battery *Battery) dischargePacket() {
-	battery.logger.Info("Discharging packet of - %0.4f kWh.\n", PACKET_KWH)
-	battery.updateBattery(-PACKET_KWH)
+	battery.logger.Info("Discharging packet of - %0.4f kWh.\n", packetKwh)
+	battery.updateBattery(-packetKwh)
 }
 
 func (battery *Battery) updateBattery(chargeAmount float64) {
@@ -235,7 +229,9 @@ func (battery *Battery) updateBattery(chargeAmount float64) {
 	currentBatteryCharge := battery.soc * BATTERY_CAPACITY_KWH
 	currentBatteryCharge += chargeAmount
 	battery.soc = (currentBatteryCharge / BATTERY_CAPACITY_KWH)
-	time.Sleep(CHARGE_DISCHARGE_INTERVAL_MS * time.Millisecond) // simulate charging/discharging
+
+	time.Sleep(time.Duration(packetTimeS) * time.Second) // simulate charging/discharging
+
 	battery.logger.Info("After the update the new SoC is: %.4f\n", battery.soc)
 	battery.busy = false
 }
