@@ -74,28 +74,29 @@ var (
 /// -------------------------------------
 
 type Battery struct {
-	id            string
-	client        client.Client
-	soc           float64
-	latestRequest PEMRequest
-	logger        util.Logger
-	busy          bool
+	id                   string
+	requestChannel       chan PEMRequest
+	responseChannel      chan PEMResponse
+	batteryActionChannel chan BatteryAction
+	soc                  float64
+	latestRequest        PEMRequest
+	logger               util.Logger
+	busy                 bool
 }
 
-func NewBattery() {
-	batteryIdAndConsumerGroupID := generateUuid()
-
+func NewBattery(id string, requestChannel chan PEMRequest, responseChannel chan PEMResponse, batteryActionChannel chan BatteryAction) {
 	battery := Battery{}
-	battery.id = batteryIdAndConsumerGroupID
-	battery.client = battery.setupClient()
+	battery.id = id
 	battery.latestRequest = PEMRequest{}
 	battery.logger = util.NewLogger(battery.id)
+	battery.requestChannel = requestChannel
+	battery.responseChannel = responseChannel
+	battery.batteryActionChannel = batteryActionChannel
 
 	// Start go routines
-	go battery.client.Listen(PEM_RESPONSES_TOPIC, batteryIdAndConsumerGroupID, battery.handlePEMresponse)
 	go battery.publishPEMrequests()
-
-	battery.logger.Info("Battery started with id/consumer group: %s\n", battery.id)
+	go battery.listenForPEMresponses()
+	go battery.logger.Info("Battery started with id/consumer group: %s\n", battery.id)
 }
 
 func (battery *Battery) setupClient() client.Client {
@@ -106,31 +107,11 @@ func (battery *Battery) setupClient() client.Client {
 	return clientInstance
 }
 
-func generateUuid() string {
+func GenerateUuid() string {
 	return uuid.New().String()
 }
 
-func (battery *Battery) handlePEMresponse(params ...[]byte) {
-	message := params[1]
-
-	response := PEMResponse{}
-	if err := json.Unmarshal(message, &response); err != nil {
-		battery.logger.ErrorWithMsg("Unmarshaling of message failed", err)
-		return
-	}
-
-	if response.ID != battery.latestRequest.ID {
-		return
-	}
-
-	battery.logger.Info("Received %s response with id %s and battery id %s\n", response.ResponseType, response.ID, response.BatteryID)
-
-	if response.ResponseType == GRANTED {
-		battery.actOnGrantedRequest(response)
-	} else if response.ResponseType == DENIED {
-		battery.logger.Info("Request with id %s denied\n", response.ID)
-	}
-}
+// Pem requests
 
 func (battery *Battery) publishPEMrequests() {
 	for {
@@ -140,14 +121,16 @@ func (battery *Battery) publishPEMrequests() {
 		}
 		request := battery.getPEMRequest()
 
-		jsonRequest, err := json.Marshal(request)
-		if err != nil {
-			battery.logger.Fatal(err)
-		}
+		// jsonRequest, err := json.Marshal(request)
+		// if err != nil {
+		// 	battery.logger.Fatal(err)
+		// }
 
 		battery.latestRequest = request
-		battery.logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
-		battery.client.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
+		battery.requestChannel <- request
+
+		// battery.logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
+		// battery.client.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
 
@@ -198,6 +181,25 @@ func (battery *Battery) probabilisticallyCalculateRequest() PEMRequest {
 	}
 }
 
+// Pem responses
+
+func (battery *Battery) listenForPEMresponses() {
+	for response := range battery.responseChannel {
+		if response.ID != battery.latestRequest.ID {
+			battery.logger.Info("Received response with id %s, but latest request id is %s. Ignoring response.\n", response.ID, battery.latestRequest.ID)
+			continue
+		}
+
+		battery.logger.Info("Received %s response with id %s and battery id %s\n", response.ResponseType, response.ID, response.BatteryID)
+
+		if response.ResponseType == GRANTED {
+			battery.actOnGrantedRequest(response)
+		} else if response.ResponseType == DENIED {
+			battery.logger.Info("Request with id %s denied\n", response.ID)
+		}
+	}
+}
+
 func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 	battery.logger.Info("Request with id %s approved\n", response.ID)
 	for battery.busy {
@@ -236,6 +238,8 @@ func (battery *Battery) updateBattery(chargeAmount float64) {
 	battery.busy = false
 }
 
+// Battery actions
+
 func (battery *Battery) publishBatteryAction(actionType string) {
 	battery.logger.Info("Publishing battery action: %s\n", actionType)
 	action := BatteryAction{
@@ -248,4 +252,5 @@ func (battery *Battery) publishBatteryAction(actionType string) {
 		battery.logger.Fatal(err)
 	}
 	battery.client.Publish(BATTERY_ACTIONS_TOPIC, battery.id, string(json))
+
 }
