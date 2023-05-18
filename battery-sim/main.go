@@ -19,10 +19,14 @@ func main() {
 }
 
 func initializeBatteries() {
+	// All request flow "up-stream" from batteries through this channel
 	requestChannel := make(chan src.PEMRequest)
+	// All responses flow "down-stream" to the right batteries through these channels
 	responseChannelMap := make(map[string]chan src.PEMResponse)
+	// All battery actions flow "up-stream" from batteries through this channel
 	batteryActionChannel := make(chan src.BatteryAction)
 
+	// Setup the common client that all batteries will use
 	client, error := client.NewClient()
 
 	if error != nil {
@@ -45,7 +49,7 @@ func initializeBatteries() {
 
 	// Start the channel communication go routines
 	go publishPEMrequests(requestChannel, client)
-	go listenForPEMresponses(client, responseChannelMap)
+	go listenForPEMresponses(responseChannelMap, client)
 	go publishBatteryActions(batteryActionChannel, client)
 
 	// To keep routines running' we start sleepin'
@@ -71,7 +75,7 @@ func publishPEMrequests(requestsChannel chan src.PEMRequest, client client.Clien
 }
 
 // Listen for PEM responses
-func listenForPEMresponses(client client.Client, responseChannelMap map[string]chan src.PEMResponse) {
+func listenForPEMresponses(responseChannelMap map[string]chan src.PEMResponse, client client.Client) {
 	client.Listen(src.PEM_RESPONSES_TOPIC, src.GenerateUuid(), func(params ...[]byte) { handlePemResponse(responseChannelMap, params...) })
 }
 
@@ -85,7 +89,7 @@ func handlePemResponse(responseChannelMap map[string]chan src.PEMResponse, param
 		return
 	}
 
-	channel, ok := responseChannelMap[response.BatteryID] // Only the messages meant for our batteries should be published to
+	channel, ok := responseChannelMap[response.BatteryID] // Only the messages meant for our batteries should be published to the batteries
 	if !ok {
 		return
 	}

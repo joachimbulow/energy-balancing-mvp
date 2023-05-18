@@ -3,6 +3,7 @@ package client
 import (
 	"context"
 	"fmt"
+	"math/rand"
 	"strings"
 	"time"
 
@@ -31,8 +32,8 @@ func NewKafkaClient() (*KafkaClient, error) {
 			break
 		}
 		if i < 10 {
-			logger.ErrorWithMsg(fmt.Sprintf("Failed to connect to Kafka, Retrying in 10 (ish) seconds... Try %d/5", i+1), err)
-			time.Sleep(10 * time.Second)
+			logger.ErrorWithMsg(fmt.Sprintf("Failed to connect to Kafka, Retrying in 5-15 (ish) seconds... Try %d/5", i+1), err)
+			time.Sleep(time.Duration(rand.Intn(11)+5) * time.Second)
 		} else {
 			logger.ErrorWithMsg("Could not connect after 10 attempts, aborting mission", err)
 			panic(err)
