@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"time"
 
 	"github.com/joachimbulow/pem-energy-balance/src"
@@ -59,7 +58,7 @@ func startBattery(id string, requestChannel chan src.PEMRequest, responseChannel
 	src.NewBattery(id, requestChannel, responseChannel, batteryActionChannel)
 }
 
-// Send out PEM requests
+// Send out PEM requests when the batteries requests it through channels
 func publishPEMrequests(requestsChannel chan src.PEMRequest, client client.Client) {
 	for request := range requestsChannel {
 		jsonRequest, err := json.Marshal(request)
@@ -76,9 +75,8 @@ func listenForPEMresponses(client client.Client, responseChannelMap map[string]c
 	client.Listen(src.PEM_RESPONSES_TOPIC, src.GenerateUuid(), func(params ...[]byte) { handlePemResponse(responseChannelMap, params...) })
 }
 
-// Send out the response to the Go routine with the relevant ID
+// Send out the response to the correct channel based on the id
 func handlePemResponse(responseChannelMap map[string]chan src.PEMResponse, params ...[]byte) {
-	id := string(params[0])
 	message := params[1]
 
 	response := src.PEMResponse{}
@@ -87,9 +85,8 @@ func handlePemResponse(responseChannelMap map[string]chan src.PEMResponse, param
 		return
 	}
 
-	channel, ok := responseChannelMap[id]
+	channel, ok := responseChannelMap[response.BatteryID] // Only the messages meant for our batteries should be published to
 	if !ok {
-		logger.ErrorWithMsg("No channel found for id", errors.New("invalid id"))
 		return
 	}
 

@@ -1,7 +1,6 @@
 package src
 
 import (
-	"encoding/json"
 	"math"
 	"math/rand"
 	"time"
@@ -121,16 +120,9 @@ func (battery *Battery) publishPEMrequests() {
 		}
 		request := battery.getPEMRequest()
 
-		// jsonRequest, err := json.Marshal(request)
-		// if err != nil {
-		// 	battery.logger.Fatal(err)
-		// }
-
 		battery.latestRequest = request
+		battery.logger.Info("Publishing %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
 		battery.requestChannel <- request
-
-		// battery.logger.Info("Sending %s request with id %s and battery id %s\n", request.RequestType, request.ID, request.BatteryID)
-		// battery.client.Publish(PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
 	}
 }
 
@@ -159,7 +151,7 @@ func (battery *Battery) measureSoC() float64 {
 
 func (battery *Battery) newRequest(requestType string) PEMRequest {
 	return PEMRequest{
-		ID:          generateUuid(),
+		ID:          GenerateUuid(),
 		BatteryID:   battery.id,
 		RequestType: requestType,
 	}
@@ -194,14 +186,11 @@ func (battery *Battery) listenForPEMresponses() {
 
 		if response.ResponseType == GRANTED {
 			battery.actOnGrantedRequest(response)
-		} else if response.ResponseType == DENIED {
-			battery.logger.Info("Request with id %s denied\n", response.ID)
 		}
 	}
 }
 
 func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
-	battery.logger.Info("Request with id %s approved\n", response.ID)
 	for battery.busy {
 		time.Sleep(1 * time.Second)
 	}
@@ -243,14 +232,10 @@ func (battery *Battery) updateBattery(chargeAmount float64) {
 func (battery *Battery) publishBatteryAction(actionType string) {
 	battery.logger.Info("Publishing battery action: %s\n", actionType)
 	action := BatteryAction{
-		ID:         generateUuid(),
+		ID:         battery.id,
 		BatteryID:  battery.id,
 		ActionType: actionType,
 	}
-	json, err := json.Marshal(action)
-	if err != nil {
-		battery.logger.Fatal(err)
-	}
-	battery.client.Publish(BATTERY_ACTIONS_TOPIC, battery.id, string(json))
+	battery.batteryActionChannel <- action
 
 }
