@@ -2,6 +2,7 @@ package client
 
 import (
 	"context"
+	"fmt"
 	"strings"
 	"time"
 
@@ -24,16 +25,16 @@ func NewKafkaClient() (*KafkaClient, error) {
 
 	var conn *kafka.Conn
 	var err error
-	for i := 0; i < 3; i++ {
+	for i := 0; i < 10; i++ {
 		conn, err = kafka.Dial("tcp", util.GetBrokerURL())
 		if err == nil {
 			break
 		}
-		if i < 2 {
-			logger.ErrorWithMsg("Failed to connect to Kafka, Retrying in 10 seconds...", err)
+		if i < 10 {
+			logger.ErrorWithMsg(fmt.Sprintf("Failed to connect to Kafka, Retrying in 10 (ish) seconds... Try %d/5", i+1), err)
 			time.Sleep(10 * time.Second)
 		} else {
-			logger.ErrorWithMsg("Could not connect after 3 attempts, aborting mission", err)
+			logger.ErrorWithMsg("Could not connect after 10 attempts, aborting mission", err)
 			panic(err)
 		}
 
