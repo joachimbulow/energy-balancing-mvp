@@ -13,7 +13,7 @@ const voltageStdDev = 3;
 const currentMean = 10;
 const currentStdDev = 2;
 const frequencyMean = 50;
-const frequencyStdDev = 0.3;
+const frequencyStdDev = 0.038;
 const consumptionMean = 2136.66;
 const consumptionStdDev = 547.84;
 const productionMean = 2265;
@@ -25,6 +25,8 @@ var prevValues = {};
 var degreeOfChange = 0;
 var frequencyOfChange = 0;
 
+const today = new Date().toISOString().slice(0, 16);
+
 function resetExperiment() {
   measurements = [];
   prevValues = {};
@@ -33,20 +35,25 @@ function resetExperiment() {
   frequencyOfChange = 0;
 }
 
-function randomWalk(value, stdDev) {
-  if (Math.random() < frequencyOfChange) {
-    return value + (Math.random() * 2 - 1) * stdDev + stdDev * degreeOfChange;
+function randomWalk(value, stdDev, randomness = Math.random(), chanceOfChange = Math.random(), direction = Math.random() < 0.5 ? -1 : 1) {
+  let localDeviation = Math.random() * 3;
+
+  if (chanceOfChange < frequencyOfChange) {
+    return value + (randomness * 2 - 1) * stdDev + stdDev * degreeOfChange * localDeviation * direction;
   }
-  return value + (Math.random() * 2 - 1) * stdDev;
+  return value + (randomness * 2 - 1) * stdDev * localDeviation;
 }
 
-// TODO add timestamp to filename -${new Date().toISOString()}
-function createExperiment(fileName = `pmu-measurements.json`) {
+function createExperiment(fileName = `pmu-measurements-${today}.json`) {
   for (
     let currentDate = new Date(startDate);
     currentDate <= endDate;
     currentDate.setSeconds(currentDate.getSeconds() + SECOND_INTERVAL)
   ) {
+    var randomness = Math.random();
+    var chanceOfChange = Math.random();
+    let direction = Math.random() < 0.5 ? -1 : 1;
+
     for (let i = 0; i < locations.length; i++) {
       const location = locations[i];
 
@@ -65,23 +72,38 @@ function createExperiment(fileName = `pmu-measurements.json`) {
         location: location,
         voltage: +randomWalk(
           prevValues[location].voltage,
-          voltageStdDev / 10
+          voltageStdDev / 10,
+          randomness,
+          chanceOfChange,
+          direction
         ).toFixed(2),
         current: +randomWalk(
           prevValues[location].current,
-          currentStdDev / 10
+          currentStdDev / 10,
+          randomness,
+          chanceOfChange,
+          direction
         ).toFixed(1),
         frequency: +randomWalk(
           prevValues[location].frequency,
-          frequencyStdDev / 10
+          frequencyStdDev / 10,
+          randomness,
+          chanceOfChange,
+          direction
         ).toFixed(5),
         consumption: +randomWalk(
           prevValues[location].consumption,
-          consumptionStdDev / 10
+          consumptionStdDev / 10,
+          randomness,
+          chanceOfChange,
+          direction
         ).toFixed(2),
         production: +randomWalk(
           prevValues[location].production,
-          productionStdDev / 10
+          productionStdDev / 10,
+          randomness,
+          chanceOfChange,
+          direction
         ).toFixed(2),
       };
 
@@ -100,16 +122,17 @@ function createExperiment(fileName = `pmu-measurements.json`) {
       if (err) {
         console.log(err);
       } else {
-        console.log("JSON saved to " + outputFilename);
+        console.log("JSON saved to " + filePath);
       }
     }
   );
+  console.log("JSON saved to " + filePath);
   resetExperiment();
 }
 
-createExperiment();
+//createExperiment();
 
 degreeOfChange = 10;
-frequencyOfChange = 0.001;
+frequencyOfChange = 0.02;
 
-createExperiment("sudden-change.json");
+createExperiment();
