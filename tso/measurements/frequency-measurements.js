@@ -19,7 +19,7 @@ var frequencyData = [];
 
 var currentTime;
 var intervalCounter = 0;
-const PUBLISHING_INTERVAL_FREQUENCY_MS = 3000; // 3 seconds
+const PUBLISHING_INTERVAL_FREQUENCY_MS = 10000; // 10 seconds
 var numberOfLocations;
 
 function loadFrequencyMeasurements() {
