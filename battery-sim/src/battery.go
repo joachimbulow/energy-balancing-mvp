@@ -111,7 +111,6 @@ func GenerateUuid() string {
 }
 
 // Pem requests
-
 func (battery *Battery) publishPEMrequests() {
 	for {
 		time.Sleep(requestInterval)

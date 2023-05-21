@@ -5,6 +5,8 @@ import (
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 // Environement variables
@@ -29,11 +31,20 @@ func GetBrokerURL() string {
 }
 
 func GetBroker() string {
-	if url := os.Getenv("BROKER"); url != "" {
-		return url
+	if broker := os.Getenv("BROKER"); broker != "" {
+		return broker
 	}
 	log.Println("BROKER not set, using default KAFKA")
 	return "KAFKA"
+}
+
+// To reuse consumer groups, we pass the k8s pod id as a parameter, and create a consumer group deterministally from this
+func GetConsumerGroupId() string {
+	if groupId := os.Getenv("CONSUMER_GROUP_ID"); groupId != "" {
+		return "battery-sim-" + groupId
+	}
+	log.Println("CONSUMER_GROUP_ID not set, using random uuid")
+	return "battery-sim" + uuid.New().String()
 }
 
 func GetNumberOfBatteries() int {

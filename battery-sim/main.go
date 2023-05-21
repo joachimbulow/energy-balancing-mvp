@@ -76,7 +76,7 @@ func publishPEMrequests(requestsChannel chan src.PEMRequest, client client.Clien
 
 // Listen for PEM responses
 func listenForPEMresponses(responseChannelMap map[string]chan src.PEMResponse, client client.Client) {
-	client.Listen(src.PEM_RESPONSES_TOPIC, src.GenerateUuid(), func(params ...[]byte) { handlePemResponse(responseChannelMap, params...) })
+	client.Listen(src.PEM_RESPONSES_TOPIC, util.GetConsumerGroupId(), func(params ...[]byte) { handlePemResponse(responseChannelMap, params...) })
 }
 
 // Send out the response to the correct channel based on the id
