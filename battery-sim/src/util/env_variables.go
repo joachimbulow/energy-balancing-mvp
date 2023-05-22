@@ -88,7 +88,7 @@ func GetRequestInterval() time.Duration {
 		}
 	}
 	log.Println("REQUEST_INTERVAL_SECONDS not set, using default: 20 seconds")
-	return 20 * time.Second // Default to 20 seconds
+	return 60 * time.Second // Default to 60 seconds
 }
 
 func GetPacketPowerW() int {
