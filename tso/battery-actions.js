@@ -6,9 +6,19 @@ const ACTION = {
   DISCHARGE: "DISCHARGE",
 };
 
-const ONE_MILLION = 1000000;
+const ONE_BILLION = 1000000000; // Wattseconds = joule so 1000000000 joules = 1 GigaWattsecond
+
+const KILOWATT_HOURS_PER_GIGAWATT_SECOND = 0.000000277777778;
+
 var batteryActions = [];
-const energyPacket = 4 / ONE_MILLION; // 4 W in MW
+
+const PACKET_TIME_S = parseInt(process.env.PACKET_TIME_S || 5 * 60); // Default to 5 minutes
+const PACKET_POWER_W = parseInt(process.env.PACKET_POWER_W || 4000); // Default to 4000 watts
+
+const ENERGY_PACKET_J = PACKET_POWER_W * PACKET_TIME_S; // Joules / wattseconds
+
+const ENERGY_PACKET_GIGA_WATT_SECONDS = ENERGY_PACKET_J / ONE_BILLION;
+
 const NOMINAL_FREQUENCY = 50;
 
 // Sum total of all the packets applied
@@ -41,9 +51,9 @@ function factorInBatteryActions(measurements) {
 
   for (const action of batteryActions) {
     if (action.actionType === ACTION.CHARGE) {
-      energyApplied -= energyPacket;
+      energyApplied -= ENERGY_PACKET_GIGA_WATT_SECONDS;
     } else if (action.actionType === ACTION.DISCHARGE) {
-      energyApplied += energyPacket;
+      energyApplied += ENERGY_PACKET_GIGA_WATT_SECONDS;
     }
   }
   if (energyApplied != 0) {
@@ -53,7 +63,9 @@ function factorInBatteryActions(measurements) {
   totalEnergyApplied += energyApplied;
 
   console.log(
-    `Total change to apply including previous actions: ${totalEnergyApplied}`
+    `Total change to apply including previous actions: ${totalEnergyApplied} Gws / ${
+      KILOWATT_HOURS_PER_GIGAWATT_SECOND * totalEnergyApplied
+    } kWh`
   );
 
   for (const measurement of measurements) {
@@ -72,11 +84,11 @@ function factorInBatteryActions(measurements) {
 }
 
 /**
- *
- * @param {The amount of energy added in MW} addedEnergy
+ * GWs = GigaWatt-seconds
+ * @param {The amount of energy added in GWs} addedEnergy
  * @param {System nominal frequency in Hz} nominalFrequency
- * @param {System current inertia in seconds per megawatts (s/MW)} inertia
- * @param {The current system frequency before applying battery action} previousFrequency
+ * @param {System current inertia in GWs} inertia // I think this is Gigawatt seconds (GWs) given https://energinet.dk/media/4xinfk4y/ffr-ig-justification-report.pdf
+ * @param {The current system frequency before applying battery action in Hz} previousFrequency
  * @returns
  */
 function calculateNewFrequency(

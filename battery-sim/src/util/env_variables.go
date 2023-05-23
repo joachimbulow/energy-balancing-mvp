@@ -87,7 +87,7 @@ func GetRequestInterval() time.Duration {
 			return time.Duration(parsedValue) * time.Second
 		}
 	}
-	log.Println("REQUEST_INTERVAL_SECONDS not set, using default: 20 seconds")
+	log.Println("REQUEST_INTERVAL_SECONDS not set, using default: 60 seconds")
 	return 60 * time.Second // Default to 60 seconds
 }
 
