@@ -115,6 +115,8 @@ services:
       - BROKER=kafka
       - BROKER_URL=kafka
       - BROKER_PORT=9092
+      - PACKET_TIME_S=30
+      - PACKET_POWER_W=4000
     networks:
       - mvp-network
 
