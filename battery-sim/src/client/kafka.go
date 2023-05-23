@@ -46,12 +46,13 @@ func NewKafkaClient() (*KafkaClient, error) {
 
 func setupReader(kafkaClient *KafkaClient, topic string, consumerGroupID string) *kafka.Reader {
 	kafkaClient.reader = kafka.NewReader(kafka.ReaderConfig{
-		Brokers:     strings.Split(util.GetBrokerURL(), ","),
-		GroupID:     consumerGroupID,
-		Topic:       topic,
-		MinBytes:    10e3, // 10KB
-		MaxBytes:    10e6, // 10MB
-		StartOffset: kafka.LastOffset,
+		Brokers:        strings.Split(util.GetBrokerURL(), ","),
+		GroupID:        consumerGroupID,
+		Topic:          topic,
+		MinBytes:       10e3, // 10KB
+		MaxBytes:       10e6, // 10MB
+		StartOffset:    kafka.LastOffset,
+		CommitInterval: 5 * time.Second,
 	})
 	return kafkaClient.reader
 }
