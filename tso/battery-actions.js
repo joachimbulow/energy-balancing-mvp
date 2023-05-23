@@ -6,9 +6,9 @@ const ACTION = {
   DISCHARGE: "DISCHARGE",
 };
 
-const ONE_BILLION = 1000000000;
+const ONE_MILLION = 1000000;
 var batteryActions = [];
-const energyPacket = 4 / ONE_BILLION; // 4 W in MW
+const energyPacket = 4 / ONE_MILLION; // 4 W in MW
 const NOMINAL_FREQUENCY = 50;
 
 // Sum total of all the packets applied
