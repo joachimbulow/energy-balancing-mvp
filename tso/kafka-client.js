@@ -8,16 +8,20 @@ const GROUP_ID = "TSO";
 
 let kafka;
 let producer;
-let consumer;
+let consumer1;
+let consumer2;
 
 connect();
 
+// Utilzing two consumers in the same group
 async function connect() {
   kafka = new Kafka({ brokers: [KAFKA_SERVER] });
   producer = kafka.producer();
-  consumer = kafka.consumer({ groupId: GROUP_ID });
+  consumer1 = kafka.consumer({ groupId: GROUP_ID });
+  consumer2 = kafka.consumer({ groupId: GROUP_ID });
   await producer.connect();
-  await consumer.connect();
+  await consumer1.connect();
+  await consumer2.connect();
 }
 
 async function ensurePublishClientIsConnected() {
@@ -33,8 +37,18 @@ async function connectPublishClient() {
 }
 
 async function subscribe(topic, handler) {
-  await consumer.subscribe({ topic });
-  await consumer.run({
+  // Run one consumer
+  await consumer1.subscribe({ topic });
+  consumer1.run({
+    eachMessage: async (message) => {
+      const msg = JSON.parse(message.message.value);
+      if (!msg.heartbeat) {
+        handler(msg);
+      }
+    },
+  });
+  await consumer2.subscribe({ topic });
+  consumer2.run({
     eachMessage: async (message) => {
       const msg = JSON.parse(message.message.value);
       if (!msg.heartbeat) {
