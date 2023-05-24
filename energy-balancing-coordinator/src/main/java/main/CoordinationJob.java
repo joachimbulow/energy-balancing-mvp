@@ -103,7 +103,7 @@ public class CoordinationJob {
         DataStream<PemResponse> responseStream = pojoRequestStream.map(new CoordinatorMapper());
 
         // Consume ALL responses on ALL processing instances and reduce sink into InfluxDB
-        DataStream<List<PemResponse>> timedWindowResponseStream = responseStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(10))).process(new RequestsProcessFunction());
+        DataStream<List<PemResponse>> timedWindowResponseStream = responseStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(5))).process(new RequestsProcessFunction());
         DataStream<ResponseSummary> responseSummaryStream = timedWindowResponseStream.map(new ResponseListToSummaryMapper());
         DataStream<InfluxDBPoint> influxResponseStream = responseSummaryStream.map(new InfluxDBPointMapper<ResponseSummary>());
         influxResponseStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB response summary sink");
@@ -112,7 +112,7 @@ public class CoordinationJob {
         DataStream<String> jsonResponseStream = responseStream.map(new PojoToJsonMapper<PemResponse>());
 
         KafkaSink<String> kafkaSink = KafkaSink.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setRecordSerializer(KafkaRecordSerializationSchema.builder()
-                .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.NONE).build();
+                .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE).build();
 
         jsonResponseStream.sinkTo(kafkaSink).name("Kafka response sink");
 
@@ -121,7 +121,7 @@ public class CoordinationJob {
         DataStream<BatteryAction> pojoActionStream = rawActionsStream.map(new JsonToActionMapper());
 
         // Sink actions into InfluxDB as well
-        DataStream<List<BatteryAction>> timedWindowActionStream = pojoActionStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(10))).process(new ActionsProcessFunction());
+        DataStream<List<BatteryAction>> timedWindowActionStream = pojoActionStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(5))).process(new ActionsProcessFunction());
         DataStream<ActionSummary> actionSummaryStream = timedWindowActionStream.map(new ActionListToSummaryMapper());
         DataStream<InfluxDBPoint> influxActionStream = actionSummaryStream.map(new InfluxDBPointMapper<ActionSummary>());
         influxActionStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB actions summary sink");
