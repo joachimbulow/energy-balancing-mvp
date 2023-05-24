@@ -52,7 +52,7 @@ func setupReader(kafkaClient *KafkaClient, topic string, consumerGroupID string)
 		MinBytes:       10e3, // 10KB
 		MaxBytes:       10e6, // 10MB
 		StartOffset:    kafka.LastOffset,
-		CommitInterval: 5 * time.Second,
+		CommitInterval: time.Duration(util.GetKafkaOffSetCommitIntervalMillis()) * time.Millisecond,
 	})
 	return kafkaClient.reader
 }

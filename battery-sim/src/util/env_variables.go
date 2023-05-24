@@ -112,3 +112,14 @@ func GetPacketTimeS() int {
 	log.Println("PACKET_TIME_S not set, using default: 5 minutes")
 	return 5 * 60 // Default to 5 minutes
 }
+
+func GetKafkaOffSetCommitIntervalMillis() int {
+	if interval := os.Getenv("KAFKA_OFFSET_COMMIT_INTERVAL_MILLIS"); interval != "" {
+		parsedValue, err := strconv.Atoi(interval)
+		if err == nil {
+			return parsedValue
+		}
+	}
+	log.Println("KAFKA_OFFSET_COMMIT_INTERVAL not set, using default: 5 seconds")
+	return 5000 // Default to 5 seconds
+}
