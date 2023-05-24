@@ -26,12 +26,15 @@ func initializeBatteries() {
 	// All battery actions flow "up-stream" from batteries through this channel
 	batteryActionChannel := make(chan src.BatteryAction)
 
-	// Setup the common client that all batteries will use
-	client, error := client.NewClient()
+	// Setup the common masterClient that all batteries will use, as well as a few slave clients for consumption only
+	masterClient, masterError := client.NewClient() // Handles consumption and production
+	slaveClient1, slaveError1 := client.NewClient() // Handles only consumption
+	slaveClient2, slaveError2 := client.NewClient() // Handles only consumption
+	slaveClient3, slaveError3 := client.NewClient() // Handles only consumption
+	slaveClient4, slaveError4 := client.NewClient() // Handles only consumption
 
-	if error != nil {
-		println("Failed to initialize the main client")
-		panic(error)
+	if masterError != nil || slaveError1 != nil || slaveError2 != nil || slaveError3 != nil || slaveError4 != nil {
+		panic("Failed to initialize a Kafka client")
 	}
 
 	for i := 0; i < nBatteries; i++ {
@@ -47,10 +50,16 @@ func initializeBatteries() {
 		go startBattery(batteryId, requestChannel, responseChannel, batteryActionChannel)
 	}
 
-	// Start the channel communication go routines
-	go publishPEMrequests(requestChannel, client)
-	go listenForPEMresponses(responseChannelMap, client)
-	go publishBatteryActions(batteryActionChannel, client)
+	// Producer
+	go publishPEMrequests(requestChannel, masterClient)
+	go publishBatteryActions(batteryActionChannel, masterClient)
+
+	// Consumer only clients
+	go listenForPEMresponses(responseChannelMap, masterClient)
+	go listenForPEMresponses(responseChannelMap, slaveClient1)
+	go listenForPEMresponses(responseChannelMap, slaveClient2)
+	go listenForPEMresponses(responseChannelMap, slaveClient3)
+	go listenForPEMresponses(responseChannelMap, slaveClient4)
 
 	// To keep routines running' we start sleepin'
 	for {
