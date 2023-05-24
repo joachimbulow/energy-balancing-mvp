@@ -5,6 +5,7 @@ import main.models.PemRequest;
 import main.models.PemResponse;
 import main.models.RequestType;
 import main.models.ResponseType;
+import main.redis.FrequencyManager;
 import main.redis.RedisConnectionPool;
 import org.apache.flink.api.common.functions.MapFunction;
 import redis.clients.jedis.Jedis;
@@ -20,7 +21,7 @@ public class CoordinatorMapper implements MapFunction<PemRequest, PemResponse> {
         double currentFrequency;
 
         try {
-            currentFrequency = Double.parseDouble(jedis.get(CoordinationJob.REDIS_FREQUENCY_KEY));
+            currentFrequency = FrequencyManager.getInstance().getFrequency();
             jedis.close();
             //currentInertia = Double.parseDouble(jedis.get(CoordinationJob.REDIS_INERTIA_KEY)); REMOVED UNTIL FURTHER NOTICE
         }
