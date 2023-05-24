@@ -23,19 +23,20 @@ public class FrequencyManager {
 
     public double getFrequency() {
         if (lastFrequencyUpdate == null || lastFrequencyUpdate.before(new Date(System.currentTimeMillis() - 1000))) {
-            updateFrequency(lastFrequency);
+            updateFrequency();
         }
 
         return lastFrequency;
     }
 
-    synchronized public void updateFrequency(double frequency) {
+    synchronized public void updateFrequency() {
         // In case of multiple threads entering, only one should update the frequency
         if (lastFrequencyUpdate != null && !lastFrequencyUpdate.before(new Date(System.currentTimeMillis() - 1000))) {
             return;
         }
         Jedis jedis = RedisConnectionPool.getInstance().getJedisPool().getResource();
         lastFrequency = Double.parseDouble(jedis.get(CoordinationJob.REDIS_FREQUENCY_KEY));
+        lastFrequencyUpdate = new Date();
         jedis.close();
     }
 }
