@@ -56,7 +56,7 @@ public class CoordinationJob {
         // For testing locally
         //final StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironment();
 
-        env.setParallelism(1);
+        env.setParallelism(4);
 
         // Custom settings
         env.setRestartStrategy(RestartStrategies.fixedDelayRestart(5, // Gracious amount of restarts
