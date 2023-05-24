@@ -61,7 +61,7 @@ func setupWriter(kafkaClient *KafkaClient) *kafka.Writer {
 	kafkaClient.writer = &kafka.Writer{
 		Addr:                   kafka.TCP(util.GetBrokerURL()),
 		Balancer:               &kafka.Hash{},
-		AllowAutoTopicCreation: true,
+		AllowAutoTopicCreation: false,
 	}
 	return kafkaClient.writer
 }
