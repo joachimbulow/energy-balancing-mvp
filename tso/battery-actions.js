@@ -33,6 +33,9 @@ function handleBatteryAction(message) {
 }
 
 function resetBatteryActions() {
+  console.log(
+    `Resetting ${batteryActions.length} battery actions after publish}`
+  );
   batteryActions = [];
 }
 
