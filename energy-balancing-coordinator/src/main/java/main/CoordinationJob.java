@@ -112,7 +112,7 @@ public class CoordinationJob {
         DataStream<String> jsonResponseStream = responseStream.map(new PojoToJsonMapper<PemResponse>());
 
         KafkaSink<String> kafkaSink = KafkaSink.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setRecordSerializer(KafkaRecordSerializationSchema.builder()
-                .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE).build();
+                .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.NONE).build();
 
         jsonResponseStream.sinkTo(kafkaSink).name("Kafka response sink");
 
