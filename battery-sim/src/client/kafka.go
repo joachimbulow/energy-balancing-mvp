@@ -49,7 +49,7 @@ func setupReader(kafkaClient *KafkaClient, topic string, consumerGroupID string)
 		Brokers:        strings.Split(util.GetBrokerURL(), ","),
 		GroupID:        consumerGroupID,
 		Topic:          topic,
-		MinBytes:       10e3, // 10KB
+		MinBytes:       1,
 		MaxBytes:       10e6, // 10MB
 		StartOffset:    kafka.LastOffset,
 		CommitInterval: time.Duration(util.GetKafkaOffSetCommitIntervalMillis()) * time.Millisecond,
@@ -64,16 +64,6 @@ func setupWriter(kafkaClient *KafkaClient) *kafka.Writer {
 		AllowAutoTopicCreation: false,
 	}
 	return kafkaClient.writer
-}
-
-func (k *KafkaClient) Connect() error {
-	// Kafka connection is established when the reader or writer is created
-	return nil
-}
-
-func (k *KafkaClient) Disconnect() error {
-	// Kafka connections are closed after the reader or writer is used
-	return nil
 }
 
 func (k *KafkaClient) Publish(topic string, key string, message string) error {
@@ -94,18 +84,6 @@ func (k *KafkaClient) Publish(topic string, key string, message string) error {
 	return err
 }
 
-func (k *KafkaClient) Subscribe(topic string) error {
-	// Kafka reader subscribes to the topic when it is listening
-	return nil
-}
-
-func (k *KafkaClient) Unsubscribe(topic string) error {
-	if err := k.reader.Close(); err != nil {
-		logger.ErrorWithMsg("Failed to close reader", err)
-	}
-	return nil
-}
-
 func (k *KafkaClient) Listen(topic string, consumerGroupID string, handler func(params ...[]byte)) error {
 	if k.reader == nil {
 		setupReader(k, topic, consumerGroupID)
@@ -119,4 +97,26 @@ func (k *KafkaClient) Listen(topic string, consumerGroupID string, handler func(
 
 		handler(m.Key, m.Value)
 	}
+}
+
+func (k *KafkaClient) Connect() error {
+	// Kafka connection is established when the reader or writer is created
+	return nil
+}
+
+func (k *KafkaClient) Disconnect() error {
+	// Kafka connections are closed after the reader or writer is used
+	return nil
+}
+
+func (k *KafkaClient) Subscribe(topic string) error {
+	// Kafka reader subscribes to the topic when it is listening
+	return nil
+}
+
+func (k *KafkaClient) Unsubscribe(topic string) error {
+	if err := k.reader.Close(); err != nil {
+		logger.ErrorWithMsg("Failed to close reader", err)
+	}
+	return nil
 }
