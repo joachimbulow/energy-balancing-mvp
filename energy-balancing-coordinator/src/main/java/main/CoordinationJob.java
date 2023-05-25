@@ -82,48 +82,48 @@ public class CoordinationJob {
 
         // # Inertia
         DataStream<String> rawInertiaStream = env.fromSource(inertiaSource, WatermarkStrategy.noWatermarks(), "Inertia source");
-        DataStream<InertiaMeasurement> pojoInertiaStream = rawInertiaStream.map(new JsonToInertiaMapper());
-        pojoInertiaStream.addSink(new RedisSinkFunction<InertiaMeasurement>());
+        DataStream<InertiaMeasurement> pojoInertiaStream = rawInertiaStream.map(new JsonToInertiaMapper()).disableChaining().name("Inertia mapper");
+        pojoInertiaStream.addSink(new RedisSinkFunction<InertiaMeasurement>()).disableChaining().name("Redis inertia sink");
 
         // # Frequency
         DataStream<String> rawFrequencyStream = env.fromSource(frequencySource, WatermarkStrategy.noWatermarks(), "Frequency source");
-        DataStream<List<FrequencyMeasurement>> pojoFreqListStream = rawFrequencyStream.map(new JsonToFreqListMapper());
-        DataStream<SystemFrequency> sysFreqStream = pojoFreqListStream.map(new FreqListAvgReducer()).returns(TypeExtractor.getForClass(SystemFrequency.class));
+        DataStream<List<FrequencyMeasurement>> pojoFreqListStream = rawFrequencyStream.map(new JsonToFreqListMapper()).disableChaining().name("FrequencyList mapper");
+        DataStream<SystemFrequency> sysFreqStream = pojoFreqListStream.map(new FreqListAvgReducer()).returns(TypeExtractor.getForClass(SystemFrequency.class)).disableChaining().name("FrequencyList reducer");
 
         // Sink into redis
-        sysFreqStream.addSink(new RedisSinkFunction<SystemFrequency>());
+        sysFreqStream.addSink(new RedisSinkFunction<SystemFrequency>()).disableChaining().name("Redis frequency sink");
 
         // Map and sink into InfluxDB
-        DataStream<InfluxDBPoint> influxStream = sysFreqStream.map(new InfluxDBPointMapper<SystemFrequency>());
+        DataStream<InfluxDBPoint> influxStream = sysFreqStream.map(new InfluxDBPointMapper<SystemFrequency>()).disableChaining().name("InfluxDB frequency mapper");
         influxStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB frequency sink");
 
         // # Requests
-        DataStream<String> rawRequestStream = env.fromSource(requestsSource, WatermarkStrategy.noWatermarks(), "Requests source");
-        DataStream<PemRequest> pojoRequestStream = rawRequestStream.map(new JsonToRequestMapper());
-        DataStream<PemResponse> responseStream = pojoRequestStream.map(new CoordinatorMapper());
+        DataStream<String> rawRequestStream = env.fromSource(requestsSource, WatermarkStrategy.noWatermarks(), "Requests source").disableChaining();
+        DataStream<PemRequest> pojoRequestStream = rawRequestStream.map(new JsonToRequestMapper()).disableChaining().name("Request mapper");
+        DataStream<PemResponse> responseStream = pojoRequestStream.map(new CoordinatorMapper()).disableChaining().name("Coordinator mapper");
 
         // Consume ALL responses on ALL processing instances and reduce sink into InfluxDB
-        DataStream<List<PemResponse>> timedWindowResponseStream = responseStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(5))).process(new RequestsProcessFunction());
-        DataStream<ResponseSummary> responseSummaryStream = timedWindowResponseStream.map(new ResponseListToSummaryMapper());
-        DataStream<InfluxDBPoint> influxResponseStream = responseSummaryStream.map(new InfluxDBPointMapper<ResponseSummary>());
-        influxResponseStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB response summary sink");
+        DataStream<List<PemResponse>> timedWindowResponseStream = responseStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(5))).process(new RequestsProcessFunction()).disableChaining().name("Requests window process function");
+        DataStream<ResponseSummary> responseSummaryStream = timedWindowResponseStream.map(new ResponseListToSummaryMapper()).disableChaining().name("Response list to summary mapper");
+        DataStream<InfluxDBPoint> influxResponseStream = responseSummaryStream.map(new InfluxDBPointMapper<ResponseSummary>()).disableChaining().name("InfluxDB response summary mapper");
+        influxResponseStream.addSink(new InfluxDBSink(influxDbConfig)).disableChaining().name("InfluxDB response summary sink");
 
         // Sink into Kafka
-        DataStream<String> jsonResponseStream = responseStream.map(new PojoToJsonMapper<PemResponse>());
+        DataStream<String> jsonResponseStream = responseStream.map(new PojoToJsonMapper<PemResponse>()).disableChaining().name("Response to JSON mapper");
 
         KafkaSink<String> kafkaSink = KafkaSink.<String>builder().setBootstrapServers(KAFKA_BOOTSTRAP_SERVERS).setRecordSerializer(KafkaRecordSerializationSchema.builder()
                 .setTopic(PEM_RESPONSES_TOPIC).setValueSerializationSchema(new SimpleStringSchema()).build()).setDeliveryGuarantee(DeliveryGuarantee.NONE).build();
 
-        jsonResponseStream.sinkTo(kafkaSink).name("Kafka response sink");
+        jsonResponseStream.sinkTo(kafkaSink).name("Kafka response sink").disableChaining();
 
         // # Actions
         DataStream<String> rawActionsStream = env.fromSource(batteryActionsSource, WatermarkStrategy.noWatermarks(), "Actions source");
-        DataStream<BatteryAction> pojoActionStream = rawActionsStream.map(new JsonToActionMapper());
+        DataStream<BatteryAction> pojoActionStream = rawActionsStream.map(new JsonToActionMapper()).disableChaining().name("Action mapper");
 
         // Sink actions into InfluxDB as well
-        DataStream<List<BatteryAction>> timedWindowActionStream = pojoActionStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(5))).process(new ActionsProcessFunction());
-        DataStream<ActionSummary> actionSummaryStream = timedWindowActionStream.map(new ActionListToSummaryMapper());
-        DataStream<InfluxDBPoint> influxActionStream = actionSummaryStream.map(new InfluxDBPointMapper<ActionSummary>());
+        DataStream<List<BatteryAction>> timedWindowActionStream = pojoActionStream.windowAll(SlidingProcessingTimeWindows.of(Time.seconds(5), Time.seconds(5))).process(new ActionsProcessFunction()).disableChaining().name("Actions window process function");
+        DataStream<ActionSummary> actionSummaryStream = timedWindowActionStream.map(new ActionListToSummaryMapper()).disableChaining().name("Action list to summary mapper");
+        DataStream<InfluxDBPoint> influxActionStream = actionSummaryStream.map(new InfluxDBPointMapper<ActionSummary>()).disableChaining().name("InfluxDB actions summary mapper");
         influxActionStream.addSink(new InfluxDBSink(influxDbConfig)).name("InfluxDB actions summary sink");
 
         // Execute program, beginning computation.
