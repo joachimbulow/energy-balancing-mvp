@@ -60,10 +60,16 @@ async function subscribe(topic, handler) {
 
 async function publish(topic, message) {
   await ensurePublishClientIsConnected();
-  await producer.send({
-    topic,
-    messages: [{ value: JSON.stringify(message, null, 2) }],
-  });
+  try {
+    await producer.send({
+      topic,
+      messages: [{ value: JSON.stringify(message, null, 2) }],
+    });
+  } catch (err) {
+    console.log("Error publishing message to Kafka");
+    console.log(`Message was ${message}`);
+    consol.log(err);
+  }
 }
 
 module.exports = {
