@@ -74,12 +74,14 @@ func startBattery(id string, requestChannel chan src.PEMRequest, responseChannel
 // Send out PEM requests when the batteries requests it through channels
 func publishPEMrequests(requestsChannel chan src.PEMRequest, client client.Client) {
 	for request := range requestsChannel {
-		jsonRequest, err := json.Marshal(request)
-		if err != nil {
-			logger.ErrorWithMsg("Marshaling of pem request message failed", err)
-			continue
-		}
-		client.Publish(src.PEM_REQUESTS_TOPIC, request.BatteryID, string(jsonRequest))
+		go func(req src.PEMRequest) {
+			jsonRequest, err := json.Marshal(req)
+			if err != nil {
+				logger.ErrorWithMsg("Marshaling of pem request message failed", err)
+				return
+			}
+			client.Publish(src.PEM_REQUESTS_TOPIC, req.BatteryID, string(jsonRequest))
+		}(request)
 	}
 }
 
@@ -109,11 +111,13 @@ func handlePemResponse(responseChannelMap map[string]chan src.PEMResponse, param
 // Send out battery actions
 func publishBatteryActions(batteryActionChannel chan src.BatteryAction, client client.Client) {
 	for action := range batteryActionChannel {
-		jsonAction, err := json.Marshal(action)
-		if err != nil {
-			logger.ErrorWithMsg("Marshaling of battery action message failed", err)
-			continue
-		}
-		client.Publish(src.BATTERY_ACTIONS_TOPIC, action.BatteryID, string(jsonAction))
+		go func(act src.BatteryAction) {
+			jsonAction, err := json.Marshal(act)
+			if err != nil {
+				logger.ErrorWithMsg("Marshaling of battery action message failed", err)
+				return
+			}
+			client.Publish(src.BATTERY_ACTIONS_TOPIC, act.BatteryID, string(jsonAction))
+		}(action)
 	}
 }
