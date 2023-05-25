@@ -5,13 +5,18 @@ import redis.clients.jedis.Jedis;
 
 import java.util.Date;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class FrequencyManager {
     private static FrequencyManager instance = null;
 
-    private static Date lastFrequencyUpdate;
+    private static long lastFrequencyUpdateTime;
     private static double lastFrequency;
+    private final ReentrantLock lock = new ReentrantLock();
 
     private FrequencyManager() {
+        lastFrequencyUpdateTime = 0;
+        lastFrequency = 50;
     }
 
     public static FrequencyManager getInstance() {
@@ -22,21 +27,33 @@ public class FrequencyManager {
     }
 
     public double getFrequency() {
-        if (lastFrequencyUpdate == null || lastFrequencyUpdate.before(new Date(System.currentTimeMillis() - 1000))) {
+        if (isStale()) {
             updateFrequency();
         }
 
         return lastFrequency;
     }
 
-    synchronized public void updateFrequency() {
-        // In case of multiple threads entering, only one should update the frequency
-        if (lastFrequencyUpdate != null && !lastFrequencyUpdate.before(new Date(System.currentTimeMillis() - 1000))) {
-            return;
+    private boolean isStale() {
+        return lastFrequencyUpdateTime == 0 || lastFrequencyUpdateTime < System.currentTimeMillis() - 1000;
+    }
+
+    public void updateFrequency() {
+        // Try to acquire the lock
+        if (lock.tryLock()) {
+            try {
+                if (!isStale()) {
+                    return;
+                }
+                Jedis jedis = RedisConnectionPool.getInstance().getJedisPool().getResource();
+                lastFrequency = Double.parseDouble(jedis.get(CoordinationJob.REDIS_FREQUENCY_KEY));
+                lastFrequencyUpdateTime = System.currentTimeMillis();
+                jedis.close();
+            } finally {
+                // Always release the lock in the final block to ensure it's released even if an exception occurs
+                lock.unlock();
+            }
         }
-        Jedis jedis = RedisConnectionPool.getInstance().getJedisPool().getResource();
-        lastFrequency = Double.parseDouble(jedis.get(CoordinationJob.REDIS_FREQUENCY_KEY));
-        lastFrequencyUpdate = new Date();
-        jedis.close();
     }
 }
+
