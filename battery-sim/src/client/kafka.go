@@ -74,7 +74,6 @@ func (k *KafkaClient) Publish(topic string, key string, message string) error {
 	err := k.writer.WriteMessages(context.Background(),
 		kafka.Message{
 			Topic: topic,
-			Key:   []byte(key),
 			Value: []byte(message),
 		},
 	)
