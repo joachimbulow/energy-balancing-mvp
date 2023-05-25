@@ -15,23 +15,11 @@ public class CoordinatorMapper implements MapFunction<PemRequest, PemResponse> {
 
     @Override
     public PemResponse map(PemRequest pemRequest) {
-        RedisConnectionPool redisPool = RedisConnectionPool.getInstance();
-        Jedis jedis = redisPool.getJedisPool().getResource();
-
-        double currentFrequency;
-
-        try {
-            currentFrequency = FrequencyManager.getInstance().getFrequency();
-            jedis.close();
-            //currentInertia = Double.parseDouble(jedis.get(CoordinationJob.REDIS_INERTIA_KEY)); REMOVED UNTIL FURTHER NOTICE
-        }
-        catch (Exception e) {
-            System.out.println("Error parsing frequency or inertia value from Redis: " + e.getMessage());
-            jedis.close();
-            return null;
-        }
+        // Would be cool with some more intricate calculations here
+        double currentFrequency = FrequencyManager.getInstance().getFrequency();
 
         ResponseType responseType;
+
         if (currentFrequency < NOMINAL_SYSTEM_FREQUENCY) {
             responseType = pemRequest.requestType == RequestType.CHARGE ? ResponseType.GRANTED : ResponseType.DENIED;
         }

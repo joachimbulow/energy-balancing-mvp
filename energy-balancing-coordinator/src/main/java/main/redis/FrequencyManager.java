@@ -48,6 +48,7 @@ public class FrequencyManager {
                 Jedis jedis = RedisConnectionPool.getInstance().getJedisPool().getResource();
                 lastFrequency = Double.parseDouble(jedis.get(CoordinationJob.REDIS_FREQUENCY_KEY));
                 lastFrequencyUpdateTime = System.currentTimeMillis();
+                System.out.println("Updating frequency, got value: " + lastFrequency);
                 jedis.close();
             } finally {
                 // Always release the lock in the final block to ensure it's released even if an exception occurs
