@@ -7,7 +7,8 @@
     "test": "test",
     "start": "node main.js",
     "simulate": "node measurements/pmu_measurement.js",
-    "sudden": "node measurements/data/sudden-change.js"
+    "sudden": "node measurements/data/sudden-change.js",
+    "actions": "node battery-actions.js"
   },
   "author": "",
   "license": "ISC",

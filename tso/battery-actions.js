@@ -21,6 +21,8 @@ const ENERGY_PACKET_GIGA_WATT_SECONDS = ENERGY_PACKET_J / ONE_BILLION;
 
 const NOMINAL_FREQUENCY = 50;
 
+var previousMeasurements = [];
+
 // Sum total of all the packets applied
 var totalEnergyApplied = 0;
 
@@ -63,10 +65,13 @@ function factorInBatteryActions(measurements) {
     console.log(`Energy change in grid since last refresh: ${energyApplied}`);
   }
   // Update the global state, and use for calculation of new frequency
+  // if the frequency moved across the nominal frequency - reset total energy applied
+  checkIfFrequencyIsStabilized(measurements)
+  
   totalEnergyApplied += energyApplied;
 
   console.log(
-    `Total change to apply including previous actions: ${totalEnergyApplied} Gws / ${
+    `Total change to apply including previous actions since last stabilization: ${totalEnergyApplied} Gws / ${
       KILOWATT_HOURS_PER_GIGAWATT_SECOND * totalEnergyApplied
     } kWh`
   );
@@ -109,11 +114,37 @@ function calculateNewFrequency(
   var appliedDeviation =
     addedEnergy / (2 * Math.PI * nominalFrequency * inertia);
 
+  console.log(`Applied frequency impact: ${appliedDeviation} Hz`);
+
   // appliedDeviation (Δf) is negative when energy is added to the system
   // Therefore, we subtract the deviation from the previous frequency
   var newFrequency = previousFrequency - appliedDeviation;
 
   return newFrequency;
+}
+
+function checkIfFrequencyIsStabilized(newMeasurements) {
+  if (previousMeasurements == null || previousMeasurements.length == 0) {
+    console.log(`No previous measurements, skipping frequency stabilization check`);
+    previousMeasurements = newMeasurements;
+    return;
+  }
+  
+  for (var i = 0; i < previousMeasurements.length; i++) {
+    var previousFrequency = previousMeasurements[i].frequency;
+    var newFrequency = newMeasurements[i].frequency;
+    if (
+      (previousFrequency > NOMINAL_FREQUENCY &&
+        newFrequency <= NOMINAL_FREQUENCY) ||
+      (previousFrequency < NOMINAL_FREQUENCY &&
+        newFrequency >= NOMINAL_FREQUENCY)
+    ) {
+      console.log(`Frequency has stabilized, resetting total energy applied to 0`);
+      totalEnergyApplied = 0;
+      break;
+    }
+  }
+  previousMeasurements = newMeasurements;
 }
 
 module.exports = {
