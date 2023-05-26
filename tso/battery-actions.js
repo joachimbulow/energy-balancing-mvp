@@ -114,7 +114,7 @@ function calculateNewFrequency(
   var appliedDeviation =
     addedEnergy / (2 * Math.PI * nominalFrequency * inertia);
 
-  console.log(`Applied frequency impact: ${appliedDeviation} Hz`);
+  console.log(`Applied frequency impact: ${-appliedDeviation} Hz`);
 
   // appliedDeviation (Δf) is negative when energy is added to the system
   // Therefore, we subtract the deviation from the previous frequency
