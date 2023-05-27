@@ -18,8 +18,6 @@ const FREQUENCY_PATH = "./measurements/pmu_measurements.json";
  */
 var frequencyData = [];
 
-var currentTime;
-var intervalCounter = 0;
 const PUBLISHING_INTERVAL_FREQUENCY_MS = 10000; // 10 seconds
 var numberOfLocations;
 
@@ -39,45 +37,12 @@ function loadFrequencyMeasurements() {
 }
 
 /**
- * @returns Data list of the different cities and their frequency measurements at the current inerval counter position
- * Including the effect of battery actions
- */
-async function getCurrentFrequencyMeasurements() {
-  const startIndex = intervalCounter * numberOfLocations;
-  const endIndex = startIndex + numberOfLocations;
-  intervalCounter++;
-  try {
-    await incrementIndex();
-  } catch (error) {
-    console.error("Error incrementing index in Redis");
-    console.error(error);
-  }
-
-  const currentFrequencyData = frequencyData.slice(startIndex, endIndex);
-
-  const factoredData =
-    factorInBatteryActions(currentFrequencyData) ?? currentFrequencyData;
-
-  const factoredDataWithCurrentTime = factoredData.map((item) => {
-    item.timestamp = new Date();
-    return item;
-  });
-
-  resetBatteryActions();
-
-  return factoredDataWithCurrentTime;
-}
-
-/**
  * Publishes the current frequency measurements to the broker
  */
 async function initializeFrequencyPublication() {
-  await loadCheckpoint();
-
   setInterval(() => {
     publishFrequencyMeasurements();
   }, PUBLISHING_INTERVAL_FREQUENCY_MS);
-
   async function publishFrequencyMeasurements() {
     const measurements = await getCurrentFrequencyMeasurements();
     console.log("Publishing frequency measurements");
@@ -85,23 +50,42 @@ async function initializeFrequencyPublication() {
     try {
       publish(FREQUENCY_MEASUREMENT_TOPIC, measurements);
     } catch (error) {
-      console.error("Error publishing frequency to Kafka");
-      console.error(error);
+      console.error("Error publishing frequency to Kafka: " + error);
     }
   }
 }
 
-async function loadCheckpoint() {
-  var index = 0;
-
+/**
+ * @returns Data list of the different cities and their frequency measurements at the current inerval counter position
+ * Including the effect of battery actions
+ */
+async function getCurrentFrequencyMeasurements() {
   try {
-    index = await getIndex();
+    const index = (await getIndex()) ?? 0;
+    const dataIndex = index * numberOfLocations;
+
+    incrementIndex();
+
+    const currentFrequencyData = frequencyData.slice(
+      dataIndex,
+      dataIndex + numberOfLocations
+    );
+
+    const factoredData =
+      factorInBatteryActions(currentFrequencyData) ?? currentFrequencyData;
+
+    const factoredDataWithCurrentTime = factoredData.map((item) => {
+      item.timestamp = new Date();
+      return item;
+    });
+    resetBatteryActions();
+
+    return factoredDataWithCurrentTime;
   } catch (error) {
-    console.error("Error loading checkpoint from Redis");
-    console.error(error);
+    console.error(
+      "Error occured when getting frequency measurements: " + error
+    );
   }
-  intervalCounter = index ?? 0;
-  console.log(`Checkpoint ${index ? "" : "not"} found, starting from ${index ?? 0}`);
 }
 
 module.exports = {

@@ -36,7 +36,7 @@ function handleBatteryAction(message) {
 
 function resetBatteryActions() {
   console.log(
-    `Resetting ${batteryActions.length} battery actions after publish}`
+    `Resetting ${batteryActions.length} battery actions after publish`
   );
   batteryActions = [];
 }
@@ -66,8 +66,8 @@ function factorInBatteryActions(measurements) {
   }
   // Update the global state, and use for calculation of new frequency
   // if the frequency moved across the nominal frequency - reset total energy applied
-  checkIfFrequencyIsStabilized(measurements)
-  
+  checkIfFrequencyIsStabilized(measurements);
+
   totalEnergyApplied += energyApplied;
 
   console.log(
@@ -114,8 +114,6 @@ function calculateNewFrequency(
   var appliedDeviation =
     addedEnergy / (2 * Math.PI * nominalFrequency * inertia);
 
-  console.log(`Applied frequency impact: ${-appliedDeviation} Hz`);
-
   // appliedDeviation (Δf) is negative when energy is added to the system
   // Therefore, we subtract the deviation from the previous frequency
   var newFrequency = previousFrequency - appliedDeviation;
@@ -125,11 +123,13 @@ function calculateNewFrequency(
 
 function checkIfFrequencyIsStabilized(newMeasurements) {
   if (previousMeasurements == null || previousMeasurements.length == 0) {
-    console.log(`No previous measurements, skipping frequency stabilization check`);
+    console.log(
+      `No previous measurements, skipping frequency stabilization check`
+    );
     previousMeasurements = newMeasurements;
     return;
   }
-  
+
   for (var i = 0; i < previousMeasurements.length; i++) {
     var previousFrequency = previousMeasurements[i].frequency;
     var newFrequency = newMeasurements[i].frequency;
@@ -139,7 +139,9 @@ function checkIfFrequencyIsStabilized(newMeasurements) {
       (previousFrequency < NOMINAL_FREQUENCY &&
         newFrequency >= NOMINAL_FREQUENCY)
     ) {
-      console.log(`Frequency has stabilized, resetting total energy applied to 0`);
+      console.log(
+        `Frequency has stabilized, resetting total energy applied to 0`
+      );
       totalEnergyApplied = 0;
       break;
     }
