@@ -88,7 +88,6 @@ func (k *KafkaClient) Listen(topic string, consumerGroupID string, handler func(
 		setupReader(k, topic, consumerGroupID)
 	}
 	for {
-		fmt.Println("Partition is:" + k.reader.Stats().Partition)
 		m, err := k.reader.ReadMessage(context.Background())
 		if err != nil {
 			logger.ErrorWithMsg("Failed to read message from Kafka", err)
