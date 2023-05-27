@@ -41,7 +41,7 @@ async function incrementIndex() {
 async function getEnergyApplied() {
   await connect();
   const energy = await client.GET("energy_applied");
-  return parseFloat(energy);
+  return parseFloat(energy ?? 0);
 }
 
 async function setEnergyApplied(energy) {
