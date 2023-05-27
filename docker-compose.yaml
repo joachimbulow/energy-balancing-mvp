@@ -144,6 +144,7 @@ services:
       - UPPER_BOUND_BATTERY_CAPACITY=0.8
       - LOWER_BOUND_BATTERY_CAPACITY=0.2
       - KAFKA_OFFSET_COMMIT_INTERVAL_MILLIS=1000
+      - INFLUX=http://influxdb:8086
     networks:
       - mvp-network
 
