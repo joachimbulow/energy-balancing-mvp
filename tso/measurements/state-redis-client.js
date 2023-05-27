@@ -1,7 +1,7 @@
 const redis = require("redis");
 
-const REDIS_HOST = process.env.BROKER_URL || "localhost";
-const REDIS_PORT = process.env.BROKER_PORT || 6379;
+const REDIS_HOST = process.env.REDIS_BROKER || "localhost";
+const REDIS_PORT = process.env.REDIS_PORT || 6379;
 const REDIS_CONFIG = {
   socket: {
     host: REDIS_HOST,
@@ -24,3 +24,9 @@ async function incrementIndex() {
 async function resetIndex() {
   return await client.SET("index", 0);
 }
+
+module.exports = {
+  incrementIndex,
+  getIndex,
+};
+

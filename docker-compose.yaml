@@ -111,12 +111,15 @@ services:
     platform: linux/x86_64
     depends_on:
       - kafka
+      - redis
     environment:
       - BROKER=kafka
       - BROKER_URL=kafka
       - BROKER_PORT=9092
       - PACKET_TIME_S=30
       - PACKET_POWER_W=4000
+      - REDIS_BROKER=redis
+      - REDIS_PORT=6379
     networks:
       - mvp-network
 

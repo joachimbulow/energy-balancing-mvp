@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 const { publish } = require("../client");
+const { getIndex, incrementIndex } = require("./state-redis-client");
 
 const {
   factorInBatteryActions,
@@ -41,11 +42,17 @@ function loadFrequencyMeasurements() {
  * @returns Data list of the different cities and their frequency measurements at the current inerval counter position
  * Including the effect of battery actions
  */
-function getCurrentFrequencyMeasurements() {
+async function getCurrentFrequencyMeasurements() {
   const startIndex = intervalCounter * numberOfLocations;
   const endIndex = startIndex + numberOfLocations;
   intervalCounter++;
-
+  try {
+    await incrementIndex();
+  } catch (error) {
+    console.error("Error incrementing index in Redis");
+    console.error(error);
+  }
+  
   const currentFrequencyData = frequencyData.slice(startIndex, endIndex);
 
   const factoredData =
@@ -64,13 +71,15 @@ function getCurrentFrequencyMeasurements() {
 /**
  * Publishes the current frequency measurements to the broker
  */
-function initializeFrequencyPublication() {
+async function initializeFrequencyPublication() {
+  await loadCheckpoint();
+
   setInterval(() => {
     publishFrequencyMeasurements();
   }, PUBLISHING_INTERVAL_FREQUENCY_MS);
 
   async function publishFrequencyMeasurements() {
-    const measurements = getCurrentFrequencyMeasurements();
+    const measurements = await getCurrentFrequencyMeasurements();
     console.log("Publishing frequency measurements");
 
     try {
@@ -79,6 +88,27 @@ function initializeFrequencyPublication() {
       console.error("Error publishing frequency to Kafka");
       console.error(error);
     }
+  }
+}
+
+async function loadCheckpoint() {
+  // TODO: Load checkpoint from Redis
+  // if none exists, initialize to 0
+  // if one exists, set intervalCounter to that value
+  var index = 0;
+
+  try {
+    index = await getIndex();
+  } catch (error) {
+    console.error("Error loading checkpoint from Redis");
+    console.error(error);
+  }
+  if (index == undefined || index == null || index == 0) {
+    intervalCounter = 0;
+    console.log("No checkpoint found, starting from 0");
+  } else {
+    intervalCounter = index;
+    console.log("Checkpoint found, starting from " + index);
   }
 }
 
