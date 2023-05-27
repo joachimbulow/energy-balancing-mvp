@@ -25,6 +25,8 @@ func initializeBatteries() {
 	responseChannelMap := make(map[string]chan src.PEMResponse)
 	// All battery actions flow "up-stream" from batteries through this channel
 	batteryActionChannel := make(chan src.BatteryAction)
+	// Latency channel for logging
+	latencyChannel := make(chan string)
 
 	// Setup the common masterClient that all batteries will use, as well as a few slave clients for consumption only
 	masterClient, masterError := client.NewClient() // Handles consumption and production
@@ -32,6 +34,8 @@ func initializeBatteries() {
 	slaveClient2, slaveError2 := client.NewClient() // Handles only consumption
 	slaveClient3, slaveError3 := client.NewClient() // Handles only consumption
 	slaveClient4, slaveError4 := client.NewClient() // Handles only consumption
+
+	go util.LogLatencies(latencyChannel)
 
 	if masterError != nil || slaveError1 != nil || slaveError2 != nil || slaveError3 != nil || slaveError4 != nil {
 		panic("Failed to initialize a Kafka client")
@@ -51,15 +55,15 @@ func initializeBatteries() {
 	}
 
 	// Producer
-	go publishPEMrequests(requestChannel, masterClient)
+	go publishPEMrequests(requestChannel, latencyChannel, masterClient)
 	go publishBatteryActions(batteryActionChannel, masterClient)
 
 	// Consumer only clients
-	go listenForPEMresponses(responseChannelMap, masterClient)
-	go listenForPEMresponses(responseChannelMap, slaveClient1)
-	go listenForPEMresponses(responseChannelMap, slaveClient2)
-	go listenForPEMresponses(responseChannelMap, slaveClient3)
-	go listenForPEMresponses(responseChannelMap, slaveClient4)
+	go listenForPEMresponses(responseChannelMap, latencyChannel, masterClient)
+	go listenForPEMresponses(responseChannelMap, latencyChannel, slaveClient1)
+	go listenForPEMresponses(responseChannelMap, latencyChannel, slaveClient2)
+	go listenForPEMresponses(responseChannelMap, latencyChannel, slaveClient3)
+	go listenForPEMresponses(responseChannelMap, latencyChannel, slaveClient4)
 
 	// To keep routines running' we start sleepin'
 	for {
@@ -72,8 +76,9 @@ func startBattery(id string, requestChannel chan src.PEMRequest, responseChannel
 }
 
 // Send out PEM requests when the batteries requests it through channels
-func publishPEMrequests(requestsChannel chan src.PEMRequest, client client.Client) {
+func publishPEMrequests(requestsChannel chan src.PEMRequest, latencyChannel chan string, client client.Client) {
 	for request := range requestsChannel {
+		latencyChannel <- request.ID // To log latency
 		go func(req src.PEMRequest) {
 			jsonRequest, err := json.Marshal(req)
 			if err != nil {
@@ -86,12 +91,12 @@ func publishPEMrequests(requestsChannel chan src.PEMRequest, client client.Clien
 }
 
 // Listen for PEM responses
-func listenForPEMresponses(responseChannelMap map[string]chan src.PEMResponse, client client.Client) {
-	client.Listen(src.PEM_RESPONSES_TOPIC, util.GetConsumerGroupId(), func(params ...[]byte) { handlePemResponse(responseChannelMap, params...) })
+func listenForPEMresponses(responseChannelMap map[string]chan src.PEMResponse, latencyChannel chan string, client client.Client) {
+	client.Listen(src.PEM_RESPONSES_TOPIC, util.GetConsumerGroupId(), func(params ...[]byte) { handlePemResponse(responseChannelMap, latencyChannel, params...) })
 }
 
 // Send out the response to the correct channel based on the id
-func handlePemResponse(responseChannelMap map[string]chan src.PEMResponse, params ...[]byte) {
+func handlePemResponse(responseChannelMap map[string]chan src.PEMResponse, latencyChannel chan string, params ...[]byte) {
 	message := params[1]
 
 	response := src.PEMResponse{}
@@ -104,6 +109,8 @@ func handlePemResponse(responseChannelMap map[string]chan src.PEMResponse, param
 	if !ok {
 		return
 	}
+
+	latencyChannel <- response.ID // To log latency
 
 	channel <- response
 }

@@ -38,6 +38,14 @@ func GetBroker() string {
 	return "KAFKA"
 }
 
+func GetInfluxDB() string {
+	if influx := os.Getenv("INFLUX"); influx != "" {
+		return influx
+	}
+	log.Println("INFLUX not set, using default http://localhost:8086")
+	return "http://localhost:8086"
+}
+
 // To reuse consumer groups, we pass the k8s pod id as a parameter, and create a consumer group deterministally from this
 func GetConsumerGroupId() string {
 	if groupId := os.Getenv("CONSUMER_GROUP_ID"); groupId != "" {
