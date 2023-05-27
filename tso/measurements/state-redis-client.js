@@ -38,12 +38,31 @@ async function incrementIndex() {
   return await client.INCR("index");
 }
 
+async function getEnergyApplied() {
+  await connect();
+  const energy = await client.GET("energy_applied");
+  return parseFloat(energy);
+}
+
+async function setEnergyApplied(energy) {
+  await connect();
+  return await client.SET("energy_applied", energy.toString());
+}
+
 async function resetIndex() {
   await connect();
   return await client.SET("index", 0);
 }
 
+async function resetEnergyApplied() {
+  await connect();
+  return await client.SET("energy_applied", "0");
+}
+
 module.exports = {
   incrementIndex,
   getIndex,
+  getEnergyApplied,
+  setEnergyApplied,
+  resetEnergyApplied,
 };

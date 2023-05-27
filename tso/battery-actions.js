@@ -1,5 +1,10 @@
 const { SocketClosedUnexpectedlyError } = require("redis");
 var { getCurrentInertia } = require("./measurements/inertia-measurements");
+const {
+  resetEnergyApplied,
+  incrementEnergyAppliedBy,
+  setEnergyApplied,
+} = require("./measurements/state-redis-client");
 
 const ACTION = {
   CHARGE: "CHARGE",
@@ -22,10 +27,6 @@ const ENERGY_PACKET_GIGA_WATT_SECONDS = ENERGY_PACKET_J / ONE_BILLION;
 const NOMINAL_FREQUENCY = 50;
 
 var previousMeasurements = [];
-
-// Sum total of all the packets applied
-var totalEnergyApplied = 0;
-
 /**
  * Handles the battery actions received from the broker
  * @param {The battery action message} message
@@ -46,13 +47,13 @@ function resetBatteryActions() {
  * @param { List of measurements obtained from statically generated data } measurement
  * @returns The same list of measurements, but with the frequency adjusted based on the battery actions
  */
-function factorInBatteryActions(measurements) {
+async function factorInBatteryActions(measurements, previouslyAppliedEnergy) {
   if (getCurrentInertia() == 0) {
     console.log("No intertia registered, skipping battery actions");
     return;
   }
 
-  var energyApplied = 0;
+  var energyApplied = previouslyAppliedEnergy;
 
   for (const action of batteryActions) {
     if (action.actionType === ACTION.CHARGE) {
@@ -61,24 +62,19 @@ function factorInBatteryActions(measurements) {
       energyApplied += ENERGY_PACKET_GIGA_WATT_SECONDS;
     }
   }
-  if (energyApplied != 0) {
-    console.log(`Energy change in grid since last refresh: ${energyApplied}`);
-  }
-  // Update the global state, and use for calculation of new frequency
-  // if the frequency moved across the nominal frequency - reset total energy applied
-  checkIfFrequencyIsStabilized(measurements);
 
-  totalEnergyApplied += energyApplied;
+  // Add value to state in redis
+  await setEnergyApplied(energyApplied);
 
   console.log(
-    `Total change to apply including previous actions since last stabilization: ${totalEnergyApplied} Gws / ${
-      KILOWATT_HOURS_PER_GIGAWATT_SECOND * totalEnergyApplied
+    `Total change to apply including previous actions since last stabilization: ${energyApplied} Gws / ${
+      KILOWATT_HOURS_PER_GIGAWATT_SECOND * energyApplied
     } kWh`
   );
 
   for (const measurement of measurements) {
     var batteryAdjustedFrequency = calculateNewFrequency(
-      totalEnergyApplied,
+      energyApplied,
       NOMINAL_FREQUENCY,
       getCurrentInertia(),
       measurement.frequency
@@ -121,7 +117,7 @@ function calculateNewFrequency(
   return newFrequency;
 }
 
-function checkIfFrequencyIsStabilized(newMeasurements) {
+async function checkIfFrequencyIsStabilized(newMeasurements) {
   if (previousMeasurements == null || previousMeasurements.length == 0) {
     console.log(
       `No previous measurements, skipping frequency stabilization check`
@@ -142,7 +138,7 @@ function checkIfFrequencyIsStabilized(newMeasurements) {
       console.log(
         `Frequency has stabilized, resetting total energy applied to 0`
       );
-      totalEnergyApplied = 0;
+      await resetEnergyApplied();
       break;
     }
   }
@@ -153,4 +149,5 @@ module.exports = {
   handleBatteryAction,
   factorInBatteryActions,
   resetBatteryActions,
+  checkIfFrequencyIsStabilized,
 };

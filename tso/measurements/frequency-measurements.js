@@ -1,11 +1,16 @@
 const fs = require("fs");
 
 const { publish } = require("../client");
-const { getIndex, incrementIndex } = require("./state-redis-client");
+const {
+  getIndex,
+  incrementIndex,
+  getEnergyApplied,
+} = require("./state-redis-client");
 
 const {
   factorInBatteryActions,
   resetBatteryActions,
+  checkIfFrequencyIsStabilized,
 } = require("../battery-actions");
 
 const FREQUENCY_MEASUREMENT_TOPIC = "frequency_measurements";
@@ -71,8 +76,15 @@ async function getCurrentFrequencyMeasurements() {
       dataIndex + numberOfLocations
     );
 
+    const previouslyAppliedEnergy = await getEnergyApplied();
+
     const factoredData =
-      factorInBatteryActions(currentFrequencyData) ?? currentFrequencyData;
+      (await factorInBatteryActions(
+        currentFrequencyData,
+        previouslyAppliedEnergy
+      )) ?? currentFrequencyData;
+
+    await checkIfFrequencyIsStabilized(factoredData);
 
     const factoredDataWithCurrentTime = factoredData.map((item) => {
       item.timestamp = new Date();
