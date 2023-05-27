@@ -68,7 +68,7 @@ async function publish(topic, message) {
   } catch (err) {
     console.log("Error publishing message to Kafka");
     console.log(`Message was ${message}`);
-    consol.log(err);
+    console.log(err);
   }
 }
 

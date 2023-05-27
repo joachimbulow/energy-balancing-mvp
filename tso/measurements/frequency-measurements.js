@@ -52,7 +52,7 @@ async function getCurrentFrequencyMeasurements() {
     console.error("Error incrementing index in Redis");
     console.error(error);
   }
-  
+
   const currentFrequencyData = frequencyData.slice(startIndex, endIndex);
 
   const factoredData =
@@ -92,9 +92,6 @@ async function initializeFrequencyPublication() {
 }
 
 async function loadCheckpoint() {
-  // TODO: Load checkpoint from Redis
-  // if none exists, initialize to 0
-  // if one exists, set intervalCounter to that value
   var index = 0;
 
   try {
@@ -103,13 +100,8 @@ async function loadCheckpoint() {
     console.error("Error loading checkpoint from Redis");
     console.error(error);
   }
-  if (index == undefined || index == null || index == 0) {
-    intervalCounter = 0;
-    console.log("No checkpoint found, starting from 0");
-  } else {
-    intervalCounter = index;
-    console.log("Checkpoint found, starting from " + index);
-  }
+  intervalCounter = index ?? 0;
+  console.log(`Checkpoint ${index ? "" : "not"} found, starting from ${index ?? 0}`);
 }
 
 module.exports = {
