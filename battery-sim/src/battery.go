@@ -191,7 +191,7 @@ func (battery *Battery) listenForPEMresponses() {
 
 func (battery *Battery) actOnGrantedRequest(response PEMResponse) {
 	for battery.busy {
-		time.Sleep(1 * time.Second)
+		time.Sleep(10 * time.Millisecond)
 	}
 
 	request := battery.latestRequest
