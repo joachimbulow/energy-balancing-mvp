@@ -44,7 +44,7 @@ func initializeBatteries() {
 	for i := 0; i < nBatteries; i++ {
 		batteryId := src.GenerateUuid()
 		// Create channels for the battery
-		responseChannel := make(chan src.PEMResponse, 10) // Store up to 10 responses in the channel buffer
+		responseChannel := make(chan src.PEMResponse)
 
 		// Add the channels to a map, so we can keep track
 		responseChannelMap[batteryId] = responseChannel
