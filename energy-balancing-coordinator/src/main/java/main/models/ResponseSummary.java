@@ -13,10 +13,10 @@ public class ResponseSummary {
         this.deniedDischarge = 0;
     }
 
-    public ResponseSummary(int approvedCharge, int rejectedCharge, int approvedDischarge, int rejectedDischarge) {
+    public ResponseSummary(int approvedCharge, int deniedCharge, int approvedDischarge, int deniedDischarge) {
             this.approvedCharge = approvedCharge;
-            this.deniedCharge = rejectedCharge;
+            this.deniedCharge = deniedCharge;
             this.approvedDischarge = approvedDischarge;
-            this.deniedDischarge = rejectedDischarge;
+            this.deniedDischarge = deniedDischarge;
         }
 }

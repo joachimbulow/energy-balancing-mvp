@@ -15,6 +15,6 @@ public class ResponseListToSummaryMapper implements MapFunction<List<PemResponse
         int approvedDischarge = pemResponses.stream().filter(pr -> pr.originalRequestType.equals(RequestType.DISCHARGE) && pr.responseType.equals(ResponseType.GRANTED)).toArray().length;
         int deniedCharge = pemResponses.stream().filter(pr -> pr.originalRequestType.equals(RequestType.CHARGE) && pr.responseType.equals(ResponseType.DENIED)).toArray().length;
         int deniedDischarge = pemResponses.stream().filter(pr -> pr.originalRequestType.equals(RequestType.DISCHARGE) && pr.responseType.equals(ResponseType.DENIED)).toArray().length;
-        return new ResponseSummary(approvedCharge, approvedDischarge, deniedCharge, deniedDischarge);
+        return new ResponseSummary(approvedCharge, deniedCharge, approvedDischarge, deniedDischarge);
     }
 }
