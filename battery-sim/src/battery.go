@@ -53,8 +53,8 @@ const (
 )
 
 const (
-	SOC_MEAN           = 0.7
-	SOC_STD            = 0.05
+	SOC_MEAN           = 0.6
+	SOC_STD            = 0.1
 	SIGNIFICANT_DIGITS = 4
 
 	BATTERY_CAPACITY_KWH = 13.5
