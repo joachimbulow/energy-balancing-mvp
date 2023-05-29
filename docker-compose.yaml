@@ -62,6 +62,9 @@ services:
       - redis
     networks:
       - mvp-network
+    volumes:
+      - ./zoo/data:/var/lib/zookeeper/data
+      - ./zoo/log:/var/lib/zookeeper/log
 
   kafka:
     profiles:
