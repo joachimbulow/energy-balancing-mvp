@@ -13,8 +13,6 @@ const ACTION = {
 
 const ONE_BILLION = 1000000000; // Wattseconds = joule so 1000000000 joules = 1 GigaWattsecond
 
-const KILOWATT_HOURS_PER_GIGAWATT_SECOND = 0.000000277777778;
-
 var batteryActions = [];
 
 const PACKET_TIME_S = parseInt(process.env.PACKET_TIME_S || 5 * 60); // Default to 5 minutes
@@ -67,9 +65,7 @@ async function factorInBatteryActions(measurements, previouslyAppliedEnergy) {
   await setEnergyApplied(energyApplied);
 
   console.log(
-    `Total change to apply including previous actions since last stabilization: ${energyApplied} Gws / ${
-      KILOWATT_HOURS_PER_GIGAWATT_SECOND * energyApplied
-    } kWh`
+    `Total change to apply including previous actions since last stabilization: ${energyApplied} GWs`
   );
 
   for (const measurement of measurements) {
@@ -109,6 +105,8 @@ function calculateNewFrequency(
   // AddedEnergy is ΔP, also known as, deviation in power (in this case applied by the batteries)
   var appliedDeviation =
     addedEnergy / (2 * Math.PI * nominalFrequency * inertia);
+
+  console.log(`Applied deviation = ${appliedDeviation} Hz`);
 
   // appliedDeviation (Δf) is negative when energy is added to the system
   // Therefore, we subtract the deviation from the previous frequency
