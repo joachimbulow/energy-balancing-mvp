@@ -134,13 +134,13 @@ services:
     platform: linux/x86_64
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 10
     depends_on:
       - kafka
     environment:
       - BROKER_URL=kafka:9092
       - BROKER=KAFKA
-      - N_BATTERIES=2
+      - N_BATTERIES=100
       - REQUEST_INTERVAL_SECONDS=30
       - PACKET_POWER_W=4000
       - PACKET_TIME_S=30
